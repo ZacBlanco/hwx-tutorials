@@ -104,23 +104,8 @@ In this module you will learn about Apache Hadoop and what makes it scale to lar
 
 Apache Hadoop® is an open source framework for distributed storage and processing of large sets of data on commodity hardware. Hadoop enables businesses to quickly gain insight from massive amounts of structured and unstructured data. Numerous Apache Software Foundation projects make up the services required by an enterprise to deploy, integrate and work with Hadoop.
 
+> Hortonworks Blog : [Understanding Hadoop 2.0](http://hortonworks.com/blog/understanding-hadoop-2-0/)
 
-<table class=" data-table" style="border-color: #050505; height: 40px;" width="153">
-
-<tbody>
-
-<tr>
-
-<td>**NOTE**  
-**![sign](http://hortonworks.com/wp-content/uploads/2015/07/sign.png) </td>
-
-<td>Hortonworks Blog : [Understanding Hadoop 2.0](http://hortonworks.com/blog/understanding-hadoop-2-0/)</td>
-
-</tr>
-
-</tbody>
-
-</table>
 
 
 The base Apache Hadoop framework is composed of the following modules:
@@ -177,25 +162,20 @@ The Hortonworks **Sandbox** is a single node implementation of the Hortonworks D
 
 [Download](http://hortonworks.com/download/)
 
-**Suggested Readings****:**
+**Suggested Readings**
 
-<table class=" data-table" style="border-color: #050505;">
 
-<tbody>
+> HDFS is one of the 4 components of [Apache Hadoop](http://hadoop.apache.org/) the other 3 are Hadoop Common, [Hadoop YARN](http://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html) and [Hadoop MapReduce](http://hortonworks.com/hadoop/mapreduce/).
 
-<tr>
+> To learn more about HDFS watch the following [HDFS introduction video](https://www.youtube.com/watch?v=1_ly9dZnmWc).
 
-<td>**NOTE**  ![sign](http://hortonworks.com/wp-content/uploads/2015/07/sign.png)</td>
+> To learn more about YARN watch the following [YARN introduction video](https://www.youtube.com/watch?v=ZYXVNxmMchc&list=PL2y_WpKCCNQc-7RJNoYym4_g7EZb3yzJW).  
 
-<td>HDFS is one of the 4 components of [Apache Hadoop](http://hadoop.apache.org/) the other 3 are Hadoop Common, [Hadoop YARN](http://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html) and [Hadoop MapReduce](http://hortonworks.com/hadoop/mapreduce/).  To learn more about HDFS watch the following [HDFS introduction video](https://www.youtube.com/watch?v=1_ly9dZnmWc).  To learn more about YARN watch the following [YARN introduction video](https://www.youtube.com/watch?v=ZYXVNxmMchc&list=PL2y_WpKCCNQc-7RJNoYym4_g7EZb3yzJW).  
-Hadoop 2.0 Blogs:  
-[Hadoop 2.7.0 Blog](http://hortonworks.com/blog/apache-hadoop-2-7-0-released/)[Understanding Hadoop 2.0](http://hortonworks.com/blog/understanding-hadoop-2-0/)</td>
 
-</tr>
+**Hadoop 2.0 Blogs:**
 
-</tbody>
-
-</table>
+- [Hadoop 2.7.0 Blog](http://hortonworks.com/blog/apache-hadoop-2-7-0-released/)
+- [Understanding Hadoop 2.0](http://hortonworks.com/blog/understanding-hadoop-2-0/)
 
 
 ## Concepts: HDFS
@@ -325,17 +305,9 @@ One of the crucial implementation details for MapReduce within the new YARN **sy
 
 <iframe width="500" height="281" src="https://www.youtube.com/embed/wlouNFscZS0?start=147&amp;feature=oembed&amp;enablejsapi=1" frameborder="0" allowfullscreen="" id="player3"></iframe>
 
-#### **Suggested Readings:**
+#### Suggested Readings
 
-<table class=" data-table" style="height: 502px;" width="817">
-
-<tbody>
-
-<tr>
-
-<td>**NOTE**  ![sign](http://hortonworks.com/wp-content/uploads/2015/07/sign.png)</td>
-
-<td>HDFS is one of the 4 components of [Apache Hadoop](http://hadoop.apache.org/) the other 3 are Hadoop Common, [Hadoop YARN](http://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html) and [Hadoop MapReduce](http://hortonworks.com/hadoop/mapreduce/).  To learn more about HDFS watch the following [HDFS introduction video](https://www.youtube.com/watch?v=1_ly9dZnmWc).  To learn more about YARN watch the following [YARN introduction video](https://www.youtube.com/watch?v=ZYXVNxmMchc&list=PL2y_WpKCCNQc-7RJNoYym4_g7EZb3yzJW).
+> HDFS is one of the 4 components of [Apache Hadoop](http://hadoop.apache.org/) the other 3 are Hadoop Common, [Hadoop YARN](http://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html) and [Hadoop MapReduce](http://hortonworks.com/hadoop/mapreduce/).  To learn more about HDFS watch the following [HDFS introduction video](https://www.youtube.com/watch?v=1_ly9dZnmWc).  To learn more about YARN watch the following [YARN introduction video](https://www.youtube.com/watch?v=ZYXVNxmMchc&list=PL2y_WpKCCNQc-7RJNoYym4_g7EZb3yzJW).
 
 **Hadoop 2.0 Blogs:**  
 [Hadoop 2.7.0 Blog](http://hortonworks.com/blog/apache-hadoop-2-7-0-released/)  
@@ -356,13 +328,6 @@ One of the crucial implementation details for MapReduce within the new YARN **sy
 [Multi-Tenancy in HDP 2.0: Capacity Scheduler and YARN](http://hortonworks.com/blog/multi-tenancy-in-hdp-2-0-capacity-scheduler-and-yarn/)  
 [Better SLAs via Resource-preemption in YARN’s Capacity Scheduler](http://hortonworks.com/blog/better-slas-via-resource-preemption-in-yarns-capacityscheduler/)
 
-</td>
-
-</tr>
-
-</tbody>
-
-</table>
 
 ## Concepts: Hive and Pig
 
@@ -402,21 +367,7 @@ Within a particular database, data in the tables is serialized and each table ha
 
 *   [**HCatalog**](https://cwiki.apache.org/confluence/display/Hive/HCatalog) is a component of Hive. It is a table and storage management layer for Hadoop that enables users with different data processing tools — including Pig and MapReduce — to more easily read and write data on the grid. HCatalog holds a set of files paths and metadata about data in a Hadoop cluster. This allows scripts, MapReduce and Tez, jobs to be decoupled from data location and metadata like the schema. Additionally, since HCatalog also supports tools like Hive and Pig, the location and metadata can be shared between tools. Using the open APIs of HCatalog external tools that want to integrate, such as Teradata Aster, can also use leverage file path location and metadata in HCatalog.
 
-<table class=" data-table">
-
-<tbody>
-
-<tr>
-
-<td>**NOTE**  ![sign](http://hortonworks.com/wp-content/uploads/2015/07/sign.png)</td>
-
-<td>At one point HCatalog was its own Apache project. However, in March, 2013, [HCatalog’s project merged](https://hive.apache.org/hcatalog_downloads.html) with Hive.  HCatalog is currently released as part of Hive.</td>
-
-</tr>
-
-</tbody>
-
-</table>
+> At one point HCatalog was its own Apache project. However, in March, 2013, [HCatalog’s project merged](https://hive.apache.org/hcatalog_downloads.html) with Hive.  HCatalog is currently released as part of Hive.
 
 *   [**WebHCat**](https://cwiki.apache.org/confluence/display/Hive/WebHCat) provides a service that you can use to run Hadoop MapReduce (or YARN), Pig, Hive jobs or perform Hive metadata operations using an HTTP (REST style) interface.
 
