@@ -226,8 +226,6 @@ Ambari Files User View provides a user friendly interface to upload, store and m
 
 #### **Suggested Readings**
 
-> **NOTE**  ![sign](http://hortonworks.com/wp-content/uploads/2015/07/sign.png)
-
 - HDFS is one of the 4 components of [Apache Hadoop](http://hadoop.apache.org/) the other 3 are Hadoop Common, [Hadoop YARN](http://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html) and [Hadoop MapReduce](http://hortonworks.com/hadoop/mapreduce/).
 - To learn more about HDFS watch the following [HDFS introduction video](https://www.youtube.com/watch?v=1_ly9dZnmWc).
 - To learn more about YARN watch the following [YARN introduction video](https://www.youtube.com/watch?v=ZYXVNxmMchc&list=PL2y_WpKCCNQc-7RJNoYym4_g7EZb3yzJW).
@@ -283,7 +281,7 @@ The Apache Hadoop projects provide a series of tools designed to solve big data 
 
 ![MapR_2](http://hortonworks.com/wp-content/uploads/2015/07/MapR_2.png)
 
-### [**Apache YARN**](http://hortonworks.com/blog/apache-hadoop-yarn-background-and-an-overview/) **(Yet Another Resource Negotiator):**
+### [Apache YARN](http://hortonworks.com/blog/apache-hadoop-yarn-background-and-an-overview/) **(Yet Another Resource Negotiator):**
 
 Hadoop HDFS is the data storage layer for Hadoop and MapReduce was the data-processing layer in Hadoop 1x. However, the MapReduce algorithm, by itself, isn’t sufficient for the very wide variety of use-cases we see Hadoop being employed to solve. Hadoop 2.0 presents YARN, as a generic resource-management and distributed application framework, whereby, one can implement multiple data processing applications customized for the task at hand. The fundamental idea of YARN is to split up the two major responsibilities of the JobTracker i.e. resource management and job scheduling/monitoring, into separate daemons: a global **ResourceManager** and per-application **ApplicationMaster** (AM).
 
@@ -460,45 +458,11 @@ Pig was designed for performing a long series of data operations, making it idea
 
 Whatever the use case, Pig will be:
 
-<table class=" data-table">
-
-<tbody>
-
-<tr>
-
-<td>**Characteristic</td>
-
-<td>**Benefit</td>
-
-</tr>
-
-<tr>
-
-<td>**Extensible</td>
-
-<td>Pig users can create custom functions to meet their particular processing requirements</td>
-
-</tr>
-
-<tr>
-
-<td>**Easily programmed</td>
-
-<td>Complex tasks involving interrelated data transformations can be simplified and encoded as data flow sequences. Pig programs accomplish huge tasks, but they are easy to write and maintain.</td>
-
-</tr>
-
-<tr>
-
-<td>**Self-optimizing</td>
-
-<td>Because the system automatically optimizes execution of Pig jobs, the user can focus on semantics.</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Characteristic | Benefit |
+|----------------|---------|
+| Extensible | Pig users can create custom functions to meet their particular processing requirements
+| Easily Programmed | Complex tasks involving interrelated data transformations can be simplified and encoded as data flow sequences. Pig programs accomplish huge tasks, but they are easy to write and maintain.
+| Self-Optimizing | Because the system automatically optimizes execution of Pig jobs, the user can focus on semantics.
 
 Please refer the following video on Pig for more clarity:
 
@@ -515,7 +479,7 @@ The user can run Pig in two modes, using either the “pig” command or the “
 *   **MapReduce Mode.** This is the default mode, which requires access to a Hadoop cluster. The cluster may be a pseudo- or fully distributed one.
 *   **Local Mode.** With access to a single machine, all files are installed and run using a local host and file system
 
-**Ambari Pig User Views on Hortonworks Sandbox****:**
+**Ambari Pig User Views on Hortonworks Sandbox**:
 
 To get to the Ambari Pig User View on Sandbox, click on the User Views icon at top right and select **Pig**:
 
@@ -533,39 +497,26 @@ The following screenshot shows and describes the various components and features
 
 **Suggested Readings**
 
-<table class=" data-table">
 
-<tbody>
+- [Apache Ambari](https://ambari.apache.org/) is an open source and open community based web based tool for Hadoop operations which has been extended via [Ambari User Views](https://cwiki.apache.org/confluence/display/AMBARI/Views) to provide a growing list of developer tools as User Views.
+- Follow this link to learn more about the [Ambari User VIews included in HDP](http://hortonworks.com/hadoop/ambari/).
 
-<tr>
+**Hive Blogs**: 
 
-<td>**NOTE* ![sign](http://hortonworks.com/wp-content/uploads/2015/07/sign.png)</td>
-
-<td>[Apache Ambari](https://ambari.apache.org/) is an open source and open community based web based tool for Hadoop operations which has been extended via [Ambari User Views](https://cwiki.apache.org/confluence/display/AMBARI/Views) to provide a growing list of developer tools as User Views.  Follow this link to learn more about the [Ambari User VIews included in HDP](http://hortonworks.com/hadoop/ambari/).
-
-**Hive Blogs**:  
-[Cost-Based Optimizer Makes Apache Hive 0.14 More Than 2.5X Faster](http://hortonworks.com/blog/cost-based-optimizer-makes-apache-hive-0-14-more-than-2-5x-faster/)  
-[Discover HDP 2.2: Even Faster SQL Queries with Apache Hive and Stinger.next](http://www.slideshare.net/hortonworks/discoverhdp22faster-sql-queries-with-hive)  
-[Announcing Apache Hive 1.2](http://hortonworks.com/blog/announcing-apache-hive-1-2/)  
-[HIVE 0.14 Cost Based Optimizer (CBO) Technical Overview](http://hortonworks.com/blog/hive-0-14-cost-based-optimizer-cbo-technical-overview/)  
-[5 Ways to Make Your Hive Queries Run Faster](http://hortonworks.com/blog/5-ways-make-hive-queries-run-faster/)  
-[Secure JDBC and ODBC Clients’ Access to HiveServer2](http://hortonworks.com/blog/secure-jdbc-odbc-clients-access-hiveserver2/)  
-[Speed, Scale and SQL: The Stinger Initiative, Apache Hive 12 & Apache Tez](http://hortonworks.com/blog/speed-scale-sql-stinger-initiative-apache-hive-12-apache-tez/)  
-[Hive/HCatalog – Data Geeks & Big Data Glue](http://hortonworks.com/blog/hivehcatalog-data-geeks-big-data-glue/)
+- [Cost-Based Optimizer Makes Apache Hive 0.14 More Than 2.5X Faster](http://hortonworks.com/blog/cost-based-optimizer-makes-apache-hive-0-14-more-than-2-5x-faster/)  
+- [Discover HDP 2.2: Even Faster SQL Queries with Apache Hive and Stinger.next](http://www.slideshare.net/hortonworks/discoverhdp22faster-sql-queries-with-hive)  
+- [Announcing Apache Hive 1.2](http://hortonworks.com/blog/announcing-apache-hive-1-2/)  
+- [HIVE 0.14 Cost Based Optimizer (CBO) Technical Overview](http://hortonworks.com/blog/hive-0-14-cost-based-optimizer-cbo-technical-overview/)  
+- [5 Ways to Make Your Hive Queries Run Faster](http://hortonworks.com/blog/5-ways-make-hive-queries-run-faster/)  
+- [Secure JDBC and ODBC Clients’ Access to HiveServer2](http://hortonworks.com/blog/secure-jdbc-odbc-clients-access-hiveserver2/)  
+- [Speed, Scale and SQL: The Stinger Initiative, Apache Hive 12 & Apache Tez](http://hortonworks.com/blog/speed-scale-sql-stinger-initiative-apache-hive-12-apache-tez/)  
+- [Hive/HCatalog – Data Geeks & Big Data Glue](http://hortonworks.com/blog/hivehcatalog-data-geeks-big-data-glue/)
 
 **Tez Blogs**:  
-[Apache Tez: A New Chapter in Hadoop Data Processing](http://hortonworks.com/blog/apache-tez-a-new-chapter-in-hadoop-data-processing/)  
-[Data Processing API in Apache Tez](http://hortonworks.com/blog/expressing-data-processing-in-apache-tez)**ORC Blogs:**  
-[Apache ORC Launches as a Top-Level Project](http://hortonworks.com/blog/apache-orc-launches-as-a-top-level-project/)  
-[ORCFile in HDP 2: Better Compression, Better Performance](http://hortonworks.com/blog/orcfile-in-hdp-2-better-compression-better-performance/)
-
-</td>
-
-</tr>
-
-</tbody>
-
-</table>
+- [Apache Tez: A New Chapter in Hadoop Data Processing](http://hortonworks.com/blog/apache-tez-a-new-chapter-in-hadoop-data-processing/)  
+- [Data Processing API in Apache Tez](http://hortonworks.com/blog/expressing-data-processing-in-apache-tez)**ORC Blogs:**  
+- [Apache ORC Launches as a Top-Level Project](http://hortonworks.com/blog/apache-orc-launches-as-a-top-level-project/)  
+- [ORCFile in HDP 2: Better Compression, Better Performance](http://hortonworks.com/blog/orcfile-in-hdp-2-better-compression-better-performance/)
 
 
 ## Lab 0: Set-up
@@ -592,149 +543,33 @@ Navigate to Ambari welcome page using the url given on Sandbox welcome page.
 
 Both the username and password to login are admin.
 
-<table class=" data-table">
-
-<tbody>
-
-<tr>
-
-<td>**NOTE**  ![sign](http://hortonworks.com/wp-content/uploads/2015/07/sign.png)</td>
-
-<td>If you want to search for the host address your sandbox is running on, ssh into the sandbox terminal upon successful installation and follow subsequent steps:
+> If you want to search for the host address your sandbox is running on, ssh into the sandbox terminal upon successful installation and follow subsequent steps:
 
 1.  login using username as “root” and password as “hadoop”.
 2.  Type ifconfig and look for inet address under eth.
 3.  Use the inet address, append :8080 and open it into a browser. It shall direct you to Ambari login page.
 4.  This inet address is randomly generated for every session and therefore differs from session to session.
 
-</td>
+| Service | URL | 
+|---------|-----|
+| Sandbox Welcome Page | http://_host_:8888|
+| Ambari Dashboard | http://_host_:8080|
+| Ambari Welcome | http://_host_:8080/views/ADMIN_VIEW/2.1.0/INSTANCE/#/|
+| Hive User View | http://_host_:8080/#/main/views/HIVE/1.0.0/Hive|
+| Pig User View | http://_host_:8080/#/main/views/PIG/0.1.0/MyPig|
+| File User View | http://_host_:8080/#/main/views/FILES/0.2.0/MyFiles|
+| SSH Web Client | http://_host_:4200|
+| Hadoop Configuration | http://_host_:50070/dfshealth.html http://_host_:50070/explorer.html |
 
-</tr>
-
-</tbody>
-
-</table>
 
 The following table has some useful URLs as well:
 
-<table class=" data-table">
 
-<tbody>
+| Service | User | Password |
+|---------|------|----------|
+| Ambari | admin | admin |
+| Linux OS | root | hadoop |
 
-<tr>
-
-<td>**Service</td>
-
-<td>**URL</td>
-
-</tr>
-
-<tr>
-
-<td>Sandbox welcome page</td>
-
-<td>http://_host_:8888</td>
-
-</tr>
-
-<tr>
-
-<td>Ambari Dashboard</td>
-
-<td>http://_host_:8080</td>
-
-</tr>
-
-<tr>
-
-<td>Ambari Welcome</td>
-
-<td>http://_host_:8080/views/ADMIN_VIEW/2.1.0/INSTANCE/#/</td>
-
-</tr>
-
-<tr>
-
-<td>Hive User View</td>
-
-<td>http://_host_:8080/#/main/views/HIVE/1.0.0/Hive</td>
-
-</tr>
-
-<tr>
-
-<td>Pig User View</td>
-
-<td>http:/_host_:8080/#/main/views/PIG/0.1.0/MyPig</td>
-
-</tr>
-
-<tr>
-
-<td>FIle User View</td>
-
-<td>http://_host_:8080/#/main/views/FILES/0.2.0/MyFiles</td>
-
-</tr>
-
-<tr>
-
-<td>SSH web Client</td>
-
-<td>http://_host_:4200</td>
-
-</tr>
-
-<tr>
-
-<td>Hadoop Configuration</td>
-
-<td>http://_host_:50070/dfshealth.html  
-http://_host_:50070/explorer.html</td>
-
-</tr>
-
-</tbody>
-
-</table>
-
-<table class=" data-table">
-
-<tbody>
-
-<tr>
-
-<td>**Service**</td>
-
-<td>**User**</td>
-
-<td>**Password**</td>
-
-</tr>
-
-<tr>
-
-<td>Ambari</td>
-
-<td>admin</td>
-
-<td>admin</td>
-
-</tr>
-
-<tr>
-
-<td>Linux OS</td>
-
-<td>root</td>
-
-<td>hadoop</td>
-
-</tr>
-
-</tbody>
-
-</table>
 
 Enter the Ambari Welcome URL and then you should see a similar screen:
 
