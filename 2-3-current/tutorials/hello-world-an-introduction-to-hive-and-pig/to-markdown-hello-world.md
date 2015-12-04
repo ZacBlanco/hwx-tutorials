@@ -386,12 +386,6 @@ Apache Spark frameworks as their execution backend
 
 Here are some advantageous characteristics of Hive for enterprise SQL in Hadoop:
 
-<table class=" data-table">
-
-<tbody>
-
-<tr>
-
 | Feature | Description |
 |---------|-------------|
 | Familiar| Query data with a SQL-based language |
