@@ -88,20 +88,6 @@ The goal of this tutorial is that you get familiar with the basics of following:
     3.  [Hadoop Crash Course slides-Hadoop Summit 2015](http://www.slideshare.net/Hadoop_Summit/hadoop-crash-course-workshop-at-hadoop-summit)
     4.  [Hadoop Crash Course Workshop- Hadoop Summit 2015](https://www.youtube.com/watch?v=R-va7pZg7HM)
 
-<div class="innernav">
-
-<div class="next">[Next »](#section_2)</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="panel" id="section_2">
-
-<div class="maincontent">
-
 ## Concepts: Hadoop & HDP
 
 ### **Introduction**
@@ -211,21 +197,6 @@ Hadoop 2.0 Blogs:
 
 </table>
 
-<div class="innernav">
-
-<div class="prev">[« Back](#section_1)</div>
-
-<div class="next">[Next »](#section_3)</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="panel" id="section_3">
-
-<div class="maincontent">
 
 ## Concepts: HDFS
 
@@ -304,22 +275,6 @@ Ambari Files User View provides a user friendly interface to upload, store and m
 </tbody>
 
 </table>
-
-<div class="innernav">
-
-<div class="prev">[« Back](#section_2)</div>
-
-<div class="next">[Next »](#section_4)</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="panel" id="section_4">
-
-<div class="maincontent">
 
 ## Concepts: MapReduce & YARN
 
@@ -418,22 +373,6 @@ One of the crucial implementation details for MapReduce within the new YARN **sy
 </tbody>
 
 </table>
-
-<div class="innernav">
-
-<div class="prev">[« Back](#section_3)</div>
-
-<div class="next">[Next »](#section_5)</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="panel" id="section_5">
-
-<div class="maincontent">
 
 ## Concepts: Hive and Pig
 
@@ -721,21 +660,6 @@ The following screenshot shows and describes the various components and features
 
 </table>
 
-<div class="innernav">
-
-<div class="prev">[« Back](#section_4)</div>
-
-<div class="next">[Next »](#section_6)</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="panel" id="section_6">
-
-<div class="maincontent">
 
 ## Lab 0: Set-up
 
@@ -948,22 +872,6 @@ If you have questions, feedback or need help getting your environment ready visi
 
 </table>
 
-<div class="innernav">
-
-<div class="prev">[« Back](#section_5)</div>
-
-<div class="next">[Next »](#section_7)</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="panel" id="section_7">
-
-<div class="maincontent">
-
 ## Lab 1: HDFS - Loading Data
 
 ### **Loading Sensor Data into HDFS**
@@ -1019,25 +927,8 @@ You can also perform the following operations on a file by right clicking on the
 
 ![Lab2_5](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_5.png)
 
-<div class="innernav">
-
-<div class="prev">[« Back](#section_6)</div>
-
-<div class="next">[Next »](#section_8)</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="panel" id="section_8">
-
-<div class="maincontent">
 
 ## Lab 2: Hive - Data ETL
-
-<style type="text/css">/** * GeSHi Dynamically Generated Stylesheet * -------------------------------------- * Dynamically generated stylesheet for sql * CSS class: , CSS id: * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2014 Benny Baumann * (http://qbnz.com/highlighter/ and http://geshi.org/) * -------------------------------------- */ .sql .de1, .sql .de2 {} .sql {font-family:monospace;} .sql .imp {font-weight: bold; color: red;} .sql li, .sql .li1 {font-weight: normal; vertical-align:top;} .sql .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;} .sql .li2 {font-weight: bold; vertical-align:top;} .sql .kw1 {color: #993333; font-weight: bold;} .sql .co1 {color: #808080; font-style: italic;} .sql .coMULTI {color: #808080; font-style: italic;} .sql .es0 {color: #000099; font-weight: bold;} .sql .br0 {color: #66cc66;} .sql .sy0 {color: #66cc66;} .sql .st0 {color: #ff0000;} .sql .nu0 {color: #cc66cc;} .sql .ln-xtra, .sql li.ln-xtra, .sql div.ln-xtra {background-color: #ffc;} .sql span.xtra { display:block; } /** * GeSHi Dynamically Generated Stylesheet * -------------------------------------- * Dynamically generated stylesheet for scala * CSS class: , CSS id: * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2014 Benny Baumann * (http://qbnz.com/highlighter/ and http://geshi.org/) * -------------------------------------- */ .scala .de1, .scala .de2 {} .scala {font-family:monospace;} .scala .imp {font-weight: bold; color: red;} .scala li, .scala .li1 {font-weight: normal; vertical-align:top;} .scala .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;} .scala .li2 {font-weight: bold; vertical-align:top;} .scala .kw1 {color: #0000ff; font-weight: bold;} .scala .kw2 {color: #9999cc; font-weight: bold;} .scala .co1 {color: #008000; font-style: italic;} .scala .co2 {color: #CC66FF;} .scala .coMULTI {color: #00ff00; font-style: italic;} .scala .es0 {color: #6666ff; font-weight: bold;} .scala .es1 {color: #6666ff; font-weight: bold;} .scala .es2 {color: #5555ff; font-weight: bold;} .scala .es3 {color: #4444ff; font-weight: bold;} .scala .es4 {color: #3333ff; font-weight: bold;} .scala .br0 {color: #F78811;} .scala .sy0 {color: #000080;} .scala .st0 {color: #6666FF;} .scala .nu0 {color: #F78811;} .scala .me1 {color: #000000;} .scala .me2 {color: #000000;} .scala .ln-xtra, .scala li.ln-xtra, .scala div.ln-xtra {background-color: #ffc;} .scala span.xtra { display:block; }</style>
 
 ### **Data manipulation with Hive**
 
@@ -1117,83 +1008,45 @@ Now that you are familiar with the Hive User View, let’s create the initial st
 
 –Create table geolocation for staging initial load
 
-<div class="wp-geshi-highlight-wrap5">
 
-<div class="wp-geshi-highlight-wrap4">
 
-<div class="wp-geshi-highlight-wrap3">
 
-<div class="wp-geshi-highlight-wrap2">
 
-<div class="wp-geshi-highlight-wrap">
 
-<div class="wp-geshi-highlight">
+
+
+
+
+
+
 
 <div class="sql">
 
-<pre class="de1"><span class="kw1">CREATE</span> <span class="kw1">TABLE</span> geolocation_stage <span class="br0">(</span>truckid string<span class="sy0">,</span> driverid string<span class="sy0">,</span> event string<span class="sy0">,</span> latitude <span class="kw1">DOUBLE</span><span class="sy0">,</span> longitude <span class="kw1">DOUBLE</span><span class="sy0">,</span> city string<span class="sy0">,</span> state string<span class="sy0">,</span> velocity <span class="kw1">BIGINT</span><span class="sy0">,</span> event_ind <span class="kw1">BIGINT</span><span class="sy0">,</span> idling_ind <span class="kw1">BIGINT</span><span class="br0">)</span><span class="kw1">ROW</span> FORMAT DELIMITED <span class="kw1">FIELDS</span> <span class="kw1">TERMINATED</span> <span class="kw1">BY</span> <span class="st0">','</span>STORED <span class="kw1">AS</span> TEXTFILE;</pre>
+<span class="kw1">CREATE <span class="kw1">TABLE geolocation_stage (truckid string, driverid string, event string, latitude <span class="kw1">DOUBLE, longitude <span class="kw1">DOUBLE, city string, state string, velocity <span class="kw1">BIGINT, event_ind <span class="kw1">BIGINT, idling_ind <span class="kw1">BIGINT)<span class="kw1">ROW FORMAT DELIMITED <span class="kw1">FIELDS <span class="kw1">TERMINATED <span class="kw1">BY ','STORED <span class="kw1">AS TEXTFILE;
 
-</div>
 
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-2\.  Click the green **Execute** button to run the command. If successful, you should see the **Succeeded** status in the **Query Process Results** section:
+2.  Click the green **Execute** button to run the command. If successful, you should see the **Succeeded** status in the **Query Process Results** section:
 
 ![Lab2_4](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_41.png)
 
-3\.  Create a new Worksheet by clicking the blue **New Worksheet** button:
+3.  Create a new Worksheet by clicking the blue **New Worksheet** button:
 
 ![Lab2_5](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_51.png)
 
-4\.  Notice the tab of your new Worksheet is labeled “Worksheet (1)”. Double-click on this tab to rename the label to “trucks_stage”:
+4.  Notice the tab of your new Worksheet is labeled “Worksheet (1)”. Double-click on this tab to rename the label to “trucks_stage”:
 
 ![Lab2_6](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_6.png)
 
-5\.  Copy-and-paste the following table DDL into your **trucks_stage** worksheet to define a new table named trucks_stage:
+5.  Copy-and-paste the following table DDL into your **trucks_stage** worksheet to define a new table named trucks_stage:
 
 –Create table trucks for staging initial load
 
-<div class="wp-geshi-highlight-wrap5">
 
-<div class="wp-geshi-highlight-wrap4">
 
-<div class="wp-geshi-highlight-wrap3">
+CREATE TABLE trucks_stage(driverid string, truckid string, model string, jun13_miles bigint, jun13_gas bigint, may13_miles bigint, may13_gas bigint, apr13_miles bigint, apr13_gas bigint, mar13_miles bigint, mar13_gas bigint, feb13_miles bigint, feb13_gas bigint, jan13_miles bigint, jan13_gas bigint, dec12_miles bigint, dec12_gas bigint, nov12_miles bigint, nov12_gas bigint, oct12_miles bigint, oct12_gas bigint, sep12_miles bigint, sep12_gas bigint, aug12_miles bigint, aug12_gas bigint, jul12_miles bigint, jul12_gas bigint, jun12_miles bigint, jun12_gas bigint,may12_miles bigint, may12_gas bigint, apr12_miles bigint, apr12_gas bigint, mar12_miles bigint, mar12_gas bigint, feb12_miles bigint, feb12_gas bigint, jan12_miles bigint, jan12_gas bigint, dec11_miles bigint,  dec11_gas bigint, nov11_miles bigint, nov11_gas bigint, oct11_miles bigint, oct11_gas bigint, sep11_miles bigint, sep11_gas bigint, aug11_miles bigint, aug11_gas bigint, jul11_miles bigint, jul11_gas bigint, jun11_miles bigint, jun11_gas bigint, may11_miles bigint, may11_gas bigint, apr11_miles bigint, apr11_gas bigint, mar11_miles bigint, mar11_gas bigint, feb11_miles bigint, feb11_gas bigint, jan11_miles bigint, jan11_gas bigint, dec10_miles bigint, dec10_gas bigint, nov10_miles bigint, nov10_gas bigint, oct10_miles bigint, oct10_gas bigint, sep10_miles bigint, sep10_gas bigint, aug10_miles bigint, aug10_gas bigint, jul10_miles bigint, jul10_gas bigint, jun10_miles bigint, jun10_gas bigint, may10_miles bigint, may10_gas bigint, apr10_miles bigint, apr10_gas bigint, mar10_miles bigint, mar10_gas bigint, feb10_miles bigint, feb10_gas bigint, jan10_miles bigint, jan10_gas bigint, dec09_miles bigint, dec09_gas bigint, nov09_miles bigint, nov09_gas bigint, oct09_miles bigint, oct09_gas bigint, sep09_miles bigint, sep09_gas bigint, aug09_miles bigint, aug09_gas bigint, jul09_miles bigint, jul09_gas bigint, jun09_miles bigint, jun09_gas bigint, may09_miles bigint, may09_gas bigint, apr09_miles bigint, apr09_gas bigint, mar09_miles bigint, mar09_gas bigint, feb09_miles bigint, feb09_gas bigint, jan09_miles bigint, jan09_gas bigint)ROW FORMAT DELIMITED FIELDS TERMINATED BY ','STORED AS TEXTFILE;
 
-<div class="wp-geshi-highlight-wrap2">
 
-<div class="wp-geshi-highlight-wrap">
-
-<div class="wp-geshi-highlight">
-
-<div class="scala">
-
-<pre class="de1">CREATE TABLE trucks<span class="sy0">_</span>stage<span class="br0">(</span>driverid string, truckid string, model string, jun13<span class="sy0">_</span>miles bigint, jun13<span class="sy0">_</span>gas bigint, may13<span class="sy0">_</span>miles bigint, may13<span class="sy0">_</span>gas bigint, apr13<span class="sy0">_</span>miles bigint, apr13<span class="sy0">_</span>gas bigint, mar13<span class="sy0">_</span>miles bigint, mar13<span class="sy0">_</span>gas bigint, feb13<span class="sy0">_</span>miles bigint, feb13<span class="sy0">_</span>gas bigint, jan13<span class="sy0">_</span>miles bigint, jan13<span class="sy0">_</span>gas bigint, dec12<span class="sy0">_</span>miles bigint, dec12<span class="sy0">_</span>gas bigint, nov12<span class="sy0">_</span>miles bigint, nov12<span class="sy0">_</span>gas bigint, oct12<span class="sy0">_</span>miles bigint, oct12<span class="sy0">_</span>gas bigint, sep12<span class="sy0">_</span>miles bigint, sep12<span class="sy0">_</span>gas bigint, aug12<span class="sy0">_</span>miles bigint, aug12<span class="sy0">_</span>gas bigint, jul12<span class="sy0">_</span>miles bigint, jul12<span class="sy0">_</span>gas bigint, jun12<span class="sy0">_</span>miles bigint, jun12<span class="sy0">_</span>gas bigint,may12<span class="sy0">_</span>miles bigint, may12<span class="sy0">_</span>gas bigint, apr12<span class="sy0">_</span>miles bigint, apr12<span class="sy0">_</span>gas bigint, mar12<span class="sy0">_</span>miles bigint, mar12<span class="sy0">_</span>gas bigint, feb12<span class="sy0">_</span>miles bigint, feb12<span class="sy0">_</span>gas bigint, jan12<span class="sy0">_</span>miles bigint, jan12<span class="sy0">_</span>gas bigint, dec11<span class="sy0">_</span>miles bigint,  dec11<span class="sy0">_</span>gas bigint, nov11<span class="sy0">_</span>miles bigint, nov11<span class="sy0">_</span>gas bigint, oct11<span class="sy0">_</span>miles bigint, oct11<span class="sy0">_</span>gas bigint, sep11<span class="sy0">_</span>miles bigint, sep11<span class="sy0">_</span>gas bigint, aug11<span class="sy0">_</span>miles bigint, aug11<span class="sy0">_</span>gas bigint, jul11<span class="sy0">_</span>miles bigint, jul11<span class="sy0">_</span>gas bigint, jun11<span class="sy0">_</span>miles bigint, jun11<span class="sy0">_</span>gas bigint, may11<span class="sy0">_</span>miles bigint, may11<span class="sy0">_</span>gas bigint, apr11<span class="sy0">_</span>miles bigint, apr11<span class="sy0">_</span>gas bigint, mar11<span class="sy0">_</span>miles bigint, mar11<span class="sy0">_</span>gas bigint, feb11<span class="sy0">_</span>miles bigint, feb11<span class="sy0">_</span>gas bigint, jan11<span class="sy0">_</span>miles bigint, jan11<span class="sy0">_</span>gas bigint, dec10<span class="sy0">_</span>miles bigint, dec10<span class="sy0">_</span>gas bigint, nov10<span class="sy0">_</span>miles bigint, nov10<span class="sy0">_</span>gas bigint, oct10<span class="sy0">_</span>miles bigint, oct10<span class="sy0">_</span>gas bigint, sep10<span class="sy0">_</span>miles bigint, sep10<span class="sy0">_</span>gas bigint, aug10<span class="sy0">_</span>miles bigint, aug10<span class="sy0">_</span>gas bigint, jul10<span class="sy0">_</span>miles bigint, jul10<span class="sy0">_</span>gas bigint, jun10<span class="sy0">_</span>miles bigint, jun10<span class="sy0">_</span>gas bigint, may10<span class="sy0">_</span>miles bigint, may10<span class="sy0">_</span>gas bigint, apr10<span class="sy0">_</span>miles bigint, apr10<span class="sy0">_</span>gas bigint, mar10<span class="sy0">_</span>miles bigint, mar10<span class="sy0">_</span>gas bigint, feb10<span class="sy0">_</span>miles bigint, feb10<span class="sy0">_</span>gas bigint, jan10<span class="sy0">_</span>miles bigint, jan10<span class="sy0">_</span>gas bigint, dec09<span class="sy0">_</span>miles bigint, dec09<span class="sy0">_</span>gas bigint, nov09<span class="sy0">_</span>miles bigint, nov09<span class="sy0">_</span>gas bigint, oct09<span class="sy0">_</span>miles bigint, oct09<span class="sy0">_</span>gas bigint, sep09<span class="sy0">_</span>miles bigint, sep09<span class="sy0">_</span>gas bigint, aug09<span class="sy0">_</span>miles bigint, aug09<span class="sy0">_</span>gas bigint, jul09<span class="sy0">_</span>miles bigint, jul09<span class="sy0">_</span>gas bigint, jun09<span class="sy0">_</span>miles bigint, jun09<span class="sy0">_</span>gas bigint, may09<span class="sy0">_</span>miles bigint, may09<span class="sy0">_</span>gas bigint, apr09<span class="sy0">_</span>miles bigint, apr09<span class="sy0">_</span>gas bigint, mar09<span class="sy0">_</span>miles bigint, mar09<span class="sy0">_</span>gas bigint, feb09<span class="sy0">_</span>miles bigint, feb09<span class="sy0">_</span>gas bigint, jan09<span class="sy0">_</span>miles bigint, jan09<span class="sy0">_</span>gas bigint<span class="br0">)</span>ROW FORMAT DELIMITED FIELDS TERMINATED BY <span class="st0">','</span>STORED AS TEXTFILE<span class="sy0">;</span></pre>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-6\.  Execute the query and make sure it runs successfully.
+6.  Execute the query and make sure it runs successfully.
 
 Let’s review some aspects of the CREATE TABLE statements issued above.  If you have a SQL background this statement should seem very familiar except for the last 3 lines after the columns definition:
 
@@ -1243,7 +1096,7 @@ For details on these clauses consult the [Apache Hive Language Manual](https://c
 
 </table>
 
-10\.  By default, when you create a table in Hive, a directory with the same name gets created in the /apps/hive/warehouse folder in HDFS.  Using the Ambari Files User View, navigate to the /apps/hive/warehouse folder. You should see both a geolocation_stage and trucks_stage directory:
+10.  By default, when you create a table in Hive, a directory with the same name gets created in the /apps/hive/warehouse folder in HDFS.  Using the Ambari Files User View, navigate to the /apps/hive/warehouse folder. You should see both a geolocation_stage and trucks_stage directory:
 
 ![Lab2_8](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_8.png)
 
@@ -1269,7 +1122,7 @@ For details on these clauses consult the [Apache Hive Language Manual](https://c
 
 ![Screen Shot 2015-07-27 at 9.45.11 PM](http://hortonworks.com/wp-content/uploads/2015/07/Screen-Shot-2015-07-27-at-9.45.11-PM.png)
 
-2\.  After clicking on the **Move** arrow your screen should look like the following:
+2.  After clicking on the **Move** arrow your screen should look like the following:
 
 ![Lab2_10](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_10.png)
 
@@ -1281,41 +1134,41 @@ Notice two things have changed:
 
 ![Lab2_11](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_111.png)
 
-4\.  Go back to the Ambari Hive View and click on the **Load sample data** icon next to the geolocation_stage table. Notice the table is no longer empty, and you should see the first 100 rows of the table:
+4.  Go back to the Ambari Hive View and click on the **Load sample data** icon next to the geolocation_stage table. Notice the table is no longer empty, and you should see the first 100 rows of the table:
 
 ![Lab2_12](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_12.png)
 
-5\.  Enter the following SQL command into an empty Worksheet in the Ambari Hive User View:
+5.  Enter the following SQL command into an empty Worksheet in the Ambari Hive User View:
 
-<div class="wp-geshi-highlight-wrap5">
 
-<div class="wp-geshi-highlight-wrap4">
 
-<div class="wp-geshi-highlight-wrap3">
 
-<div class="wp-geshi-highlight-wrap2">
 
-<div class="wp-geshi-highlight-wrap">
 
-<div class="wp-geshi-highlight">
 
-<div class="scala">
 
-<pre class="de1">LOAD DATA INPATH <span class="st0">'/tmp/admin/data/trucks.csv'</span> OVERWRITE INTO TABLE trucks<span class="sy0">_</span>stage<span class="sy0">;</span></pre>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
+LOAD DATA INPATH '/tmp/admin/data/trucks.csv' OVERWRITE INTO TABLE trucks_stage;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 6\.  You should now see data in the trucks_stage table:
 
@@ -1339,47 +1192,47 @@ In this step, you will create two ORC tables (geolocation and trucks) that are c
 
 –Create table geolocation as ORC from geolocation_stage table
 
-<div class="wp-geshi-highlight-wrap5">
 
-<div class="wp-geshi-highlight-wrap4">
 
-<div class="wp-geshi-highlight-wrap3">
 
-<div class="wp-geshi-highlight-wrap2">
 
-<div class="wp-geshi-highlight-wrap">
 
-<div class="wp-geshi-highlight">
 
-<div class="scala">
 
-<pre class="de1">CREATE TABLE geolocation STORED AS ORC AS SELECT <span class="sy0">*</span> FROM geolocation<span class="sy0">_</span>stage<span class="sy0">;</span></pre>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
+CREATE TABLE geolocation STORED AS ORC AS SELECT * FROM geolocation_stage;
 
-2\.  Refresh the **Database Explorer** and verify you have a table named geolocation in the default database:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2.  Refresh the **Database Explorer** and verify you have a table named geolocation in the default database:
 
 ![Lab2_14](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_14.png)
 
-3\.  View the contents of the geolocation table. Notice it contains the same rows as geolocation_stage.
+3.  View the contents of the geolocation table. Notice it contains the same rows as geolocation_stage.
 
-4\.  To verify geolocation is an ORC table, execute the following query:
+4.  To verify geolocation is an ORC table, execute the following query:
 
 describe formatted geolocation;
 
-5\.  Scroll down to the bottom of the **Results** tab and you will see a section labeled **Storage Information**. The output should look like:
+5.  Scroll down to the bottom of the **Results** tab and you will see a section labeled **Storage Information**. The output should look like:
 
 ![Lab2_15](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_15.png)
 
@@ -1387,35 +1240,35 @@ describe formatted geolocation;
 
 –Create table trucks as ORC from trucks_stage table
 
-<div class="wp-geshi-highlight-wrap5">
 
-<div class="wp-geshi-highlight-wrap4">
 
-<div class="wp-geshi-highlight-wrap3">
 
-<div class="wp-geshi-highlight-wrap2">
 
-<div class="wp-geshi-highlight-wrap">
 
-<div class="wp-geshi-highlight">
 
-<div class="scala">
 
-<pre class="de1">CREATE TABLE trucks STORED AS ORC AS SELECT <span class="sy0">*</span> FROM trucks<span class="sy0">_</span>stage<span class="sy0">;</span></pre>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
+CREATE TABLE trucks STORED AS ORC AS SELECT * FROM trucks_stage;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 7\.  Verify that the table has been properly created by refreshing the **Database Explorer** and viewing the contents of trucks:
 
@@ -1456,7 +1309,7 @@ Exits out of the Hive shell.
 
 ![Lab2_17](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_17.png)
 
-2\.  Go to the **Hive page** then select the **Configs tab** then click on **Settings tab**:
+2.  Go to the **Hive page** then select the **Configs tab** then click on **Settings tab**:
 
 ![Lab2_18](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_18.png)
 
@@ -1541,78 +1394,78 @@ Let’s get started with the first transformation.   We want to calculate the 
 
 — Create table truck_mileage from existing trucking data
 
-<div class="wp-geshi-highlight-wrap5">
 
-<div class="wp-geshi-highlight-wrap4">
 
-<div class="wp-geshi-highlight-wrap3">
 
-<div class="wp-geshi-highlight-wrap2">
 
-<div class="wp-geshi-highlight-wrap">
 
-<div class="wp-geshi-highlight">
 
-<div class="scala">
 
-<pre class="de1">CREATE TABLE truck<span class="sy0">_</span>mileage STORED AS ORC AS SELECT truckid, driverid, rdate, miles, gas, miles / gas mpg FROM trucks LATERAL VIEW stack<span class="br0">(</span> <span class="nu0">54</span>, <span class="st0">'jun13'</span>,jun13<span class="sy0">_</span>miles,jun13<span class="sy0">_</span>gas,<span class="st0">'may13'</span>,may13<span class="sy0">_</span>miles,may13<span class="sy0">_</span>gas,<span class="st0">'apr13'</span>,apr13<span class="sy0">_</span>miles,apr13<span class="sy0">_</span>gas,<span class="st0">'mar13'</span>,mar13<span class="sy0">_</span>miles,mar13<span class="sy0">_</span>gas,<span class="st0">'feb13'</span>,feb13<span class="sy0">_</span>miles,feb13<span class="sy0">_</span>gas,<span class="st0">'jan13'</span>,jan13<span class="sy0">_</span>miles,jan13<span class="sy0">_</span>gas,<span class="st0">'dec12'</span>,dec12<span class="sy0">_</span>miles,dec12<span class="sy0">_</span>gas,<span class="st0">'nov12'</span>,nov12<span class="sy0">_</span>miles,nov12<span class="sy0">_</span>gas,<span class="st0">'oct12'</span>,oct12<span class="sy0">_</span>miles,oct12<span class="sy0">_</span>gas,<span class="st0">'sep12'</span>,sep12<span class="sy0">_</span>miles,sep12<span class="sy0">_</span>gas,<span class="st0">'aug12'</span>,aug12<span class="sy0">_</span>miles,aug12<span class="sy0">_</span>gas,<span class="st0">'jul12'</span>,jul12<span class="sy0">_</span>miles,jul12<span class="sy0">_</span>gas,<span class="st0">'jun12'</span>,jun12<span class="sy0">_</span>miles,jun12<span class="sy0">_</span>gas,<span class="st0">'may12'</span>,may12<span class="sy0">_</span>miles,may12<span class="sy0">_</span>gas,<span class="st0">'apr12'</span>,apr12<span class="sy0">_</span>miles,apr12<span class="sy0">_</span>gas,<span class="st0">'mar12'</span>,mar12<span class="sy0">_</span>miles,mar12<span class="sy0">_</span>gas,<span class="st0">'feb12'</span>,feb12<span class="sy0">_</span>miles,feb12<span class="sy0">_</span>gas,<span class="st0">'jan12'</span>,jan12<span class="sy0">_</span>miles,jan12<span class="sy0">_</span>gas,<span class="st0">'dec11'</span>,dec11<span class="sy0">_</span>miles,dec11<span class="sy0">_</span>gas,<span class="st0">'nov11'</span>,nov11<span class="sy0">_</span>miles,nov11<span class="sy0">_</span>gas,<span class="st0">'oct11'</span>,oct11<span class="sy0">_</span>miles,oct11<span class="sy0">_</span>gas,<span class="st0">'sep11'</span>,sep11<span class="sy0">_</span>miles,sep11<span class="sy0">_</span>gas,<span class="st0">'aug11'</span>,aug11<span class="sy0">_</span>miles,aug11<span class="sy0">_</span>gas,<span class="st0">'jul11'</span>,jul11<span class="sy0">_</span>miles,jul11<span class="sy0">_</span>gas,<span class="st0">'jun11'</span>,jun11<span class="sy0">_</span>miles,jun11<span class="sy0">_</span>gas,<span class="st0">'may11'</span>,may11<span class="sy0">_</span>miles,may11<span class="sy0">_</span>gas,<span class="st0">'apr11'</span>,apr11<span class="sy0">_</span>miles,apr11<span class="sy0">_</span>gas,<span class="st0">'mar11'</span>,mar11<span class="sy0">_</span>miles,mar11<span class="sy0">_</span>gas,<span class="st0">'feb11'</span>,feb11<span class="sy0">_</span>miles,feb11<span class="sy0">_</span>gas,<span class="st0">'jan11'</span>,jan11<span class="sy0">_</span>miles,jan11<span class="sy0">_</span>gas,<span class="st0">'dec10'</span>,dec10<span class="sy0">_</span>miles,dec10<span class="sy0">_</span>gas,<span class="st0">'nov10'</span>,nov10<span class="sy0">_</span>miles,nov10<span class="sy0">_</span>gas,<span class="st0">'oct10'</span>,oct10<span class="sy0">_</span>miles,oct10<span class="sy0">_</span>gas,<span class="st0">'sep10'</span>,sep10<span class="sy0">_</span>miles,sep10<span class="sy0">_</span>gas,<span class="st0">'aug10'</span>,aug10<span class="sy0">_</span>miles,aug10<span class="sy0">_</span>gas,<span class="st0">'jul10'</span>,jul10<span class="sy0">_</span>miles,jul10<span class="sy0">_</span>gas,<span class="st0">'jun10'</span>,jun10<span class="sy0">_</span>miles,jun10<span class="sy0">_</span>gas,<span class="st0">'may10'</span>,may10<span class="sy0">_</span>miles,may10<span class="sy0">_</span>gas,<span class="st0">'apr10'</span>,apr10<span class="sy0">_</span>miles,apr10<span class="sy0">_</span>gas,<span class="st0">'mar10'</span>,mar10<span class="sy0">_</span>miles,mar10<span class="sy0">_</span>gas,<span class="st0">'feb10'</span>,feb10<span class="sy0">_</span>miles,feb10<span class="sy0">_</span>gas,<span class="st0">'jan10'</span>,jan10<span class="sy0">_</span>miles,jan10<span class="sy0">_</span>gas,<span class="st0">'dec09'</span>,dec09<span class="sy0">_</span>miles,dec09<span class="sy0">_</span>gas,<span class="st0">'nov09'</span>,nov09<span class="sy0">_</span>miles,nov09<span class="sy0">_</span>gas,<span class="st0">'oct09'</span>,oct09<span class="sy0">_</span>miles,oct09<span class="sy0">_</span>gas,<span class="st0">'sep09'</span>,sep09<span class="sy0">_</span>miles,sep09<span class="sy0">_</span>gas,<span class="st0">'aug09'</span>,aug09<span class="sy0">_</span>miles,aug09<span class="sy0">_</span>gas,<span class="st0">'jul09'</span>,jul09<span class="sy0">_</span>miles,jul09<span class="sy0">_</span>gas,<span class="st0">'jun09'</span>,jun09<span class="sy0">_</span>miles,jun09<span class="sy0">_</span>gas,<span class="st0">'may09'</span>,may09<span class="sy0">_</span>miles,may09<span class="sy0">_</span>gas,<span class="st0">'apr09'</span>,apr09<span class="sy0">_</span>miles,apr09<span class="sy0">_</span>gas,<span class="st0">'mar09'</span>,mar09<span class="sy0">_</span>miles,mar09<span class="sy0">_</span>gas,<span class="st0">'feb09'</span>,feb09<span class="sy0">_</span>miles,feb09<span class="sy0">_</span>gas,<span class="st0">'jan09'</span>,jan09<span class="sy0">_</span>miles,jan09<span class="sy0">_</span>gas <span class="br0">)</span>dummyalias AS rdate, miles, gas<span class="sy0">;</span></pre>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
+CREATE TABLE truck_mileage STORED AS ORC AS SELECT truckid, driverid, rdate, miles, gas, miles / gas mpg FROM trucks LATERAL VIEW stack( <span class="nu0">54, 'jun13',jun13_miles,jun13_gas,'may13',may13_miles,may13_gas,'apr13',apr13_miles,apr13_gas,'mar13',mar13_miles,mar13_gas,'feb13',feb13_miles,feb13_gas,'jan13',jan13_miles,jan13_gas,'dec12',dec12_miles,dec12_gas,'nov12',nov12_miles,nov12_gas,'oct12',oct12_miles,oct12_gas,'sep12',sep12_miles,sep12_gas,'aug12',aug12_miles,aug12_gas,'jul12',jul12_miles,jul12_gas,'jun12',jun12_miles,jun12_gas,'may12',may12_miles,may12_gas,'apr12',apr12_miles,apr12_gas,'mar12',mar12_miles,mar12_gas,'feb12',feb12_miles,feb12_gas,'jan12',jan12_miles,jan12_gas,'dec11',dec11_miles,dec11_gas,'nov11',nov11_miles,nov11_gas,'oct11',oct11_miles,oct11_gas,'sep11',sep11_miles,sep11_gas,'aug11',aug11_miles,aug11_gas,'jul11',jul11_miles,jul11_gas,'jun11',jun11_miles,jun11_gas,'may11',may11_miles,may11_gas,'apr11',apr11_miles,apr11_gas,'mar11',mar11_miles,mar11_gas,'feb11',feb11_miles,feb11_gas,'jan11',jan11_miles,jan11_gas,'dec10',dec10_miles,dec10_gas,'nov10',nov10_miles,nov10_gas,'oct10',oct10_miles,oct10_gas,'sep10',sep10_miles,sep10_gas,'aug10',aug10_miles,aug10_gas,'jul10',jul10_miles,jul10_gas,'jun10',jun10_miles,jun10_gas,'may10',may10_miles,may10_gas,'apr10',apr10_miles,apr10_gas,'mar10',mar10_miles,mar10_gas,'feb10',feb10_miles,feb10_gas,'jan10',jan10_miles,jan10_gas,'dec09',dec09_miles,dec09_gas,'nov09',nov09_miles,nov09_gas,'oct09',oct09_miles,oct09_gas,'sep09',sep09_miles,sep09_gas,'aug09',aug09_miles,aug09_gas,'jul09',jul09_miles,jul09_gas,'jun09',jun09_miles,jun09_gas,'may09',may09_miles,may09_gas,'apr09',apr09_miles,apr09_gas,'mar09',mar09_miles,mar09_gas,'feb09',feb09_miles,feb09_gas,'jan09',jan09_miles,jan09_gas )dummyalias AS rdate, miles, gas;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ![Lab2_22](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_22.png)  
-2\.  To view the data generated by the script, click **Load Sample Data** icon in the Database Explorer next to truck_mileage. After clicking the next button once, you should see a table that list each trip made by a truck and driver:
+2.  To view the data generated by the script, click **Load Sample Data** icon in the Database Explorer next to truck_mileage. After clicking the next button once, you should see a table that list each trip made by a truck and driver:
 
 ![Lab2_23](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_23.png)
 
 #### **Use the Content Assist to build a query**
 
-3\.  Create a new SQL Worksheet.
+3.  Create a new SQL Worksheet.
 
-4\.  Start typing in the SELECT SQL command, but only enter the first two letters:
+4.  Start typing in the SELECT SQL command, but only enter the first two letters:
 
-<div class="wp-geshi-highlight-wrap5">
 
-<div class="wp-geshi-highlight-wrap4">
 
-<div class="wp-geshi-highlight-wrap3">
 
-<div class="wp-geshi-highlight-wrap2">
 
-<div class="wp-geshi-highlight-wrap">
 
-<div class="wp-geshi-highlight">
 
-<div class="scala">
 
-<pre class="de1">SE</pre>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
+SE
 
-5\.  Press **Ctrl+space** to view the following content assist pop-up dialog window:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5.  Press **Ctrl+space** to view the following content assist pop-up dialog window:
 
 ![Lab2_24](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_24.png)
 
@@ -1620,35 +1473,35 @@ Notice content assist shows you some options that start with an “SE”.
 
 6\.  Type in the following query, using **Ctrl+space** throughout your typing so that you can get an idea of what content assist can do and how it works:
 
-<div class="wp-geshi-highlight-wrap5">
 
-<div class="wp-geshi-highlight-wrap4">
 
-<div class="wp-geshi-highlight-wrap3">
 
-<div class="wp-geshi-highlight-wrap2">
 
-<div class="wp-geshi-highlight-wrap">
 
-<div class="wp-geshi-highlight">
 
-<div class="scala">
 
-<pre class="de1">SELECT truckid, avg<span class="br0">(</span>mpg<span class="br0">)</span> avgmpg FROM truck<span class="sy0">_</span>mileage GROUP BY truckid<span class="sy0">;</span></pre>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
+SELECT truckid, avg(mpg) avgmpg FROM truck_mileage GROUP BY truckid;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ![Lab2_28](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_28.png)  
 7\.  Click the “**Save as …**” button to save the query as “**average mpg**”:  
@@ -1662,96 +1515,54 @@ Notice content assist shows you some options that start with an “SE”.
 
 ![Lab2_27](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_27.png)
 
-11\. Verify this added the EXPLAIN command at the beginning of the query:
+11. Verify this added the EXPLAIN command at the beginning of the query:
 
 ![Lab2_25](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_25.png)
 
-12\. Execute the query. The results should look like the following:
+12. Execute the query. The results should look like the following:
 
 ![Lab2_29](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_29.png)
 
-13\. Click on **STAGE PLANS:** to view its output, which displays the flow of the resulting Tez job:
+13. Click on **STAGE PLANS:** to view its output, which displays the flow of the resulting Tez job:
 
 ![Lab2_30](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_30.png)
 
-14\. To see the Visual Explain click on the Visual Explain icon on the right tabs. This is a much more readable summary of the explain plan:
+14. To see the Visual Explain click on the Visual Explain icon on the right tabs. This is a much more readable summary of the explain plan:
 
 ![Lab2_31](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_311.png)
 
-15\. If you click on the **TEZ** tab on the right-hand column, you can see DAG details associated with the query.
+15. If you click on the **TEZ** tab on the right-hand column, you can see DAG details associated with the query.
 
 ![Lab2_32](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_32.png)
 
-16\. However, you can also view the DAG by going to the Ambari Tez User View. Select the “Tez View: Cluster Instance” User View from the list of User Views.
+16. However, you can also view the DAG by going to the Ambari Tez User View. Select the “Tez View: Cluster Instance” User View from the list of User Views.
 
 ![Screen Shot 2015-07-21 at 10.22.56 AM](http://hortonworks.com/wp-content/uploads/2015/07/Screen-Shot-2015-07-21-at-10.22.56-AM.png)  
 Select the first DAG as it represents the last job that was executed.
 
 ![Lab2_34](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_34.png)
 
-17\. There are six tabs at the top right please take a few minutes to explore the various tabs and then click on the Graphical View tab and hover over one of the nodes with your cursor to get more details on the processing in that node.  
+17. There are six tabs at the top right please take a few minutes to explore the various tabs and then click on the Graphical View tab and hover over one of the nodes with your cursor to get more details on the processing in that node.  
 ![Lab2_35](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_35.png)
 
-18\. Go back to the Hive UV and save the query by
+18. Go back to the Hive UV and save the query by
 
-19\.  To persist these results into a table, This is a fairly common pattern in Hive and it is called [Create Table As Select](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL#LanguageManualDDL-CreateTableAsSelect(CTAS)) (CTAS ).  Paste the following script into a new Worksheet, then click the **Execute** button:
+19.  To persist these results into a table, This is a fairly common pattern in Hive and it is called [Create Table As Select](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL#LanguageManualDDL-CreateTableAsSelect(CTAS)) (CTAS ).  Paste the following script into a new Worksheet, then click the **Execute** button:
 
 — Create table truck avg_mileage from existing trucks_mileage data
 
-<div class="wp-geshi-highlight-wrap5">
-
-<div class="wp-geshi-highlight-wrap4">
-
-<div class="wp-geshi-highlight-wrap3">
-
-<div class="wp-geshi-highlight-wrap2">
-
-<div class="wp-geshi-highlight-wrap">
-
-<div class="wp-geshi-highlight">
-
-<div class="scala">
-
-<pre class="de1">CREATE TABLE avg<span class="sy0">_</span>mileage
+CREATE TABLE avg_mileage
 STORED AS ORC
 AS
-SELECT truckid, avg<span class="br0">(</span>mpg<span class="br0">)</span> avgmpg
-FROM truck<span class="sy0">_</span>mileage
-GROUP BY truckid<span class="sy0">;</span></pre>
+SELECT truckid, avg(mpg) avgmpg
+FROM truck_mileage
+GROUP BY truckid;
 
-</div>
 
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-20\.  To view the data generated by the script, click **Load sample data** icon in the Database Explorer next to avg_mileage. You see our table is now a list of each trip made by a truck.
+20.  To view the data generated by the script, click **Load sample data** icon in the Database Explorer next to avg_mileage. You see our table is now a list of each trip made by a truck.
 
 ![Lab2_36](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_36.png)
 
-<div class="innernav">
-
-<div class="prev">[« Back](#section_7)</div>
-
-<div class="next">[Next »](#section_9)</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="panel" id="section_9">
-
-<div class="maincontent">
 
 ## Lab 3: Pig - Risk Factor
 
@@ -1801,80 +1612,68 @@ If we look at the truck_mileage table, we we have the driverid and the number of
 
 — Create table DriverMileage from existing truck_mileage data
 
-<div class="wp-geshi-highlight-wrap5">
 
-<div class="wp-geshi-highlight-wrap4">
 
-<div class="wp-geshi-highlight-wrap3">
 
-<div class="wp-geshi-highlight-wrap2">
 
-<div class="wp-geshi-highlight-wrap">
 
-<div class="wp-geshi-highlight">
 
-<div class="scala">
 
-<pre class="de1">CREATE TABLE DriverMileage
+
+
+
+
+
+
+
+CREATE TABLE DriverMileage
 STORED AS ORC
 AS
-SELECT driverid, sum<span class="br0">(</span>miles<span class="br0">)</span> totmiles
-FROM truck<span class="sy0">_</span>mileage
-GROUP BY driverid<span class="sy0">;</span></pre>
+SELECT driverid, sum(miles) totmiles
+FROM truck_mileage
+GROUP BY driverid;
 
-</div>
 
-</div>
 
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-2\.  View the data generated by the script by clicking the **Load sample data** icon in the Database Explorer next to drivermileage. The results should look like:
+2.  View the data generated by the script by clicking the **Load sample data** icon in the Database Explorer next to drivermileage. The results should look like:
 
 ![Lab3_2](http://hortonworks.com/wp-content/uploads/2015/07/Lab3_2.png)
 
-3\.  Next, you will use Pig to compute the risk factor of each driver. Before we can run the Pig code, one of the requirements for the HCatStorer() class is that the table must already exist in Hive. The Pig code expects the following structure for a table named riskfactor. Execute the following DDL command:
+3.  Next, you will use Pig to compute the risk factor of each driver. Before we can run the Pig code, one of the requirements for the HCatStorer() class is that the table must already exist in Hive. The Pig code expects the following structure for a table named riskfactor. Execute the following DDL command:
 
 — Create table avg_mileage from existing trucks_mileage data
 
-<div class="wp-geshi-highlight-wrap5">
 
-<div class="wp-geshi-highlight-wrap4">
 
-<div class="wp-geshi-highlight-wrap3">
 
-<div class="wp-geshi-highlight-wrap2">
 
-<div class="wp-geshi-highlight-wrap">
 
-<div class="wp-geshi-highlight">
 
-<div class="scala">
 
-<pre class="de1">CREATE TABLE riskfactor <span class="br0">(</span>driverid string,events bigint,totmiles bigint,riskfactor <span class="kw2">float</span><span class="br0">)</span>STORED AS ORC<span class="sy0">;</span></pre>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
+CREATE TABLE riskfactor (driverid string,events bigint,totmiles bigint,riskfactor <span class="kw2">float)STORED AS ORC;
 
-4\.  Verify the riskfactor table was created successfully. It will be empty now, but you will populate it from a Pig script. You are now ready to compute the risk factor using Pig. Let’s take a look at Pig and how to execute Pig scripts from within Ambari.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4.  Verify the riskfactor table was created successfully. It will be empty now, but you will populate it from a Pig script. You are now ready to compute the risk factor using Pig. Let’s take a look at Pig and how to execute Pig scripts from within Ambari.
 
 **Step 3.2: Create Pig Script**
 
@@ -1914,35 +1713,35 @@ We are going to use HCatalog to load data into Pig. HCatalog allows us to share 
 *   Remember to add the **a =** before the template. This saves the results into a. Note the **‘=’** has to have a space before and after it.
 *   Our completed line of code will look like:
 
-<div class="wp-geshi-highlight-wrap5">
 
-<div class="wp-geshi-highlight-wrap4">
 
-<div class="wp-geshi-highlight-wrap3">
 
-<div class="wp-geshi-highlight-wrap2">
 
-<div class="wp-geshi-highlight-wrap">
 
-<div class="wp-geshi-highlight">
 
-<div class="scala">
 
-<pre class="de1">a <span class="sy0">=</span> LOAD <span class="st0">'geolocation'</span> using org.<span class="me1">apache</span>.<span class="me1">hive</span>.<span class="me1">hcatalog</span>.<span class="me1">pig</span>.<span class="me1">HCatLoader</span><span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span></pre>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
+a = LOAD 'geolocation' using org.<span class="me1">apache.<span class="me1">hive.<span class="me1">hcatalog.<span class="me1">pig.<span class="me1">HCatLoader();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Copy-and-paste the above Pig code into the riskfactor.pig window.
 
@@ -1955,35 +1754,35 @@ The next step is to select a subset of the records so that we just have the reco
 *   Our **%COND%** is “**event !=’normal’;** ” (note: single quotes are needed around normal and don’t forget the trailing semi-colon)
 *   Complete line of code will look like:
 
-<div class="wp-geshi-highlight-wrap5">
 
-<div class="wp-geshi-highlight-wrap4">
 
-<div class="wp-geshi-highlight-wrap3">
 
-<div class="wp-geshi-highlight-wrap2">
 
-<div class="wp-geshi-highlight-wrap">
 
-<div class="wp-geshi-highlight">
 
-<div class="scala">
 
-<pre class="de1">b <span class="sy0">=</span> filter a by event <span class="sy0">!=</span> <span class="st0">'normal'</span><span class="sy0">;</span></pre>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
+b = filter a by event != 'normal';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Copy-and-paste the above Pig code into the riskfactor.pig window.
 
@@ -1995,35 +1794,35 @@ Now that we have the right set of records we can iterate through them. We use th
 *   Our **%DATA%** is **b** and the second **%NEW_DATA%** is “**driverid,event,(int) ‘1’ as occurance;**”
 *   Complete line of code will look like:
 
-<div class="wp-geshi-highlight-wrap5">
 
-<div class="wp-geshi-highlight-wrap4">
 
-<div class="wp-geshi-highlight-wrap3">
 
-<div class="wp-geshi-highlight-wrap2">
 
-<div class="wp-geshi-highlight-wrap">
 
-<div class="wp-geshi-highlight">
 
-<div class="scala">
 
-<pre class="de1">c <span class="sy0">=</span> foreach b generate driverid, event, <span class="br0">(</span><span class="kw2">int</span><span class="br0">)</span> <span class="st0">'1'</span> as occurance<span class="sy0">;</span></pre>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
+c = foreach b generate driverid, event, (<span class="kw2">int) '1' as occurance;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Copy-and-paste the above Pig code into the riskfactor.pig window:
 
@@ -2035,69 +1834,69 @@ The group statement is important because it groups the records by one or more re
 *   First **%VAR%** takes **“c”** and second **%VAR%** takes “**driverid;**”
 *   Complete line of code will look like:
 
-<div class="wp-geshi-highlight-wrap5">
 
-<div class="wp-geshi-highlight-wrap4">
 
-<div class="wp-geshi-highlight-wrap3">
 
-<div class="wp-geshi-highlight-wrap2">
 
-<div class="wp-geshi-highlight-wrap">
 
-<div class="wp-geshi-highlight">
 
-<div class="scala">
 
-<pre class="de1">d <span class="sy0">=</span> group c by driverid<span class="sy0">;</span></pre>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
+d = group c by driverid;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Copy-and-paste the above Pig code into the riskfactor.pig window.
 
 *   Next use Foreach statement again to add the occurance.
 
-<div class="wp-geshi-highlight-wrap5">
 
-<div class="wp-geshi-highlight-wrap4">
 
-<div class="wp-geshi-highlight-wrap3">
 
-<div class="wp-geshi-highlight-wrap2">
 
-<div class="wp-geshi-highlight-wrap">
 
-<div class="wp-geshi-highlight">
 
-<div class="scala">
 
-<pre class="de1">e <span class="sy0">=</span> foreach d generate group as driverid, SUM<span class="br0">(</span>c.<span class="me1">occurance</span><span class="br0">)</span> as t<span class="sy0">_</span>occ<span class="sy0">;</span></pre>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
+e = foreach d generate group as driverid, SUM(c.<span class="me1">occurance) as t_occ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 **    g.  Load drivermileage table and perform a join operation**
 
@@ -2105,69 +1904,69 @@ In this section we will load drivermileage table into Pig using Hcatlog and perf
 
 *   Load drivermileage using HcatLoader()
 
-<div class="wp-geshi-highlight-wrap5">
 
-<div class="wp-geshi-highlight-wrap4">
 
-<div class="wp-geshi-highlight-wrap3">
 
-<div class="wp-geshi-highlight-wrap2">
 
-<div class="wp-geshi-highlight-wrap">
 
-<div class="wp-geshi-highlight">
 
-<div class="scala">
 
-<pre class="de1">g <span class="sy0">=</span> LOAD <span class="st0">'drivermileage'</span> using org.<span class="me1">apache</span>.<span class="me1">hive</span>.<span class="me1">hcatalog</span>.<span class="me1">pig</span>.<span class="me1">HCatLoader</span><span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span></pre>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
+g = LOAD 'drivermileage' using org.<span class="me1">apache.<span class="me1">hive.<span class="me1">hcatalog.<span class="me1">pig.<span class="me1">HCatLoader();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 *   **Pig helper ->Relational Operators->JOIN %VAR% BY** template will get us the code
 *   Replace **%VAR%** by ‘**e**’ and after **BY** put ‘**driverid, g by driverid;**’
 *   Complete line of code will look like:
 
-<div class="wp-geshi-highlight-wrap5">
 
-<div class="wp-geshi-highlight-wrap4">
 
-<div class="wp-geshi-highlight-wrap3">
 
-<div class="wp-geshi-highlight-wrap2">
 
-<div class="wp-geshi-highlight-wrap">
 
-<div class="wp-geshi-highlight">
 
-<div class="scala">
 
-<pre class="de1">h <span class="sy0">=</span> join e by driverid, g by driverid<span class="sy0">;</span></pre>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
+h = join e by driverid, g by driverid;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Copy-and-paste the above two Pig codes into the riskfactor.pig window.
 
@@ -2178,35 +1977,35 @@ In this section we will associate a driver risk factor with every driver. Driver
 *   We will use Foreach statement again to compute driver risk factor for each driver.
 *   Use the following code and paste it into your Pig script.
 
-<div class="wp-geshi-highlight-wrap5">
 
-<div class="wp-geshi-highlight-wrap4">
 
-<div class="wp-geshi-highlight-wrap3">
 
-<div class="wp-geshi-highlight-wrap2">
 
-<div class="wp-geshi-highlight-wrap">
 
-<div class="wp-geshi-highlight">
 
-<div class="scala">
 
-<pre class="de1">final<span class="sy0">_</span>data <span class="sy0">=</span> foreach h generate $0 as driverid, $1 as events, $3 as totmiles, <span class="br0">(</span><span class="kw2">float</span><span class="br0">)</span> $3/$1 as riskfactor<span class="sy0">;</span></pre>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
+final_data = foreach h generate $0 as driverid, $1 as events, $3 as totmiles, (<span class="kw2">float) $3/$1 as riskfactor;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 *   As a final step store the data into a table using Hcatalog.
 
@@ -2216,43 +2015,43 @@ Here is the final code and what it will look like once you paste it into the edi
 
 — Geolocation has data stored in ORC format
 
-<div class="wp-geshi-highlight-wrap5">
 
-<div class="wp-geshi-highlight-wrap4">
 
-<div class="wp-geshi-highlight-wrap3">
 
-<div class="wp-geshi-highlight-wrap2">
 
-<div class="wp-geshi-highlight-wrap">
 
-<div class="wp-geshi-highlight">
 
-<div class="scala">
 
-<pre class="de1">a <span class="sy0">=</span> LOAD <span class="st0">'geolocation'</span> using org.<span class="me1">apache</span>.<span class="me1">hive</span>.<span class="me1">hcatalog</span>.<span class="me1">pig</span>.<span class="me1">HCatLoader</span><span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span>
-b <span class="sy0">=</span> filter a by event <span class="sy0">!=</span> <span class="st0">'normal'</span><span class="sy0">;</span>
-c <span class="sy0">=</span> foreach b generate driverid, event, <span class="br0">(</span><span class="kw2">int</span><span class="br0">)</span> <span class="st0">'1'</span> as occurance<span class="sy0">;</span>
-d <span class="sy0">=</span> group c by driverid<span class="sy0">;</span>
-e <span class="sy0">=</span> foreach d generate group as driverid, SUM<span class="br0">(</span>c.<span class="me1">occurance</span><span class="br0">)</span> as t<span class="sy0">_</span>occ<span class="sy0">;</span>
-g <span class="sy0">=</span> LOAD <span class="st0">'drivermileage'</span> using org.<span class="me1">apache</span>.<span class="me1">hive</span>.<span class="me1">hcatalog</span>.<span class="me1">pig</span>.<span class="me1">HCatLoader</span><span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span>
-h <span class="sy0">=</span> join e by driverid, g by driverid<span class="sy0">;</span>
-final<span class="sy0">_</span>data <span class="sy0">=</span> foreach h generate $0 as driverid, $1 as events, $3 as totmiles, <span class="br0">(</span><span class="kw2">float</span><span class="br0">)</span> $3/$1 as riskfactor<span class="sy0">;</span>
-store final<span class="sy0">_</span>data into <span class="st0">'riskfactor'</span> using org.<span class="me1">apache</span>.<span class="me1">hive</span>.<span class="me1">hcatalog</span>.<span class="me1">pig</span>.<span class="me1">HCatStorer</span><span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span></pre>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
+a = LOAD 'geolocation' using org.<span class="me1">apache.<span class="me1">hive.<span class="me1">hcatalog.<span class="me1">pig.<span class="me1">HCatLoader();
+b = filter a by event != 'normal';
+c = foreach b generate driverid, event, (<span class="kw2">int) '1' as occurance;
+d = group c by driverid;
+e = foreach d generate group as driverid, SUM(c.<span class="me1">occurance) as t_occ;
+g = LOAD 'drivermileage' using org.<span class="me1">apache.<span class="me1">hive.<span class="me1">hcatalog.<span class="me1">pig.<span class="me1">HCatLoader();
+h = join e by driverid, g by driverid;
+final_data = foreach h generate $0 as driverid, $1 as events, $3 as totmiles, (<span class="kw2">float) $3/$1 as riskfactor;
+store final_data into 'riskfactor' using org.<span class="me1">apache.<span class="me1">hive.<span class="me1">hcatalog.<span class="me1">pig.<span class="me1">HCatStorer();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ![Lab3_8](http://hortonworks.com/wp-content/uploads/2015/07/Lab3_8.png)
 
@@ -2297,22 +2096,6 @@ Click on the **Logs** twisty to see what happened when your script ran. This is 
 ![Lab3_14](http://hortonworks.com/wp-content/uploads/2015/07/Lab3_14.png)
 
 At this point we now have our truck miles per gallon table and our risk factor table. The next step is to pull this data into Excel to create the charts for the visualization step.
-
-<div class="innernav">
-
-<div class="prev">[« Back](#section_8)</div>
-
-<div class="next">[Next »](#section_10)</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="panel" id="section_10">
-
-<div class="maincontent">
 
 ## Lab 4: Spark - Risk Factor
 
@@ -2365,42 +2148,42 @@ Lets get started…!!
 
 ![Lab4_3](http://hortonworks.com/wp-content/uploads/2015/07/Lab4_3.png)
 
-2\.  Close the Ambari browser and we will get running with some codes on Spark. ssh into the sandbox using root as login and hadoop as password.
+2.  Close the Ambari browser and we will get running with some codes on Spark. ssh into the sandbox using root as login and hadoop as password.
 
-<div class="wp-geshi-highlight-wrap5">
 
-<div class="wp-geshi-highlight-wrap4">
 
-<div class="wp-geshi-highlight-wrap3">
 
-<div class="wp-geshi-highlight-wrap2">
 
-<div class="wp-geshi-highlight-wrap">
 
-<div class="wp-geshi-highlight">
 
-<div class="scala">
 
-<pre class="de1">login<span class="sy0">:</span> root
-password<span class="sy0">:</span> hadoop</pre>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
+login: root
+password: hadoop
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Optionally, if you don’t have an SSH client installed and configured you can use the built-in web client which can be accessed from here: **http://(_host_):4200** (use the same username and password provided above)
 
-3\.  Type the command spark-shell
+3.  Type the command spark-shell
 
 This will load the default Spark Scala API.
 
@@ -2414,70 +2197,70 @@ For improved Hive integration, HDP 2.3 offers [ORC file](http://hortonworks.com/
 
 *   ****Import these sql libraries.****
 
-<div class="wp-geshi-highlight-wrap5">
 
-<div class="wp-geshi-highlight-wrap4">
 
-<div class="wp-geshi-highlight-wrap3">
 
-<div class="wp-geshi-highlight-wrap2">
 
-<div class="wp-geshi-highlight-wrap">
 
-<div class="wp-geshi-highlight">
 
-<div class="scala">
 
-<pre class="de1"><span class="kw1">import</span> org.<span class="me1">apache</span>.<span class="me1">spark</span>.<span class="me1">sql</span>.<span class="me1">hive</span>.<span class="me1">orc</span>.<span class="sy0">_</span>
-<span class="kw1">import</span> org.<span class="me1">apache</span>.<span class="me1">spark</span>.<span class="me1">sql</span>.<span class="sy0">_</span></pre>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
+<span class="kw1">import org.<span class="me1">apache.<span class="me1">spark.<span class="me1">sql.<span class="me1">hive.<span class="me1">orc._
+<span class="kw1">import org.<span class="me1">apache.<span class="me1">spark.<span class="me1">sql._
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ![Lab4_5](http://hortonworks.com/wp-content/uploads/2015/07/Lab4_5.png)
 
 *   ****Instantiate HiveContext****
 
-<div class="wp-geshi-highlight-wrap5">
 
-<div class="wp-geshi-highlight-wrap4">
 
-<div class="wp-geshi-highlight-wrap3">
 
-<div class="wp-geshi-highlight-wrap2">
 
-<div class="wp-geshi-highlight-wrap">
 
-<div class="wp-geshi-highlight">
 
-<div class="scala">
 
-<pre class="de1"><span class="kw1">val</span> hiveContext <span class="sy0">=</span> <span class="kw1">new</span> org.<span class="me1">apache</span>.<span class="me1">spark</span>.<span class="me1">sql</span>.<span class="me1">hive</span>.<span class="me1">HiveContext</span><span class="br0">(</span>sc<span class="br0">)</span></pre>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
+<span class="kw1">val hiveContext = <span class="kw1">new org.<span class="me1">apache.<span class="me1">spark.<span class="me1">sql.<span class="me1">hive.<span class="me1">HiveContext(sc)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ![Lab4_6](http://hortonworks.com/wp-content/uploads/2015/07/Lab4_6.png)
 
@@ -2509,179 +2292,179 @@ There are three methods for creating a RDD:
 *   The second method to create a RDD, is to reference a dataset. This dataset can come from any storage source supported by Hadoop such as HDFS, Cassandra, HBase etc.
 *   The third method to create a RDD is from transforming an existing RDD to create a new RDD. We will be using the later two methods in our tutorial.
 
-****    1\.  Use a simple show command to see the list of tables in Hive warehouse.****
+****    1.  Use a simple show command to see the list of tables in Hive warehouse.****
 
-<div class="wp-geshi-highlight-wrap5">
 
-<div class="wp-geshi-highlight-wrap4">
 
-<div class="wp-geshi-highlight-wrap3">
 
-<div class="wp-geshi-highlight-wrap2">
 
-<div class="wp-geshi-highlight-wrap">
 
-<div class="wp-geshi-highlight">
 
-<div class="scala">
 
-<pre class="de1">hiveContext.<span class="me1">sql</span><span class="br0">(</span><span class="st0">"show tables"</span><span class="br0">)</span>.<span class="me1">collect</span>.<span class="me1">foreach</span><span class="br0">(</span>println<span class="br0">)</span></pre>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
+hiveContext.<span class="me1">sql("show tables").<span class="me1">collect.<span class="me1">foreach(println)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ![Lab4_7](http://hortonworks.com/wp-content/uploads/2015/07/Lab4_7.png)
 
 You will notice that geolocation table and driver mileage table that we created in earlier tutorial are already listed in Hive metastore and can be directly queried upon.
 
-****    2\.  Query tables to build Spark RDD****
+****    2.  Query tables to build Spark RDD****
 
 We will do a simple select query to fetch data from geolocation and drivermileage tables to a spark variable. Getting data into Spark this way also allows to copy table schema to RDD.
 
-<div class="wp-geshi-highlight-wrap5">
 
-<div class="wp-geshi-highlight-wrap4">
 
-<div class="wp-geshi-highlight-wrap3">
 
-<div class="wp-geshi-highlight-wrap2">
 
-<div class="wp-geshi-highlight-wrap">
 
-<div class="wp-geshi-highlight">
 
-<div class="scala">
 
-<pre class="de1"><span class="kw1">val</span> geolocation<span class="sy0">_</span>temp1 <span class="sy0">=</span> hiveContext.<span class="me1">sql</span><span class="br0">(</span><span class="st0">"select * from geolocation"</span><span class="br0">)</span></pre>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
+<span class="kw1">val geolocation_temp1 = hiveContext.<span class="me1">sql("select * from geolocation")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ![Lab4_8](http://hortonworks.com/wp-content/uploads/2015/07/Lab4_8.png)
 
-<div class="wp-geshi-highlight-wrap5">
 
-<div class="wp-geshi-highlight-wrap4">
 
-<div class="wp-geshi-highlight-wrap3">
 
-<div class="wp-geshi-highlight-wrap2">
 
-<div class="wp-geshi-highlight-wrap">
 
-<div class="wp-geshi-highlight">
 
-<div class="scala">
 
-<pre class="de1"><span class="kw1">val</span> drivermileage<span class="sy0">_</span>temp1 <span class="sy0">=</span> hiveContext.<span class="me1">sql</span><span class="br0">(</span><span class="st0">"select * from drivermileage"</span><span class="br0">)</span></pre>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
+<span class="kw1">val drivermileage_temp1 = hiveContext.<span class="me1">sql("select * from drivermileage")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ![Lab4_9](http://hortonworks.com/wp-content/uploads/2015/07/Lab4_9.png)  
 
 Make sure that the RDD`s carry the exact data. You can verify through following   command
 
-<div class="wp-geshi-highlight-wrap5">
 
-<div class="wp-geshi-highlight-wrap4">
 
-<div class="wp-geshi-highlight-wrap3">
 
-<div class="wp-geshi-highlight-wrap2">
 
-<div class="wp-geshi-highlight-wrap">
 
-<div class="wp-geshi-highlight">
 
-<div class="scala">
 
-<pre class="de1">geolocation<span class="sy0">_</span>temp1.<span class="me1">take</span><span class="br0">(</span><span class="nu0">10</span><span class="br0">)</span> 
-drivermileage<span class="sy0">_</span>temp1.<span class="me1">take</span><span class="br0">(</span><span class="nu0">10</span><span class="br0">)</span></pre>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
+geolocation_temp1.<span class="me1">take(<span class="nu0">10) 
+drivermileage_temp1.<span class="me1">take(<span class="nu0">10)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Both these commands will return 10 rows from respective RDD`s.
 
-****    3\.  Registering a Temporary table****
+****    3.  Registering a Temporary table****
 
 Now let’s give this RDD a name, so that we can use it in Spark SQL statements
 
-<div class="wp-geshi-highlight-wrap5">
 
-<div class="wp-geshi-highlight-wrap4">
 
-<div class="wp-geshi-highlight-wrap3">
 
-<div class="wp-geshi-highlight-wrap2">
 
-<div class="wp-geshi-highlight-wrap">
 
-<div class="wp-geshi-highlight">
 
-<div class="scala">
 
-<pre class="de1">geolocation<span class="sy0">_</span>temp1.<span class="me1">registerTempTable</span><span class="br0">(</span><span class="st0">"geolocation_temp1"</span><span class="br0">)</span>
-drivermileage<span class="sy0">_</span>temp1.<span class="me1">registerTempTable</span><span class="br0">(</span><span class="st0">"drivermileage_temp1"</span><span class="br0">)</span></pre>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
+geolocation_temp1.<span class="me1">registerTempTable("geolocation_temp1")
+drivermileage_temp1.<span class="me1">registerTempTable("drivermileage_temp1")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 **Step 4.4: RDD transformations and Actions**
 
@@ -2692,41 +2475,41 @@ Once an RDD is instantiated, you can apply a [series of operations](https://spar
 *   **Transformation** operations, as the name suggests, create new datasets from an existing RDD and build out the processing DAG that can then be applied on the partitioned dataset across the YARN cluster. Transformations do not return a value. In fact, nothing is evaluated during the definition of these transformation statements. Spark just creates these Direct Acyclic Graphs or DAG, which will only be evaluated at runtime. We call this lazy evaluation.
 *   An **Action** operation, on the other hand, executes DAG and returns a value.
 
-****    1\.  Querying against the table****
+****    1.  Querying against the table****
 
 Now that our schema’s RDD with data has a name, we can use Spark SQL commands to query it. Remember the table below is not a Hive table, it is just a RDD we are querying with SQL.
 
 *   Here we will try to perform iteration and filter operation. First, we need to filter drivers that have non- normal events associated to them and then count the number for non- normal events for each driver.
 
-<div class="wp-geshi-highlight-wrap5">
 
-<div class="wp-geshi-highlight-wrap4">
 
-<div class="wp-geshi-highlight-wrap3">
 
-<div class="wp-geshi-highlight-wrap2">
 
-<div class="wp-geshi-highlight-wrap">
 
-<div class="wp-geshi-highlight">
 
-<div class="scala">
 
-<pre class="de1"><span class="kw1">val</span> geolocation<span class="sy0">_</span>temp2<span class="sy0">=</span> hiveContext.<span class="me1">sql</span><span class="br0">(</span><span class="st0">"SELECT driverid, count(driverid) occurance from             geolocation_temp1  where event!='normal' group by driverid"</span><span class="br0">)</span></pre>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
+<span class="kw1">val geolocation_temp2= hiveContext.<span class="me1">sql("SELECT driverid, count(driverid) occurance from             geolocation_temp1  where event!='normal' group by driverid")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ![Lab4_10](http://hortonworks.com/wp-content/uploads/2015/07/Lab4_10.png)
 
@@ -2748,67 +2531,67 @@ Now that our schema’s RDD with data has a name, we can use Spark SQL commands 
 
 *   The resulting table will have count of total non normal events associated to each driver. Register this filtered table as a temporary table so that subsequent SQL queries can be applied on it.
 
-<div class="wp-geshi-highlight-wrap5">
 
-<div class="wp-geshi-highlight-wrap4">
 
-<div class="wp-geshi-highlight-wrap3">
 
-<div class="wp-geshi-highlight-wrap2">
 
-<div class="wp-geshi-highlight-wrap">
 
-<div class="wp-geshi-highlight">
 
-<div class="scala">
 
-<pre class="de1">geolocation<span class="sy0">_</span>temp2.<span class="me1">registerTempTable</span><span class="br0">(</span><span class="st0">"geolocation_temp2"</span><span class="br0">)</span></pre>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
+geolocation_temp2.<span class="me1">registerTempTable("geolocation_temp2")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 *   You can view the result by doing an action operation on RDD.
 
-<div class="wp-geshi-highlight-wrap5">
 
-<div class="wp-geshi-highlight-wrap4">
 
-<div class="wp-geshi-highlight-wrap3">
 
-<div class="wp-geshi-highlight-wrap2">
 
-<div class="wp-geshi-highlight-wrap">
 
-<div class="wp-geshi-highlight">
 
-<div class="scala">
 
-<pre class="de1">geolocation<span class="sy0">_</span>temp2.<span class="me1">collect</span>.<span class="me1">foreach</span><span class="br0">(</span>println<span class="br0">)</span></pre>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
+geolocation_temp2.<span class="me1">collect.<span class="me1">foreach(println)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ![Lab4_11](http://hortonworks.com/wp-content/uploads/2015/07/Lab4_11.png)
 
@@ -2818,101 +2601,101 @@ In this section we will perform a join operation geolocation_temp2 table has det
 
 *   We will join two tables on common column, which in our case is driverid.
 
-<div class="wp-geshi-highlight-wrap5">
 
-<div class="wp-geshi-highlight-wrap4">
 
-<div class="wp-geshi-highlight-wrap3">
 
-<div class="wp-geshi-highlight-wrap2">
 
-<div class="wp-geshi-highlight-wrap">
 
-<div class="wp-geshi-highlight">
 
-<div class="scala">
 
-<pre class="de1"><span class="kw1">val</span> joined<span class="sy0">=</span> hiveContext.<span class="me1">sql</span><span class="br0">(</span><span class="st0">"select a.driverid,a.occurance,b.totmiles from geolocation_temp2 a,drivermileage_temp1 b where a.driverid=b.driverid"</span><span class="br0">)</span></pre>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
+<span class="kw1">val joined= hiveContext.<span class="me1">sql("select a.driverid,a.occurance,b.totmiles from geolocation_temp2 a,drivermileage_temp1 b where a.driverid=b.driverid")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ![Lab4_12](http://hortonworks.com/wp-content/uploads/2015/07/Lab4_12.png)
 
 *   The resulting data set will give us total miles and total non normal events for a particular driver. Register this filtered table as a temporary table so that subsequent SQL queries can be applied on it.
 
-<div class="wp-geshi-highlight-wrap5">
 
-<div class="wp-geshi-highlight-wrap4">
 
-<div class="wp-geshi-highlight-wrap3">
 
-<div class="wp-geshi-highlight-wrap2">
 
-<div class="wp-geshi-highlight-wrap">
 
-<div class="wp-geshi-highlight">
 
-<div class="scala">
 
-<pre class="de1">joined.<span class="me1">registerTempTable</span><span class="br0">(</span><span class="st0">"joined"</span><span class="br0">)</span></pre>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
+joined.<span class="me1">registerTempTable("joined")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 *   You can view the result by doing an action operation on RDD.
 
-<div class="wp-geshi-highlight-wrap5">
 
-<div class="wp-geshi-highlight-wrap4">
 
-<div class="wp-geshi-highlight-wrap3">
 
-<div class="wp-geshi-highlight-wrap2">
 
-<div class="wp-geshi-highlight-wrap">
 
-<div class="wp-geshi-highlight">
 
-<div class="scala">
 
-<pre class="de1">joined.<span class="me1">collect</span>.<span class="me1">foreach</span><span class="br0">(</span>println<span class="br0">)</span></pre>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
+joined.<span class="me1">collect.<span class="me1">foreach(println)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ![Lab4_13](http://hortonworks.com/wp-content/uploads/2015/07/Lab4_13.png)
 
@@ -2920,101 +2703,101 @@ In this section we will perform a join operation geolocation_temp2 table has det
 
 In this section we will associate a driver risk factor with every driver. Driver risk factor will be calculated by dividing total miles travelled by non normal event occurrences.
 
-<div class="wp-geshi-highlight-wrap5">
 
-<div class="wp-geshi-highlight-wrap4">
 
-<div class="wp-geshi-highlight-wrap3">
 
-<div class="wp-geshi-highlight-wrap2">
 
-<div class="wp-geshi-highlight-wrap">
 
-<div class="wp-geshi-highlight">
 
-<div class="scala">
 
-<pre class="de1"><span class="kw1">val</span> risk<span class="sy0">_</span>factor<span class="sy0">_</span>spark<span class="sy0">=</span>hiveContext.<span class="me1">sql</span><span class="br0">(</span><span class="st0">"select driverid, totmiles,occurance, totmiles/occurance riskfactor from joined"</span><span class="br0">)</span></pre>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
+<span class="kw1">val risk_factor_spark=hiveContext.<span class="me1">sql("select driverid, totmiles,occurance, totmiles/occurance riskfactor from joined")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ![Lab4_14](http://hortonworks.com/wp-content/uploads/2015/07/Lab4_14.png)
 
 *   The resulting data set will give us total miles and total non normal events and what is a risk for a particular driver. Register this filtered table as a temporary table so that subsequent SQL queries can be applied on it.
 
-<div class="wp-geshi-highlight-wrap5">
 
-<div class="wp-geshi-highlight-wrap4">
 
-<div class="wp-geshi-highlight-wrap3">
 
-<div class="wp-geshi-highlight-wrap2">
 
-<div class="wp-geshi-highlight-wrap">
 
-<div class="wp-geshi-highlight">
 
-<div class="scala">
 
-<pre class="de1">risk<span class="sy0">_</span>factor<span class="sy0">_</span>spark.<span class="me1">registerTempTable</span><span class="br0">(</span><span class="st0">"risk_factor_spark"</span><span class="br0">)</span></pre>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
+risk_factor_spark.<span class="me1">registerTempTable("risk_factor_spark")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 *   View the results
 
-<div class="wp-geshi-highlight-wrap5">
 
-<div class="wp-geshi-highlight-wrap4">
 
-<div class="wp-geshi-highlight-wrap3">
 
-<div class="wp-geshi-highlight-wrap2">
 
-<div class="wp-geshi-highlight-wrap">
 
-<div class="wp-geshi-highlight">
 
-<div class="scala">
 
-<pre class="de1">risk<span class="sy0">_</span>factor<span class="sy0">_</span>spark.<span class="me1">collect</span>.<span class="me1">foreach</span><span class="br0">(</span>println<span class="br0">)</span></pre>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
+risk_factor_spark.<span class="me1">collect.<span class="me1">foreach(println)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ![Lab4_15](http://hortonworks.com/wp-content/uploads/2015/07/Lab4_15.png)
 
@@ -3028,149 +2811,107 @@ Predicate pushdown uses those indexes to determine which stripes in a file need 
 
 Create a table and store it as ORC. Specifying as orc at the end of the SQL statement below ensures that the Hive table is stored in the ORC format.
 
-<div class="wp-geshi-highlight-wrap5">
 
-<div class="wp-geshi-highlight-wrap4">
 
-<div class="wp-geshi-highlight-wrap3">
 
-<div class="wp-geshi-highlight-wrap2">
 
-<div class="wp-geshi-highlight-wrap">
 
-<div class="wp-geshi-highlight">
 
-<div class="scala">
 
-<pre class="de1">hiveContext.<span class="me1">sql</span><span class="br0">(</span><span class="st0">"create table finalresults( driverid String, occurance bigint,totmiles bigint,riskfactor double) stored as orc"</span><span class="br0">)</span>.<span class="me1">toDF</span><span class="br0">(</span><span class="br0">)</span></pre>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
+hiveContext.<span class="me1">sql("create table finalresults( driverid String, occurance bigint,totmiles bigint,riskfactor double) stored as orc").<span class="me1">toDF()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 *   ** Load data into ORC table**
 
 Before we load the data into hive table that we created above, we will have to convert our data file into orc format too.
 
-<div class="wp-geshi-highlight-wrap5">
 
-<div class="wp-geshi-highlight-wrap4">
 
-<div class="wp-geshi-highlight-wrap3">
 
-<div class="wp-geshi-highlight-wrap2">
 
-<div class="wp-geshi-highlight-wrap">
 
-<div class="wp-geshi-highlight">
 
-<div class="scala">
 
-<pre class="de1">risk<span class="sy0">_</span>factor<span class="sy0">_</span>spark.<span class="me1">saveAsOrcFile</span><span class="br0">(</span><span class="st0">"risk_factor_spark"</span><span class="br0">)</span></pre>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
+risk_factor_spark.<span class="me1">saveAsOrcFile("risk_factor_spark")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Load the data into Hive table using load data command.
 
-<div class="wp-geshi-highlight-wrap5">
 
-<div class="wp-geshi-highlight-wrap4">
 
-<div class="wp-geshi-highlight-wrap3">
 
-<div class="wp-geshi-highlight-wrap2">
 
-<div class="wp-geshi-highlight-wrap">
 
-<div class="wp-geshi-highlight">
 
-<div class="scala">
 
-<pre class="de1">hiveContext.<span class="me1">sql</span><span class="br0">(</span><span class="st0">"load data inpath 'risk_factor_spark' into table finalresults"</span><span class="br0">)</span></pre>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
+hiveContext.<span class="me1">sql("load data inpath 'risk_factor_spark' into table finalresults")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 *   Execute a select query to verify your table has been successfully stored.You can go to Ambari Hive user view to check whether the Hive table you created has the data populated in it.
 
-<div class="wp-geshi-highlight-wrap5">
 
-<div class="wp-geshi-highlight-wrap4">
+hiveContext.<span class="me1">sql("select * from finalresults")
 
-<div class="wp-geshi-highlight-wrap3">
-
-<div class="wp-geshi-highlight-wrap2">
-
-<div class="wp-geshi-highlight-wrap">
-
-<div class="wp-geshi-highlight">
-
-<div class="scala">
-
-<pre class="de1">hiveContext.<span class="me1">sql</span><span class="br0">(</span><span class="st0">"select * from finalresults"</span><span class="br0">)</span></pre>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="innernav">
-
-<div class="prev">[« Back](#section_9)</div>
-
-<div class="next">[Next »](#section_11)</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="panel" id="section_11">
-
-<div class="maincontent">
 
 ## Lab 5: Reporting
 
@@ -3211,15 +2952,15 @@ The [Hive ODBC driver](http://hortonworks.com/hdp/addons/) can be found at the H
 
 ![Lab5_1](http://hortonworks.com/wp-content/uploads/2015/07/Lab5_1.png)
 
-3\.  Next prompt shall ask you to enter login and password. Type “sandbox” in login and the leave the password empty. Hit Ok.
+3.  Next prompt shall ask you to enter login and password. Type “sandbox” in login and the leave the password empty. Hit Ok.
 
 ![Lab5_2](http://hortonworks.com/wp-content/uploads/2015/07/Lab5_2.png)
 
-4\.   Choose the data table avg_mileage table from the table chart on the right and hit      Add Table. avg_mileage should now appear under Query View tab on the left. Choose avg_mileage.* in the Field column. You are set to import data from your Hive table. As a final step, Hit Test!
+4.   Choose the data table avg_mileage table from the table chart on the right and hit      Add Table. avg_mileage should now appear under Query View tab on the left. Choose avg_mileage.* in the Field column. You are set to import data from your Hive table. As a final step, Hit Test!
 
 ![Lab5_3](http://hortonworks.com/wp-content/uploads/2015/07/Lab5_3.png)
 
-5\.  Click on Return Data to import your table into an excel. Submit OK to populate your excel.
+5.  Click on Return Data to import your table into an excel. Submit OK to populate your excel.
 
 ![Lab5_4](http://hortonworks.com/wp-content/uploads/2015/07/Lab5_4.png)
 
@@ -3231,11 +2972,11 @@ The [Hive ODBC driver](http://hortonworks.com/hdp/addons/) can be found at the H
 
 ![Lab5_6](http://hortonworks.com/wp-content/uploads/2015/07/Lab5_6.png)
 
-2\.  Accept the defaults for everything and click through till you hit the Finish button. After you click on Finish, Excel will send the data request over to Hadoop. It will take awhile for this to happen. When the data is returned it will ask you to place the data in the workbook. We want to be in cell \$A\$1 like this.
+2.  Accept the defaults for everything and click through till you hit the Finish button. After you click on Finish, Excel will send the data request over to Hadoop. It will take awhile for this to happen. When the data is returned it will ask you to place the data in the workbook. We want to be in cell \$A\$1 like this.
 
 ![Lab5_6](http://hortonworks.com/wp-content/uploads/2015/07/Lab5_61.png)
 
-3\.  The data is placed you will see the avg_mileage table imported into your spreadsheet.
+3.  The data is placed you will see the avg_mileage table imported into your spreadsheet.
 
 ![Lab5_7](http://hortonworks.com/wp-content/uploads/2015/07/Lab5_7.jpg)
 
@@ -3245,119 +2986,51 @@ The [Hive ODBC driver](http://hortonworks.com/hdp/addons/) can be found at the H
 
 ![Lab5_14](http://hortonworks.com/wp-content/uploads/2015/07/Lab5_14.jpg)
 
-2\.  Select the design tab at the top and then select a column chart and use the stacked column version in the drop down menu. This will give you a bar chart. Grab the lower right of the chart and stretch it out to the full pane. Close the filter tab and the chart will expand and look like this.
+2.  Select the design tab at the top and then select a column chart and use the stacked column version in the drop down menu. This will give you a bar chart. Grab the lower right of the chart and stretch it out to the full pane. Close the filter tab and the chart will expand and look like this.
 
 ![Lab5_9](http://hortonworks.com/wp-content/uploads/2015/07/Lab5_9.jpg)
 
-3\.  So to finish off the tutorial I am going to create a map of the events reported in the geolocation table. I will show you how you can build up the queries and create a map of the data on an ad hoc basis.
+3.  So to finish off the tutorial I am going to create a map of the events reported in the geolocation table. I will show you how you can build up the queries and create a map of the data on an ad hoc basis.
 
-4\.  For a map we need location information and a data point. Looking at the geolocation table I will simply plot the location of each of the events. I will need the driverid, city and state columns from this table. We know that the select statement will let me extract these columns. So to start off I can just create the select query in the Query Editor.
+4.  For a map we need location information and a data point. Looking at the geolocation table I will simply plot the location of each of the events. I will need the driverid, city and state columns from this table. We know that the select statement will let me extract these columns. So to start off I can just create the select query in the Query Editor.
 
-5\.  — Query subset of geolocation columns
+5.  — Query subset of geolocation columns
 
-<div class="wp-geshi-highlight-wrap5">
 
-<div class="wp-geshi-highlight-wrap4">
+select driverid, city, state from geolocation;
 
-<div class="wp-geshi-highlight-wrap3">
-
-<div class="wp-geshi-highlight-wrap2">
-
-<div class="wp-geshi-highlight-wrap">
-
-<div class="wp-geshi-highlight">
-
-<div class="scala">
-
-<pre class="de1">select driverid, city, state from geolocation<span class="sy0">;</span></pre>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
 
 ![Lab5_10](http://hortonworks.com/wp-content/uploads/2015/07/Lab5_10.png)
 
-6\.  After I execute the query I see what results are returned. In a more complex query you can easily make changes to the query at this point till you get the right results. So the results I get back look like this.
+6.  After I execute the query I see what results are returned. In a more complex query you can easily make changes to the query at this point till you get the right results. So the results I get back look like this.
 
 ![Lab5_11](http://hortonworks.com/wp-content/uploads/2015/07/Lab5_11.png)
 
-7\.  Since my results look fine I now need to capture the result in a table. So I will use the select statement as part of my CTAS (create table select as) pattern. I will call the table events and the query now looks like this.  
+7.  Since my results look fine I now need to capture the result in a table. So I will use the select statement as part of my CTAS (create table select as) pattern. I will call the table events and the query now looks like this. 
+
 — Create table avg_mileage from existing trucks_mileage data
 
-<div class="wp-geshi-highlight-wrap5">
-
-<div class="wp-geshi-highlight-wrap4">
-
-<div class="wp-geshi-highlight-wrap3">
-
-<div class="wp-geshi-highlight-wrap2">
-
-<div class="wp-geshi-highlight-wrap">
-
-<div class="wp-geshi-highlight">
-
-<div class="scala">
-
-<pre class="de1">CREATE TABLE events
+CREATE TABLE events
 STORED AS ORC
 AS
-SELECT driverid, city, state FROM geolocation<span class="sy0">;</span></pre>
+SELECT driverid, city, state FROM geolocation;
 
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
 
 ![Lab5_12](http://hortonworks.com/wp-content/uploads/2015/07/Lab5_12.png)
 
-8\.  I can execute the query and the table events gets created. As we saw earlier I can go to Excel and import the table into a blank worksheet. The imported data will look like this.
+8.  I can execute the query and the table events gets created. As we saw earlier I can go to Excel and import the table into a blank worksheet. The imported data will look like this.
 
 ![Lab5_13](http://hortonworks.com/wp-content/uploads/2015/07/Lab5_13.jpg)
 
-9\.  Now I can insert the PowerView tab in the Excel workbook. To get a map I just select the Design tab at the top and select the Map button in the menu bar.
+9.  Now I can insert the PowerView tab in the Excel workbook. To get a map I just select the Design tab at the top and select the Map button in the menu bar.
 
 ![Lab5_8](http://hortonworks.com/wp-content/uploads/2015/07/Lab5_8.jpg)
 
-10\.  Make sure you have a network connection because Power View using Bing to do the geocoding which translates the city and state columns into map coordinates. If we just want to see where events took place we can uncheck the driverid. The finished map looks like this.
+10.  Make sure you have a network connection because Power View using Bing to do the geocoding which translates the city and state columns into map coordinates. If we just want to see where events took place we can uncheck the driverid. The finished map looks like this.
 
 ![Lab5_15](http://hortonworks.com/wp-content/uploads/2015/07/Lab5_15.jpg)
 
 We’ve shown how the Hortonworks Data Platform (HDP) can store and analyze geolocation data. In addition I have shown you a few techniques on building your own queries. You can easily plot risk factor and miles per gallon as bar charts. I showed you the basics of creating maps. A good next step is to only plot certain types of events. Using the pattern I gave you it is pretty straight forward to extract the data and visualize it in Excel.
-
-<div class="innernav">
-
-<div class="prev">[« Back](#section_10)</div>
-
-<div class="next">[Next »](#section_12)</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="panel" id="section_12">
-
-<div class="maincontent">
 
 ## Next Steps: Try These
 
@@ -3382,33 +3055,33 @@ Learn more about Hadoop through these case studies:
 
 <div class="innernav">
 
-<div class="prev">[« Back](#section_11)</div>
+<div class="prev">[« Back](#section_11)
 
-</div>
 
-</div>
 
-</div>
+
+
+
 
 <div class="share">Share on :
 
-<div class="addthis_toolbox addthis_default_style addthis_32x32_style">[<span class="at4-icon-left at4-icon aticon-facebook" style="background-color: rgb(48, 88, 145);"><span class="at_a11y">Share on facebook</span></span>](# "Facebook") [<span class="at4-icon-left at4-icon aticon-twitter" style="background-color: rgb(44, 168, 210);"><span class="at_a11y">Share on twitter</span></span>](# "Tweet") [<span class="at4-icon-left at4-icon aticon-linkedin" style="background-color: rgb(68, 152, 200);"><span class="at_a11y">Share on linkedin</span></span>](# "LinkedIn") [<span class="at4-icon-left at4-icon aticon-google_plusone_share" style="background-color: rgb(206, 77, 57);"><span class="at_a11y">Share on google_plusone_share</span></span>](# "Google+")</div>
+<div class="addthis_toolbox addthis_default_style addthis_32x32_style">[<span class="at4-icon-left at4-icon aticon-facebook" style="background-color: rgb(48, 88, 145);"><span class="at_a11y">Share on facebook](# "Facebook") [<span class="at4-icon-left at4-icon aticon-twitter" style="background-color: rgb(44, 168, 210);"><span class="at_a11y">Share on twitter](# "Tweet") [<span class="at4-icon-left at4-icon aticon-linkedin" style="background-color: rgb(68, 152, 200);"><span class="at_a11y">Share on linkedin](# "LinkedIn") [<span class="at4-icon-left at4-icon aticon-google_plusone_share" style="background-color: rgb(206, 77, 57);"><span class="at_a11y">Share on google_plusone_share](# "Google+")
 
-</div>
+
 
 <div class="newsletter_signup">
 
-<div class="prompt">Get notified of new tutorials :</div>
+<div class="prompt">Get notified of new tutorials :
 
-<form id="mktoForm_523" class="marketo-form-embed uid_55ea8f431e049" method="post"><span>Stay up to date!</span><label for="Email">Email:</label><input class="customMktoField validate[required,custom[email]]" type="email" name="Email" id="Email" maxlength="255" value="" placeholder="Leave your email for updates"><input class="customMktoField " type="hidden" name="rFSITECompany" id="rFSITECompany" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFSITEAddr1" id="rFSITEAddr1" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFSITEAddr2" id="rFSITEAddr2" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFSITECity" id="rFSITECity" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFSITEState" id="rFSITEState" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFSITECountry" id="rFSITECountry" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFSITEZip" id="rFSITEZip" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFSITEPhone" id="rFSITEPhone" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFSITETradeName" id="rFSITETradeName" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFSITEURL" id="rFSITEURL" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFSITELocationType" id="rFSITELocationType" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFSITESubCode" id="rFSITESubCode" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFSITESICCode" id="rFSITESICCode" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFSITESicName" id="rFSITESicName" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFSITENAICCode" id="rFSITENAICCode" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFSITENAICSName" id="rFSITENAICSName" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFSITEEmplyeesTotal" id="rFSITEEmplyeesTotal" maxlength="" value=""><input class="customMktoField " type="hidden" name="rFSITEEmplyeesHere" id="rFSITEEmplyeesHere" maxlength="" value=""><input class="customMktoField " type="hidden" name="rFSITEAnnualRev" id="rFSITEAnnualRev" maxlength="" value=""><input class="customMktoField " type="hidden" name="rFgeoIPareacode" id="rFgeoIPareacode" maxlength="" value=""><input class="customMktoField " type="hidden" name="rFgeoIPcity" id="rFgeoIPcity" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFgeoIPstate" id="rFgeoIPstate" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFgeoIPcountry" id="rFgeoIPcountry" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFConfidenceLevel" id="rFConfidenceLevel" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFHQCompany" id="rFHQCompany" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFHQAddr1" id="rFHQAddr1" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFHQAddr2" id="rFHQAddr2" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFHQCity" id="rFHQCity" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFHQState" id="rFHQState" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFHQCountry" id="rFHQCountry" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFHQZip" id="rFHQZip" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFHQPhone" id="rFHQPhone" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFHQTradeName" id="rFHQTradeName" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFHQURL" id="rFHQURL" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFHQLocationType" id="rFHQLocationType" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFHQSubCode" id="rFHQSubCode" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFHQSICCode" id="rFHQSICCode" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFHQSicName" id="rFHQSicName" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFHQNAICCode" id="rFHQNAICCode" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFHQNAICSName" id="rFHQNAICSName" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFHQEmplyeesTotal" id="rFHQEmplyeesTotal" maxlength="" value=""><input class="customMktoField " type="hidden" name="rFHQEmplyeesHere" id="rFHQEmplyeesHere" maxlength="" value=""><input class="customMktoField " type="hidden" name="rFHQAnnualRev" id="rFHQAnnualRev" maxlength="" value=""><input class="customMktoField " type="hidden" name="rFDHQCompany" id="rFDHQCompany" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFDHQAddr1" id="rFDHQAddr1" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFDHQAddr2" id="rFDHQAddr2" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFDHQCity" id="rFDHQCity" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFDHQState" id="rFDHQState" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFDHQCountry" id="rFDHQCountry" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFDHQZip" id="rFDHQZip" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFDHQPhone" id="rFDHQPhone" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFDHQTradeName" id="rFDHQTradeName" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFDHQURL" id="rFDHQURL" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFDHQLocationType" id="rFDHQLocationType" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFDHQSubCode" id="rFDHQSubCode" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFDHQSicName" id="rFDHQSicName" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFDHQSICCode" id="rFDHQSICCode" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFDHQNAICCode" id="rFDHQNAICCode" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFDHQNAICSName" id="rFDHQNAICSName" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFDHQEmplyeesTotal" id="rFDHQEmplyeesTotal" maxlength="" value=""><input class="customMktoField " type="hidden" name="rFDHQEmplyeesHere" id="rFDHQEmplyeesHere" maxlength="" value=""><input class="customMktoField " type="hidden" name="rFDHQAnnualRev" id="rFDHQAnnualRev" maxlength="255" value=""><input class="customMktoField " type="hidden" name="InferredCompany" id="InferredCompany" maxlength="255" value=""><input class="customMktoField " type="hidden" name="InferredCountry" id="InferredCountry" maxlength="255" value=""><input class="customMktoField " type="hidden" name="Inferred_Industry__c" id="Inferred_Industry__c" maxlength="255" value=""><input class="customMktoField " type="hidden" name="inferredState" id="inferredState" maxlength="255" value=""><input class="customMktoField " type="hidden" name="optIn" id="optIn" maxlength="" value="True"><input type="hidden" class="customMktoField hidden" id="formVid" name="formVid" value="523"><input type="hidden" class="customMktoField hidden" id="munchkinId" name="munchkinId" value="549-QAL-086"><input type="hidden" class="customMktoField hidden" id="formid" name="formid" value="523"><input type="hidden" class="unique_identifier customMktoField hidden" value="55ea8f431e049"><input type="submit" value="Submit" class="btn loud"></form>
+<form id="mktoForm_523" class="marketo-form-embed uid_55ea8f431e049" method="post"><span>Stay up to date!<label for="Email">Email:</label><input class="customMktoField validate[required,custom[email]]" type="email" name="Email" id="Email" maxlength="255" value="" placeholder="Leave your email for updates"><input class="customMktoField " type="hidden" name="rFSITECompany" id="rFSITECompany" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFSITEAddr1" id="rFSITEAddr1" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFSITEAddr2" id="rFSITEAddr2" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFSITECity" id="rFSITECity" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFSITEState" id="rFSITEState" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFSITECountry" id="rFSITECountry" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFSITEZip" id="rFSITEZip" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFSITEPhone" id="rFSITEPhone" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFSITETradeName" id="rFSITETradeName" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFSITEURL" id="rFSITEURL" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFSITELocationType" id="rFSITELocationType" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFSITESubCode" id="rFSITESubCode" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFSITESICCode" id="rFSITESICCode" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFSITESicName" id="rFSITESicName" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFSITENAICCode" id="rFSITENAICCode" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFSITENAICSName" id="rFSITENAICSName" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFSITEEmplyeesTotal" id="rFSITEEmplyeesTotal" maxlength="" value=""><input class="customMktoField " type="hidden" name="rFSITEEmplyeesHere" id="rFSITEEmplyeesHere" maxlength="" value=""><input class="customMktoField " type="hidden" name="rFSITEAnnualRev" id="rFSITEAnnualRev" maxlength="" value=""><input class="customMktoField " type="hidden" name="rFgeoIPareacode" id="rFgeoIPareacode" maxlength="" value=""><input class="customMktoField " type="hidden" name="rFgeoIPcity" id="rFgeoIPcity" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFgeoIPstate" id="rFgeoIPstate" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFgeoIPcountry" id="rFgeoIPcountry" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFConfidenceLevel" id="rFConfidenceLevel" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFHQCompany" id="rFHQCompany" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFHQAddr1" id="rFHQAddr1" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFHQAddr2" id="rFHQAddr2" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFHQCity" id="rFHQCity" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFHQState" id="rFHQState" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFHQCountry" id="rFHQCountry" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFHQZip" id="rFHQZip" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFHQPhone" id="rFHQPhone" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFHQTradeName" id="rFHQTradeName" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFHQURL" id="rFHQURL" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFHQLocationType" id="rFHQLocationType" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFHQSubCode" id="rFHQSubCode" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFHQSICCode" id="rFHQSICCode" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFHQSicName" id="rFHQSicName" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFHQNAICCode" id="rFHQNAICCode" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFHQNAICSName" id="rFHQNAICSName" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFHQEmplyeesTotal" id="rFHQEmplyeesTotal" maxlength="" value=""><input class="customMktoField " type="hidden" name="rFHQEmplyeesHere" id="rFHQEmplyeesHere" maxlength="" value=""><input class="customMktoField " type="hidden" name="rFHQAnnualRev" id="rFHQAnnualRev" maxlength="" value=""><input class="customMktoField " type="hidden" name="rFDHQCompany" id="rFDHQCompany" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFDHQAddr1" id="rFDHQAddr1" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFDHQAddr2" id="rFDHQAddr2" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFDHQCity" id="rFDHQCity" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFDHQState" id="rFDHQState" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFDHQCountry" id="rFDHQCountry" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFDHQZip" id="rFDHQZip" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFDHQPhone" id="rFDHQPhone" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFDHQTradeName" id="rFDHQTradeName" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFDHQURL" id="rFDHQURL" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFDHQLocationType" id="rFDHQLocationType" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFDHQSubCode" id="rFDHQSubCode" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFDHQSicName" id="rFDHQSicName" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFDHQSICCode" id="rFDHQSICCode" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFDHQNAICCode" id="rFDHQNAICCode" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFDHQNAICSName" id="rFDHQNAICSName" maxlength="255" value=""><input class="customMktoField " type="hidden" name="rFDHQEmplyeesTotal" id="rFDHQEmplyeesTotal" maxlength="" value=""><input class="customMktoField " type="hidden" name="rFDHQEmplyeesHere" id="rFDHQEmplyeesHere" maxlength="" value=""><input class="customMktoField " type="hidden" name="rFDHQAnnualRev" id="rFDHQAnnualRev" maxlength="255" value=""><input class="customMktoField " type="hidden" name="InferredCompany" id="InferredCompany" maxlength="255" value=""><input class="customMktoField " type="hidden" name="InferredCountry" id="InferredCountry" maxlength="255" value=""><input class="customMktoField " type="hidden" name="Inferred_Industry__c" id="Inferred_Industry__c" maxlength="255" value=""><input class="customMktoField " type="hidden" name="inferredState" id="inferredState" maxlength="255" value=""><input class="customMktoField " type="hidden" name="optIn" id="optIn" maxlength="" value="True"><input type="hidden" class="customMktoField hidden" id="formVid" name="formVid" value="523"><input type="hidden" class="customMktoField hidden" id="munchkinId" name="munchkinId" value="549-QAL-086"><input type="hidden" class="customMktoField hidden" id="formid" name="formid" value="523"><input type="hidden" class="unique_identifier customMktoField hidden" value="55ea8f431e049"><input type="submit" value="Submit" class="btn loud"></form>
 
 <div class="success_message" style="display: none;">
 
 Thank You
 
-</div>
 
-</div>
+
+
 
 <div id="comments">
 
@@ -3418,21 +3091,21 @@ Thank You
 
 <div class="comment even thread-even depth-1" id="605974">
 
-<div class="avatar_container">![](http://1.gravatar.com/avatar/7cb294448c0aa48bbf7797fdcd1a4079?s=40&d=mm&r=g)</div>
+<div class="avatar_container">![](http://1.gravatar.com/avatar/7cb294448c0aa48bbf7797fdcd1a4079?s=40&d=mm&r=g)
 
 <div class="comment_title">
 
-<div class="comment_author">[steven white](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/#section_9)</div>
+<div class="comment_author">[steven white](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/#section_9)
 
 |
 
-<div class="posted_on">July 26, 2015 at 10:36 am</div>
+<div class="posted_on">July 26, 2015 at 10:36 am
 
 |
 
-<div class="reply">[Reply](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/?replytocom=605974#respond)</div>
+<div class="reply">[Reply](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/?replytocom=605974#respond)
 
-</div>
+
 
 <div class="comment_body">
 
@@ -3445,58 +3118,58 @@ but the codeline generated by PIG Helper is missing the word “hive” after �
 
 Maybe a warning in the tutorial would help to double check code generated by automated features etc
 
-</div>
 
-</div>
+
+
 
 <div class="comment byuser comment-author-benrig44 odd alt thread-odd thread-alt depth-1" id="605975">
 
-<div class="avatar_container">![](http://1.gravatar.com/avatar/7cb294448c0aa48bbf7797fdcd1a4079?s=40&d=mm&r=g)</div>
+<div class="avatar_container">![](http://1.gravatar.com/avatar/7cb294448c0aa48bbf7797fdcd1a4079?s=40&d=mm&r=g)
 
 <div class="comment_title">
 
-<div class="comment_author">steven white</div>
+<div class="comment_author">steven white
 
 |
 
-<div class="posted_on">July 26, 2015 at 5:07 pm</div>
+<div class="posted_on">July 26, 2015 at 5:07 pm
 
 |
 
-<div class="reply">[Reply](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/?replytocom=605975#respond)</div>
+<div class="reply">[Reply](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/?replytocom=605975#respond)
 
-</div>
+
 
 <div class="comment_body">
 
 [http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/#section_10](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/#section_10)  
 section : Step 4.1: Configuring Spark services using Ambari  
-2\. Close the Ambari browser and we will get running with some codes on Spark. ssh into the sandbox using root as login and hadoop as password.
+2. Close the Ambari browser and we will get running with some codes on Spark. ssh into the sandbox using root as login and hadoop as password.
 
 I found this step (2) confusing. I recommend the following:  
 In order to run some example code on Spark you need to open a window or tool that allows LINUX command line syntax to be executed e.g. SSH, Terminal etc. There is no need to close the Ambari browser window.
 
-</div>
 
-</div>
+
+
 
 <div class="comment byuser comment-author-benrig44 even thread-even depth-1" id="605976">
 
-<div class="avatar_container">![](http://1.gravatar.com/avatar/7cb294448c0aa48bbf7797fdcd1a4079?s=40&d=mm&r=g)</div>
+<div class="avatar_container">![](http://1.gravatar.com/avatar/7cb294448c0aa48bbf7797fdcd1a4079?s=40&d=mm&r=g)
 
 <div class="comment_title">
 
-<div class="comment_author">steven white</div>
+<div class="comment_author">steven white
 
 |
 
-<div class="posted_on">July 26, 2015 at 5:08 pm</div>
+<div class="posted_on">July 26, 2015 at 5:08 pm
 
 |
 
-<div class="reply">[Reply](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/?replytocom=605976#respond)</div>
+<div class="reply">[Reply](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/?replytocom=605976#respond)
 
-</div>
+
 
 <div class="comment_body">
 
@@ -3511,79 +3184,79 @@ hiveContext.sql(“select * from finalresults”)
 
 (note the double quotes are straight and not curved)
 
-</div>
 
-</div>
+
+
 
 <div class="comment byuser comment-author-benrig44 odd alt depth-2" id="605977">
 
-<div class="avatar_container">![](http://1.gravatar.com/avatar/7cb294448c0aa48bbf7797fdcd1a4079?s=40&d=mm&r=g)</div>
+<div class="avatar_container">![](http://1.gravatar.com/avatar/7cb294448c0aa48bbf7797fdcd1a4079?s=40&d=mm&r=g)
 
 <div class="comment_title">
 
-<div class="comment_author">steven white</div>
+<div class="comment_author">steven white
 
 |
 
-<div class="posted_on">July 26, 2015 at 5:10 pm</div>
+<div class="posted_on">July 26, 2015 at 5:10 pm
 
 |
 
-<div class="reply">[Reply](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/?replytocom=605977#respond)</div>
+<div class="reply">[Reply](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/?replytocom=605977#respond)
 
-</div>
+
 
 <div class="comment_body">
 
 Ok, I cant seem to get the double quotes straight on this web page.
 
-</div>
 
-</div>
+
+
 
 <div class="comment byuser comment-author-aawasthihortonworks-com bypostauthor even depth-2" id="606055">
 
-<div class="avatar_container">![](http://2.gravatar.com/avatar/efa302e38bfdd75c658d11df0df458c9?s=40&d=mm&r=g)</div>
+<div class="avatar_container">![](http://2.gravatar.com/avatar/efa302e38bfdd75c658d11df0df458c9?s=40&d=mm&r=g)
 
 <div class="comment_title">
 
-<div class="comment_author">Anubhav Awasthi</div>
+<div class="comment_author">Anubhav Awasthi
 
 |
 
-<div class="posted_on">August 6, 2015 at 11:16 am</div>
+<div class="posted_on">August 6, 2015 at 11:16 am
 
 |
 
-<div class="reply">[Reply](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/?replytocom=606055#respond)</div>
+<div class="reply">[Reply](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/?replytocom=606055#respond)
 
-</div>
+
 
 <div class="comment_body">
 
 Thank you for pointing this out. We fixed it.
 
-</div>
 
-</div>
+
+
 
 <div class="comment byuser comment-author-benrig44 odd alt thread-odd thread-alt depth-1" id="605978">
 
-<div class="avatar_container">![](http://1.gravatar.com/avatar/7cb294448c0aa48bbf7797fdcd1a4079?s=40&d=mm&r=g)</div>
+<div class="avatar_container">![](http://1.gravatar.com/avatar/7cb294448c0aa48bbf7797fdcd1a4079?s=40&d=mm&r=g)
 
 <div class="comment_title">
 
-<div class="comment_author">steven white</div>
+<div class="comment_author">steven white
 
 |
 
-<div class="posted_on">July 26, 2015 at 5:23 pm</div>
+<div class="posted_on">July 26, 2015 at 5:23 pm
 
 |
 
-<div class="reply">[Reply](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/?replytocom=605978#respond)</div>
+<div class="reply">[Reply](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/?replytocom=605978#respond)
 
-</div>
+
 
 <div class="comment_body">
 
@@ -3591,30 +3264,30 @@ Thank you for pointing this out. We fixed it.
 
 Step 5.b.2: Visualize Data with Microsoft Excel
 
-Step 4 “4\. For a map we need location information and a data point” and step 5  
+Step 4 “4. For a map we need location information and a data point” and step 5  
 It needs to be made clearer that the user is expected to go to Hive to do these steps. The tutorial is deep in Excel and then suddenly assumes the user will know that they need to go back to using Hive.
 
-</div>
 
-</div>
+
+
 
 <div class="comment even thread-even depth-1" id="605986">
 
-<div class="avatar_container">![](http://2.gravatar.com/avatar/ed452d928deec6c975b6aaad49e630ff?s=40&d=mm&r=g)</div>
+<div class="avatar_container">![](http://2.gravatar.com/avatar/ed452d928deec6c975b6aaad49e630ff?s=40&d=mm&r=g)
 
 <div class="comment_title">
 
-<div class="comment_author">Aniket Sao</div>
+<div class="comment_author">Aniket Sao
 
 |
 
-<div class="posted_on">July 27, 2015 at 10:04 pm</div>
+<div class="posted_on">July 27, 2015 at 10:04 pm
 
 |
 
-<div class="reply">[Reply](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/?replytocom=605986#respond)</div>
+<div class="reply">[Reply](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/?replytocom=605986#respond)
 
-</div>
+
 
 <div class="comment_body">
 
@@ -3632,79 +3305,79 @@ WARNING: Use “yarn jar” to launch YARN applications.
 Details at logfile: /hadoop/yarn/local/usercache/admin/appcache/application_1438051512308_0005/container_e12_1438051512308_0005_01_000002/pig_1438059427878.log  
 2015-07-28 04:57:09,276 [main] INFO org.apache.pig.Main – Pig script completed in 1 second and 980 milliseconds (1980 ms)
 
-</div>
 
-</div>
+
+
 
 <div class="comment odd alt depth-2" id="606011">
 
-<div class="avatar_container">![](http://2.gravatar.com/avatar/b4884f2a1ecffd1d2f165fdb55244498?s=40&d=mm&r=g)</div>
+<div class="avatar_container">![](http://2.gravatar.com/avatar/b4884f2a1ecffd1d2f165fdb55244498?s=40&d=mm&r=g)
 
 <div class="comment_title">
 
-<div class="comment_author">datamite</div>
+<div class="comment_author">datamite
 
 |
 
-<div class="posted_on">July 30, 2015 at 1:39 pm</div>
+<div class="posted_on">July 30, 2015 at 1:39 pm
 
 |
 
-<div class="reply">[Reply](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/?replytocom=606011#respond)</div>
+<div class="reply">[Reply](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/?replytocom=606011#respond)
 
-</div>
+
 
 <div class="comment_body">
 
 I am having the same problem. Also even if I save the pig script when I go back to it, it is empty and not saved.
 
-</div>
 
-</div>
+
+
 
 <div class="comment even depth-2" id="606026">
 
-<div class="avatar_container">![](http://0.gravatar.com/avatar/96b4b160e42f64a0c3a013cadbdf3eb7?s=40&d=mm&r=g)</div>
+<div class="avatar_container">![](http://0.gravatar.com/avatar/96b4b160e42f64a0c3a013cadbdf3eb7?s=40&d=mm&r=g)
 
 <div class="comment_title">
 
-<div class="comment_author">nz</div>
+<div class="comment_author">nz
 
 |
 
-<div class="posted_on">August 3, 2015 at 8:13 am</div>
+<div class="posted_on">August 3, 2015 at 8:13 am
 
 |
 
-<div class="reply">[Reply](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/?replytocom=606026#respond)</div>
+<div class="reply">[Reply](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/?replytocom=606026#respond)
 
-</div>
+
 
 <div class="comment_body">
 
 I got the same problem and found the solution. Don’t copy the –useHCatalog, instead, type it. The “-” maybe not a correct character in the web page, so you’d best hand type it to make sure.
 
-</div>
 
-</div>
+
+
 
 <div class="comment byuser comment-author-levs odd alt depth-3" id="606063">
 
-<div class="avatar_container">![](http://0.gravatar.com/avatar/6b129178df5197741063e8731413ee4a?s=40&d=mm&r=g)</div>
+<div class="avatar_container">![](http://0.gravatar.com/avatar/6b129178df5197741063e8731413ee4a?s=40&d=mm&r=g)
 
 <div class="comment_title">
 
-<div class="comment_author">Lev Sigal</div>
+<div class="comment_author">Lev Sigal
 
 |
 
-<div class="posted_on">August 9, 2015 at 12:17 am</div>
+<div class="posted_on">August 9, 2015 at 12:17 am
 
 |
 
-<div class="reply">[Reply](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/?replytocom=606063#respond)</div>
+<div class="reply">[Reply](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/?replytocom=606063#respond)
 
-</div>
+
 
 <div class="comment_body">
 
@@ -3713,27 +3386,27 @@ My execution of riskfactor.pig – FAILED with result: File /tmp/.pigjobs/riskfa
 Please advise,  
 Thanks, Lev
 
-</div>
 
-</div>
+
+
 
 <div class="comment even thread-odd thread-alt depth-1" id="605999">
 
-<div class="avatar_container">![](http://1.gravatar.com/avatar/7d54e1ba9d69397e1e2f8a1670c19a67?s=40&d=mm&r=g)</div>
+<div class="avatar_container">![](http://1.gravatar.com/avatar/7d54e1ba9d69397e1e2f8a1670c19a67?s=40&d=mm&r=g)
 
 <div class="comment_title">
 
-<div class="comment_author">Calvin</div>
+<div class="comment_author">Calvin
 
 |
 
-<div class="posted_on">July 28, 2015 at 3:46 pm</div>
+<div class="posted_on">July 28, 2015 at 3:46 pm
 
 |
 
-<div class="reply">[Reply](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/?replytocom=605999#respond)</div>
+<div class="reply">[Reply](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/?replytocom=605999#respond)
 
-</div>
+
 
 <div class="comment_body">
 
@@ -3741,53 +3414,53 @@ The copy that says “Here is a short video introduction on Tez.” should inste
 
 BTW, longest “Hello World” tutorial ever.
 
-</div>
 
-</div>
+
+
 
 <div class="comment odd alt thread-even depth-1" id="606002">
 
-<div class="avatar_container">![](http://1.gravatar.com/avatar/aa18710a31f2b74506a90fce73d4a9e0?s=40&d=mm&r=g)</div>
+<div class="avatar_container">![](http://1.gravatar.com/avatar/aa18710a31f2b74506a90fce73d4a9e0?s=40&d=mm&r=g)
 
 <div class="comment_title">
 
-<div class="comment_author">Aditya</div>
+<div class="comment_author">Aditya
 
 |
 
-<div class="posted_on">July 29, 2015 at 4:02 am</div>
+<div class="posted_on">July 29, 2015 at 4:02 am
 
 |
 
-<div class="reply">[Reply](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/?replytocom=606002#respond)</div>
+<div class="reply">[Reply](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/?replytocom=606002#respond)
 
-</div>
+
 
 <div class="comment_body">
 
 Do you have any shell tutorial for HIVE and PIG?
 
-</div>
 
-</div>
+
+
 
 <div class="comment even thread-odd thread-alt depth-1" id="606017">
 
-<div class="avatar_container">![](http://1.gravatar.com/avatar/1b343c5a0849bb857c655f00d216f813?s=40&d=mm&r=g)</div>
+<div class="avatar_container">![](http://1.gravatar.com/avatar/1b343c5a0849bb857c655f00d216f813?s=40&d=mm&r=g)
 
 <div class="comment_title">
 
-<div class="comment_author">hidemi</div>
+<div class="comment_author">hidemi
 
 |
 
-<div class="posted_on">July 31, 2015 at 5:26 pm</div>
+<div class="posted_on">July 31, 2015 at 5:26 pm
 
 |
 
-<div class="reply">[Reply](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/?replytocom=606017#respond)</div>
+<div class="reply">[Reply](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/?replytocom=606017#respond)
 
-</div>
+
 
 <div class="comment_body">
 
@@ -3807,53 +3480,53 @@ risk factor would be 1000/10 = 100
 which would be lower than someone who has 11 abnormal and 1 normal  
 risk factor would be 1000/1 = 1000
 
-</div>
 
-</div>
+
+
 
 <div class="comment byuser comment-author-aawasthihortonworks-com bypostauthor odd alt depth-2" id="606054">
 
-<div class="avatar_container">![](http://2.gravatar.com/avatar/efa302e38bfdd75c658d11df0df458c9?s=40&d=mm&r=g)</div>
+<div class="avatar_container">![](http://2.gravatar.com/avatar/efa302e38bfdd75c658d11df0df458c9?s=40&d=mm&r=g)
 
 <div class="comment_title">
 
-<div class="comment_author">Anubhav Awasthi</div>
+<div class="comment_author">Anubhav Awasthi
 
 |
 
-<div class="posted_on">August 6, 2015 at 10:41 am</div>
+<div class="posted_on">August 6, 2015 at 10:41 am
 
 |
 
-<div class="reply">[Reply](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/?replytocom=606054#respond)</div>
+<div class="reply">[Reply](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/?replytocom=606054#respond)
 
-</div>
+
 
 <div class="comment_body">
 
 Thank you for the suggestion. The idea is to communicate the possibilities of computation that could be done using Pig. You can very well build your own logic and draw inference through it.
 
-</div>
 
-</div>
+
+
 
 <div class="comment even thread-even depth-1" id="606018">
 
-<div class="avatar_container">![](http://0.gravatar.com/avatar/0bf1814c2a0e180dead27429c18d983d?s=40&d=mm&r=g)</div>
+<div class="avatar_container">![](http://0.gravatar.com/avatar/0bf1814c2a0e180dead27429c18d983d?s=40&d=mm&r=g)
 
 <div class="comment_title">
 
-<div class="comment_author">Rafiq</div>
+<div class="comment_author">Rafiq
 
 |
 
-<div class="posted_on">July 31, 2015 at 6:45 pm</div>
+<div class="posted_on">July 31, 2015 at 6:45 pm
 
 |
 
-<div class="reply">[Reply](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/?replytocom=606018#respond)</div>
+<div class="reply">[Reply](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/?replytocom=606018#respond)
 
-</div>
+
 
 <div class="comment_body">
 
@@ -3868,27 +3541,27 @@ How can I specify PIG script to look for database xademo instead of deafult data
 Thanks in advance.  
 Keep doing good work.
 
-</div>
 
-</div>
+
+
 
 <div class="comment odd alt depth-2" id="606019">
 
-<div class="avatar_container">![](http://0.gravatar.com/avatar/0bf1814c2a0e180dead27429c18d983d?s=40&d=mm&r=g)</div>
+<div class="avatar_container">![](http://0.gravatar.com/avatar/0bf1814c2a0e180dead27429c18d983d?s=40&d=mm&r=g)
 
 <div class="comment_title">
 
-<div class="comment_author">Rafiq</div>
+<div class="comment_author">Rafiq
 
 |
 
-<div class="posted_on">July 31, 2015 at 7:23 pm</div>
+<div class="posted_on">July 31, 2015 at 7:23 pm
 
 |
 
-<div class="reply">[Reply](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/?replytocom=606019#respond)</div>
+<div class="reply">[Reply](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/?replytocom=606019#respond)
 
-</div>
+
 
 <div class="comment_body">
 
@@ -3897,27 +3570,27 @@ Found the solution. When you are using non-default database. you have to use ‘
 Here is Script.  
 a = LOAD ‘xademo.geolocation’ using org.apache.hive.hcatalog.pig.HCatLoader();
 
-</div>
 
-</div>
+
+
 
 <div class="comment even thread-odd thread-alt depth-1" id="606022">
 
-<div class="avatar_container">![](http://0.gravatar.com/avatar/0a5eb3e8a1e97398a822405567504549?s=40&d=mm&r=g)</div>
+<div class="avatar_container">![](http://0.gravatar.com/avatar/0a5eb3e8a1e97398a822405567504549?s=40&d=mm&r=g)
 
 <div class="comment_title">
 
-<div class="comment_author">Soumik</div>
+<div class="comment_author">Soumik
 
 |
 
-<div class="posted_on">August 2, 2015 at 12:41 am</div>
+<div class="posted_on">August 2, 2015 at 12:41 am
 
 |
 
-<div class="reply">[Reply](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/?replytocom=606022#respond)</div>
+<div class="reply">[Reply](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/?replytocom=606022#respond)
 
-</div>
+
 
 <div class="comment_body">
 
@@ -3928,27 +3601,27 @@ Can somebody please help me log into ambari server?
 Regards,  
 Soumik
 
-</div>
 
-</div>
+
+
 
 <div class="comment odd alt depth-2" id="606029">
 
-<div class="avatar_container">![](http://0.gravatar.com/avatar/f2401e5057cef3c55ba90412fa3f9090?s=40&d=mm&r=g)</div>
+<div class="avatar_container">![](http://0.gravatar.com/avatar/f2401e5057cef3c55ba90412fa3f9090?s=40&d=mm&r=g)
 
 <div class="comment_title">
 
-<div class="comment_author">michel Osborne</div>
+<div class="comment_author">michel Osborne
 
 |
 
-<div class="posted_on">August 3, 2015 at 12:54 pm</div>
+<div class="posted_on">August 3, 2015 at 12:54 pm
 
 |
 
-<div class="reply">[Reply](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/?replytocom=606029#respond)</div>
+<div class="reply">[Reply](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/?replytocom=606029#respond)
 
-</div>
+
 
 <div class="comment_body">
 
@@ -3958,27 +3631,27 @@ Make sure your VMWare is properly configure to be able to be have access to your
 
 A+
 
-</div>
 
-</div>
+
+
 
 <div class="comment even depth-2" id="606031">
 
-<div class="avatar_container">![](http://0.gravatar.com/avatar/079b26e19404ff645088a2533cfae237?s=40&d=mm&r=g)</div>
+<div class="avatar_container">![](http://0.gravatar.com/avatar/079b26e19404ff645088a2533cfae237?s=40&d=mm&r=g)
 
 <div class="comment_title">
 
-<div class="comment_author">robert</div>
+<div class="comment_author">robert
 
 |
 
-<div class="posted_on">August 3, 2015 at 6:50 pm</div>
+<div class="posted_on">August 3, 2015 at 6:50 pm
 
 |
 
-<div class="reply">[Reply](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/?replytocom=606031#respond)</div>
+<div class="reply">[Reply](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/?replytocom=606031#respond)
 
-</div>
+
 
 <div class="comment_body">
 
@@ -3988,53 +3661,53 @@ Hi Soumik,
 Regards,  
 Robert
 
-</div>
 
-</div>
+
+
 
 <div class="comment odd alt thread-even depth-1" id="606073">
 
-<div class="avatar_container">![](http://2.gravatar.com/avatar/b5fa6d59d9bbf68b6dfc903eb3e0be2d?s=40&d=mm&r=g)</div>
+<div class="avatar_container">![](http://2.gravatar.com/avatar/b5fa6d59d9bbf68b6dfc903eb3e0be2d?s=40&d=mm&r=g)
 
 <div class="comment_title">
 
-<div class="comment_author">kaustubh patil</div>
+<div class="comment_author">kaustubh patil
 
 |
 
-<div class="posted_on">August 10, 2015 at 10:46 am</div>
+<div class="posted_on">August 10, 2015 at 10:46 am
 
 |
 
-<div class="reply">[Reply](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/?replytocom=606073#respond)</div>
+<div class="reply">[Reply](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/?replytocom=606073#respond)
 
-</div>
+
 
 <div class="comment_body">
 
 Thank you for such a detailed and comprehensive article. It let me get started with Hadoop.
 
-</div>
 
-</div>
+
+
 
 <div class="comment even thread-odd thread-alt depth-1" id="606188">
 
-<div class="avatar_container">![](http://0.gravatar.com/avatar/66590487a6bd78fe4a65d9c383ae21aa?s=40&d=mm&r=g)</div>
+<div class="avatar_container">![](http://0.gravatar.com/avatar/66590487a6bd78fe4a65d9c383ae21aa?s=40&d=mm&r=g)
 
 <div class="comment_title">
 
-<div class="comment_author">Apurv</div>
+<div class="comment_author">Apurv
 
 |
 
-<div class="posted_on">August 28, 2015 at 5:03 pm</div>
+<div class="posted_on">August 28, 2015 at 5:03 pm
 
 |
 
-<div class="reply">[Reply](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/?replytocom=606188#respond)</div>
+<div class="reply">[Reply](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/?replytocom=606188#respond)
 
-</div>
+
 
 <div class="comment_body">
 
@@ -4042,27 +3715,27 @@ I am trying to upload file to HDFS and New Directory and Upload button are not e
 
 looks like some permission missing. Kindly help
 
-</div>
 
-</div>
+
+
 
 <div class="comment byuser comment-author-rcoss odd alt thread-even depth-1" id="606224">
 
-<div class="avatar_container">![](http://0.gravatar.com/avatar/04b0b0fe9235cee228bfdaa4e6a412b1?s=40&d=mm&r=g)</div>
+<div class="avatar_container">![](http://0.gravatar.com/avatar/04b0b0fe9235cee228bfdaa4e6a412b1?s=40&d=mm&r=g)
 
 <div class="comment_title">
 
-<div class="comment_author">Rafael Coss</div>
+<div class="comment_author">Rafael Coss
 
 |
 
-<div class="posted_on">September 4, 2015 at 11:00 am</div>
+<div class="posted_on">September 4, 2015 at 11:00 am
 
 |
 
-<div class="reply">[Reply](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/?replytocom=606224#respond)</div>
+<div class="reply">[Reply](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/?replytocom=606224#respond)
 
-</div>
+
 
 <div class="comment_body">
 
@@ -4074,37 +3747,37 @@ Do you have read/write access to the directory where you are trying to upload th
 > ALso when i try to use -copyFromLocal command,  
 Which step is this coming from?
 
-</div>
 
-</div>
+
+
 
 <div class="comment even thread-odd thread-alt depth-1" id="606225">
 
-<div class="avatar_container">![](http://1.gravatar.com/avatar/a8a29e9af44f1044d228558f14af37b7?s=40&d=mm&r=g)</div>
+<div class="avatar_container">![](http://1.gravatar.com/avatar/a8a29e9af44f1044d228558f14af37b7?s=40&d=mm&r=g)
 
 <div class="comment_title">
 
-<div class="comment_author">Dave S</div>
+<div class="comment_author">Dave S
 
 |
 
-<div class="posted_on">September 4, 2015 at 12:10 pm</div>
+<div class="posted_on">September 4, 2015 at 12:10 pm
 
 |
 
-<div class="reply">[Reply](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/?replytocom=606225#respond)</div>
+<div class="reply">[Reply](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/?replytocom=606225#respond)
 
-</div>
+
 
 <div class="comment_body">
 
 Perhaps you people should be promoting **LibreOffice** instead of ms office. Open source is where it’s at – or haven’t you been paying attention?
 
-</div>
 
-</div>
 
-</div>
+
+
+
 
 <div class="labels-on-top">
 
@@ -4116,11 +3789,11 @@ Perhaps you people should be promoting **LibreOffice** instead of ms office. Ope
 
 <noscript>JavaScript and Cookies are required to submit comments. Please enable JavaScript and Cookies before proceeding.</noscript>
 
-<span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span>
+<span id="email-notes">Your email address will not be published. Required fields are marked <span class="required">*
 
-<label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" aria-required="true" required="required">
+<label for="author">Name <span class="required">*</label> <input id="author" name="author" type="text" value="" size="30" aria-required="true" required="required">
 
-<label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" aria-describedby="email-notes" aria-required="true" required="required">
+<label for="email">Email <span class="required">*</label> <input id="email" name="email" type="text" value="" size="30" aria-describedby="email-notes" aria-required="true" required="required">
 
 <label for="url">Website</label> <input id="url" name="url" type="text" value="" size="30">
 
@@ -4136,12 +3809,11 @@ You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and a
 
 <input type="hidden" id="ak_js" name="ak_js" value="1449265862762"></form>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
 
-</div>
+
+
+
+
