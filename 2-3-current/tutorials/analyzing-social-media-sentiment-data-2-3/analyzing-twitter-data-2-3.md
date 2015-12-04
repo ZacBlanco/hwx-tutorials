@@ -1,3 +1,9 @@
+---
+layout: post
+title: Analyzing Twitter Data With Apache NiFi and HDP Search
+tutorial: true
+---
+
 # Analyzing Twitter Data With Apache NiFi and HDP Search
 
 ## Introduction
