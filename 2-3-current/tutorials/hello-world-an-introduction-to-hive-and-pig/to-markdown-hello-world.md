@@ -246,35 +246,25 @@ Ambari Files User View provides a user friendly interface to upload, store and m
 
 #### **Suggested Readings**
 
-<table class=" data-table">
+> **NOTE**  ![sign](http://hortonworks.com/wp-content/uploads/2015/07/sign.png)
 
-<tbody>
-
-<tr>
-
-<td>**NOTE**  ![sign](http://hortonworks.com/wp-content/uploads/2015/07/sign.png)</td>
-
-<td>HDFS is one of the 4 components of [Apache Hadoop](http://hadoop.apache.org/) the other 3 are Hadoop Common, [Hadoop YARN](http://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html) and [Hadoop MapReduce](http://hortonworks.com/hadoop/mapreduce/).  To learn more about HDFS watch the following [HDFS introduction video](https://www.youtube.com/watch?v=1_ly9dZnmWc).  To learn more about YARN watch the following [YARN introduction video](https://www.youtube.com/watch?v=ZYXVNxmMchc&list=PL2y_WpKCCNQc-7RJNoYym4_g7EZb3yzJW).
+- HDFS is one of the 4 components of [Apache Hadoop](http://hadoop.apache.org/) the other 3 are Hadoop Common, [Hadoop YARN](http://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html) and [Hadoop MapReduce](http://hortonworks.com/hadoop/mapreduce/).
+- To learn more about HDFS watch the following [HDFS introduction video](https://www.youtube.com/watch?v=1_ly9dZnmWc).
+- To learn more about YARN watch the following [YARN introduction video](https://www.youtube.com/watch?v=ZYXVNxmMchc&list=PL2y_WpKCCNQc-7RJNoYym4_g7EZb3yzJW).
 
 **Hadoop 2.0 Blogs:**  
-[Hadoop 2.7.0 Blog](http://hortonworks.com/blog/apache-hadoop-2-7-0-released/)  
-[Understanding Hadoop 2.0](http://hortonworks.com/blog/understanding-hadoop-2-0/)
+
+- [Hadoop 2.7.0 Blog](http://hortonworks.com/blog/apache-hadoop-2-7-0-released/)  
+- [Understanding Hadoop 2.0](http://hortonworks.com/blog/understanding-hadoop-2-0/)
 
 **HDFS Blogs:**  
-[Heterogeneous Storage Policies in HDP 2.2](http://hortonworks.com/blog/heterogeneous-storage-policies-hdp-2-2/)  
-[HDFS Metadata Directories Explained](http://hortonworks.com/blog/hdfs-metadata-directories-explained/)  
-[Heterogeneous Storages in HDFS](http://hortonworks.com/blog/heterogeneous-storages-hdfs/)  
-[HDFS 2.0 Next Generation Architecture](http://hortonworks.com/blog/hdfs-2-0-next-generation-architecture/)  
-[NameNode High Availability in HDP 2.0](http://hortonworks.com/blog/namenode-high-availability-in-hdp-2-0/)  
-[Introducing… Tez: Accelerating processing of data stored in HDFS](http://hortonworks.com/blog/introducing-tez-faster-hadoop-processing/)
 
-</td>
-
-</tr>
-
-</tbody>
-
-</table>
+- [Heterogeneous Storage Policies in HDP 2.2](http://hortonworks.com/blog/heterogeneous-storage-policies-hdp-2-2/)  
+- [HDFS Metadata Directories Explained](http://hortonworks.com/blog/hdfs-metadata-directories-explained/)  
+- [Heterogeneous Storages in HDFS](http://hortonworks.com/blog/heterogeneous-storages-hdfs/)  
+- [HDFS 2.0 Next Generation Architecture](http://hortonworks.com/blog/hdfs-2-0-next-generation-architecture/)  
+- [NameNode High Availability in HDP 2.0](http://hortonworks.com/blog/namenode-high-availability-in-hdp-2-0/)  
+- [Introducing… Tez: Accelerating processing of data stored in HDFS](http://hortonworks.com/blog/introducing-tez-faster-hadoop-processing/)
 
 ## Concepts: MapReduce & YARN
 
@@ -402,39 +392,11 @@ Here are some advantageous characteristics of Hive for enterprise SQL in Hadoop:
 
 <tr>
 
-<td>**Feature</td>
-
-<td>**Description</td>
-
-</tr>
-
-<tr>
-
-<td>**Familiar</td>
-
-<td>Query data with a SQL-based language</td>
-
-</tr>
-
-<tr>
-
-<td>**Fast</td>
-
-<td>Interactive response times, even over huge datasets</td>
-
-</tr>
-
-<tr>
-
-<td>**Scalable and Extensible</td>
-
-<td>As data variety and volume grows, more commodity machines can be added, without a corresponding reduction in performance</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| Feature | Description |
+|---------|-------------|
+| Familiar| Query data with a SQL-based language |
+| Fast    | Interactive response times, even over huge datasets |
+| Scalable and Extensible| As data variety and volume grows, more commodity machines can be added, without a corresponding reduction in performance|
 
 **How Hive Works**
 
@@ -797,11 +759,11 @@ http://_host_:50070/explorer.html</td>
 
 <tr>
 
-<td>**Service</td>
+<td>**Service**</td>
 
-<td>**User</td>
+<td>**User**</td>
 
-<td>**Password</td>
+<td>**Password**</td>
 
 </tr>
 
@@ -1088,7 +1050,7 @@ For details on these clauses consult the [Apache Hive Language Manual](https://c
 
 <td>**NOTE**  ![sign](http://hortonworks.com/wp-content/uploads/2015/07/sign.png)</td>
 
-<td>A few additional commands to explore tables:show tables;List the tables created in the database by looking up the list of tables from the metadata stored in HCatalogdescribe _table_name_;Provides a list of columns for a particular table (ie describe geolocation_stage;)show create _table_name_;Provides the DDL to recreate a table (ie show create table geolocation_stage;)</td>
+<td>A few additional commands to explore tables: show tables;List the tables created in the database by looking up the list of tables from the metadata stored in HCatalogdescribe _table_name_;Provides a list of columns for a particular table (ie describe geolocation_stage;)show create _table_name_;Provides the DDL to recreate a table (ie show create table geolocation_stage;)</td>
 
 </tr>
 
