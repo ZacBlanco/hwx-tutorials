@@ -112,7 +112,7 @@ Apache Hadoop® is an open source framework for distributed storage and processi
 <tr>
 
 <td>**NOTE**  
-**![sign](http://hortonworks.com/wp-content/uploads/2015/07/sign.png) **</td>
+**![sign](http://hortonworks.com/wp-content/uploads/2015/07/sign.png) </td>
 
 <td>Hortonworks Blog : [Understanding Hadoop 2.0](http://hortonworks.com/blog/understanding-hadoop-2-0/)</td>
 
@@ -185,7 +185,7 @@ The Hortonworks **Sandbox** is a single node implementation of the Hortonworks D
 
 <tr>
 
-<td>**NOTE** ** ![sign](http://hortonworks.com/wp-content/uploads/2015/07/sign.png)**</td>
+<td>**NOTE**  ![sign](http://hortonworks.com/wp-content/uploads/2015/07/sign.png)</td>
 
 <td>HDFS is one of the 4 components of [Apache Hadoop](http://hadoop.apache.org/) the other 3 are Hadoop Common, [Hadoop YARN](http://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html) and [Hadoop MapReduce](http://hortonworks.com/hadoop/mapreduce/).  To learn more about HDFS watch the following [HDFS introduction video](https://www.youtube.com/watch?v=1_ly9dZnmWc).  To learn more about YARN watch the following [YARN introduction video](https://www.youtube.com/watch?v=ZYXVNxmMchc&list=PL2y_WpKCCNQc-7RJNoYym4_g7EZb3yzJW).  
 Hadoop 2.0 Blogs:  
@@ -252,7 +252,7 @@ Ambari Files User View provides a user friendly interface to upload, store and m
 
 <tr>
 
-<td>**NOTE** ** ![sign](http://hortonworks.com/wp-content/uploads/2015/07/sign.png)**</td>
+<td>**NOTE**  ![sign](http://hortonworks.com/wp-content/uploads/2015/07/sign.png)</td>
 
 <td>HDFS is one of the 4 components of [Apache Hadoop](http://hadoop.apache.org/) the other 3 are Hadoop Common, [Hadoop YARN](http://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html) and [Hadoop MapReduce](http://hortonworks.com/hadoop/mapreduce/).  To learn more about HDFS watch the following [HDFS introduction video](https://www.youtube.com/watch?v=1_ly9dZnmWc).  To learn more about YARN watch the following [YARN introduction video](https://www.youtube.com/watch?v=ZYXVNxmMchc&list=PL2y_WpKCCNQc-7RJNoYym4_g7EZb3yzJW).
 
@@ -343,7 +343,7 @@ One of the crucial implementation details for MapReduce within the new YARN **sy
 
 <tr>
 
-<td>**NOTE** ** ![sign](http://hortonworks.com/wp-content/uploads/2015/07/sign.png)**</td>
+<td>**NOTE**  ![sign](http://hortonworks.com/wp-content/uploads/2015/07/sign.png)</td>
 
 <td>HDFS is one of the 4 components of [Apache Hadoop](http://hadoop.apache.org/) the other 3 are Hadoop Common, [Hadoop YARN](http://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html) and [Hadoop MapReduce](http://hortonworks.com/hadoop/mapreduce/).  To learn more about HDFS watch the following [HDFS introduction video](https://www.youtube.com/watch?v=1_ly9dZnmWc).  To learn more about YARN watch the following [YARN introduction video](https://www.youtube.com/watch?v=ZYXVNxmMchc&list=PL2y_WpKCCNQc-7RJNoYym4_g7EZb3yzJW).
 
@@ -402,15 +402,15 @@ Here are some advantageous characteristics of Hive for enterprise SQL in Hadoop:
 
 <tr>
 
-<td>**Feature**</td>
+<td>**Feature</td>
 
-<td>**Description**</td>
+<td>**Description</td>
 
 </tr>
 
 <tr>
 
-<td>**Familiar**</td>
+<td>**Familiar</td>
 
 <td>Query data with a SQL-based language</td>
 
@@ -418,7 +418,7 @@ Here are some advantageous characteristics of Hive for enterprise SQL in Hadoop:
 
 <tr>
 
-<td>**Fast**</td>
+<td>**Fast</td>
 
 <td>Interactive response times, even over huge datasets</td>
 
@@ -426,7 +426,7 @@ Here are some advantageous characteristics of Hive for enterprise SQL in Hadoop:
 
 <tr>
 
-<td>**Scalable and Extensible**</td>
+<td>**Scalable and Extensible</td>
 
 <td>As data variety and volume grows, more commodity machines can be added, without a corresponding reduction in performance</td>
 
@@ -452,7 +452,7 @@ Within a particular database, data in the tables is serialized and each table ha
 
 <tr>
 
-<td>**NOTE** ** ![sign](http://hortonworks.com/wp-content/uploads/2015/07/sign.png)**</td>
+<td>**NOTE**  ![sign](http://hortonworks.com/wp-content/uploads/2015/07/sign.png)</td>
 
 <td>At one point HCatalog was its own Apache project. However, in March, 2013, [HCatalog’s project merged](https://hive.apache.org/hcatalog_downloads.html) with Hive.  HCatalog is currently released as part of Hive.</td>
 
@@ -559,15 +559,15 @@ Whatever the use case, Pig will be:
 
 <tr>
 
-<td>**Characteristic**</td>
+<td>**Characteristic</td>
 
-<td>**Benefit**</td>
+<td>**Benefit</td>
 
 </tr>
 
 <tr>
 
-<td>**Extensible**</td>
+<td>**Extensible</td>
 
 <td>Pig users can create custom functions to meet their particular processing requirements</td>
 
@@ -575,7 +575,7 @@ Whatever the use case, Pig will be:
 
 <tr>
 
-<td>**Easily programmed**</td>
+<td>**Easily programmed</td>
 
 <td>Complex tasks involving interrelated data transformations can be simplified and encoded as data flow sequences. Pig programs accomplish huge tasks, but they are easy to write and maintain.</td>
 
@@ -583,7 +583,7 @@ Whatever the use case, Pig will be:
 
 <tr>
 
-<td>**Self-optimizing**</td>
+<td>**Self-optimizing</td>
 
 <td>Because the system automatically optimizes execution of Pig jobs, the user can focus on semantics.</td>
 
@@ -632,7 +632,7 @@ The following screenshot shows and describes the various components and features
 
 <tr>
 
-<td>**NOTE** ** ![sign](http://hortonworks.com/wp-content/uploads/2015/07/sign.png)**</td>
+<td>**NOTE* ![sign](http://hortonworks.com/wp-content/uploads/2015/07/sign.png)</td>
 
 <td>[Apache Ambari](https://ambari.apache.org/) is an open source and open community based web based tool for Hadoop operations which has been extended via [Ambari User Views](https://cwiki.apache.org/confluence/display/AMBARI/Views) to provide a growing list of developer tools as User Views.  Follow this link to learn more about the [Ambari User VIews included in HDP](http://hortonworks.com/hadoop/ambari/).
 
@@ -691,7 +691,7 @@ Both the username and password to login are admin.
 
 <tr>
 
-<td>**NOTE** ** ![sign](http://hortonworks.com/wp-content/uploads/2015/07/sign.png)**</td>
+<td>**NOTE**  ![sign](http://hortonworks.com/wp-content/uploads/2015/07/sign.png)</td>
 
 <td>If you want to search for the host address your sandbox is running on, ssh into the sandbox terminal upon successful installation and follow subsequent steps:
 
@@ -716,9 +716,9 @@ The following table has some useful URLs as well:
 
 <tr>
 
-<td>**Service**</td>
+<td>**Service</td>
 
-<td>**URL**</td>
+<td>**URL</td>
 
 </tr>
 
@@ -797,11 +797,11 @@ http://_host_:50070/explorer.html</td>
 
 <tr>
 
-<td>**Service**</td>
+<td>**Service</td>
 
-<td>**User**</td>
+<td>**User</td>
 
-<td>**Password**</td>
+<td>**Password</td>
 
 </tr>
 
@@ -861,7 +861,7 @@ and then the
 
 <tr>
 
-<td>**NOTE** **![sign](http://hortonworks.com/wp-content/uploads/2015/07/sign.png) **</td>
+<td>**NOTE** ![sign](http://hortonworks.com/wp-content/uploads/2015/07/sign.png) </td>
 
 <td>To learn more about Hadoop please explore the [HDP Getting Started documentation](http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.2.4/bk_getting-started-guide/content/ch_about-hortonworks-data-platform.html).  
 If you have questions, feedback or need help getting your environment ready visit  [developer.hortonworks.com](http://hortonworks.com/developer/).  Please also explore the [HDP documentation](http://docs.hortonworks.com/).   To ask a question check out the [Hortonworks Forums](http://hortonworks.com/community/forums/).</td>
@@ -1056,7 +1056,7 @@ Let’s review some aspects of the CREATE TABLE statements issued above.  If yo
 
 For details on these clauses consult the [Apache Hive Language Manual](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL).
 
-7\.  To verify the tables were defined successfully, click the “refresh” icon in the Database Explorer. Under Databases, click default database to expand the list of table and the new tables should appear:
+7.  To verify the tables were defined successfully, click the “refresh” icon in the Database Explorer. Under Databases, click default database to expand the list of table and the new tables should appear:
 
 ![Lab2_7](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_7.png)
 
@@ -1070,7 +1070,7 @@ For details on these clauses consult the [Apache Hive Language Manual](https://c
 
 <tr>
 
-<td>**NOTE** ** ![sign](http://hortonworks.com/wp-content/uploads/2015/07/sign.png)**</td>
+<td>**NOTE**  ![sign](http://hortonworks.com/wp-content/uploads/2015/07/sign.png)</td>
 
 <td>You can have multiple SQL statements within each editor worksheet, but each statement needs to be separated by a semicolon “;”.   If you have multiple statements within a worksheet but you only want to run one of them just highlight the statement you want ran and then click the Execute button.</td>
 
@@ -1086,7 +1086,7 @@ For details on these clauses consult the [Apache Hive Language Manual](https://c
 
 <tr>
 
-<td>**NOTE** ** ![sign](http://hortonworks.com/wp-content/uploads/2015/07/sign.png)**</td>
+<td>**NOTE**  ![sign](http://hortonworks.com/wp-content/uploads/2015/07/sign.png)</td>
 
 <td>A few additional commands to explore tables:show tables;List the tables created in the database by looking up the list of tables from the metadata stored in HCatalogdescribe _table_name_;Provides a list of columns for a particular table (ie describe geolocation_stage;)show create _table_name_;Provides the DDL to recreate a table (ie show create table geolocation_stage;)</td>
 
@@ -1106,7 +1106,7 @@ For details on these clauses consult the [Apache Hive Language Manual](https://c
 
 <tr>
 
-<td>**NOTE** ** ![sign](http://hortonworks.com/wp-content/uploads/2015/07/sign.png)**</td>
+<td>**NOTE**  ![sign](http://hortonworks.com/wp-content/uploads/2015/07/sign.png)</td>
 
 <td>The definition of a Hive table and its associated metadata (i.e., the directory the data is stored in, the file format, what Hive properties are set, etc.) are stored in the Hive metastore, which on the Sandbox is a MySQL database.</td>
 
@@ -1170,11 +1170,11 @@ LOAD DATA INPATH '/tmp/admin/data/trucks.csv' OVERWRITE INTO TABLE trucks_stage;
 
 
 
-6\.  You should now see data in the trucks_stage table:
+6.  You should now see data in the trucks_stage table:
 
 ![Lab2_13](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_13.png)
 
-7\.  From the Files view, navigate to the /temp/admin/data folder. Notice the folder is empty! The LOAD DATA INPATH command moved the trucks.csv file from the /user/admin/data folder to the /apps/hive/warehouse/trucks_stage folder.
+7.  From the Files view, navigate to the /temp/admin/data folder. Notice the folder is empty! The LOAD DATA INPATH command moved the trucks.csv file from the /user/admin/data folder to the /apps/hive/warehouse/trucks_stage folder.
 
 **Step 2.4: Define an ORC Table in Hive**
 
@@ -1236,7 +1236,7 @@ describe formatted geolocation;
 
 ![Lab2_15](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_15.png)
 
-6\.  Execute the following query to define a new ORC table named trucks that contains the data from trucks_stage:
+6.  Execute the following query to define a new ORC table named trucks that contains the data from trucks_stage:
 
 –Create table trucks as ORC from trucks_stage table
 
@@ -1270,7 +1270,7 @@ CREATE TABLE trucks STORED AS ORC AS SELECT * FROM trucks_stage;
 
 
 
-7\.  Verify that the table has been properly created by refreshing the **Database Explorer** and viewing the contents of trucks:
+7.  Verify that the table has been properly created by refreshing the **Database Explorer** and viewing the contents of trucks:
 
 ![Lab2_16](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_16.png)
 
@@ -1337,7 +1337,7 @@ This shows the new HDP 2.3 Ambari Smart Configurations, which simplifies setting
 <tr>
 
 <td>**NOTE**![sign](http://hortonworks.com/wp-content/uploads/2015/07/sign.png)  
-**New in HDP 2.3**</td>
+**New in HDP 2.3</td>
 
 <td>Hadoop is configured by a collection of XML files.   In early versions of Hadoop operators would need to do XML editing to change settings.  There was no default versioning.  Early Ambari interfaces made it easier to change values by showing the settings page with dialog boxes for the various settings and allowing you to edit them.  However, you needed to know what needed to go into the field and understand the range of values.   Now with Smart Configurations you can toggle binary features and use the slider bars with settings that have ranges.</td>
 
@@ -1471,7 +1471,7 @@ SE
 
 Notice content assist shows you some options that start with an “SE”.
 
-6\.  Type in the following query, using **Ctrl+space** throughout your typing so that you can get an idea of what content assist can do and how it works:
+6.  Type in the following query, using **Ctrl+space** throughout your typing so that you can get an idea of what content assist can do and how it works:
 
 
 
@@ -1504,14 +1504,16 @@ SELECT truckid, avg(mpg) avgmpg FROM truck_mileage GROUP BY truckid;
 
 
 ![Lab2_28](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_28.png)  
-7\.  Click the “**Save as …**” button to save the query as “**average mpg**”:  
+
+7.  Click the “**Save as …**” button to save the query as “**average mpg**”:  
+
 ![Lab2_26](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_26.png)
 
-8\.  Notice your query now shows up in the list of “Saved Queries”, which is one of the tabs at the top of the Hive User View.
+8.  Notice your query now shows up in the list of “Saved Queries”, which is one of the tabs at the top of the Hive User View.
 
-9\.  Execute the “**average mpg**” query and view its results.
+9.  Execute the “**average mpg**” query and view its results.
 
-10\. Now lets explore the various explain features to better understand the execution of a query: Text Explain, Visual Explain and Tez Explain. Click on the **Explain** button:
+10. Now lets explore the various explain features to better understand the execution of a query: Text Explain, Visual Explain and Tez Explain. Click on the **Explain** button:
 
 ![Lab2_27](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_27.png)
 
@@ -1611,19 +1613,6 @@ If we look at the truck_mileage table, we we have the driverid and the number of
 1.  We will start by creating a table named driver_mileage that is created from a query of the columns we want from truck_mileage. The following query groups the records by driverid and sums the miles in the select statement. Execute this query in a new Worksheet:
 
 — Create table DriverMileage from existing truck_mileage data
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 CREATE TABLE DriverMileage
@@ -2270,7 +2259,7 @@ For improved Hive integration, HDP 2.3 offers [ORC file](http://hortonworks.com/
 
 <tr>
 
-<td>**NOTE** ** ![sign](http://hortonworks.com/wp-content/uploads/2015/07/sign.png)**</td>
+<td>**NOTE**  ![sign](http://hortonworks.com/wp-content/uploads/2015/07/sign.png)</td>
 
 <td>sc stands for Spark Context. SparkContext is the main entry point to everything Spark. It can be used to create RDDs and shared variables on the cluster. When you start up the Spark Shell, the SparkContext is automatically initialized for you with the variable sc.</td>
 
@@ -2519,7 +2508,7 @@ Now that our schema’s RDD with data has a name, we can use Spark SQL commands 
 
 <tr>
 
-<td>**NOTE****![sign](http://hortonworks.com/wp-content/uploads/2015/07/sign.png)  **</td>
+<td>**NOTE****![sign](http://hortonworks.com/wp-content/uploads/2015/07/sign.png)  </td>
 
 <td>As stated earlier about RDD transformations, select operation is a RDD transformation and therefore does not return anything.</td>
 
@@ -2964,7 +2953,7 @@ The [Hive ODBC driver](http://hortonworks.com/hdp/addons/) can be found at the H
 
 ![Lab5_4](http://hortonworks.com/wp-content/uploads/2015/07/Lab5_4.png)
 
-6\.  Once the data is placed you will see the avg_mileage table imported into your spreadsheet.
+6.  Once the data is placed you will see the avg_mileage table imported into your spreadsheet.
 
 **For Windows users**:-
 
