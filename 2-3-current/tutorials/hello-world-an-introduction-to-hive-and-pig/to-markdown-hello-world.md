@@ -165,11 +165,9 @@ The Hortonworks **Sandbox** is a single node implementation of the Hortonworks D
 **Suggested Readings**
 
 
-> HDFS is one of the 4 components of [Apache Hadoop](http://hadoop.apache.org/) the other 3 are Hadoop Common, [Hadoop YARN](http://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html) and [Hadoop MapReduce](http://hortonworks.com/hadoop/mapreduce/).
-
-> To learn more about HDFS watch the following [HDFS introduction video](https://www.youtube.com/watch?v=1_ly9dZnmWc).
-
-> To learn more about YARN watch the following [YARN introduction video](https://www.youtube.com/watch?v=ZYXVNxmMchc&list=PL2y_WpKCCNQc-7RJNoYym4_g7EZb3yzJW).  
+- HDFS is one of the 4 components of [Apache Hadoop](http://hadoop.apache.org/) the other 3 are Hadoop Common, [Hadoop YARN](http://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html) and [Hadoop MapReduce](http://hortonworks.com/hadoop/mapreduce/).
+- To learn more about HDFS watch the following [HDFS introduction video](https://www.youtube.com/watch?v=1_ly9dZnmWc).
+- To learn more about YARN watch the following [YARN introduction video](https://www.youtube.com/watch?v=ZYXVNxmMchc&list=PL2y_WpKCCNQc-7RJNoYym4_g7EZb3yzJW).  
 
 
 **Hadoop 2.0 Blogs:**
@@ -210,7 +208,7 @@ The NameNode does not directly send requests to DataNodes. It sends instructions
 
 ![HDFS_2](http://hortonworks.com/wp-content/uploads/2015/07/HDFS_2.png)
 
-For more details on HDFS: [http://hortonworks.com/hadoop/hdfs/](http://hortonworks.com/hadoop/hdfs/)
+> For more details on HDFS: [http://hortonworks.com/hadoop/hdfs/](http://hortonworks.com/hadoop/hdfs/)
 
 With [next generation HDFS data architecture](http://hortonworks.com/blog/hdfs-2-0-next-generation-architecture/) that comes with HDP 2.0, HDFS has evolved to provide [automated failure](http://hortonworks.com/blog/namenode-high-availability-in-hdp-2-0/) with a hot standby, with full stack resiliency. Please spare some time to go through this video for more clarity on HDFS.
 
@@ -257,17 +255,17 @@ The biggest limitation with MapReduce programming is that map and reduce jobs ar
 *   Understanding Map and Reduce jobs.
 *   Understanding YARN
 
-[**APACHE MAPREDUCE**](http://hortonworks.com/hadoop/mapreduce/)
+[**Apache MapReduce**](http://hortonworks.com/hadoop/mapreduce/)
 
 MapReduce is the key algorithm that the Hadoop data processing engine uses to distribute work around a cluster. A MapReduce job splits a large data set into independent chunks and organizes them into key, value pairs for parallel processing. This parallel processing improves the speed and reliability of the cluster, returning solutions more quickly and with greater reliability.
 
 The **Map** function divides the input into ranges by the InputFormat and creates a map task for each range in the input. The JobTracker distributes those tasks to the worker nodes. The output of each map task is partitioned into a group of key-value pairs for each reduce.
 
-*   map(key1,value) -> list<key2,value2>
+*   `map(key1,value) -> list<key2,value2>`
 
 The **Reduce** function then collects the various results and combines them to answer the larger problem that the master node needs to solve. Each reduce pulls the relevant partition from the machines where the maps executed, then writes its output back into HDFS. Thus, the reduce is able to collect the data from all of the maps for the keys and combine them to solve the problem.
 
-*   reduce(key2, list<value2>) -> list<value3>
+*   `reduce(key2, list<value2>) -> list<value3>`
 
 The current Apache Hadoop MapReduce System is composed of the JobTracker, which is the master, and the per-node slaves called TaskTrackers. The JobTracker is responsible for _resource management_ (managing the worker nodes i.e. TaskTrackers), _tracking resource consumption/availability_ and also _job life-cycle management_ (scheduling individual tasks of the job, tracking progress, providing fault-tolerance for tasks etc).
 
@@ -305,7 +303,7 @@ One of the crucial implementation details for MapReduce within the new YARN **sy
 
 #### Suggested Readings
 
-> HDFS is one of the 4 components of [Apache Hadoop](http://hadoop.apache.org/) the other 3 are Hadoop Common, [Hadoop YARN](http://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html) and [Hadoop MapReduce](http://hortonworks.com/hadoop/mapreduce/).  To learn more about HDFS watch the following [HDFS introduction video](https://www.youtube.com/watch?v=1_ly9dZnmWc).  To learn more about YARN watch the following [YARN introduction video](https://www.youtube.com/watch?v=ZYXVNxmMchc&list=PL2y_WpKCCNQc-7RJNoYym4_g7EZb3yzJW).
+- HDFS is one of the 4 components of [Apache Hadoop](http://hadoop.apache.org/) the other 3 are Hadoop Common, [Hadoop YARN](http://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html) and [Hadoop MapReduce](http://hortonworks.com/hadoop/mapreduce/).  To learn more about HDFS watch the following [HDFS introduction video](https://www.youtube.com/watch?v=1_ly9dZnmWc).  To learn more about YARN watch the following [YARN introduction video](https://www.youtube.com/watch?v=ZYXVNxmMchc&list=PL2y_WpKCCNQc-7RJNoYym4_g7EZb3yzJW).
 
 **Hadoop 2.0 Blogs:**  
 [Hadoop 2.7.0 Blog](http://hortonworks.com/blog/apache-hadoop-2-7-0-released/)  
@@ -541,25 +539,26 @@ Append the port number :8888 to your host address, open your browser, and access
 
 Navigate to Ambari welcome page using the url given on Sandbox welcome page.
 
-Both the username and password to login are admin.
+**Both the username and password to login are admin.**
 
-> If you want to search for the host address your sandbox is running on, ssh into the sandbox terminal upon successful installation and follow subsequent steps:
+If you want to search for the host address your sandbox is running on, ssh into the sandbox terminal upon successful installation and follow subsequent steps:
 
 1.  login using username as “root” and password as “hadoop”.
 2.  Type ifconfig and look for inet address under eth.
 3.  Use the inet address, append :8080 and open it into a browser. It shall direct you to Ambari login page.
 4.  This inet address is randomly generated for every session and therefore differs from session to session.
 
+
 | Service | URL | 
 |---------|-----|
-| Sandbox Welcome Page | http://_host_:8888|
-| Ambari Dashboard | http://_host_:8080|
-| Ambari Welcome | http://_host_:8080/views/ADMIN_VIEW/2.1.0/INSTANCE/#/|
-| Hive User View | http://_host_:8080/#/main/views/HIVE/1.0.0/Hive|
-| Pig User View | http://_host_:8080/#/main/views/PIG/0.1.0/MyPig|
-| File User View | http://_host_:8080/#/main/views/FILES/0.2.0/MyFiles|
-| SSH Web Client | http://_host_:4200|
-| Hadoop Configuration | http://_host_:50070/dfshealth.html http://_host_:50070/explorer.html |
+| Sandbox Welcome Page | [http://_host_:8888]()|
+| Ambari Dashboard | [http://_host_:8080]()|
+| Ambari Welcome | [http://_host_:8080/views/ADMIN_VIEW/2.1.0/INSTANCE/#/]()|
+| Hive User View | [http://_host_:8080/#/main/views/HIVE/1.0.0/Hive]()|
+| Pig User View | [http://_host_:8080/#/main/views/PIG/0.1.0/MyPig]()|
+| File User View | [http://_host_:8080/#/main/views/FILES/0.2.0/MyFiles]()|
+| SSH Web Client | [http://_host_:4200]()|
+| Hadoop Configuration | [http://_host_:50070/dfshealth.html http://_host_:50070/explorer.html]() |
 
 
 The following table has some useful URLs as well:
@@ -597,22 +596,10 @@ and then the
 
 1.  **Dashboard**, **Services**, **Hosts**, **Alerts**, **Admin** and User Views icon (represented by 3×3 matrix ) to become familiar with the Ambari resources available to you.
 
-<table class=" data-table">
-
-<tbody>
-
-<tr>
-
-<td>**NOTE** ![sign](http://hortonworks.com/wp-content/uploads/2015/07/sign.png) </td>
-
-<td>To learn more about Hadoop please explore the [HDP Getting Started documentation](http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.2.4/bk_getting-started-guide/content/ch_about-hortonworks-data-platform.html).  
-If you have questions, feedback or need help getting your environment ready visit  [developer.hortonworks.com](http://hortonworks.com/developer/).  Please also explore the [HDP documentation](http://docs.hortonworks.com/).   To ask a question check out the [Hortonworks Forums](http://hortonworks.com/community/forums/).</td>
-
-</tr>
-
-</tbody>
-
-</table>
+- To learn more about Hadoop please explore the [HDP Getting Started documentation](http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.2.4/bk_getting-started-guide/content/ch_about-hortonworks-data-platform.html).  
+- If you have questions, feedback or need help getting your environment ready visit  [developer.hortonworks.com](http://hortonworks.com/developer/).
+- Please also explore the [HDP documentation](http://docs.hortonworks.com/).
+- To ask a question check out the [Hortonworks Forums](http://hortonworks.com/community/forums/).
 
 ## Lab 1: HDFS - Loading Data
 
@@ -622,18 +609,18 @@ If you have questions, feedback or need help getting your environment ready visi
 
 In this section you will download the sensor data and load that into HDFS using Ambari User Views. You will get introduced to the Ambari Files User View to manage files. You can perform tasks like create directories, navigate file systems and upload files to HDFS.  In addition you’ll perform a few other file-related tasks as well.  Once you get the basics, you will create two directories and then load two files into HDFS using the Ambari Files User View.
 
-**Prerequisite:**
+**Prerequisites:**
 
 The tutorial is a part of series of hands on tutorial to get you started on HDP using Hortonworks sandbox. Please ensure you complete the prerequisites before proceeding with this tutorial.
 
-*   Step-0 (Hortonworks sandbox set up)
+*   Step 0 (Hortonworks sandbox set up)
 *   Allow yourself around half an hour to complete this tutorial.
 
 **Outline:**
 
 *   HDFS backdrop
-*   Step-1.1: Download data – [**Geolocation.zip**](https://app.box.com/HadoopCrashCourseData)
-*   Step-1.2: Load Data into HDFS
+*   Step 1.1: Download data – [**Geolocation.zip**](https://app.box.com/HadoopCrashCourseData)
+*   Step 1.2: Load Data into HDFS
 *   Suggested readings
 
 **HDFS backdrop:**
@@ -678,26 +665,26 @@ You can also perform the following operations on a file by right clicking on the
 
 In this section of tutorial you will be introduced to Apache Hive. In the earlier section we covered how to load data into HDFS. So now you have ‘geolocation’ and ‘trucks’ files stored in HDFS as csv files. In order to use this data in Hive we will tell you how to create a table and how to move data into Hive warehouse, from where it can be queried upon. We will analyze this data using SQL queries in Hive User Views and store it as ORC. We will also walk through Apache Tez and how a DAG is created when you specify Tez as execution engine for Hive. Lets start..!!
 
-**Prerequisite:**
+**Prerequisites:**
 
 The tutorial is a part of series of hands on tutorial to get you started on HDP using Hortonworks sandbox. Please ensure you complete the prerequisites before proceeding with this tutorial.
 
-*   Step-0 (Hortonworks sandbox set up)
-*   Lab1: Loading sensor data into HDFS
+*   Step 0 (Hortonworks sandbox set up)
+*   Lab 1: Loading sensor data into HDFS
 *   Allow yourself around one hour to complete this tutorial.
 
 **Outline:**
 
 *   Hive basics
-*   Step-2.1: Use Ambari Hive User Views
-*   Step-2.2: Define a Hive Table
-*   Step-2.3: Load Data into Hive Table
-*   Step-2.4: Define an ORC table in Hive
-*   Step-2.5: Review Hive Settings
-*   Step-2.6: Analyze Truck Data
+*   Step 2.1: Use Ambari Hive User Views
+*   Step 2.2: Define a Hive Table
+*   Step 2.3: Load Data into Hive Table
+*   Step 2.4: Define an ORC table in Hive
+*   Step 2.5: Review Hive Settings
+*   Step 2.6: Analyze Truck Data
 *   Suggested readings
 
-**HIVE:**
+### Hive
 
 Hive is a SQL like query language that enables analysts familiar with SQL to run queries on large volumes of data.  Hive has three main functions: data summarization, query and analysis. Hive provides tools that enable easy data extraction, transformation and loading (ETL).
 
@@ -748,24 +735,14 @@ Now that you are familiar with the Hive User View, let’s create the initial st
 
 1.  Copy-and-paste the the following table DDL into the empty **Worksheet** of the **Query Editor** to define a new table named geolocation_staging:
 
-–Create table geolocation for staging initial load
+**Create table geolocation for staging initial load**
 
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="sql">
-
-<span class="kw1">CREATE <span class="kw1">TABLE geolocation_stage (truckid string, driverid string, event string, latitude <span class="kw1">DOUBLE, longitude <span class="kw1">DOUBLE, city string, state string, velocity <span class="kw1">BIGINT, event_ind <span class="kw1">BIGINT, idling_ind <span class="kw1">BIGINT)<span class="kw1">ROW FORMAT DELIMITED <span class="kw1">FIELDS <span class="kw1">TERMINATED <span class="kw1">BY ','STORED <span class="kw1">AS TEXTFILE;
-
+~~~
+CREATE TABLE geolocation_stage (truckid string, driverid string, event string, latitude DOUBLE, longitude DOUBLE, city string, state string, velocity BIGINT, event_ind BIGINT, idling_ind BIGINT) 
+ROW FORMAT DELIMITED 
+FIELDS TERMINATED BY ',' 
+STORED AS TEXTFILE;
+~~~
 
 2.  Click the green **Execute** button to run the command. If successful, you should see the **Succeeded** status in the **Query Process Results** section:
 
@@ -781,12 +758,14 @@ Now that you are familiar with the Hive User View, let’s create the initial st
 
 5.  Copy-and-paste the following table DDL into your **trucks_stage** worksheet to define a new table named trucks_stage:
 
-–Create table trucks for staging initial load
+**Create table trucks for staging initial load**
 
-
-
-CREATE TABLE trucks_stage(driverid string, truckid string, model string, jun13_miles bigint, jun13_gas bigint, may13_miles bigint, may13_gas bigint, apr13_miles bigint, apr13_gas bigint, mar13_miles bigint, mar13_gas bigint, feb13_miles bigint, feb13_gas bigint, jan13_miles bigint, jan13_gas bigint, dec12_miles bigint, dec12_gas bigint, nov12_miles bigint, nov12_gas bigint, oct12_miles bigint, oct12_gas bigint, sep12_miles bigint, sep12_gas bigint, aug12_miles bigint, aug12_gas bigint, jul12_miles bigint, jul12_gas bigint, jun12_miles bigint, jun12_gas bigint,may12_miles bigint, may12_gas bigint, apr12_miles bigint, apr12_gas bigint, mar12_miles bigint, mar12_gas bigint, feb12_miles bigint, feb12_gas bigint, jan12_miles bigint, jan12_gas bigint, dec11_miles bigint,  dec11_gas bigint, nov11_miles bigint, nov11_gas bigint, oct11_miles bigint, oct11_gas bigint, sep11_miles bigint, sep11_gas bigint, aug11_miles bigint, aug11_gas bigint, jul11_miles bigint, jul11_gas bigint, jun11_miles bigint, jun11_gas bigint, may11_miles bigint, may11_gas bigint, apr11_miles bigint, apr11_gas bigint, mar11_miles bigint, mar11_gas bigint, feb11_miles bigint, feb11_gas bigint, jan11_miles bigint, jan11_gas bigint, dec10_miles bigint, dec10_gas bigint, nov10_miles bigint, nov10_gas bigint, oct10_miles bigint, oct10_gas bigint, sep10_miles bigint, sep10_gas bigint, aug10_miles bigint, aug10_gas bigint, jul10_miles bigint, jul10_gas bigint, jun10_miles bigint, jun10_gas bigint, may10_miles bigint, may10_gas bigint, apr10_miles bigint, apr10_gas bigint, mar10_miles bigint, mar10_gas bigint, feb10_miles bigint, feb10_gas bigint, jan10_miles bigint, jan10_gas bigint, dec09_miles bigint, dec09_gas bigint, nov09_miles bigint, nov09_gas bigint, oct09_miles bigint, oct09_gas bigint, sep09_miles bigint, sep09_gas bigint, aug09_miles bigint, aug09_gas bigint, jul09_miles bigint, jul09_gas bigint, jun09_miles bigint, jun09_gas bigint, may09_miles bigint, may09_gas bigint, apr09_miles bigint, apr09_gas bigint, mar09_miles bigint, mar09_gas bigint, feb09_miles bigint, feb09_gas bigint, jan09_miles bigint, jan09_gas bigint)ROW FORMAT DELIMITED FIELDS TERMINATED BY ','STORED AS TEXTFILE;
-
+~~~
+CREATE TABLE trucks_stage(driverid string, truckid string, model string, jun13_miles bigint, jun13_gas bigint, may13_miles bigint, may13_gas bigint, apr13_miles bigint, apr13_gas bigint, mar13_miles bigint, mar13_gas bigint, feb13_miles bigint, feb13_gas bigint, jan13_miles bigint, jan13_gas bigint, dec12_miles bigint, dec12_gas bigint, nov12_miles bigint, nov12_gas bigint, oct12_miles bigint, oct12_gas bigint, sep12_miles bigint, sep12_gas bigint, aug12_miles bigint, aug12_gas bigint, jul12_miles bigint, jul12_gas bigint, jun12_miles bigint, jun12_gas bigint,may12_miles bigint, may12_gas bigint, apr12_miles bigint, apr12_gas bigint, mar12_miles bigint, mar12_gas bigint, feb12_miles bigint, feb12_gas bigint, jan12_miles bigint, jan12_gas bigint, dec11_miles bigint,  dec11_gas bigint, nov11_miles bigint, nov11_gas bigint, oct11_miles bigint, oct11_gas bigint, sep11_miles bigint, sep11_gas bigint, aug11_miles bigint, aug11_gas bigint, jul11_miles bigint, jul11_gas bigint, jun11_miles bigint, jun11_gas bigint, may11_miles bigint, may11_gas bigint, apr11_miles bigint, apr11_gas bigint, mar11_miles bigint, mar11_gas bigint, feb11_miles bigint, feb11_gas bigint, jan11_miles bigint, jan11_gas bigint, dec10_miles bigint, dec10_gas bigint, nov10_miles bigint, nov10_gas bigint, oct10_miles bigint, oct10_gas bigint, sep10_miles bigint, sep10_gas bigint, aug10_miles bigint, aug10_gas bigint, jul10_miles bigint, jul10_gas bigint, jun10_miles bigint, jun10_gas bigint, may10_miles bigint, may10_gas bigint, apr10_miles bigint, apr10_gas bigint, mar10_miles bigint, mar10_gas bigint, feb10_miles bigint, feb10_gas bigint, jan10_miles bigint, jan10_gas bigint, dec09_miles bigint, dec09_gas bigint, nov09_miles bigint, nov09_gas bigint, oct09_miles bigint, oct09_gas bigint, sep09_miles bigint, sep09_gas bigint, aug09_miles bigint, aug09_gas bigint, jul09_miles bigint, jul09_gas bigint, jun09_miles bigint, jun09_gas bigint, may09_miles bigint, may09_gas bigint, apr09_miles bigint, apr09_gas bigint, mar09_miles bigint, mar09_gas bigint, feb09_miles bigint, feb09_gas bigint, jan09_miles bigint, jan09_gas bigint)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+STORED AS TEXTFILE;
+~~~
 
 6.  Execute the query and make sure it runs successfully.
 
@@ -806,57 +785,21 @@ For details on these clauses consult the [Apache Hive Language Manual](https://c
 
 9\.  Click on the **Load sample data** icon to generate and execute a select SQL statement to query the table for a 100 rows. Notice your two new tables are currently empty.
 
-<table class=" data-table">
+> You can have multiple SQL statements within each editor worksheet, but each statement needs to be separated by a semicolon “;”.
 
-<tbody>
+> If you have multiple statements within a worksheet but you only want to run one of them just highlight the statement you want ran and then click the Execute button.
 
-<tr>
+**A few additional commands to explore tables:**
 
-<td>**NOTE**  ![sign](http://hortonworks.com/wp-content/uploads/2015/07/sign.png)</td>
-
-<td>You can have multiple SQL statements within each editor worksheet, but each statement needs to be separated by a semicolon “;”.   If you have multiple statements within a worksheet but you only want to run one of them just highlight the statement you want ran and then click the Execute button.</td>
-
-</tr>
-
-</tbody>
-
-</table>
-
-<table class=" data-table">
-
-<tbody>
-
-<tr>
-
-<td>**NOTE**  ![sign](http://hortonworks.com/wp-content/uploads/2015/07/sign.png)</td>
-
-<td>A few additional commands to explore tables: show tables;List the tables created in the database by looking up the list of tables from the metadata stored in HCatalogdescribe _table_name_;Provides a list of columns for a particular table (ie describe geolocation_stage;)show create _table_name_;Provides the DDL to recreate a table (ie show create table geolocation_stage;)</td>
-
-</tr>
-
-</tbody>
-
-</table>
+- `show tables;` List the tables created in the database by looking up the list of tables from the metadata stored in HCatalogdescribe _
+-`{table_name}`;Provides a list of columns for a particular table (ie `describe geolocation_stage;`)
+- `show create {table_name};`Provides the DDL to recreate a table (ie `show create table geolocation_stage;`)
 
 10.  By default, when you create a table in Hive, a directory with the same name gets created in the /apps/hive/warehouse folder in HDFS.  Using the Ambari Files User View, navigate to the /apps/hive/warehouse folder. You should see both a geolocation_stage and trucks_stage directory:
 
 ![Lab2_8](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_8.png)
 
-<table class=" data-table">
-
-<tbody>
-
-<tr>
-
-<td>**NOTE**  ![sign](http://hortonworks.com/wp-content/uploads/2015/07/sign.png)</td>
-
-<td>The definition of a Hive table and its associated metadata (i.e., the directory the data is stored in, the file format, what Hive properties are set, etc.) are stored in the Hive metastore, which on the Sandbox is a MySQL database.</td>
-
-</tr>
-
-</tbody>
-
-</table>
+> The definition of a Hive table and its associated metadata (i.e., the directory the data is stored in, the file format, what Hive properties are set, etc.) are stored in the Hive metastore, which on the Sandbox is a MySQL database.
 
 **Step 2.3: Load Data into a Hive table**
 
@@ -882,35 +825,9 @@ Notice two things have changed:
 
 5.  Enter the following SQL command into an empty Worksheet in the Ambari Hive User View:
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+~~~
 LOAD DATA INPATH '/tmp/admin/data/trucks.csv' OVERWRITE INTO TABLE trucks_stage;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+~~~
 
 6.  You should now see data in the trucks_stage table:
 
@@ -926,43 +843,17 @@ The Optimized Row Columnar ([new Apache ORC project](http://hortonworks.com/blog
 
 To use the ORC format, specify ORC as the file format when creating the table:
 
-CREATE TABLE … **STORED AS ORC**
+`CREATE TABLE … **STORED AS ORC**`
 
 In this step, you will create two ORC tables (geolocation and trucks) that are created from the text data in your geolocation_stage and trucks_stage tables.
 
 1.  From the Ambari Hive User View, execute the following table DDL to define a new table named geolocation:
 
-–Create table geolocation as ORC from geolocation_stage table
+**Create table geolocation as ORC from geolocation_stage table**
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+~~~
 CREATE TABLE geolocation STORED AS ORC AS SELECT * FROM geolocation_stage;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+~~~
 
 2.  Refresh the **Database Explorer** and verify you have a table named geolocation in the default database:
 
@@ -980,70 +871,30 @@ describe formatted geolocation;
 
 6.  Execute the following query to define a new ORC table named trucks that contains the data from trucks_stage:
 
-–Create table trucks as ORC from trucks_stage table
+**Create table trucks as ORC from trucks_stage table**
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+~~~
 CREATE TABLE trucks STORED AS ORC AS SELECT * FROM trucks_stage;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+~~~
 
 7.  Verify that the table has been properly created by refreshing the **Database Explorer** and viewing the contents of trucks:
 
 ![Lab2_16](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_16.png)
 
-<table class=" data-table">
 
-<tbody>
+- If you want to try running some of these commands from the Hive Shell follow the following steps from your terminal shell (or putty if using Windows):
 
-<tr>
-
-<td>**NOTE**![sign](http://hortonworks.com/wp-content/uploads/2015/07/sign.png)</td>
-
-<td>If you want to try running some of these commands from the Hive Shell follow the following steps from your terminal shell (ie putty):
-
-1.  ssh root@127.0.0.1 -p 2222  
+1.  `ssh root@127.0.0.1 -p 2222`
     Root pwd is hadoop
-2.  su hive
-3.  hive
+2.  `su hive`
+3.  `hive`
 
 Starts Hive shell and now you can enter commands and SQL
 
-1.  quit;
+1.  `quit;`
 
 Exits out of the Hive shell.
 
-</td>
-
-</tr>
-
-</tbody>
-
-</table>
 
 #### **Step 2.5: Review Hive Settings**
 
@@ -1072,22 +923,10 @@ In the above screenshot we can see:
 
 This shows the new HDP 2.3 Ambari Smart Configurations, which simplifies setting configurations
 
-<table>
-
-<tbody class=" data-table">
-
-<tr>
-
-<td>**NOTE**![sign](http://hortonworks.com/wp-content/uploads/2015/07/sign.png)  
-**New in HDP 2.3</td>
-
-<td>Hadoop is configured by a collection of XML files.   In early versions of Hadoop operators would need to do XML editing to change settings.  There was no default versioning.  Early Ambari interfaces made it easier to change values by showing the settings page with dialog boxes for the various settings and allowing you to edit them.  However, you needed to know what needed to go into the field and understand the range of values.   Now with Smart Configurations you can toggle binary features and use the slider bars with settings that have ranges.</td>
-
-</tr>
-
-</tbody>
-
-</table>
+- Hadoop is configured by a collection of XML files.
+- In early versions of Hadoop operators would need to do XML editing to change settings.  There was no default versioning.
+- Early Ambari interfaces made it easier to change values by showing the settings page with dialog boxes for the various settings and allowing you to edit them.  However, you needed to know what needed to go into the field and understand the range of values.
+- Now with Smart Configurations you can toggle binary features and use the slider bars with settings that have ranges.
 
 By default the key configurations are displayed on the first page.  If the setting you are looking for is not on this page you can find additional settings in the **Advanced** tab:
 
@@ -1100,30 +939,14 @@ For example, what if we wanted to improve SQL performance by using the new Hive 
 
 As you can see from the green circle above the hive.vectorized.execution.enabled is turned on already.
 
-<table class=" data-table" style="height: 123px;" width="620">
+**Some key resources to learn more about vectorization and some of the key settings in Hive tuning:**
 
-<tbody>
-
-<tr>
-
-<td>**NOTE**![sign](http://hortonworks.com/wp-content/uploads/2015/07/sign.png)</td>
-
-<td>Here are some key resources to learn more about vectorization and some of the key settings in Hive tuning:
-
-*   Apache Hive docs on [Vectorized Query Execution](https://cwiki.apache.org/confluence/display/Hive/Vectorized+Query+Execution)
-*   [HDP Docs Vectorization docs](http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.0.9.0/bk_dataintegration/content/ch_using-hive-1a.html)
-*   [Hive Blogs](http://hortonworks.com/blog/category/hive/)
-    *   [5 Ways to Make Your Hive Queries Run Faster](http://hortonworks.com/blog/5-ways-make-hive-queries-run-faster/)
-    *   [Interactive Query for Hadoop with Apache Hive on Apache Tez](http://hortonworks.com/hadoop-tutorial/supercharging-interactive-queries-hive-tez/)
-    *   [Evaluating Hive with Tez as a Fast Query Engine](http://hortonworks.com/blog/evaluating-hive-with-tez-as-a-fast-query-engine/)
-
-</td>
-
-</tr>
-
-</tbody>
-
-</table>
+* Apache Hive docs on [Vectorized Query Execution](https://cwiki.apache.org/confluence/display/Hive/Vectorized+Query+Execution)
+* [HDP Docs Vectorization docs](http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.0.9.0/bk_dataintegration/content/ch_using-hive-1a.html)
+* [Hive Blogs](http://hortonworks.com/blog/category/hive/)
+* [5 Ways to Make Your Hive Queries Run Faster](http://hortonworks.com/blog/5-ways-make-hive-queries-run-faster/)
+* [Interactive Query for Hadoop with Apache Hive on Apache Tez](http://hortonworks.com/hadoop-tutorial/supercharging-interactive-queries-hive-tez/)
+* [Evaluating Hive with Tez as a Fast Query Engine](http://hortonworks.com/blog/evaluating-hive-with-tez-as-a-fast-query-engine/)
 
 #### **Step 2.6: Analyze the Trucks Data**
 
@@ -1134,39 +957,14 @@ Let’s get started with the first transformation.   We want to calculate the 
 
 1.  Using the Ambari Hive User View, execute the following query:
 
-— Create table truck_mileage from existing trucking data
+**Create table truck_mileage from existing trucking data**
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-CREATE TABLE truck_mileage STORED AS ORC AS SELECT truckid, driverid, rdate, miles, gas, miles / gas mpg FROM trucks LATERAL VIEW stack( <span class="nu0">54, 'jun13',jun13_miles,jun13_gas,'may13',may13_miles,may13_gas,'apr13',apr13_miles,apr13_gas,'mar13',mar13_miles,mar13_gas,'feb13',feb13_miles,feb13_gas,'jan13',jan13_miles,jan13_gas,'dec12',dec12_miles,dec12_gas,'nov12',nov12_miles,nov12_gas,'oct12',oct12_miles,oct12_gas,'sep12',sep12_miles,sep12_gas,'aug12',aug12_miles,aug12_gas,'jul12',jul12_miles,jul12_gas,'jun12',jun12_miles,jun12_gas,'may12',may12_miles,may12_gas,'apr12',apr12_miles,apr12_gas,'mar12',mar12_miles,mar12_gas,'feb12',feb12_miles,feb12_gas,'jan12',jan12_miles,jan12_gas,'dec11',dec11_miles,dec11_gas,'nov11',nov11_miles,nov11_gas,'oct11',oct11_miles,oct11_gas,'sep11',sep11_miles,sep11_gas,'aug11',aug11_miles,aug11_gas,'jul11',jul11_miles,jul11_gas,'jun11',jun11_miles,jun11_gas,'may11',may11_miles,may11_gas,'apr11',apr11_miles,apr11_gas,'mar11',mar11_miles,mar11_gas,'feb11',feb11_miles,feb11_gas,'jan11',jan11_miles,jan11_gas,'dec10',dec10_miles,dec10_gas,'nov10',nov10_miles,nov10_gas,'oct10',oct10_miles,oct10_gas,'sep10',sep10_miles,sep10_gas,'aug10',aug10_miles,aug10_gas,'jul10',jul10_miles,jul10_gas,'jun10',jun10_miles,jun10_gas,'may10',may10_miles,may10_gas,'apr10',apr10_miles,apr10_gas,'mar10',mar10_miles,mar10_gas,'feb10',feb10_miles,feb10_gas,'jan10',jan10_miles,jan10_gas,'dec09',dec09_miles,dec09_gas,'nov09',nov09_miles,nov09_gas,'oct09',oct09_miles,oct09_gas,'sep09',sep09_miles,sep09_gas,'aug09',aug09_miles,aug09_gas,'jul09',jul09_miles,jul09_gas,'jun09',jun09_miles,jun09_gas,'may09',may09_miles,may09_gas,'apr09',apr09_miles,apr09_gas,'mar09',mar09_miles,mar09_gas,'feb09',feb09_miles,feb09_gas,'jan09',jan09_miles,jan09_gas )dummyalias AS rdate, miles, gas;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+~~~
+CREATE TABLE truck_mileage STORED AS ORC AS SELECT truckid, driverid, rdate, miles, gas, miles / gas mpg FROM trucks LATERAL VIEW stack(54, 'jun13',jun13_miles,jun13_gas,'may13',may13_miles,may13_gas,'apr13',apr13_miles,apr13_gas,'mar13',mar13_miles,mar13_gas,'feb13',feb13_miles,feb13_gas,'jan13',jan13_miles,jan13_gas,'dec12',dec12_miles,dec12_gas,'nov12',nov12_miles,nov12_gas,'oct12',oct12_miles,oct12_gas,'sep12',sep12_miles,sep12_gas,'aug12',aug12_miles,aug12_gas,'jul12',jul12_miles,jul12_gas,'jun12',jun12_miles,jun12_gas,'may12',may12_miles,may12_gas,'apr12',apr12_miles,apr12_gas,'mar12',mar12_miles,mar12_gas,'feb12',feb12_miles,feb12_gas,'jan12',jan12_miles,jan12_gas,'dec11',dec11_miles,dec11_gas,'nov11',nov11_miles,nov11_gas,'oct11',oct11_miles,oct11_gas,'sep11',sep11_miles,sep11_gas,'aug11',aug11_miles,aug11_gas,'jul11',jul11_miles,jul11_gas,'jun11',jun11_miles,jun11_gas,'may11',may11_miles,may11_gas,'apr11',apr11_miles,apr11_gas,'mar11',mar11_miles,mar11_gas,'feb11',feb11_miles,feb11_gas,'jan11',jan11_miles,jan11_gas,'dec10',dec10_miles,dec10_gas,'nov10',nov10_miles,nov10_gas,'oct10',oct10_miles,oct10_gas,'sep10',sep10_miles,sep10_gas,'aug10',aug10_miles,aug10_gas,'jul10',jul10_miles,jul10_gas,'jun10',jun10_miles,jun10_gas,'may10',may10_miles,may10_gas,'apr10',apr10_miles,apr10_gas,'mar10',mar10_miles,mar10_gas,'feb10',feb10_miles,feb10_gas,'jan10',jan10_miles,jan10_gas,'dec09',dec09_miles,dec09_gas,'nov09',nov09_miles,nov09_gas,'oct09',oct09_miles,oct09_gas,'sep09',sep09_miles,sep09_gas,'aug09',aug09_miles,aug09_gas,'jul09',jul09_miles,jul09_gas,'jun09',jun09_miles,jun09_gas,'may09',may09_miles,may09_gas,'apr09',apr09_miles,apr09_gas,'mar09',mar09_miles,mar09_gas,'feb09',feb09_miles,feb09_gas,'jan09',jan09_miles,jan09_gas ) dummyalias AS rdate, miles, gas;
+~~~
 
 ![Lab2_22](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_22.png)  
+
 2.  To view the data generated by the script, click **Load Sample Data** icon in the Database Explorer next to truck_mileage. After clicking the next button once, you should see a table that list each trip made by a truck and driver:
 
 ![Lab2_23](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_23.png)
@@ -1177,35 +975,9 @@ CREATE TABLE truck_mileage STORED AS ORC AS SELECT truckid, driverid, rdate, mil
 
 4.  Start typing in the SELECT SQL command, but only enter the first two letters:
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+~~~
 SE
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+~~~
 
 5.  Press **Ctrl+space** to view the following content assist pop-up dialog window:
 
@@ -1215,35 +987,9 @@ Notice content assist shows you some options that start with an “SE”.
 
 6.  Type in the following query, using **Ctrl+space** throughout your typing so that you can get an idea of what content assist can do and how it works:
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+~~~
 SELECT truckid, avg(mpg) avgmpg FROM truck_mileage GROUP BY truckid;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+~~~
 
 ![Lab2_28](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_28.png)  
 
@@ -1259,7 +1005,7 @@ SELECT truckid, avg(mpg) avgmpg FROM truck_mileage GROUP BY truckid;
 
 ![Lab2_27](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_27.png)
 
-11. Verify this added the EXPLAIN command at the beginning of the query:
+11. Verify this added the `EXPLAIN` command at the beginning of the query:
 
 ![Lab2_25](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_25.png)
 
@@ -1293,15 +1039,16 @@ Select the first DAG as it represents the last job that was executed.
 
 19.  To persist these results into a table, This is a fairly common pattern in Hive and it is called [Create Table As Select](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL#LanguageManualDDL-CreateTableAsSelect(CTAS)) (CTAS ).  Paste the following script into a new Worksheet, then click the **Execute** button:
 
-— Create table truck avg_mileage from existing trucks_mileage data
+**Create table truck avg_mileage from existing trucks_mileage data**
 
+~~~
 CREATE TABLE avg_mileage
 STORED AS ORC
 AS
 SELECT truckid, avg(mpg) avgmpg
 FROM truck_mileage
 GROUP BY truckid;
-
+~~~
 
 20.  To view the data generated by the script, click **Load sample data** icon in the Database Explorer next to avg_mileage. You see our table is now a list of each trip made by a truck.
 
@@ -1316,22 +1063,22 @@ GROUP BY truckid;
 
 In this tutorial you will be introduced to Apache Pig. In the earlier section of lab you learned how to load data into HDFS and then manipulate it using Hive. We are using the Truck sensor data to better understand  risk associated with every driver. This section will teach you to compute risk using Apache Pig.
 
-**Prerequisite:**
+**Prerequisites:**
 
 The tutorial is a part of series of hands on tutorial to get you started on HDP using Hortonworks sandbox. Please ensure you complete the prerequisites before proceeding with this tutorial.
 
-*   Step-0 (Hortonworks sandbox set up)
-*   Lab1: Loading sensor data into HDFS
-*   Lab2: Data Manipulation with Apache Hive
+*   Step 0 (Hortonworks sandbox set up)
+*   Lab 1: Loading sensor data into HDFS
+*   Lab 2: Data Manipulation with Apache Hive
 *   Allow yourself around one hour to complete this tutorial.
 
 **Outline:**
 
 *   Pig basics
-*   Step-3.1: Define Table schema
-*   Step-3.2: Create Pig Script
-*   Step-3.3: Quick Recap
-*   Step-3.4: Execute Pig Script on Tez
+*   Step 3.1: Define Table schema
+*   Step 3.2: Create Pig Script
+*   Step 3.3: Quick Recap
+*   Step 3.4: Execute Pig Script on Tez
 *   Suggested readings
 
 **Pig Basics:**
@@ -1354,17 +1101,16 @@ If we look at the truck_mileage table, we we have the driverid and the number of
 
 1.  We will start by creating a table named driver_mileage that is created from a query of the columns we want from truck_mileage. The following query groups the records by driverid and sums the miles in the select statement. Execute this query in a new Worksheet:
 
-— Create table DriverMileage from existing truck_mileage data
+**Create table DriverMileage from existing truck_mileage data**
 
-
+~~~
 CREATE TABLE DriverMileage
 STORED AS ORC
 AS
 SELECT driverid, sum(miles) totmiles
 FROM truck_mileage
 GROUP BY driverid;
-
-
+~~~
 
 2.  View the data generated by the script by clicking the **Load sample data** icon in the Database Explorer next to drivermileage. The results should look like:
 
@@ -1372,37 +1118,12 @@ GROUP BY driverid;
 
 3.  Next, you will use Pig to compute the risk factor of each driver. Before we can run the Pig code, one of the requirements for the HCatStorer() class is that the table must already exist in Hive. The Pig code expects the following structure for a table named riskfactor. Execute the following DDL command:
 
-— Create table avg_mileage from existing trucks_mileage data
+**Create table avg_mileage from existing trucks_mileage data**
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-CREATE TABLE riskfactor (driverid string,events bigint,totmiles bigint,riskfactor <span class="kw2">float)STORED AS ORC;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+~~~
+CREATE TABLE riskfactor (driverid string,events bigint,totmiles bigint,riskfactor float)
+STORED AS ORC;
+~~~
 
 4.  Verify the riskfactor table was created successfully. It will be empty now, but you will populate it from a Pig script. You are now ready to compute the risk factor using Pig. Let’s take a look at Pig and how to execute Pig scripts from within Ambari.
 
@@ -1410,7 +1131,7 @@ CREATE TABLE riskfactor (driverid string,events bigint,totmiles bigint,riskfacto
 
 In this tutorial we create and run a Pig script. We will use the Ambari Pig User View. Let’s get started…
 
-****    a.  Log in to Ambari Pig User Views****
+#### 1. Log in to Ambari Pig User Views
 
 To get to the Ambari Pig User View, click on the User Views icon at top right and select **Pig**:
 
@@ -1425,7 +1146,7 @@ The following screenshot shows and describes the various components and features
 
 ![Lab3_5](http://hortonworks.com/wp-content/uploads/2015/07/Lab3_5.png)
 
-#### **   b. Create a New Script**
+#### 2. Create a New Script
 
 Let’s enter a Pig script. Click the **New Script** button in the upper-right corner of the view:
 
@@ -1435,7 +1156,7 @@ Name the script **riskfactor.pig**, then click the **Create** button:
 
 ![Lab3_7](http://hortonworks.com/wp-content/uploads/2015/07/Lab3_7.png)
 
-#### **    c. Load Data in Pig using Hcatalog**
+#### 3. Load Data in Pig using Hcatalog
 
 We are going to use HCatalog to load data into Pig. HCatalog allows us to share schema across tools and users within our Hadoop environment. It also allows us to factor out schema and location information from our queries and scripts and centralize them in a common repository. Since it is in HCatalog we can use the HCatLoader() function. Pig makes it easy by allowing us to give the table a name or alias and not have to worry about allocating space and defining the structure. We just have to worry about how we are processing the table.
 
@@ -1444,39 +1165,14 @@ We are going to use HCatalog to load data into Pig. HCatalog allows us to share 
 *   Remember to add the **a =** before the template. This saves the results into a. Note the **‘=’** has to have a space before and after it.
 *   Our completed line of code will look like:
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-a = LOAD 'geolocation' using org.<span class="me1">apache.<span class="me1">hive.<span class="me1">hcatalog.<span class="me1">pig.<span class="me1">HCatLoader();
-
-
-
-
-
-
-
-
-
-
-
-
-
+~~~
+a = LOAD 'geolocation' using org.apache.hive.hcatalog.pig.HCatLoader();
+~~~
 
 
 Copy-and-paste the above Pig code into the riskfactor.pig window.
 
-**    d.  Filter your data set**
+#### 4. Filter your data set
 
 The next step is to select a subset of the records so that we just have the records of drivers for which the event is not normal. To do this in Pig we use the Filter operator. We tell Pig to Filter our table and keep all records where event !=“normal” and store this in b. With this one simple statement Pig will look at each record in the table and filter out all the ones that do not meet our criteria.
 
@@ -1485,39 +1181,13 @@ The next step is to select a subset of the records so that we just have the reco
 *   Our **%COND%** is “**event !=’normal’;** ” (note: single quotes are needed around normal and don’t forget the trailing semi-colon)
 *   Complete line of code will look like:
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+~~~
 b = filter a by event != 'normal';
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+~~~
 
 Copy-and-paste the above Pig code into the riskfactor.pig window.
 
-**    e.  Iterate your data set**
+#### 5. Iterate your data set
 
 Now that we have the right set of records we can iterate through them. We use the “foreach” operator on the grouped data to iterate through all the records. We would also like to know how many times a driver has a non normal event associated with him. to achieve this we add ‘1’ to every row in the data set.
 
@@ -1525,39 +1195,13 @@ Now that we have the right set of records we can iterate through them. We use th
 *   Our **%DATA%** is **b** and the second **%NEW_DATA%** is “**driverid,event,(int) ‘1’ as occurance;**”
 *   Complete line of code will look like:
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-c = foreach b generate driverid, event, (<span class="kw2">int) '1' as occurance;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+~~~
+c = foreach b generate driverid, event, (int) '1' as occurance;
+~~~
 
 Copy-and-paste the above Pig code into the riskfactor.pig window:
 
-**    f.  Calculate the total non normal events for each driver**
+#### 6. Calculate the total non normal events for each driver
 
 The group statement is important because it groups the records by one or more relations. In this case we would like to group by driver id and iterate over each row again to sum the non normal events.
 
@@ -1565,178 +1209,49 @@ The group statement is important because it groups the records by one or more re
 *   First **%VAR%** takes **“c”** and second **%VAR%** takes “**driverid;**”
 *   Complete line of code will look like:
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+~~~
 d = group c by driverid;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+~~~
 
 Copy-and-paste the above Pig code into the riskfactor.pig window.
 
 *   Next use Foreach statement again to add the occurance.
 
+~~~
+e = foreach d generate group as driverid, SUM(c.occurance) as t_occ;
+~~~
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-e = foreach d generate group as driverid, SUM(c.<span class="me1">occurance) as t_occ;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-**    g.  Load drivermileage table and perform a join operation**
+#### 7. Load drivermileage table and perform a join operation
 
 In this section we will load drivermileage table into Pig using Hcatlog and perform a join operation on driverid. The resulting data set will give us total miles and total non normal events for a particular driver.
 
 *   Load drivermileage using HcatLoader()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-g = LOAD 'drivermileage' using org.<span class="me1">apache.<span class="me1">hive.<span class="me1">hcatalog.<span class="me1">pig.<span class="me1">HCatLoader();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+~~~
+g = LOAD 'drivermileage' using org.apache.hive.hcatalog.pig.HCatLoader();
+~~~
 
 *   **Pig helper ->Relational Operators->JOIN %VAR% BY** template will get us the code
 *   Replace **%VAR%** by ‘**e**’ and after **BY** put ‘**driverid, g by driverid;**’
 *   Complete line of code will look like:
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+~~~
 h = join e by driverid, g by driverid;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+~~~
 
 Copy-and-paste the above two Pig codes into the riskfactor.pig window.
 
-**    h.  Compute Driver Risk factor**
+#### 8. Compute Driver Risk factor
 
 In this section we will associate a driver risk factor with every driver. Driver risk factor will be calculated by dividing total miles travelled by non normal event occurrences.
 
 *   We will use Foreach statement again to compute driver risk factor for each driver.
 *   Use the following code and paste it into your Pig script.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-final_data = foreach h generate $0 as driverid, $1 as events, $3 as totmiles, (<span class="kw2">float) $3/$1 as riskfactor;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+~~~
+final_data = foreach h generate $0 as driverid, $1 as events, $3 as totmiles, (float) $3/$1 as riskfactor;
+~~~
 
 *   As a final step store the data into a table using Hcatalog.
 
@@ -1744,45 +1259,19 @@ store final_data into ‘riskfactor’ using
 
 Here is the final code and what it will look like once you paste it into the editor.
 
-— Geolocation has data stored in ORC format
+**Geolocation has data stored in ORC format**
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-a = LOAD 'geolocation' using org.<span class="me1">apache.<span class="me1">hive.<span class="me1">hcatalog.<span class="me1">pig.<span class="me1">HCatLoader();
+~~~~
+a = LOAD 'geolocation' using org.apache.hive.hcatalog.pig.HCatLoader();
 b = filter a by event != 'normal';
-c = foreach b generate driverid, event, (<span class="kw2">int) '1' as occurance;
+c = foreach b generate driverid, event, (int) '1' as occurance;
 d = group c by driverid;
-e = foreach d generate group as driverid, SUM(c.<span class="me1">occurance) as t_occ;
-g = LOAD 'drivermileage' using org.<span class="me1">apache.<span class="me1">hive.<span class="me1">hcatalog.<span class="me1">pig.<span class="me1">HCatLoader();
+e = foreach d generate group as driverid, SUM(c.occurance) as t_occ;
+g = LOAD 'drivermileage' using org.apache.hive.hcatalog.pig.HCatLoader();
 h = join e by driverid, g by driverid;
-final_data = foreach h generate $0 as driverid, $1 as events, $3 as totmiles, (<span class="kw2">float) $3/$1 as riskfactor;
-store final_data into 'riskfactor' using org.<span class="me1">apache.<span class="me1">hive.<span class="me1">hcatalog.<span class="me1">pig.<span class="me1">HCatStorer();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+final_data = foreach h generate $0 as driverid, $1 as events, $3 as totmiles, (float) $3/$1 as riskfactor;
+store final_data into 'riskfactor' using org.apache.hive.hcatalog.pig.HCatStorer();
+~~~
 
 ![Lab3_8](http://hortonworks.com/wp-content/uploads/2015/07/Lab3_8.png)
 
@@ -1942,8 +1431,8 @@ For improved Hive integration, HDP 2.3 offers [ORC file](http://hortonworks.com/
 
 
 
-<span class="kw1">import org.<span class="me1">apache.<span class="me1">spark.<span class="me1">sql.<span class="me1">hive.<span class="me1">orc._
-<span class="kw1">import org.<span class="me1">apache.<span class="me1">spark.<span class="me1">sql._
+import org.apache.spark.sql.hive.orc._
+import org.apache.spark.sql._
 
 
 
@@ -1977,7 +1466,7 @@ For improved Hive integration, HDP 2.3 offers [ORC file](http://hortonworks.com/
 
 
 
-<span class="kw1">val hiveContext = <span class="kw1">new org.<span class="me1">apache.<span class="me1">spark.<span class="me1">sql.<span class="me1">hive.<span class="me1">HiveContext(sc)
+val hiveContext = new org.apache.spark.sql.hive.HiveContext(sc)
 
 
 
@@ -2039,7 +1528,7 @@ There are three methods for creating a RDD:
 
 
 
-hiveContext.<span class="me1">sql("show tables").<span class="me1">collect.<span class="me1">foreach(println)
+hiveContext.sql("show tables").collect.foreach(println)
 
 
 
@@ -2077,7 +1566,7 @@ We will do a simple select query to fetch data from geolocation and drivermileag
 
 
 
-<span class="kw1">val geolocation_temp1 = hiveContext.<span class="me1">sql("select * from geolocation")
+val geolocation_temp1 = hiveContext.sql("select * from geolocation")
 
 
 
@@ -2109,7 +1598,7 @@ We will do a simple select query to fetch data from geolocation and drivermileag
 
 
 
-<span class="kw1">val drivermileage_temp1 = hiveContext.<span class="me1">sql("select * from drivermileage")
+val drivermileage_temp1 = hiveContext.sql("select * from drivermileage")
 
 
 
@@ -2143,8 +1632,8 @@ Make sure that the RDD`s carry the exact data. You can verify through following 
 
 
 
-geolocation_temp1.<span class="me1">take(<span class="nu0">10) 
-drivermileage_temp1.<span class="me1">take(<span class="nu0">10)
+geolocation_temp1.take(<span class="nu0">10) 
+drivermileage_temp1.take(<span class="nu0">10)
 
 
 
@@ -2180,8 +1669,8 @@ Now let’s give this RDD a name, so that we can use it in Spark SQL statements
 
 
 
-geolocation_temp1.<span class="me1">registerTempTable("geolocation_temp1")
-drivermileage_temp1.<span class="me1">registerTempTable("drivermileage_temp1")
+geolocation_temp1.registerTempTable("geolocation_temp1")
+drivermileage_temp1.registerTempTable("drivermileage_temp1")
 
 
 
@@ -2226,7 +1715,7 @@ Now that our schema’s RDD with data has a name, we can use Spark SQL commands 
 
 
 
-<span class="kw1">val geolocation_temp2= hiveContext.<span class="me1">sql("SELECT driverid, count(driverid) occurance from             geolocation_temp1  where event!='normal' group by driverid")
+val geolocation_temp2= hiveContext.sql("SELECT driverid, count(driverid) occurance from             geolocation_temp1  where event!='normal' group by driverid")
 
 
 
@@ -2276,7 +1765,7 @@ Now that our schema’s RDD with data has a name, we can use Spark SQL commands 
 
 
 
-geolocation_temp2.<span class="me1">registerTempTable("geolocation_temp2")
+geolocation_temp2.registerTempTable("geolocation_temp2")
 
 
 
@@ -2308,7 +1797,7 @@ geolocation_temp2.<span class="me1">registerTempTable("geolocation_temp2")
 
 
 
-geolocation_temp2.<span class="me1">collect.<span class="me1">foreach(println)
+geolocation_temp2.collect.foreach(println)
 
 
 
@@ -2346,7 +1835,7 @@ In this section we will perform a join operation geolocation_temp2 table has det
 
 
 
-<span class="kw1">val joined= hiveContext.<span class="me1">sql("select a.driverid,a.occurance,b.totmiles from geolocation_temp2 a,drivermileage_temp1 b where a.driverid=b.driverid")
+val joined= hiveContext.sql("select a.driverid,a.occurance,b.totmiles from geolocation_temp2 a,drivermileage_temp1 b where a.driverid=b.driverid")
 
 
 
@@ -2380,7 +1869,7 @@ In this section we will perform a join operation geolocation_temp2 table has det
 
 
 
-joined.<span class="me1">registerTempTable("joined")
+joined.registerTempTable("joined")
 
 
 
@@ -2412,7 +1901,7 @@ joined.<span class="me1">registerTempTable("joined")
 
 
 
-joined.<span class="me1">collect.<span class="me1">foreach(println)
+joined.collect.foreach(println)
 
 
 
@@ -2448,7 +1937,7 @@ In this section we will associate a driver risk factor with every driver. Driver
 
 
 
-<span class="kw1">val risk_factor_spark=hiveContext.<span class="me1">sql("select driverid, totmiles,occurance, totmiles/occurance riskfactor from joined")
+val risk_factor_spark=hiveContext.sql("select driverid, totmiles,occurance, totmiles/occurance riskfactor from joined")
 
 
 
@@ -2482,7 +1971,7 @@ In this section we will associate a driver risk factor with every driver. Driver
 
 
 
-risk_factor_spark.<span class="me1">registerTempTable("risk_factor_spark")
+risk_factor_spark.registerTempTable("risk_factor_spark")
 
 
 
@@ -2514,7 +2003,7 @@ risk_factor_spark.<span class="me1">registerTempTable("risk_factor_spark")
 
 
 
-risk_factor_spark.<span class="me1">collect.<span class="me1">foreach(println)
+risk_factor_spark.collect.foreach(println)
 
 
 
@@ -2556,7 +2045,7 @@ Create a table and store it as ORC. Specifying as orc at the end of the SQL stat
 
 
 
-hiveContext.<span class="me1">sql("create table finalresults( driverid String, occurance bigint,totmiles bigint,riskfactor double) stored as orc").<span class="me1">toDF()
+hiveContext.sql("create table finalresults( driverid String, occurance bigint,totmiles bigint,riskfactor double) stored as orc").toDF()
 
 
 
@@ -2590,7 +2079,7 @@ Before we load the data into hive table that we created above, we will have to c
 
 
 
-risk_factor_spark.<span class="me1">saveAsOrcFile("risk_factor_spark")
+risk_factor_spark.saveAsOrcFile("risk_factor_spark")
 
 
 
@@ -2622,7 +2111,7 @@ Load the data into Hive table using load data command.
 
 
 
-hiveContext.<span class="me1">sql("load data inpath 'risk_factor_spark' into table finalresults")
+hiveContext.sql("load data inpath 'risk_factor_spark' into table finalresults")
 
 
 
@@ -2641,7 +2130,7 @@ hiveContext.<span class="me1">sql("load data inpath 'risk_factor_spark' into tab
 *   Execute a select query to verify your table has been successfully stored.You can go to Ambari Hive user view to check whether the Hive table you created has the data populated in it.
 
 
-hiveContext.<span class="me1">sql("select * from finalresults")
+hiveContext.sql("select * from finalresults")
 
 
 ## Lab 5: Reporting
