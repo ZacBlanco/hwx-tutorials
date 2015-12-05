@@ -654,6 +654,10 @@ A single physical machine gets saturated with its storage capacity as the data g
 
 You can also perform the following operations on a file by right clicking on the file: **Download**, **Move**, **Permissions**, **Rename** and **Delete**.
 
+** IMPORTANT **
+
+- Right click on the file `trucks.csv`. Click **Permissions**. Make sure that the background of all the **write** boxes are checked (blue).
+
 ![Lab2_5](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_5.png)
 
 
@@ -781,9 +785,9 @@ For details on these clauses consult the [Apache Hive Language Manual](https://c
 
 ![Lab2_7](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_7.png)
 
-8\.  Click on the trucks_stage table name to view its schema.
+8.  Click on the trucks_stage table name to view its schema.
 
-9\.  Click on the **Load sample data** icon to generate and execute a select SQL statement to query the table for a 100 rows. Notice your two new tables are currently empty.
+9.  Click on the **Load sample data** icon to generate and execute a select SQL statement to query the table for a 100 rows. Notice your two new tables are currently empty.
 
 > You can have multiple SQL statements within each editor worksheet, but each statement needs to be separated by a semicolon “;”.
 
