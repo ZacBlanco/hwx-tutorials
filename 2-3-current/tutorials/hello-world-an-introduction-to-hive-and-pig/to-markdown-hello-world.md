@@ -21,13 +21,13 @@ Here is the video of [Analyzing Geolocation Data](http://youtu.be/n8fdYHoEEAM) t
     *   Microsoft Excel 2013 Professional Plus is required for the Windows 7 or later installation to be able to construct the maps.
 
 
-> In this tutorial, the Hortonworks Sandbox is installed on an Oracle VirtualBox virtual machine (VM) – your screens may be different.
+- In this tutorial, the Hortonworks Sandbox is installed on an Oracle VirtualBox virtual machine (VM) – your screens may be different.
 
-> Install the ODBC driver that matches the version of Excel you are using (32-bit or 64-bit).
+- Install the ODBC driver that matches the version of Excel you are using (32-bit or 64-bit).
 
-> We will use the Power View feature in Microsoft Excel 2013 to visualize the sensor data. Power View is currently only available in Microsoft Office Professional Plus and Microsoft Office 365 Professional Plus.
+- We will use the Power View feature in Microsoft Excel 2013 to visualize the sensor data. Power View is currently only available in Microsoft Office Professional Plus and Microsoft Office 365 Professional Plus.
 
-> Note, other versions of Excel will work, but the visualizations will be limited to charts or graphs. You can also use other visualization tool.
+- Note, other versions of Excel will work, but the visualizations will be limited to charts or graphs. You can also use other visualization tool.
 
 **Tutorial Overview**
 
@@ -104,7 +104,7 @@ In this module you will learn about Apache Hadoop and what makes it scale to lar
 
 Apache Hadoop® is an open source framework for distributed storage and processing of large sets of data on commodity hardware. Hadoop enables businesses to quickly gain insight from massive amounts of structured and unstructured data. Numerous Apache Software Foundation projects make up the services required by an enterprise to deploy, integrate and work with Hadoop.
 
-> Hortonworks Blog : [Understanding Hadoop 2.0](http://hortonworks.com/blog/understanding-hadoop-2-0/)
+- Hortonworks Blog : [Understanding Hadoop 2.0](http://hortonworks.com/blog/understanding-hadoop-2-0/)
 
 
 
@@ -208,7 +208,7 @@ The NameNode does not directly send requests to DataNodes. It sends instructions
 
 ![HDFS_2](http://hortonworks.com/wp-content/uploads/2015/07/HDFS_2.png)
 
-> For more details on HDFS: [http://hortonworks.com/hadoop/hdfs/](http://hortonworks.com/hadoop/hdfs/)
+- For more details on HDFS: [http://hortonworks.com/hadoop/hdfs/](http://hortonworks.com/hadoop/hdfs/)
 
 With [next generation HDFS data architecture](http://hortonworks.com/blog/hdfs-2-0-next-generation-architecture/) that comes with HDP 2.0, HDFS has evolved to provide [automated failure](http://hortonworks.com/blog/namenode-high-availability-in-hdp-2-0/) with a hot standby, with full stack resiliency. Please spare some time to go through this video for more clarity on HDFS.
 
@@ -791,9 +791,9 @@ For details on these clauses consult the [Apache Hive Language Manual](https://c
 
 9.  Click on the **Load sample data** icon to generate and execute a select SQL statement to query the table for a 100 rows. Notice your two new tables are currently empty.
 
-> You can have multiple SQL statements within each editor worksheet, but each statement needs to be separated by a semicolon “;”.
+- You can have multiple SQL statements within each editor worksheet, but each statement needs to be separated by a semicolon “;”.
 
-> If you have multiple statements within a worksheet but you only want to run one of them just highlight the statement you want ran and then click the Execute button.
+- If you have multiple statements within a worksheet but you only want to run one of them just highlight the statement you want ran and then click the Execute button.
 
 **A few additional commands to explore tables:**
 
@@ -805,7 +805,7 @@ For details on these clauses consult the [Apache Hive Language Manual](https://c
 
 ![Lab2_8](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_8.png)
 
-> The definition of a Hive table and its associated metadata (i.e., the directory the data is stored in, the file format, what Hive properties are set, etc.) are stored in the Hive metastore, which on the Sandbox is a MySQL database.
+- The definition of a Hive table and its associated metadata (i.e., the directory the data is stored in, the file format, what Hive properties are set, etc.) are stored in the Hive metastore, which on the Sandbox is a MySQL database.
 
 **Step 2.3: Load Data into a Hive table**
 
@@ -1296,7 +1296,7 @@ Before we execute the code, let’s review the code again:
 
 You need to configure the Pig Editor to use HCatalog so that the Pig script can load the proper libraries. In the Pig arguments text box, enter –**useHCatalog**   and click the **Add** button:
 
-> Note that this argument is **case sensistive**. It should be typed exactly "-useHCatalog".
+**Note** that this argument is **case sensistive**. It should be typed exactly "-useHCatalog".
 
 ![Lab3_9](http://hortonworks.com/wp-content/uploads/2015/07/Lab3_9.png)
 
@@ -1327,7 +1327,7 @@ At this point we now have our truck miles per gallon table and our risk factor t
 
 ### **Use Apache Spark to compute Driver Risk Factor**
 
-> Note that this step is optional and produces the same result as in Lab 3. You may continue on to the next lab if you wish.
+**Note** that this step is optional and produces the same result as in Lab 3. You may continue on to the next lab if you wish.
 
 **Introduction:**
 
@@ -1416,7 +1416,7 @@ val hiveContext = new org.apache.spark.sql.hive.HiveContext(sc)
 ![Lab4_6](http://hortonworks.com/wp-content/uploads/2015/07/Lab4_6.png)
 
 
-> `sc` stands for Spark Context. SparkContext is the main entry point to everything Spark. It can be used to create RDDs and shared variables on the cluster. When you start up the Spark Shell, the SparkContext is automatically initialized for you with the variable `sc`.
+- `sc` stands for **Spark Context**. SparkContext is the main entry point to everything Spark. It can be used to create RDDs and shared variables on the cluster. When you start up the Spark Shell, the SparkContext is automatically initialized for you with the variable `sc`.
 
 **Step 4.3: Creating a RDD from HiveContext**
 
@@ -1493,7 +1493,7 @@ Now that our schema’s RDD with data has a name, we can use Spark SQL commands 
 val geolocation_temp2= hiveContext.sql("SELECT driverid, count(driverid) occurance from             geolocation_temp1  where event!='normal' group by driverid")
 ~~~
 
-> As stated earlier about RDD transformations, select operation is a RDD transformation and therefore does not return anything.
+- As stated earlier about RDD transformations, select operation is a RDD transformation and therefore does not return anything.
 
 *   The resulting table will have count of total non normal events associated to each driver. Register this filtered table as a temporary table so that subsequent SQL queries can be applied on it.
 
