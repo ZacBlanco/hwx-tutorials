@@ -874,7 +874,7 @@ describe formatted geolocation;
 **Create table trucks as ORC from trucks_stage table**
 
 ~~~
-CREATE TABLE trucks STORED AS ORC AS SELECT * FROM trucks_stage;
+CREATE TABLE trucks STORED AS ORC TBLPROPERTIES ("orc.compress.size"="1024") AS SELECT * FROM trucks_stage;
 ~~~
 
 7.  Verify that the table has been properly created by refreshing the **Database Explorer** and viewing the contents of trucks:
