@@ -38,7 +38,7 @@ To refine and analyze Geolocation data, we will:
 *   Review some Hadoop Fundamentals
 *   Download and extract the Geolocation data files.
 *   Load the captured data into the Hortonworks Sandbox.
-*   Run Hive,Pig and Spark scripts that compute truck mileage and driver risk factor.
+*   Run Hive, Pig and Spark scripts that compute truck mileage and driver risk factor.
 *   Access the refined sensor data with Microsoft Excel.
 *   Visualize the sensor data using Excel Power View.
 
@@ -67,23 +67,23 @@ The goal of this tutorial is that you get familiar with the basics of following:
     3.  [Apache MapReduce and Apache YARN](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig#section_4)
     4.  [Apache Hive and Apache Pig](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig#section_5)
 6.  Get Started with HDP Labs
-    1.  [Step 0: Start Sandbox VM and Open Ambari](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig#section_6)
+    1.  [Lab 0: Start Sandbox VM and Open Ambari](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig#section_6)
     2.  [Lab 1: Loading Sensor Data into HDFS](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig#section_7)
     3.  [Lab 2: Data Manipulation with Hive](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig#section_8) (AMBARI HIVE USER VIEWS)
     4.  [Lab 3: Use Pig to compute Driver Risk Factor](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig#section_9)
     5.  [Lab 4: Use Apache Spark to compute Driver Risk Factor](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig#section_10)
-    6.  Lab 5: Optional Visualization and Reporting
+    6.  [Lab 5: Optional Visualization and Reporting](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig#section_11)
         1.  [Configuring ODBC driver](http://hortonworks.com/hadoop-tutorial/how-to-install-and-configure-the-hortonworks-odbc-driver-on-mac-os-x/)  (Mac and Windows)
         2.  [Using Microsoft Excel](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig#section_11)
         3.  Using Zeppelin (Coming Soon…)
-7.  Next Step/Try These
+7.  Next Steps/Try These
     1.  Practitioner Journey-  As a Hadoop Practitioner you can adopt following learning paths
-        *   Hadoop Developer- [Click Here!](http://hortonworks.com/products/hortonworks-sandbox/#tuts-developers)
-        *   Hadoop Administrator-[Click Here!](http://hortonworks.com/products/hortonworks-sandbox/#tuts-admins)
-        *   Data Scientist- [Click Here!](http://hortonworks.com/products/hortonworks-sandbox/#tuts-analysts)
-    2.  [Case Studies](http://hortonworks.com/industry/)– Learn how Hadoop is being used by various industries.
+        *   Hadoop Developer - [Click Here!](http://hortonworks.com/products/hortonworks-sandbox/#tuts-developers)
+        *   Hadoop Administrator -[Click Here!](http://hortonworks.com/products/hortonworks-sandbox/#tuts-admins)
+        *   Data Scientist - [Click Here!](http://hortonworks.com/products/hortonworks-sandbox/#tuts-analysts)
+    2.  [Case Studies](http://hortonworks.com/industry/) – Learn how Hadoop is being used by various industries.
 8.  References and Resources
-    1.  Hadoop -The Definitive Guide by O`Reilly
+    1.  Hadoop - The Definitive Guide by O`Reilly
     2.  Hadoop for Dummies
     3.  [Hadoop Crash Course slides-Hadoop Summit 2015](http://www.slideshare.net/Hadoop_Summit/hadoop-crash-course-workshop-at-hadoop-summit)
     4.  [Hadoop Crash Course Workshop- Hadoop Summit 2015](https://www.youtube.com/watch?v=R-va7pZg7HM)
@@ -613,7 +613,7 @@ In this section you will download the sensor data and load that into HDFS using 
 
 The tutorial is a part of series of hands on tutorial to get you started on HDP using Hortonworks sandbox. Please ensure you complete the prerequisites before proceeding with this tutorial.
 
-*   Step 0 (Hortonworks sandbox set up)
+*   Lab 0: (Hortonworks sandbox set up)
 *   Allow yourself around half an hour to complete this tutorial.
 
 **Outline:**
@@ -654,7 +654,7 @@ A single physical machine gets saturated with its storage capacity as the data g
 
 You can also perform the following operations on a file by right clicking on the file: **Download**, **Move**, **Permissions**, **Rename** and **Delete**.
 
-** IMPORTANT **
+**IMPORTANT**
 
 - Right click on the file `trucks.csv`. Click **Permissions**. Make sure that the background of all the **write** boxes are checked (blue).
 
@@ -673,7 +673,7 @@ In this section of tutorial you will be introduced to Apache Hive. In the earlie
 
 The tutorial is a part of series of hands on tutorial to get you started on HDP using Hortonworks sandbox. Please ensure you complete the prerequisites before proceeding with this tutorial.
 
-*   Step 0 (Hortonworks sandbox set up)
+*   Lab 0: (Hortonworks sandbox set up)
 *   Lab 1: Loading sensor data into HDFS
 *   Allow yourself around one hour to complete this tutorial.
 
@@ -839,7 +839,7 @@ LOAD DATA INPATH '/tmp/admin/data/trucks.csv' OVERWRITE INTO TABLE trucks_stage;
 
 ![Lab2_13](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_13.png)
 
-7.  From the Files view, navigate to the /temp/admin/data folder. Notice the folder is empty! The LOAD DATA INPATH command moved the trucks.csv file from the /user/admin/data folder to the /apps/hive/warehouse/trucks_stage folder.
+7.  From the Files view, navigate to the `/tmp/admin/data` folder. Notice the folder is empty! The LOAD DATA INPATH command moved the `trucks.csv` file from the `/user/admin/data` folder to the `/apps/hive/warehouse/trucks_stage` folder.
 
 **Step 2.4: Define an ORC Table in Hive**
 
@@ -891,7 +891,7 @@ CREATE TABLE trucks STORED AS ORC TBLPROPERTIES ("orc.compress.size"="1024") AS 
 - If you want to try running some of these commands from the Hive Shell follow the following steps from your terminal shell (or putty if using Windows):
 
 1.  `ssh root@127.0.0.1 -p 2222`
-    Root pwd is hadoop
+    Root password is hadoop
 2.  `su hive`
 3.  `hive`
 
@@ -902,7 +902,7 @@ Starts Hive shell and now you can enter commands and SQL
 Exits out of the Hive shell.
 
 
-#### **Step 2.5: Review Hive Settings**
+#### Step 2.5: Review Hive Settings
 
 1.  Open the Ambari Dashboard in another tab by right clicking on the Ambari icon
 
@@ -954,7 +954,7 @@ As you can see from the green circle above the hive.vectorized.execution.enabled
 * [Interactive Query for Hadoop with Apache Hive on Apache Tez](http://hortonworks.com/hadoop-tutorial/supercharging-interactive-queries-hive-tez/)
 * [Evaluating Hive with Tez as a Fast Query Engine](http://hortonworks.com/blog/evaluating-hive-with-tez-as-a-fast-query-engine/)
 
-#### **Step 2.6: Analyze the Trucks Data**
+#### Step 2.6: Analyze the Trucks Data
 
 Next we will be using Hive, Pig and Excel to analyze derived data from the geolocation and trucks tables.  The business objective is to better understand the risk the company is under from fatigue of drivers, over-used trucks, and the impact of various trucking events on risk.   In order to accomplish this we are going to apply a series of transformations to the source data, mostly though SQL, and use Pig to calculate risk.   In Step 10 we will be using Microsoft Excel to generate a series of charts to better understand risk.  
 ![Lab2_21](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_211.png)
@@ -975,7 +975,7 @@ CREATE TABLE truck_mileage STORED AS ORC AS SELECT truckid, driverid, rdate, mil
 
 ![Lab2_23](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_23.png)
 
-#### **Use the Content Assist to build a query**
+#### Use the Content Assist to build a query
 
 3.  Create a new SQL Worksheet.
 
@@ -1073,7 +1073,7 @@ In this tutorial you will be introduced to Apache Pig. In the earlier section of
 
 The tutorial is a part of series of hands on tutorial to get you started on HDP using Hortonworks sandbox. Please ensure you complete the prerequisites before proceeding with this tutorial.
 
-*   Step 0 (Hortonworks sandbox set up)
+*   Lab 0: (Hortonworks sandbox set up)
 *   Lab 1: Loading sensor data into HDFS
 *   Lab 2: Data Manipulation with Apache Hive
 *   Allow yourself around one hour to complete this tutorial.
@@ -1260,8 +1260,9 @@ final_data = foreach h generate $0 as driverid, $1 as events, $3 as totmiles, (f
 
 * As a final step store the data into a table using Hcatalog.
 
-store final_data into ‘riskfactor’ using
-
+~~~
+store final_data into 'riskfactor' using org.apache.hive.hcatalog.pig.HCatStorer();
+~~~
 Here is the final code and what it will look like once you paste it into the editor.
 
 **Geolocation has data stored in ORC format**
@@ -1315,7 +1316,7 @@ The **Arguments** section of the Pig View should now look like the following:
 
 ![Lab3_13](http://hortonworks.com/wp-content/uploads/2015/07/Lab3_13.png)
 
-Click on the **Logs** twisty to see what happened when your script ran. This is where you will see any error messages. The log may scroll below the edge of your window so you may have to scroll down.
+Click on the **Logs** dropdown menu to see what happened when your script ran. Errors will appear here.
 
 1.  Go back to the Ambari Hive User View and browse the data in the riskfactor table to verify that your Pig job successfully populated this table. Here is what is should look like:
 
@@ -1325,7 +1326,7 @@ At this point we now have our truck miles per gallon table and our risk factor t
 
 ## Lab 4: Spark - Risk Factor
 
-### **Use Apache Spark to compute Driver Risk Factor**
+### Use Apache Spark to compute Driver Risk Factor
 
 **Note** that this step is optional and produces the same result as in Lab 3. You may continue on to the next lab if you wish.
 
@@ -1337,7 +1338,7 @@ In this tutorial you will be introduced to Apache Spark. In the earlier section 
 
 The tutorial is a part of series of hands on tutorial to get you started on HDP using Hortonworks sandbox. Please ensure you complete the prerequisites before proceeding with this tutorial.
 
-* Step 0 (Hortonworks sandbox set up)
+* Lab 0: (Hortonworks sandbox set up)
 * Lab 1: Loading sensor data into HDFS
 * Lab 2: Data Manipulation with Apache Hive
 * Allow yourself around one hour to complete this tutorial.
@@ -1490,7 +1491,7 @@ Now that our schema’s RDD with data has a name, we can use Spark SQL commands 
 *   Here we will try to perform iteration and filter operation. First, we need to filter drivers that have non- normal events associated to them and then count the number for non- normal events for each driver.
 
 ~~~
-val geolocation_temp2= hiveContext.sql("SELECT driverid, count(driverid) occurance from             geolocation_temp1  where event!='normal' group by driverid")
+val geolocation_temp2 = hiveContext.sql("SELECT driverid, count(driverid) occurance from             geolocation_temp1  where event!='normal' group by driverid")
 ~~~
 
 - As stated earlier about RDD transformations, select operation is a RDD transformation and therefore does not return anything.
@@ -1517,7 +1518,7 @@ In this section we will perform a join operation geolocation_temp2 table has det
 *   We will join two tables on common column, which in our case is driverid.
 
 ~~~
-val joined= hiveContext.sql("select a.driverid,a.occurance,b.totmiles from geolocation_temp2 a,drivermileage_temp1 b where a.driverid=b.driverid")
+val joined = hiveContext.sql("select a.driverid,a.occurance,b.totmiles from geolocation_temp2 a,drivermileage_temp1 b where a.driverid=b.driverid")
 ~~~
 
 
@@ -1607,7 +1608,7 @@ This step is optional as it requires you to have Excel and Power View, however f
 
 The tutorial is a part of series of hands on tutorial to get you started on HDP using Hortonworks sandbox. Please ensure you complete the prerequisites before proceeding with this tutorial.
 
-*   Step 0 (Hortonworks sandbox set up)
+*   Lab 0: (Hortonworks sandbox set up)
 *   Lab 1: Loading sensor data into HDFS
 *   Lab 2: Data Manipulation with Apache Hive
 *   Lab 3: Use Pig to compute Driver Risk Factor/ Lab4: Use Spark to compute Driver Risk Factor
