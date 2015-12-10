@@ -86,7 +86,7 @@ Once the virtual machine is deployed the following screen is displayed in the po
 
 15\. If you are new to HDP, start your journey by clicking on the link to the HDP Hello World Tutorial.  
 
-Next Steps..
+## Next Steps.
 Now that you have the Sandbox up and running, feel free to try our list of tutorials.  By clicking on the try tab on the splash page.  The page below will be displayed allowing you to explore our tutorials. 
 
 ![15](images/14_sandbox_next_steps.png)
