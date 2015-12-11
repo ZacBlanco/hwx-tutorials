@@ -23,7 +23,7 @@ The offering is a single Virtual Machine which has similar functionality as the 
 
 ![03](images/03_azure_sign_in.png)
 
-4\. After logging in, the following page is presented.  Select “Resource Manager” from the drop down field “Select a deployment model” field.  Microsoft suggests to always use the Resource Manager deployment model.  More information on the Resource Manager can be found here .  After making the selection, click “Create”. 
+4\. After logging in, the following page is presented.  Select “Resource Manager” from the drop down field “Select a deployment model” field.  Microsoft suggests to always use the Resource Manager deployment model.  More information on the Resource Manager can be found [here](https://azure.microsoft.com/en-us/documentation/articles/resource-group-overview/) .  After making the selection, click “Create”. 
 
 ![04](images/04_select_resource_manager.png)
 
@@ -86,7 +86,7 @@ Once the virtual machine is deployed the following screen is displayed in the po
 
 15\. If you are new to HDP, start your journey by clicking on the link to the HDP Hello World Tutorial.  
 
-## Next Steps.
+## Next Steps...
 Now that you have the Sandbox up and running, feel free to try our list of tutorials.  By clicking on the try tab on the splash page.  The page below will be displayed allowing you to explore our tutorials. 
 
 ![15](images/14_sandbox_next_steps.png)
