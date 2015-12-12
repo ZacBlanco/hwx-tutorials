@@ -1611,7 +1611,7 @@ The tutorial is a part of series of hands on tutorial to get you started on HDP 
 *   Lab 0: (Hortonworks sandbox set up)
 *   Lab 1: Loading sensor data into HDFS
 *   Lab 2: Data Manipulation with Apache Hive
-*   Lab 3: Use Pig to compute Driver Risk Factor/ Lab4: Use Spark to compute Driver Risk Factor
+*   Lab 3: Use Pig to compute Driver Risk Factor/ Lab 4: Use Spark to compute Driver Risk Factor
 *   Please configure ODBC drivers on your system with the help of following tutorial:
     *   [Installing and Configuring the Hortonworks ODBC driver on Windows 7](http://hortonworks.com/hadoop-tutorial/how-to-install-and-configure-the-hortonworks-odbc-driver-on-windows-7/)
     *   [Installing and Configuring the Hortonworks ODBC driver on Mac OS X](http://hortonworks.com/hadoop-tutorial/how-to-install-and-configure-the-hortonworks-odbc-driver-on-mac-os-x/)
