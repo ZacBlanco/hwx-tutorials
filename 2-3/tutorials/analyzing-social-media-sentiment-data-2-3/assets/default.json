@@ -31,12 +31,12 @@
       ],
       "list": {
         "0": {
-          "from": "NOW/HOUR-1HOUR",
-          "to": "NOW/HOUR%2B1HOUR",
+          "from": "NOW/MINUTE-15MINUTE",
+          "to": "NOW/MINUTE%2B1MINUTE",
           "field": "twitter_created_at_dt",
           "type": "time",
-          "fromDateObj": "2015-06-01T20:12:37.820Z",
-          "toDateObj": "2015-06-01T21:12:37.820Z",
+          "fromDateObj": "2015-12-01T20:19:23.376Z",
+          "toDateObj": "2015-12-01T20:34:23.376Z",
           "mandate": "must",
           "active": true,
           "alias": "",
@@ -118,7 +118,7 @@
             "ids": [
               0
             ],
-            "query": "q=*%3A*&df=id&fq=twitter_created_at_dt:[NOW/HOUR-1HOUR%20TO%20NOW/HOUR%2B1HOUR]&wt=json&rows=0\n",
+            "query": "q=*%3A*&df=id&fq=twitter_created_at_dt:[NOW/MINUTE-15MINUTE%20TO%20NOW/MINUTE%2B1MINUTE]&wt=json&rows=0\n",
             "basic_query": "",
             "custom": ""
           },
@@ -175,7 +175,7 @@
             "ids": [
               0
             ],
-            "query": "q=*%3A*&df=id&wt=json&rows=0&fq=twitter_created_at_dt:[NOW/HOUR-1HOUR%20TO%20NOW/HOUR%2B1HOUR]&facet=true&facet.range=twitter_created_at_dt&facet.range.start=NOW/HOUR-1HOUR&facet.range.end=NOW/HOUR%2B1HOUR&facet.range.gap=%2B30SECOND\n",
+            "query": "q=*%3A*&df=id&wt=json&rows=0&fq=twitter_created_at_dt:[NOW/MINUTE-15MINUTE%20TO%20NOW/MINUTE%2B1MINUTE]&facet=true&facet.range=twitter_created_at_dt&facet.range.start=NOW/MINUTE-15MINUTE&facet.range.end=NOW/MINUTE%2B1MINUTE&facet.range.gap=%2B10SECOND\n",
             "custom": ""
           },
           "max_rows": 100000,
@@ -183,7 +183,7 @@
           "group_field": "polarity_s",
           "auto_int": true,
           "resolution": 100,
-          "interval": "30s",
+          "interval": "10s",
           "intervals": [
             "auto",
             "1s",
@@ -241,7 +241,7 @@
             "ids": [
               0
             ],
-            "query": "q=*%3A*&df=id&wt=json&rows=0&fq=twitter_created_at_dt:[NOW/HOUR-1HOUR%20TO%20NOW/HOUR%2B1HOUR]&facet=true&facet.field=language_s&facet.limit=10&facet.missing=true",
+            "query": "q=*%3A*&df=id&wt=json&rows=0&fq=twitter_created_at_dt:[NOW/MINUTE-15MINUTE%20TO%20NOW/MINUTE%2B1MINUTE]&facet=true&facet.field=language_s&facet.limit=10&facet.missing=true",
             "custom": ""
           },
           "mode": "count",
@@ -326,9 +326,6 @@
           "logAxis": false,
           "show_queries": true
         },
-        
-
-
         {
           "span": 3,
           "editable": true,
@@ -339,18 +336,17 @@
             "ids": [
               0
             ],
-            "query": "q=*%3A*&df=id&wt=json&rows=0&fq=twitter_created_at_dt:[NOW/HOUR-1HOUR%20TO%20NOW/HOUR%2B1HOUR]&facet=true&facet.field=screenName_s&facet.limit=20",
+            "query": "q=*%3A*&df=id&wt=json&rows=0&fq=twitter_created_at_dt:[NOW/MINUTE-15MINUTE%20TO%20NOW/MINUTE%2B1MINUTE]&facet=true&facet.field=text&facet.limit=20",
             "custom": ""
           },
-          "field": "screenName_s",
+          "field": "text",
           "size": 20,
           "alignment": "vertical and horizontal",
           "fontScale": 1,
           "spyable": true,
           "show_queries": true,
-          "title": "Screen Names"
+          "title": "Hashtags"
         },
-        
         {
           "span": 2,
           "editable": true,
@@ -361,7 +357,7 @@
             "ids": [
               0
             ],
-            "query": "q=*%3A*&df=id&wt=json&rows=0&fq=twitter_created_at_dt:[NOW/HOUR-1HOUR%20TO%20NOW/HOUR%2B1HOUR]&facet=true&facet.field=screenName_s&facet.limit=10&facet.missing=true",
+            "query": "q=*%3A*&df=id&wt=json&rows=0&fq=twitter_created_at_dt:[NOW/MINUTE-15MINUTE%20TO%20NOW/MINUTE%2B1MINUTE]&facet=true&facet.field=screenName_s&facet.limit=10&facet.missing=true",
             "custom": ""
           },
           "mode": "count",
@@ -446,7 +442,6 @@
           "logAxis": false,
           "show_queries": true
         },
-
         {
           "span": 2,
           "editable": true,
@@ -457,7 +452,7 @@
             "ids": [
               0
             ],
-            "query": "q=*%3A*&df=id&wt=json&rows=0&fq=twitter_created_at_dt:[NOW/HOUR-1HOUR%20TO%20NOW/HOUR%2B1HOUR]&facet=true&facet.field=originalposter_s&facet.limit=10&facet.missing=true",
+            "query": "q=*%3A*&df=id&wt=json&rows=0&fq=twitter_created_at_dt:[NOW/MINUTE-15MINUTE%20TO%20NOW/MINUTE%2B1MINUTE]&facet=true&facet.field=originalposter_s&facet.limit=10&facet.missing=true",
             "custom": ""
           },
           "mode": "count",
@@ -542,7 +537,6 @@
           "logAxis": false,
           "show_queries": true
         },
-
         {
           "span": 2,
           "editable": true,
@@ -553,7 +547,7 @@
             "ids": [
               0
             ],
-            "query": "q=*%3A*&df=id&wt=json&rows=0&fq=twitter_created_at_dt:[NOW/HOUR-1HOUR%20TO%20NOW/HOUR%2B1HOUR]&facet=true&facet.field=language_s&facet.limit=150&facet.missing=true",
+            "query": "q=*%3A*&df=id&wt=json&rows=0&fq=twitter_created_at_dt:[NOW/MINUTE-15MINUTE%20TO%20NOW/MINUTE%2B1MINUTE]&facet=true&facet.field=language_s&facet.limit=150&facet.missing=true",
             "custom": ""
           },
           "mode": "count",
@@ -658,8 +652,8 @@
             "ids": [
               0
             ],
-            "query": "q=*%3A*&df=id&fq=twitter_created_at_dt:[NOW/HOUR-1HOUR%20TO%20NOW/HOUR%2B1HOUR]&wt=json&rows=50",
-            "basic_query": "q=*%3A*&df=id&fq=twitter_created_at_dt:[NOW/HOUR-1HOUR%20TO%20NOW/HOUR%2B1HOUR]",
+            "query": "q=*%3A*&df=id&fq=twitter_created_at_dt:[NOW/MINUTE-15MINUTE%20TO%20NOW/MINUTE%2B1MINUTE]&sort=twitter_created_at_dt desc&wt=json&rows=500",
+            "basic_query": "q=*%3A*&df=id&fq=twitter_created_at_dt:[NOW/MINUTE-15MINUTE%20TO%20NOW/MINUTE%2B1MINUTE]&sort=twitter_created_at_dt desc",
             "custom": ""
           },
           "size": 100,
@@ -689,7 +683,7 @@
           "normTimes": true,
           "spyable": false,
           "saveOption": "json",
-          "exportSize": 50,
+          "exportSize": 500,
           "exportAll": true,
           "displayLinkIcon": true,
           "imageFields": [],
@@ -740,23 +734,9 @@
     "server": "http://sandbox.hortonworks.com:8983/solr/",
     "core_name": "tweets",
     "core_list": [
-      "tweets"
+      "myCollection_shard1_replica1",
+      "tweets_shard1_replica1"
     ],
     "global_params": "&df=id"
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
