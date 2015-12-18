@@ -463,7 +463,7 @@ Then create two new directories inside of `/tmp/data/tables/`. One named **time_
 
 ![Data Table Folders](./images/31_data_table_folders.png)
 
-In each of the folders respectively you'll need to upload the [`dictionary.tsv` file](https://raw.githubusercontent.com/ZacBlanco/hdp-tutorials/master/nifi-flow-tutorial/dictionary/dictionary.tsv), and the [`time_zone_map.tsv` file](https://raw.githubusercontent.com/ZacBlanco/hdp-tutorials/master/nifi-flow-tutorial/time_zone_map/time_zone_map.tsv) to each of their respective directories.
+In each of the folders respectively you'll need to upload the [`dictionary.tsv` file](https://raw.githubusercontent.com/ZacBlanco/hwx-tutorials/master/2-3/tutorials/analyzing-social-media-sentiment-data-2-3/assets/dictionary.tsv), and the [`time_zone_map.tsv` file](https://raw.githubusercontent.com/ZacBlanco/hwx-tutorials/master//2-3/tutorials/analyzing-social-media-sentiment-data-2-3/assets/time_zone_map.tsv) to each of their respective directories.
 
 After doing so, you'll need to run the following command on the Sandbox:
 
