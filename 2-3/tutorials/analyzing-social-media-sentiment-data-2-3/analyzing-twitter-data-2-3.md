@@ -194,7 +194,7 @@ Next we need to replace a JSON file. Use the following commands to move the orig
 ~~~
 cd /opt/lucidworks-hdpsearch/solr/server/solr-webapp/webapp/banana/app/dashboards/
 mv default.json default.json.orig
-wget https://raw.githubusercontent.com/ZacBlanco/hdp-tutorials/master/nifi-flow-tutorial/assets/default.json
+wget https://raw.githubusercontent.com/ZacBlanco/hwx-tutorials/master/2-3/tutorials/analyzing-social-media-sentiment-data-2-3/assets/default.json
 ~~~
 
 Now we're going to start Solr. Execute
@@ -270,9 +270,9 @@ Please make note of your **Consumer Key**, **Consumer Secret**, **Access Token**
 
 ## Create a Data Flow with NiFi
 
-The first thing you'll need to do here is download the NiFi data flow template for the [Twitter Dashboard here](https://raw.githubusercontent.com/ZacBlanco/hdp-tutorials/master/nifi-flow-tutorial/assets/Twitter_Flow.xml)
+The first thing you'll need to do here is download the NiFi data flow template for the [Twitter Dashboard here](https://raw.githubusercontent.com/ZacBlanco/hwx-tutorials/master/2-3/tutorials/analyzing-social-media-sentiment-data-2-3/assets/Twitter_Flow.xml)
 
-[**Download**](https://raw.githubusercontent.com/ZacBlanco/hdp-tutorials/master/nifi-flow-tutorial/assets/Twitter_Flow.xml)
+[**Download**](https://raw.githubusercontent.com/ZacBlanco/hwx-tutorials/master/2-3/tutorials/analyzing-social-media-sentiment-data-2-3/assets/Twitter_Flow.xml)
 
 Make note of where you download this file. You'll need it in the next step.
 
@@ -331,7 +331,7 @@ This section is for anyone who didn't want to set up a Twitter app so they could
 First you'll need to SSH into the sandbox execute the following command
 
 ~~~
-wget https://raw.githubusercontent.com/ZacBlanco/hdp-tutorials/master/nifi-flow-tutorial/assets/twitter-gen.sh
+wget https://raw.githubusercontent.com/ZacBlanco/hwx-tutorials/master/2-3/tutorials/analyzing-social-media-sentiment-data-2-3/assets/twitter-gen.sh
 ~~~
 
 Then run the command with your specified number of tweets that you would like to generate.
