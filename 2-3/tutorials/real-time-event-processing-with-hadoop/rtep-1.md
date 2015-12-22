@@ -48,17 +48,17 @@ Kafka works like a distributed commit log, where incoming data is written sequen
 *   Consumers
 *   Brokers
 
-![image00](./images/image00.png)
+![image00](./images/t1/image00.png)
 
 In Kafka, a **Topic** is a user-defined category to which messages are published. Kafka **Producers** publish messages to one or more topics and **Consumers** subscribe to topics and process the published messages. So, at a high level, producers send messages over the network to the Kafka cluster which in turn serves them up to consumers. Finally, a Kafka cluster consists of one or more servers, called **Brokers** that manage the persistence and replication of message data (i.e. the commit log).
 
-![image02](./images/image02.png)
+![image02](./images/t1/image02.png)
 
 One of the keys to Kafka’s high performance is the simplicity of the brokers’ responsibilities. In Kafka, topics consist of one or more Partitions that are ordered, immutable sequences of messages. Since writes to a partition are sequential, this design greatly reduces the number of hard disk seeks.
 
 Another factor contributing to Kafka’s performance and scalability is the fact that Kafka brokers are not responsible for keeping track of what messages have been consumed – that responsibility falls on the consumer. In traditional messaging systems such as JMS, the broker bore this responsibility, severely limiting the system’s ability to scale as the number of consumers increased.
 
-![image02](./images/image02.png)
+![image02](./images/t1/image02.png)
 
 For Kafka consumers, keeping track of which messages have been consumed (processed) is simply a matter of keeping track of an **Offset**, which is a sequential id number that uniquely identifies a message within a partition. Because Kafka retains all messages on disk (for a configurable amount of time), consumers can rewind or skip to any point in a partition simply by supplying an offset value. Finally, this design eliminates the potential for back-pressure when consumers process messages at different rates.
 
@@ -70,13 +70,13 @@ We will begin with configuring settings of Apache Kafka and Zookeeper. Next we w
 
 *   Start the Hortonworks Sandbox.
 
-![](./images/Screenshot%202015-08-27%2012.23.13.png)  
+![](./images/t1/Screenshot%202015-08-27%2012.23.13.png)  
 
 *   Login to Ambari
 
 Go to port 8080 of your Sandbox’s IP address to view the Ambari login page. For example, http://127.0.0.1:8080:
 
-![](./images/image21.png)  
+![](./images/t1/image21.png)  
 
 
 The username and password are both admin.
@@ -87,18 +87,18 @@ The username and password are both admin.
 
 From the Dashboard page of Ambari, click on Kafka from the list of installed services:
 
-![](./images/image03.png)  
+![](./images/t1/image03.png)  
 
 
 *   Start Kafka
 
 From the Kafka page, click on Service Actions -> Start:
 
-![image06](./images/image06.png)
+![image06](./images/t1/image06.png)
 
 Check the box and click on Confirm Start:
 
-![](./images/image11.png)  
+![](./images/t1/image11.png)  
 
 
 Wait for Kafka to start.
@@ -107,7 +107,7 @@ Wait for Kafka to start.
 
 ZooKeeper serves as the coordination interface between the Kafka broker and consumers:
 
-![](./images/image24.png)  
+![](./images/t1/image24.png)  
 
 
 The important Zookeeper properties can be checked in Ambari.
@@ -116,19 +116,19 @@ The important Zookeeper properties can be checked in Ambari.
 
 Click on ZooKeeper in the list of services, then click on the Configs tab. Verify ZooKeeper is running on port 2181:
 
-![](./images/image003.png)  
+![](./images/t1/image003.png)  
 
 
 If this port 2181 is busy or is consumed by other processes, then you could change the default port number of ZooKeeper to any other valid port number. If ZooKeeper is not running, you can start the Zookeeper service from Ambari:
 
-![](./images/image16.png)  
+![](./images/t1/image16.png)  
 
 
 *   Configure Kafka
 
 From the Kafka page, click on the Configs tab. Verify the ‘zookeeper.connect’ property points to your ZooKeeper server name and port:
 
-![](./images/image18.png)  
+![](./images/t1/image18.png)  
 
 
 ### Step 4: Define a Kafka Topic
@@ -137,7 +137,7 @@ From the Kafka page, click on the Configs tab. Verify the ‘zookeeper.connect�
 
 We will SSH in to the Sandbox to the perform the remaining tasks of this tutorial. Open a commandline shell to our Sandbox from terminal:
 
-![](./images/Screenshot_2015-04-13_07_58_43.png)  
+![](./images/t1/Screenshot_2015-04-13_07_58_43.png)  
 
 
 The default password is `hadoop`
@@ -152,7 +152,7 @@ Also note that sometimes ZooKeeper does not listen on localhost, so you may need
 
 The output should look like:
 
-![](./images/image22.png)  
+![](./images/t1/image22.png)  
 
 
 *   Verify the topic was created successfully
@@ -163,14 +163,14 @@ Check if topic ‘truckevent’ was created successfully with the following comm
 
 You should see truckevent in the list of topics (and probably your only topic):
 
-![](./images/image25.png)  
+![](./images/t1/image25.png)  
 
 
 ### Overview of Producing Messages
 
 Producers are applications that create Messages and publish them to the Kafka broker for further consumption:
 
-![](./images/image24.png)  
+![](./images/t1/image24.png)  
 
 
 In this tutorial we shall use a Java API to produce Truck events. The Java code in TruckEventsProducer.java will generate data with following columns:
@@ -208,7 +208,7 @@ To start the Kafka Producer we execute the following command to see the output a
 
     java -cp target/Tutorial-1.0-SNAPSHOT.jar com.hortonworks.tutorials.tutorial1.TruckEventsProducer sandbox.hortonworks.com:6667 sandbox.hortonworks.com:2181
 
-![image15](./images/image15-1024x80.png)
+![image15](./images/t1/image15-1024x80.png)
 
 
 After a few seconds, press Control-C to stop the producer.
@@ -219,7 +219,7 @@ To verify, execute the following command to start a consumer to see the produced
 
     /usr/hdp/current/kafka-broker/bin/kafka-console-consumer.sh --zookeeper sandbox.hortonworks.com:2181 --topic truckevent --from-beginning
 
-![image23](./images/image23-1024x84.png)
+![image23](./images/t1/image23-1024x84.png)
 
 
 You can press Control-C to stop the console consumer
@@ -299,28 +299,28 @@ Follow these steps if your version of the Sandbox does not have Kafka installed:
 
 1.  From the Ambari Dashboard, select Actions -> Add Service:
 
-![image17](./images/image17.png)
+![image17](./images/t1/image17.png)
 
 
 1.  Select Kafka from the list of Services and click Next:
 
-![image08](./images/image08-1024x550.png)
+![image08](./images/t1/image08-1024x550.png)
 
 
 1.  Keep clicking Next with the selected defaults until you reach the following screen:
 
-![image20](./images/image20-1024x550.png)
+![image20](./images/t1/image20-1024x550.png)
 
 
 1.  Set the value of logs.dir to  /tmp/kafka-logs
 
 2.  Click the Deploy button:
 
-![image09](./images/image09-1024x553.png)
+![image09](./images/t1/image09-1024x553.png)
 
 1.  Wait for Kafka to install:
 
-![image07](./images/image07-1024x548.png)
+![image07](./images/t1/image07-1024x548.png)
 
 
 1.  After Kafka is installed, you may be asked to restart some dependent Services. Please select the appropriate Services and click Restart.
@@ -334,7 +334,7 @@ Download and install Apache Maven as shown in the commands below
     yum -y install apache-maven
     mvn -version
 
-![image14](./images/image14.png)
+![image14](./images/t1/image14.png)
 
 
 
@@ -343,13 +343,13 @@ Now lets compile and execute the code to generate Truck Events. (This may run fo
     cd /opt/TruckEvents/Tutorials-master
     mvn clean package
 
-![image19](./images/image19.png)
+![image19](./images/t1/image19.png)
 
 
 
 Once the code is successfully compiled we shall see a new target directory created in the current folder. The binaries for all the Tutorials are in this target directory and the source code in src.
 
-![image10](./images/image10-1024x173.png)
+![image10](./images/t1/image10-1024x173.png)
 
 
-![image05](./images/image05-1024x72.png)
+![image05](./images/t1/image05-1024x72.png)
