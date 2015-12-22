@@ -1,0 +1,171 @@
+<!DOCTYPE html> 
+
+<html>
+
+  
+  <head>
+    <title>Tutorial Importer</title>
+    
+    <style>
+      body, html, div, a, span, ul, li {
+        margin:0;
+        padding:0;
+      }
+      body, html {
+        background-color:dodgerblue;
+        height:100%;
+      }
+      .left {
+        margin: 0 auto;
+        width: 100%;
+        height:100%;
+        background-color:dimgray;
+      }
+      .right {
+        margin: 0 auto;
+        width: 100%;
+        height: 100%;
+        background-color:darkgray;
+      }
+      .content {
+        background-color: dimgray;
+        margin:0 auto;
+        max-width:1000px;
+        min-height: 500px;
+        height: 100%;
+      }
+      h2 {
+        text-align: center;
+        font-family:sans-serif;
+        color:white;
+        padding: 0;
+        margin: 0;
+      }
+      
+      textarea {
+        display:block;
+        margin:auto;
+        width: 90%;
+        height: 95%;
+        max-height: 500px;
+        font-size: 18px;
+        font-family: sans-serif;
+        resize: none;
+      }
+      #html-output {
+        background-color: lightgray;
+        font-family: monospace;
+      }
+      
+      .t-container {
+        padding-top: 3%;
+        width: 100%;
+        height: 97%;
+        margin:auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+     
+      <div style="float:left; width:50%;height:100%;">
+        <div class="left">
+          <div class="t-container">
+            <h2>INPUT</h2>
+            <textarea id="html-input"></textarea>
+            <div style="color:white; font-family:sans-serif;text-align:center;">
+              <h3>Instructions</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="float:left; width:50%;height:100%">
+        <div class="right">
+         <div class="t-container">
+           <h2>OUTPUT</h2>
+            <textarea id="html-output" readonly></textarea>
+          </div>
+        </div>
+      </div>
+
+      
+    </div>
+  
+  </body>
+
+      
+    <script>
+    var input = document.getElementById("html-input");
+    var output = document.getElementById("html-output");
+    var iNum = 0;
+    input.addEventListener('input', function () {
+        var d = document.createElement("div");
+        d.innerHTML = input.value;
+        var i = 0;
+        for(i=0;i < d.children.length; i++) {
+         output.value += dfs(d.children[i]);
+        }
+      });
+      
+      function dfs(node) {
+        var text = getText(node, iNum);
+        var c = 0;
+        for(c = 0; c < node.children.length; c++) {
+          text += dfs(node.children[c]);
+        }
+        return text;
+      }
+      function downloadImage(src, name) {
+        var canvas = document.createElement("canvas");
+        canvas.setAttribute("style", "display:hidden");
+        var img = new Image();
+        img.crossOrigin = "Anonymous";
+        img.onload = function(){
+          canvas.width = img.width;
+          canvas.height = img.height;
+          var ctx = canvas.getContext("2d");
+          ctx.drawImage(img, 0, 0, img.width, img.height);
+          var dataURL = canvas.toDataURL("image/png");
+          window.location = dataURL;
+        }
+        img.src = src;
+      }
+      function getText(node, imgNum) {
+        var val = "";
+        if(node.nodeName == "H1") {
+          val = "# " + node.innerText + "\n\n";
+        } else if(node.nodeName == "H1") {
+          val = "## " + node.innerText + "\n\n";
+        } else if(node.nodeName == "H2") {
+          val = "## " + node.innerText + "\n\n";
+        } else if(node.nodeName == "H3") {
+          val = "### " + node.innerText + "\n\n";
+        } else if(node.nodeName == "H4") {
+          val = "#### " + node.innerText + "\n\n";
+        } else if(node.nodeName == "H5") {
+          val = "##### " + node.innerText + "\n\n";
+        } else if(node.nodeName == "H6") {
+          val = "###### " + node.innerText + "\n\n";
+        } else if(node.nodeName == "P") {
+          val = node.innerText + "\n\n";
+        } else if(node.nodeName == "A") {
+          val =  "[" + node.innerText + "](" + node.getAttribute("href") + ")";
+        } else if(node.nodeName == "IMG") {
+          var name = "";
+          if(node.hasAttribute("alt")) {
+            name = imgNum + "_" + node.getAttribute("alt").replace(" ", "_");
+          } else {
+            name = imgNum + "default_image_name";
+          }
+          name += ".png";
+          downloadImage(node.getAttribute("src"), name);
+          val =  "![" + node.getAttribute("alt") + "](" + name + ")" +"\n\n";
+          iNum++;
+        } else {
+          
+        }
+        return val;
+      }
+    </script>
+</html>

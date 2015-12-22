@@ -173,18 +173,17 @@ After inserting the above, the portion of the file should look something like th
 
 ~~~
 <processor class="solr.ParseLongFieldUpdateProcessorFactory"/>
-    <processor class="solr.ParseDoubleFieldUpdateProcessorFactory"/>
-    <processor class="solr.ParseDateFieldUpdateProcessorFactory">
-      <arr name="format">
-        <str>EEE MMM d HH:mm:ss Z yyyy</str>
-        <str>yyyy-MM-dd'T'HH:mm:ss.SSSZ</str>
-        <str>yyyy-MM-dd'T'HH:mm:ss,SSSZ</str>
-        <str>yyyy-MM-dd'T'HH:mm:ss.SSS</str>
-        <str>yyyy-MM-dd'T'HH:mm:ss,SSS</str>
-        <str>yyyy-MM-dd'T'HH:mm:ssZ</str>
-		.
-		.
-		.
+  <processor class="solr.ParseDateFieldUpdateProcessorFactory">
+    <arr name="format">
+      <str>EEE MMM d HH:mm:ss Z yyyy</str>
+      <str>yyyy-MM-dd'T'HH:mm:ss.SSSZ</str>
+      <str>yyyy-MM-dd'T'HH:mm:ss,SSSZ</str>
+      <str>yyyy-MM-dd'T'HH:mm:ss.SSS</str>
+      <str>yyyy-MM-dd'T'HH:mm:ss,SSS</str>
+      <str>yyyy-MM-dd'T'HH:mm:ssZ</str>
+      </arr>
+    </processor>
+</processor>
 ~~~
 
 Finally press the **Escape key** on your keyboard and type `:wq` to save and close the `solrconfig.xml` file.
@@ -238,9 +237,9 @@ Ensure that you can access the Solr UI by navigating to [http://sandbox.hortonwo
 
 ## Creating a Twitter Application
 
-If you would rather not register your own twitter application and use previous data, please head to the [next section](#analyze-and-search-data-with-solr) where you can download the sample dataset.
+If you would rather not register your own Twitter application and use previous data, please head to the [next section](#analyze-and-search-data-with-solr) where you can download the sample dataset.
 
-If you want to pull live data from Twitter in this tutorial you'll need to register your own twitter application. It's quite simple and only takes a few short steps
+If you want to pull live data from Twitter in this tutorial you'll need to register your own Twitter application. It's quite simple and only takes a few short steps
 
 First head over to the [Twitter Apps Website](http://apps.twitter.com) and Sign In using your Twitter account (or make one if you don't have one yet!)
 
@@ -306,13 +305,17 @@ After clicking import you should have a screen similar to the following:
 
 ![Imported Dashboard](./images/19_nifi_twitter_dashboard.png)
 
-Now we'll need to configure the Twitter Hose with the access tokens that we made earlier for our twitter application.
+Great! The NiFi flow has been set up. The _boxes_ are what NiFi calls processors. Each of the processors can be connected to one another and help make data flow. Each processor can perform specific tasks. They are at the very heart of NiFi's functionality.
+
+Try **right-clicking** on a few of the the processors and look at their configuration. This can help you better understand how the Twitter flow works.
+
+Now we'll need to configure the Twitter Hose processor with the access tokens that we made earlier for our Twitter application.
 
 Right click on the **Grab Garden Hose** element and click **Configure**
 
 ![Configure Garden Hose](./images/20_nifi_configure_hose.png)
 
-Then you're going to need to place all of those twitter API tokens from earlier in their respective places. Then hit **Apply**.
+Then you're going to need to place all of those Twitter API tokens from earlier in their respective places. Then hit **Apply**.
 
 ![NiFi Tokens](./images/21_nifi_set_tokens.png)
 
@@ -386,7 +389,7 @@ Click on the query tab, and you should be brought to screen similar to the follo
 We're only going to be using 3 of these fields before we execute any queries, but let's quickly outline the different query parameters
 
 - **fq**: This is a filter query parameter it lets us retrieve data that only contains certain values that we're looking for. Example: we can specify that we only wants tweets after a certain time to be returned.
-- **sort**: self-explanatory. You can sort by a specified field in ascending or descending order. we could return all tweets by alphabetical order of twitter handles, or possible by the time they were tweeted as well.
+- **sort**: self-explanatory. You can sort by a specified field in ascending or descending order. we could return all tweets by alphabetical order of Twitter handles, or possible by the time they were tweeted as well.
 - **start, rows**: This tells us where exactly in the index we should start searching, and how many rows should be returned when we execute the query. The defaults for each of these is `0` and `10` respectively.
 - **fl**: Short for _field list_ specify which fields you want to be returned. If the data many, many fields, you can choose to specify only a few that are returned in the query.
 - **df**: Short for _default fields_ you can tell which fields solr should be searching in. You will not need this if the query fields are already defined.
@@ -572,7 +575,12 @@ This command should yield our final results table as shown below.
 
 ![Hive Sentiment Analysis Results](./images/34_hive_sentiment_analysis_results.png)
 
-Now that we can access the sentiment data in our Hive table let's do some visualization on the analysis.
+**Try the new Hive Visualization tab!**
+
+ On the right hand side of the screen try clicking the **graph icon**. It will bring up a new tab where you can directly create charts using your query results in Hive!
+
+
+Now that we can access the sentiment data in our Hive table let's do some visualization on the analysis using Apache Zeppelin.
 
 ## Visualizing Sentiment With Zeppelin
 ------------------------------------------------
