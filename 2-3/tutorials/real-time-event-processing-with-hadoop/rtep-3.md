@@ -35,10 +35,12 @@ In this tutorial, you will learn the following topics:
 
 The _‘jps’_ command will show all java process that are currently running as seen in the screenshot below.  
 Verify that the _NameNode_ and the _DataNode_ processes are running.  
-`  
+
+~~~
 [root@sandbox~]#jps  
-`  
-![jps](http://hortonassets.s3.amazonaws.com/mda/tut3/jps.png)
+~~~  
+
+![jps](./images/t3/image_01.png)
 
 *   **Check that HBase is running.**
 
@@ -46,8 +48,7 @@ If **HMaster** and **HRegionServer** are missing in the ‘jps’ command ou
 
 ‘jps’ command output list should now show that the **HMaster** and **HRegionServer** services are running.
 
-![jps : verify hbase services running](http://hortonassets.s3.amazonaws.com/mda/tut3/jps+hbase+running.png)  
-jps : verify hbase services running
+![jps : verify hbase services running](./images/t3/image_02.png)  
 
 To smoke test HBase, we need to login to _HBase_ user account and start the HBase shell to verify the status of the services.
 
@@ -63,8 +64,7 @@ To smoke test HBase, we need to login to _HBase_ user account and start the HB
 
 The output is as shown in the screenshot below.
 
-![hbase running](http://hortonassets.s3.amazonaws.com/mda/tut3/hbase+running.png)  
-hbase running
+![hbase running](./images/t3/image_03.png)  
 
 *   **Smoke test that Hive is Running.**
 
@@ -82,17 +82,17 @@ To smoke test using the command line, login as a Hive user with _su hive_ comm
 
     [root@sandbox ~]# 
 
-![smoketest hive](http://hortonassets.s3.amazonaws.com/mda/tut3/smoketest+hive.png)  
-smoketest hive
+![smoketest hive](./images/t3/image_04.png)  
 
 To smoke test Hive by using a browser, open the url ‘http://localhost:8000/beeswax/’ from any browser on your local machine.  
 Execute the query "**show databases;**" in the query editor window.  
 Click on ‘Execute’ button to see an output as shown in the screenshot below.  
-![Query Editor](http://hortonassets.s3.amazonaws.com/mda/tut3/show+databases.png)  
-Hive queries can be tested and saved using the Query Editor.
 
-![default database](http://hortonassets.s3.amazonaws.com/mda/tut3/default+databases.png)  
-default database
+![Query Editor](./images/t3/image_05.png)  
+
+
+![default database](./images/t3/image_06.png)  
+
 
 ### Step 2:
 
@@ -110,8 +110,7 @@ Use the following url to open a HBase shell: http://localhost:8000/shell/create?
     hbase(main):003:0> list  
     hbase(main):004:0> 
 
-![hbase create tables](http://hortonassets.s3.amazonaws.com/mda/tut3/hbase+create+tables.png)  
-hbase create tables
+![hbase create tables](./images/t3/image_07.png)  
 
 Next, we will create Hive tables.
 
@@ -133,19 +132,15 @@ Open the URL http://localhost:8000/beeswax/ in a browser and copy the below scri
 This script creates the Hive table to persist all events generated. This table is partitioned by date.  
 The table created can be viewed at this URL: http://localhost:8000/beeswax/table/default/truck_events_text_partition
 
-![Hive table](http://hortonassets.s3.amazonaws.com/mda/tut3/Screen+Shot+2014-08-15+at+12.00.48+AM.png)  
-Hive table
+![Hive table](./images/t3/image_08.png)  
+
 
 Verify that the table has been properly created by clicking Tables and selecting truck_events_text_partiiton.
 
-![](http://hortonassets.s3.amazonaws.com/mda/storm2/image22.png)
+![](./images/t3/image_09.png)
 
 
-
-
-
-![truck_events_text_partition](http://hortonassets.s3.amazonaws.com/mda/tut3/truck_events_text_partition+table+created.png)
-
+![truck_events_text_partition](./images/t3/image_10.png)
 
 
 *   **Creating ORC ‘truckevent’ Hive tables**
@@ -187,15 +182,21 @@ The data in ‘truck_events_text_partition_orc’ table can be stored with ZLIB,
     [root@sandbox Tutorials-master]# cp /etc/hbase/conf/hbase-site.xml src/main/resources/  
     [root@sandbox Tutorials-master]# mvn clean package
 
-![update project](http://hortonassets.s3.amazonaws.com/mda/tut3/mvn+clean+package.png)  
+![update project](./images/t3/image_11.png)
+
 In case, mvn is not in your path, you can use the command `exportPATH=/usr/local/apache-maven-3.2.2/bin:$PATH` to include it in your path.
 
 *   Deactivate & Kill the Storm topology using the Storm UI as shown in the screenshot below:  
-    ![storm UI](http://hortonassets.s3.amazonaws.com/mda/tut3/storm+UI.png)  
-    storm UI![deactivate and kill](http://hortonassets.s3.amazonaws.com/mda/tut3/Deactivate+and+Kill.png)  
-    deactivate and kill![Deactivate](http://hortonassets.s3.amazonaws.com/mda/tut3/deactivate.png)  
-    Deactivate![kill](http://hortonassets.s3.amazonaws.com/mda/tut3/kill.png)  
-    kill
+
+    ![storm UI](./images/t3/image_12.png)  
+    
+    ![deactivate and kill](./images/t3/image_13.png)  
+    
+    ![Deactivate](./images/t3/image_14.png)  
+    
+    
+    ![kill](./images/t3/image_15.png)  
+    
 
 *   **Loading new Storm topology.**
 
@@ -203,8 +204,8 @@ Execute the Storm ‘jar’ command to create a new Topology from **Tutorial# 3
 
     [root@sandbox Tutorials-master]# storm jar target/Tutorial-1.0-SNAPSHOT.jar com.hortonworks.tutorials.tutorial3.TruckEventProcessingTopology
 
-![Topology Summary](http://hortonassets.s3.amazonaws.com/mda/tut3/Topology+Summary.png)  
-Topology Summary
+![Topology Summary](./images/t3/image_16.png)  
+
 
 ### Step 4:
 
@@ -214,8 +215,7 @@ Topology Summary
 
     [root@sandbox Tutorials-master]# java -cp target/Tutorial-1.0-SNAPSHOT.jar com.hortonworks.tutorials.tutorial1.TruckEventsProducer localhost:9092 localhost:2181
 
-![Verify Storm UI](http://hortonassets.s3.amazonaws.com/mda/tut3/Verify+data+in+Storm+UI.png)  
-Verify Storm UI
+![Verify Storm UI](./images/t3/image_17.png)  
 
 *   Verify that the data is in HBase by executing the following commands in HBase shell:
 
@@ -233,14 +233,13 @@ Verify Storm UI
 
 The ‘driver_dangerous_events’ table is updated upon every violation.
 
-![Verify data in HBase](http://hortonassets.s3.amazonaws.com/mda/tut3/Verify+data+in+HBase.png)  
-Verify data in HBase
+![Verify data in HBase](./images/t3/image_18.png)  
 
 *   Verify that the data is in HDFS by browsing to this URL: http://localhost:8000/filebrowser/view/truck-events-v4/staging  
     We should see the files been injested in HDFS now.  
     With the default settings for HDFS, users might see the data written to HDFS once in every 5 minutes.  
-    ![Verify data in HDFS](http://hortonassets.s3.amazonaws.com/mda/tut3/Verify+Data+in+HDFS.png)  
-    Verify data in HDFS
+
+![Verify data in HDFS](./images/t3/image_19.png)
 
 This completes the tutorial #3. 
 
