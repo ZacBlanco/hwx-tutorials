@@ -4,6 +4,7 @@ This repository contains tutorials for many versions of the [Hortonworks Sandbox
 
 Check out the tutorials for the following HDP Versions:
 
+- [HDP 1.3](archives/1-3/)
 - [HDP 2.0](archives/2-0/)
 - [HDP 2.1](archives/2-1/)
 - [HDP 2.2](archives/2-2/)
