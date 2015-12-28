@@ -17,4 +17,4 @@ In this tutorial, learn how to install and get started with Loom, register and t
 1.  Download [Sandbox](http://hortonworks.com/sandbox/)
 2.  Download [Loom trial license](http://www.revelytix.com/?q=content/download-loom-trial).
 3.  Watch [video](https://www.youtube.com/watch?feature=player_embedded&v=cqpvO-shB1Q) of the demo
-4.  View [tutorial](UsingLoomHortonworksSandbox_v1.2.pdf)
+4.  View [tutorial](/assets/1-3/loom/UsingLoomHortonworksSandbox_v1.2.pdf)

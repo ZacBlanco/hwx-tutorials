@@ -32,7 +32,7 @@ There are two options to install the HDP with sentiment data. The first is to im
 
 Next create the tweetsbi table from a file by browsing to _http://hdp-vm:8000/hcatalog/create/create_from_file …_then enter tweetsbi as the tablename, choosing the tweetsbi.csv and then clicking create table. Make sure the delimeter is changed to a comma but keep the other defaults.
 
-![Evolving your data into stratagic asset using HDP and Red Hat JBoss Data Virtualization](./images/red1.png)
+![Evolving your data into stratagic asset using HDP and Red Hat JBoss Data Virtualization](/assets/2-1/redhat-jboss/red1.png)
 
 **Step 3:** In Ambari using admin/admin verify some configuration by Ambari > Services > Configs >
 
@@ -47,7 +47,7 @@ Restart All Hive Services
 **NOTE:** Should you skip step 3 or have permission errors when access the tweetsbi table through hive  then issue the query below through h_ttp://hdp-vm:8000/beeswax/_  
 grant select on table tweetsbi to user hdfs;
 
-![rh2](./images/rh2.png)
+![rh2](/assets/2-1/redhat-jboss/rh2.png)
 
 **Install MySQL with Sales Data**
 
@@ -230,11 +230,11 @@ Data Virtualization Dashboard
 
 **Step 2:** Create the Teiid external connections
 
-**![RH3](./images/RH3.png)**
+**![RH3](/assets/2-1/redhat-jboss/RH3.png)**
 
 **Step 3:** Create the data provider
 
-**![RH4](./images/RH4.png)**
+**![RH4](/assets/2-1/redhat-jboss/RH4.png)**
 
 **Step 4:** Create the workspace
 
@@ -248,13 +248,13 @@ Data Virtualization Dashboard
 
 **Step 9:** Select the Data Table to see the data in a spreadsheet
 
-![RH5](./images/RH5.png)
+![RH5](/assets/2-1/redhat-jboss/RH5.png)
 
 **SquirreL Client**
 
 **Step 1:** Preview the content for the SalesSentimentCountry Table with the datasource that was setup above
 
-![RH6](./images/RH6.png)
+![RH6](/assets/2-1/redhat-jboss/RH6.png)
 
 **Pull the data into Libreoffice spreadsheet**
 
