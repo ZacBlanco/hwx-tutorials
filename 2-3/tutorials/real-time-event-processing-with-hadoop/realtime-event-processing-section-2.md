@@ -1,6 +1,6 @@
 ### [Introduction](#introduction)
 
-In this tutorial, we will explore [Apache Storm](http://hortonworks.com/hadoop/storm) and use it with [Apache Kafka](http://hortonworks.com/hadoop/kafka) to develop a multi-stage event processing pipeline.
+In part of the tutorial, we will explore [Apache Storm](http://hortonworks.com/hadoop/storm) and use it with [Apache Kafka](http://hortonworks.com/hadoop/kafka) to develop a multi-stage event processing pipeline.
 
 ![image01](/assets/2-3/realtime-event-processing/t2/image_01.png)
 
@@ -12,9 +12,9 @@ In an event processing pipeline, each stage is a purpose-built step that perform
 
 ### [Prerequisites](#prerequisites)
 
-In the [previous tutorial](http://hortonworks.com/hadoop-tutorial/simulating-transporting-realtime-events-stream-apache-kafka/), we explored collecting and transporting data using Apache Kafka.
+In the [previous section](http://hortonworks.com/hadoop-tutorial/simulating-transporting-realtime-events-stream-apache-kafka/), we explored collecting and transporting data using Apache Kafka.
 
-So the tutorial [Transporting Realtime Event Stream with Apache Kafka](http://hortonworks.com/hadoop-tutorial/simulating-transporting-realtime-events-stream-apache-kafka/#section_5) needs to be completed before the next steps of this tutorial.
+The previous section: [Transporting Realtime Event Stream with Apache Kafka](http://hortonworks.com/hadoop-tutorial/simulating-transporting-realtime-events-stream-apache-kafka/#section_5) needs to be completed before the next steps of this tutorial.
 
 ### [Scenario](#scenario)
 
@@ -89,7 +89,7 @@ A topology runs indefinitely until you terminate it. Storm will automatically re
 
 1.  View the Storm Services page
 
-Started by logging into Ambari as admin/admin. From the Dashboard page of Ambari, click on Storm from the list of installed services. (If you do not see Storm listed under Services, please follow click on Action->Add Service and select Storm and deploy it.)
+Started by logging into Ambari as admin/admin (username/password). From the Dashboard page of Ambari, click on Storm from the list of installed services. (If you do not see Storm listed under Services, please follow click on Action->Add Service and select Storm and deploy it.)
 
 ![image11](/assets/2-3/realtime-event-processing/t2/image_05.png)
 
