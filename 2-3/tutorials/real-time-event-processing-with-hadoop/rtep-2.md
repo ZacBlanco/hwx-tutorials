@@ -2,7 +2,7 @@
 
 In this tutorial, we will explore [Apache Storm](http://hortonworks.com/hadoop/storm) and use it with [Apache Kafka](http://hortonworks.com/hadoop/kafka) to develop a multi-stage event processing pipeline.
 
-![image01](./images/t2/image_01.png)
+![image01](/assets/2-3/realtime-event-processing/t2/image_01.png)
 
 In an event processing pipeline, each stage is a purpose-built step that performs some real-time processing against upstream event streams for downstream analysis. This produces increasingly richer event streams, as data flows through the pipeline:
 
@@ -45,7 +45,7 @@ A storm cluster has three sets of nodes:
 *   **ZooKeeper** nodes – coordinates the Storm cluster
 *   **Supervisor** nodes – communicates with Nimbus through Zookeeper, starts and stops workers according to signals from Nimbus
 
-![](./images/t2/image_02.png)
+![](/assets/2-3/realtime-event-processing/t2/image_02.png)
 
 Five key abstractions help to understand how Storm processes data:
 
@@ -55,7 +55,7 @@ Five key abstractions help to understand how Storm processes data:
 *   **Bolts** – process input streams and produce output streams. They can run functions, filter, aggregate, or join data, or talk to databases.
 *   **Topologies** – the overall calculation, represented visually as a network of spouts and bolts (as in the following diagram)
 
-![](./images/t2/image_03.png)
+![](/assets/2-3/realtime-event-processing/t2/image_03.png)
 
 Storm users define topologies for how to process the data when it comes streaming in from the spout. When the data comes in, it is processed and the results are passed onto to other bolts or stored in Hadoop.
 
@@ -79,7 +79,7 @@ Links between nodes in your topology indicate how tuples should be passed around
 
 Each node in a Storm topology executes in parallel. In your topology, you can specify how much parallelism you want for each node, and then Storm will spawn that number of threads across the cluster to do the execution.
 
-![](./images/t2/image_04.png)
+![](/assets/2-3/realtime-event-processing/t2/image_04.png)
 
 A topology runs indefinitely until you terminate it. Storm will automatically reassign any failed tasks. Additionally, Storm guarantees that there will be no data loss, even if machines go down and messages are dropped.
 
@@ -91,21 +91,21 @@ A topology runs indefinitely until you terminate it. Storm will automatically re
 
 Started by logging into Ambari as admin/admin. From the Dashboard page of Ambari, click on Storm from the list of installed services. (If you do not see Storm listed under Services, please follow click on Action->Add Service and select Storm and deploy it.)
 
-![image11](./images/t2/image_05.png)
+![image11](/assets/2-3/realtime-event-processing/t2/image_05.png)
 
 1.  Start Storm
 
 From the Storm page, click on Service Actions -> Start
 
-![](./images/t2/image_06.png)
+![](/assets/2-3/realtime-event-processing/t2/image_06.png)
 
 Check the box and click on Confirm Start:
 
-![image19](./images/t2/image_07.png)
+![image19](/assets/2-3/realtime-event-processing/t2/image_07.png)
 
 Wait for Storm to start.
 
-![image17](./images/t2/image_08.png)
+![image17](/assets/2-3/realtime-event-processing/t2/image_08.png)
 
 1.  Configure Storm
 
@@ -113,40 +113,40 @@ You can check the below configurations by pasting them into the Filter text box 
 
 *   Check zookeeper configuration: ensure `storm.zookeeper.servers` is set to **sandbox.hortonworks.com**
 
-![image21](./images/t2/image_09.png)
+![image21](/assets/2-3/realtime-event-processing/t2/image_09.png)
 
 *   Check the local directory configuration: ensure `storm.local.dir` is set to **/hadoop/storm**
 
-![image00](./images/t2/image_10.png)
+![image00](/assets/2-3/realtime-event-processing/t2/image_10.png)
 
 *   Check the nimbus host configuration: ensure nimbus.host is set to sandbox.hortonworks.com
 
-![](./images/t2/image_11.png)
+![](/assets/2-3/realtime-event-processing/t2/image_11.png)
 *   Check the slots allocated: ensure supervisor.slots.ports is set to [6700, 6701]
 
-![](./images/t2/image_12.png)
+![](/assets/2-3/realtime-event-processing/t2/image_12.png)
 
 *   Check the UI configuration port: Ensure ui.port is set to 8744
 
-![](./images/t2/image_13.png)
+![](/assets/2-3/realtime-event-processing/t2/image_13.png)
 
 *   Check the Storm UI from the Quick Links
 
-![](./images/t2/image_14.png)
+![](/assets/2-3/realtime-event-processing/t2/image_14.png)
 
 Now you can see the UI:
 
-![](./images/t2/image_15.png)
+![](/assets/2-3/realtime-event-processing/t2/image_15.png)
 
 4. **Storm User View: **You can alternatively use Storm User View as well to view the topologies created by you.
 
 *   Go to the Ambari User VIew icon and select Storm :
 
-![](./images/t2/image_16.png)
+![](/assets/2-3/realtime-event-processing/t2/image_16.png)
 
 *   The Storm user view gives you the summary of topologies created by you. As of now we do not have any topologies created hence none are listed in the summary.
 
-![](./images/t2/image_17.png)
+![](/assets/2-3/realtime-event-processing/t2/image_17.png)
 
 #### [Step 2. Creating a Storm Spout to consume the Kafka truck events](#step-2-creating-a-storm-spout-to-consume-the-kafka-truck-events)
 
@@ -166,7 +166,7 @@ directory and pre-compiled jars are under the `/opt/TruckEvents/Tutorials-master
 
 Verify that Kafka is running using Ambari dashboard. If not, following the steps in tutorial #1
 
-![](./images/t2/image_18.png)
+![](/assets/2-3/realtime-event-processing/t2/image_18.png)
 
 *   **Creating Storm Topology**
 
@@ -179,21 +179,21 @@ cd /opt/TruckEvents/Tutorials-master/
 storm jar target/Tutorial-1.0-SNAPSHOT.jar.com.hortonworks.tutorials.tutorial2.TruckEventProcessingTopology
 ~~~
 
-![](./images/t2/image_19.png)
+![](/assets/2-3/realtime-event-processing/t2/image_19.png)
 
 It should complete with “Finished submitting topology” as shown below.
 
-![](./images/t2/image_20.png)
+![](/assets/2-3/realtime-event-processing/t2/image_20.png)
 
 This runs the class TruckEventProcessingTopology . The main function of the class defines the topology and submits it to Nimbus. The storm jar part takes care of connecting to Nimbus and uploading the jar.
 
 Refresh the Storm UI browser window to see new Topology ‘truck-event-processor’ in the browser.
 
-![](./images/t2/image_21.png)
+![](/assets/2-3/realtime-event-processing/t2/image_21.png)
 
 *   Storm User View will now show a topology formed and running.
 
-![](./images/t2/image_22.png)
+![](/assets/2-3/realtime-event-processing/t2/image_22.png)
 *   **Generating TruckEvents**
 
 The TruckEvents producer can now be executed as we did in Tutorial #1 from the same dir:
@@ -202,23 +202,23 @@ The TruckEvents producer can now be executed as we did in Tutorial #1 from the s
 java -cp target/Tutorial-1.0-SNAPSHOT.jar com.hortonworks.tutorials.tutorial1.TruckEventsProducer sandbox.hortonworks.com:6667 sandbox.hortonworks.com:2181
 ~~~
 
-![](./images/t2/image_23.png)
+![](/assets/2-3/realtime-event-processing/t2/image_23.png)
 
 Go back to the Storm UI and click on “truck-event-processor” topology to drill into it.  Under Spouts you should see that numbers of emitted and transferred tuples is increasing which shows that the messages are processed in real time by Spout
 
-![](./images/t2/image_24.png)
+![](/assets/2-3/realtime-event-processing/t2/image_24.png)
 
 You can press `Ctrl-C` to stop the Kafka producer
 
 ** Under Storm User view: ** You should be able to see the topology created by you under storm user views.
 
-![](./images/t2/image_25.png)
+![](/assets/2-3/realtime-event-processing/t2/image_25.png)
 
 *   You can also keep track of several statistics of Spouts and Bolts.
 
-![](./images/t2/image_26.png)
+![](/assets/2-3/realtime-event-processing/t2/image_26.png)
 
-![](./images/t2/image_27.png)
+![](/assets/2-3/realtime-event-processing/t2/image_27.png)
 
 #### [Step 3: Code description](#step-3-code-description)
 
