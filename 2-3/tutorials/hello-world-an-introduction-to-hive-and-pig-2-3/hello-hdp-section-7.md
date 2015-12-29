@@ -40,16 +40,16 @@ Therefore Apache Spark was designed as a computing platform to be fast, general-
 
 You can run batch application such as MapReduce types jobs or iterative algorithms that builds upon each other. You can also run interactive queries and process streaming data with your application. Spark also provides number of libraries which you can easily use to expand beyond the basic Spark capabilities such as Machine Learning algorithms, SQL, streaming, and graph processing. Spark runs on Hadoop clusters such as Hadoop YARN or Apache Mesos, or even as a standalone with its own scheduler.
 
-![Lab4_1](http://hortonworks.com/wp-content/uploads/2015/07/Lab4_1.png)  
+![Lab4_1](/assets/2-3/hello-hdp/Lab4_1.png)  
 Lets get started…!!
 
 **Step 4.1: Configuring Spark services using Ambari**
 
 1.  Log on to Ambari Dashboard and click on Actions tab at the bottom left corner. Hit Start All to ensure Spark is running. Ambari will take some time to start all services and you can monitor the progress of it.
 
-![Lab4_2](http://hortonworks.com/wp-content/uploads/2015/07/Lab4_2.png)
+![Lab4_2](/assets/2-3/hello-hdp/Lab4_2.png)
 
-![Lab4_3](http://hortonworks.com/wp-content/uploads/2015/07/Lab4_3.png)
+![Lab4_3](/assets/2-3/hello-hdp/Lab4_3.png)
 
 2.  Close the Ambari browser and we will get running with some codes on Spark. ssh into the sandbox using root as login and hadoop as password.
 
@@ -64,7 +64,7 @@ Optionally, if you don’t have an SSH client installed and configured you can u
 
 This will load the default Spark Scala API.
 
-![Lab4_4](http://hortonworks.com/wp-content/uploads/2015/07/Lab4_4.png)
+![Lab4_4](/assets/2-3/hello-hdp/Lab4_4.png)
 
 Notice it is already starting with Hive integration as we have preconfigured it on the Hortonworks Sandbox.
 
@@ -80,7 +80,7 @@ import org.apache.spark.sql._
 ~~~
 
 
-![Lab4_5](http://hortonworks.com/wp-content/uploads/2015/07/Lab4_5.png)
+![Lab4_5](/assets/2-3/hello-hdp/Lab4_5.png)
 
 **Instantiate HiveContext**
 
@@ -88,7 +88,7 @@ import org.apache.spark.sql._
 val hiveContext = new org.apache.spark.sql.hive.HiveContext(sc)
 ~~~
 
-![Lab4_6](http://hortonworks.com/wp-content/uploads/2015/07/Lab4_6.png)
+![Lab4_6](/assets/2-3/hello-hdp/Lab4_6.png)
 
 
 - `sc` stands for **Spark Context**. SparkContext is the main entry point to everything Spark. It can be used to create RDDs and shared variables on the cluster. When you start up the Spark Shell, the SparkContext is automatically initialized for you with the variable `sc`.
@@ -111,7 +111,7 @@ There are three methods for creating a RDD:
 hiveContext.sql("show tables").collect.foreach(println)
 ~~~
 
-![Lab4_7](http://hortonworks.com/wp-content/uploads/2015/07/Lab4_7.png)
+![Lab4_7](/assets/2-3/hello-hdp/Lab4_7.png)
 
 You will notice that geolocation table and driver mileage table that we created in earlier tutorial are already listed in Hive metastore and can be directly queried upon.
 
@@ -123,13 +123,13 @@ We will do a simple select query to fetch data from geolocation and drivermileag
 val geolocation_temp1 = hiveContext.sql("select * from geolocation")
 ~~~
 
-![Lab4_8](http://hortonworks.com/wp-content/uploads/2015/07/Lab4_8.png)
+![Lab4_8](/assets/2-3/hello-hdp/Lab4_8.png)
 
 ~~~
 val drivermileage_temp1 = hiveContext.sql("select * from drivermileage")
 ~~~
 
-![Lab4_9](http://hortonworks.com/wp-content/uploads/2015/07/Lab4_9.png)  
+![Lab4_9](/assets/2-3/hello-hdp/Lab4_9.png)  
 
 Make sure that the RDD`s carry the exact data. You can verify through following   command
 
@@ -183,7 +183,7 @@ geolocation_temp2.registerTempTable("geolocation_temp2")
 geolocation_temp2.collect.foreach(println)
 ~~~
 
-![Lab4_11](http://hortonworks.com/wp-content/uploads/2015/07/Lab4_11.png)
+![Lab4_11](/assets/2-3/hello-hdp/Lab4_11.png)
 
 1.  **Perform join operation**
 
@@ -196,7 +196,7 @@ val joined = hiveContext.sql("select a.driverid,a.occurance,b.totmiles from geol
 ~~~
 
 
-![Lab4_12](http://hortonworks.com/wp-content/uploads/2015/07/Lab4_12.png)
+![Lab4_12](/assets/2-3/hello-hdp/Lab4_12.png)
 
 *   The resulting data set will give us total miles and total non normal events for a particular driver. Register this filtered table as a temporary table so that subsequent SQL queries can be applied on it.
 
@@ -210,7 +210,7 @@ joined.registerTempTable("joined")
 joined.collect.foreach(println)
 ~~~
 
-![Lab4_13](http://hortonworks.com/wp-content/uploads/2015/07/Lab4_13.png)
+![Lab4_13](/assets/2-3/hello-hdp/Lab4_13.png)
 
 1.  **Compute Driver Risk Factor**
 
@@ -220,7 +220,7 @@ In this section we will associate a driver risk factor with every driver. Driver
 val risk_factor_spark=hiveContext.sql("select driverid, totmiles,occurance, totmiles/occurance riskfactor from joined")
 ~~~
 
-![Lab4_14](http://hortonworks.com/wp-content/uploads/2015/07/Lab4_14.png)
+![Lab4_14](/assets/2-3/hello-hdp/Lab4_14.png)
 
 *   The resulting data set will give us total miles and total non normal events and what is a risk for a particular driver. Register this filtered table as a temporary table so that subsequent SQL queries can be applied on it.
 
@@ -234,7 +234,7 @@ risk_factor_spark.registerTempTable("risk_factor_spark")
 risk_factor_spark.collect.foreach(println)
 ~~~
 
-![Lab4_15](http://hortonworks.com/wp-content/uploads/2015/07/Lab4_15.png)
+![Lab4_15](/assets/2-3/hello-hdp/Lab4_15.png)
 
 **Step 4.5: Load and Save Data into Hive as ORC**
 

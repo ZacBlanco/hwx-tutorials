@@ -37,11 +37,11 @@ To make it easy to interact with Hive we use a tool in the Hortonworks Sandbox c
 
 Let’s now open the Ambari Hive User View and get introduced to the environment, go to the Ambari User VIew icon and select Hive :
 
-![Screen Shot 2015-07-21 at 10.10.18 AM](http://hortonworks.com/wp-content/uploads/2015/07/Screen-Shot-2015-07-21-at-10.10.18-AM-300x208.png)
+![Screen Shot 2015-07-21 at 10.10.18 AM](assets/2-3/hello-hdp/Screen-Shot-2015-07-21-at-10.10.18-AM-300x208.png)
 
 The Ambari Hive User View looks like the following:
 
-![Lab2_2](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_21.png)
+![Lab2_2](assets/2-3/hello-hdp/Lab2_21.png)
 
 Now let’s take a closer look at the SQL editing capabilities in the User View:
 
@@ -72,7 +72,7 @@ Take a few minutes to explore the various Hive User View features.
 
 Now that you are familiar with the Hive User View, let’s create the initial staging tables for the geolocation and trucks data. In this section we will learn how to use the Ambari Hive User View to create four tables: geolocaiton_stage, trucking_stage, geolocation, trucking.  First we are going to create 2 tables to stage the data in their original csv text format and then will create two more tables where we will optimize the storage with ORC. Here is a visual representation of the Data Flow:
 
-![Lab2_3](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_31.png)
+![Lab2_3](assets/2-3/hello-hdp/Lab2_31.png)
 
 1.  Copy-and-paste the the following table DDL into the empty **Worksheet** of the **Query Editor** to define a new table named geolocation_staging:
 
@@ -88,15 +88,15 @@ TBLPROPERTIES ("skip.header.line.count"="1");
 
 2.  Click the green **Execute** button to run the command. If successful, you should see the **Succeeded** status in the **Query Process Results** section:
 
-![Lab2_4](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_41.png)
+![Lab2_4](assets/2-3/hello-hdp/Lab2_41.png)
 
 3.  Create a new Worksheet by clicking the blue **New Worksheet** button:
 
-![Lab2_5](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_51.png)
+![Lab2_5](assets/2-3/hello-hdp/Lab2_51.png)
 
 4.  Notice the tab of your new Worksheet is labeled “Worksheet (1)”. Double-click on this tab to rename the label to “trucks_stage”:
 
-![Lab2_6](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_6.png)
+![Lab2_6](assets/2-3/hello-hdp/Lab2_6.png)
 
 5.  Copy-and-paste the following table DDL into your **trucks_stage** worksheet to define a new table named trucks_stage:
 
@@ -122,7 +122,7 @@ For details on these clauses consult the [Apache Hive Language Manual](https://c
 
 7.  To verify the tables were defined successfully, click the “refresh” icon in the Database Explorer. Under Databases, click default database to expand the list of table and the new tables should appear:
 
-![Lab2_7](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_7.png)
+![Lab2_7](assets/2-3/hello-hdp/Lab2_7.png)
 
 8.  Click on the trucks_stage table name to view its schema.
 
@@ -140,7 +140,7 @@ For details on these clauses consult the [Apache Hive Language Manual](https://c
 
 10.  By default, when you create a table in Hive, a directory with the same name gets created in the /apps/hive/warehouse folder in HDFS.  Using the Ambari Files User View, navigate to the /apps/hive/warehouse folder. You should see both a geolocation_stage and trucks_stage directory:
 
-![Lab2_8](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_8.png)
+![Lab2_8](assets/2-3/hello-hdp/Lab2_8.png)
 
 - The definition of a Hive table and its associated metadata (i.e., the directory the data is stored in, the file format, what Hive properties are set, etc.) are stored in the Hive metastore, which on the Sandbox is a MySQL database.
 
@@ -148,11 +148,11 @@ For details on these clauses consult the [Apache Hive Language Manual](https://c
 
 1.  Let’s load some data into your two Hive tables. Populating a Hive table can be done in various ways. A simple way to populate a table is to put a file into the directory associated with the table. Using the Ambari Files User View, click on the **Move** icon next to the file /tmp/admin/data/geolocation.csv. (Clicking on **Move** is similar to “cut” in cut-and-paste.)
 
-![Screen Shot 2015-07-27 at 9.45.11 PM](http://hortonworks.com/wp-content/uploads/2015/07/Screen-Shot-2015-07-27-at-9.45.11-PM.png)
+![Screen Shot 2015-07-27 at 9.45.11 PM](assets/2-3/hello-hdp/Screen-Shot-2015-07-27-at-9.45.11-PM.png)
 
 2.  After clicking on the **Move** arrow your screen should look like the following:
 
-![Lab2_10](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_10.png)
+![Lab2_10](assets/2-3/hello-hdp/Lab2_10.png)
 
 Notice two things have changed:
 
@@ -160,11 +160,11 @@ Notice two things have changed:
 2.  The icons associated with the operations on the files are removed. This is to indicate that this file is in a special state that is ready to be moved.
 3.  Now navigate to the destination path /apps/hive/warehouse/geolocation_stage.  You might notice that as you navigate through the directories that the file is pinned at the top.  Once you get to the appropriate directory click on the **Paste** icon to move the file:
 
-![Lab2_11](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_111.png)
+![Lab2_11](assets/2-3/hello-hdp/Lab2_111.png)
 
 4.  Go back to the Ambari Hive View and click on the **Load sample data** icon next to the geolocation_stage table. Notice the table is no longer empty, and you should see the first 100 rows of the table:
 
-![Lab2_12](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_12.png)
+![Lab2_12](assets/2-3/hello-hdp/Lab2_12.png)
 
 5.  Enter the following SQL command into an empty Worksheet in the Ambari Hive User View:
 
@@ -174,7 +174,7 @@ LOAD DATA INPATH '/tmp/admin/data/trucks.csv' OVERWRITE INTO TABLE trucks_stage;
 
 6.  You should now see data in the trucks_stage table:
 
-![Lab2_13](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_13.png)
+![Lab2_13](assets/2-3/hello-hdp/Lab2_13.png)
 
 7.  From the Files view, navigate to the `/tmp/admin/data` folder. Notice the folder is empty! The LOAD DATA INPATH command moved the `trucks.csv` file from the `/user/admin/data` folder to the `/apps/hive/warehouse/trucks_stage` folder.
 
@@ -200,7 +200,7 @@ CREATE TABLE geolocation STORED AS ORC AS SELECT * FROM geolocation_stage;
 
 2.  Refresh the **Database Explorer** and verify you have a table named geolocation in the default database:
 
-![Lab2_14](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_14.png)
+![Lab2_14](assets/2-3/hello-hdp/Lab2_14.png)
 
 3.  View the contents of the geolocation table. Notice it contains the same rows as geolocation_stage.
 
@@ -210,7 +210,7 @@ describe formatted geolocation;
 
 5.  Scroll down to the bottom of the **Results** tab and you will see a section labeled **Storage Information**. The output should look like:
 
-![Lab2_15](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_15.png)
+![Lab2_15](assets/2-3/hello-hdp/Lab2_15.png)
 
 6.  Execute the following query to define a new ORC table named trucks that contains the data from trucks_stage:
 
@@ -222,7 +222,7 @@ CREATE TABLE trucks STORED AS ORC TBLPROPERTIES ("orc.compress.size"="1024") AS 
 
 7.  Verify that the table has been properly created by refreshing the **Database Explorer** and viewing the contents of trucks:
 
-![Lab2_16](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_16.png)
+![Lab2_16](assets/2-3/hello-hdp/Lab2_16.png)
 
 
 - If you want to try running some of these commands from the Hive Shell follow the following steps from your terminal shell (or putty if using Windows):
@@ -243,11 +243,11 @@ Exits out of the Hive shell.
 
 1.  Open the Ambari Dashboard in another tab by right clicking on the Ambari icon
 
-![Lab2_17](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_17.png)
+![Lab2_17](assets/2-3/hello-hdp/Lab2_17.png)
 
 2.  Go to the **Hive page** then select the **Configs tab** then click on **Settings tab**:
 
-![Lab2_18](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_18.png)
+![Lab2_18](assets/2-3/hello-hdp/Lab2_18.png)
 
 Once you click on the Hive page you should see a page similar to above:
 
@@ -258,7 +258,7 @@ Once you click on the Hive page you should see a page similar to above:
 
 Scroll down to the Optimization Settings:
 
-![Lab2_19](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_19.png)  
+![Lab2_19](assets/2-3/hello-hdp/Lab2_19.png)  
 In the above screenshot we can see:
 
 1.  Tez is set as the optimization engine
@@ -273,7 +273,7 @@ This shows the new HDP 2.3 Ambari Smart Configurations, which simplifies setting
 
 By default the key configurations are displayed on the first page.  If the setting you are looking for is not on this page you can find additional settings in the **Advanced** tab:
 
-![Lab2_20](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_20.png)
+![Lab2_20](assets/2-3/hello-hdp/Lab2_20.png)
 
 For example, what if we wanted to improve SQL performance by using the new Hive vectorization features, where would we find the setting and how would we turn it on.   You would need to do the following steps:
 
@@ -294,7 +294,7 @@ As you can see from the green circle above the hive.vectorized.execution.enabled
 #### Step 2.6: Analyze the Trucks Data
 
 Next we will be using Hive, Pig and Excel to analyze derived data from the geolocation and trucks tables.  The business objective is to better understand the risk the company is under from fatigue of drivers, over-used trucks, and the impact of various trucking events on risk.   In order to accomplish this we are going to apply a series of transformations to the source data, mostly though SQL, and use Pig to calculate risk.   In Step 10 we will be using Microsoft Excel to generate a series of charts to better understand risk.  
-![Lab2_21](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_211.png)
+![Lab2_21](assets/2-3/hello-hdp/Lab2_211.png)
 
 Let’s get started with the first transformation.   We want to calculate the miles per gallon for each truck. We will start with our truck data table.  We need to sum up all the miles and gas columns on a per truck basis. Hive has a series of functions that can be used to reformat a table. The keyword [LATERAL VIEW](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+LateralView) is how we invoke things. The stack function allows us to restructure the data into 3 columns labeled rdate, gas and mile with 54 rows. We pick truckid, driverid, rdate, miles, gas from our original table and add a calculated column for mpg (miles/gas).  And then we will calculate average mileage.
 
@@ -306,11 +306,11 @@ Let’s get started with the first transformation.   We want to calculate the 
 CREATE TABLE truck_mileage STORED AS ORC AS SELECT truckid, driverid, rdate, miles, gas, miles / gas mpg FROM trucks LATERAL VIEW stack(54, 'jun13',jun13_miles,jun13_gas,'may13',may13_miles,may13_gas,'apr13',apr13_miles,apr13_gas,'mar13',mar13_miles,mar13_gas,'feb13',feb13_miles,feb13_gas,'jan13',jan13_miles,jan13_gas,'dec12',dec12_miles,dec12_gas,'nov12',nov12_miles,nov12_gas,'oct12',oct12_miles,oct12_gas,'sep12',sep12_miles,sep12_gas,'aug12',aug12_miles,aug12_gas,'jul12',jul12_miles,jul12_gas,'jun12',jun12_miles,jun12_gas,'may12',may12_miles,may12_gas,'apr12',apr12_miles,apr12_gas,'mar12',mar12_miles,mar12_gas,'feb12',feb12_miles,feb12_gas,'jan12',jan12_miles,jan12_gas,'dec11',dec11_miles,dec11_gas,'nov11',nov11_miles,nov11_gas,'oct11',oct11_miles,oct11_gas,'sep11',sep11_miles,sep11_gas,'aug11',aug11_miles,aug11_gas,'jul11',jul11_miles,jul11_gas,'jun11',jun11_miles,jun11_gas,'may11',may11_miles,may11_gas,'apr11',apr11_miles,apr11_gas,'mar11',mar11_miles,mar11_gas,'feb11',feb11_miles,feb11_gas,'jan11',jan11_miles,jan11_gas,'dec10',dec10_miles,dec10_gas,'nov10',nov10_miles,nov10_gas,'oct10',oct10_miles,oct10_gas,'sep10',sep10_miles,sep10_gas,'aug10',aug10_miles,aug10_gas,'jul10',jul10_miles,jul10_gas,'jun10',jun10_miles,jun10_gas,'may10',may10_miles,may10_gas,'apr10',apr10_miles,apr10_gas,'mar10',mar10_miles,mar10_gas,'feb10',feb10_miles,feb10_gas,'jan10',jan10_miles,jan10_gas,'dec09',dec09_miles,dec09_gas,'nov09',nov09_miles,nov09_gas,'oct09',oct09_miles,oct09_gas,'sep09',sep09_miles,sep09_gas,'aug09',aug09_miles,aug09_gas,'jul09',jul09_miles,jul09_gas,'jun09',jun09_miles,jun09_gas,'may09',may09_miles,may09_gas,'apr09',apr09_miles,apr09_gas,'mar09',mar09_miles,mar09_gas,'feb09',feb09_miles,feb09_gas,'jan09',jan09_miles,jan09_gas ) dummyalias AS rdate, miles, gas;
 ~~~
 
-![Lab2_22](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_22.png)  
+![Lab2_22](assets/2-3/hello-hdp/Lab2_22.png)  
 
 2.  To view the data generated by the script, click **Load Sample Data** icon in the Database Explorer next to truck_mileage. After clicking the next button once, you should see a table that list each trip made by a truck and driver:
 
-![Lab2_23](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_23.png)
+![Lab2_23](assets/2-3/hello-hdp/Lab2_23.png)
 
 #### Use the Content Assist to build a query
 
@@ -324,7 +324,7 @@ SE
 
 5.  Press **Ctrl+space** to view the following content assist pop-up dialog window:
 
-![Lab2_24](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_24.png)
+![Lab2_24](assets/2-3/hello-hdp/Lab2_24.png)
 
 Notice content assist shows you some options that start with an “SE”.
 
@@ -334,11 +334,11 @@ Notice content assist shows you some options that start with an “SE”.
 SELECT truckid, avg(mpg) avgmpg FROM truck_mileage GROUP BY truckid;
 ~~~
 
-![Lab2_28](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_28.png)  
+![Lab2_28](assets/2-3/hello-hdp/Lab2_28.png)  
 
 7.  Click the “**Save as …**” button to save the query as “**average mpg**”:  
 
-![Lab2_26](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_26.png)
+![Lab2_26](assets/2-3/hello-hdp/Lab2_26.png)
 
 8.  Notice your query now shows up in the list of “Saved Queries”, which is one of the tabs at the top of the Hive User View.
 
@@ -346,37 +346,37 @@ SELECT truckid, avg(mpg) avgmpg FROM truck_mileage GROUP BY truckid;
 
 10. Now lets explore the various explain features to better understand the execution of a query: Text Explain, Visual Explain and Tez Explain. Click on the **Explain** button:
 
-![Lab2_27](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_27.png)
+![Lab2_27](assets/2-3/hello-hdp/Lab2_27.png)
 
 11. Verify this added the `EXPLAIN` command at the beginning of the query:
 
-![Lab2_25](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_25.png)
+![Lab2_25](assets/2-3/hello-hdp/Lab2_25.png)
 
 12. Execute the query. The results should look like the following:
 
-![Lab2_29](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_29.png)
+![Lab2_29](assets/2-3/hello-hdp/Lab2_29.png)
 
 13. Click on **STAGE PLANS:** to view its output, which displays the flow of the resulting Tez job:
 
-![Lab2_30](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_30.png)
+![Lab2_30](assets/2-3/hello-hdp/Lab2_30.png)
 
 14. To see the Visual Explain click on the Visual Explain icon on the right tabs. This is a much more readable summary of the explain plan:
 
-![Lab2_31](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_311.png)
+![Lab2_31](assets/2-3/hello-hdp/Lab2_311.png)
 
 15. If you click on the **TEZ** tab on the right-hand column, you can see DAG details associated with the query.
 
-![Lab2_32](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_32.png)
+![Lab2_32](assets/2-3/hello-hdp/Lab2_32.png)
 
 16. However, you can also view the DAG by going to the Ambari Tez User View. Select the “Tez View: Cluster Instance” User View from the list of User Views.
 
-![Screen Shot 2015-07-21 at 10.22.56 AM](http://hortonworks.com/wp-content/uploads/2015/07/Screen-Shot-2015-07-21-at-10.22.56-AM.png)  
+![Screen Shot 2015-07-21 at 10.22.56 AM](assets/2-3/hello-hdp/Screen-Shot-2015-07-21-at-10.22.56-AM.png)  
 Select the first DAG as it represents the last job that was executed.
 
-![Lab2_34](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_34.png)
+![Lab2_34](assets/2-3/hello-hdp/Lab2_34.png)
 
 17. There are six tabs at the top right please take a few minutes to explore the various tabs and then click on the Graphical View tab and hover over one of the nodes with your cursor to get more details on the processing in that node.  
-![Lab2_35](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_35.png)
+![Lab2_35](assets/2-3/hello-hdp/Lab2_35.png)
 
 18. Go back to the Hive UV and save the query by
 
@@ -395,5 +395,5 @@ GROUP BY truckid;
 
 20.  To view the data generated by the script, click **Load sample data** icon in the Database Explorer next to avg_mileage. You see our table is now a list of each trip made by a truck.
 
-![Lab2_36](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_36.png)
+![Lab2_36](assets/2-3/hello-hdp/Lab2_36.png)
 

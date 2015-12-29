@@ -36,19 +36,19 @@ The [Hive ODBC driver](http://hortonworks.com/hdp/addons/) can be found at the H
 1.  Open a new blank workbook. Select Data tab at the top then select “Get External Data” and then select “New Database query”.
 2.  Chose Sample Hortonworks Hive DSN and hit Ok.
 
-![Lab5_1](http://hortonworks.com/wp-content/uploads/2015/07/Lab5_1.png)
+![Lab5_1](/assets/2-3/hello-hdp/Lab5_1.png)
 
 3.  Next prompt shall ask you to enter login and password. Type “sandbox” in login and the leave the password empty. Hit Ok.
 
-![Lab5_2](http://hortonworks.com/wp-content/uploads/2015/07/Lab5_2.png)
+![Lab5_2](/assets/2-3/hello-hdp/Lab5_2.png)
 
 4.   Choose the data table avg_mileage table from the table chart on the right and hit      Add Table. avg_mileage should now appear under Query View tab on the left. Choose avg_mileage.* in the Field column. You are set to import data from your Hive table. As a final step, Hit Test!
 
-![Lab5_3](http://hortonworks.com/wp-content/uploads/2015/07/Lab5_3.png)
+![Lab5_3](/assets/2-3/hello-hdp/Lab5_3.png)
 
 5.  Click on Return Data to import your table into an excel. Submit OK to populate your excel.
 
-![Lab5_4](http://hortonworks.com/wp-content/uploads/2015/07/Lab5_4.png)
+![Lab5_4](/assets/2-3/hello-hdp/Lab5_4.png)
 
 6.  Once the data is placed you will see the avg_mileage table imported into your spreadsheet.
 
@@ -56,25 +56,25 @@ The [Hive ODBC driver](http://hortonworks.com/hdp/addons/) can be found at the H
 
 1.  Open a new blank workbook. Select Data tab at the top then select “Get External Data” and then select “From Other Data Sources”. Then at the bottom select “From Microsoft Query”. Choose your data source and ours is called Hadoop and you will then see the Query Wizard. We will import the avg_mileage table.
 
-![Lab5_6](http://hortonworks.com/wp-content/uploads/2015/07/Lab5_6.png)
+![Lab5_6](/assets/2-3/hello-hdp/Lab5_6.png)
 
 2.  Accept the defaults for everything and click through till you hit the Finish button. After you click on Finish, Excel will send the data request over to Hadoop. It will take awhile for this to happen. When the data is returned it will ask you to place the data in the workbook. We want to be in cell \$A\$1 like this.
 
-![Lab5_6](http://hortonworks.com/wp-content/uploads/2015/07/Lab5_61.png)
+![Lab5_6](/assets/2-3/hello-hdp/Lab5_61.png)
 
 3.  The data is placed you will see the avg_mileage table imported into your spreadsheet.
 
-![Lab5_7](http://hortonworks.com/wp-content/uploads/2015/07/Lab5_7.jpg)
+![Lab5_7](/assets/2-3/hello-hdp/Lab5_7.jpg)
 
 **Step 5.b.2: Visualize Data with Microsoft Excel**
 
 1.  So now we are going to insert a Power View report. We do this by selecting the “Insert” tab at the top and select “Power View Reports” button in the middle. This will create a new tab in your workbook with the data inserted in the Power View page.”
 
-![Lab5_14](http://hortonworks.com/wp-content/uploads/2015/07/Lab5_14.jpg)
+![Lab5_14](/assets/2-3/hello-hdp/Lab5_14.jpg)
 
 2.  Select the design tab at the top and then select a column chart and use the stacked column version in the drop down menu. This will give you a bar chart. Grab the lower right of the chart and stretch it out to the full pane. Close the filter tab and the chart will expand and look like this.
 
-![Lab5_9](http://hortonworks.com/wp-content/uploads/2015/07/Lab5_9.jpg)
+![Lab5_9](/assets/2-3/hello-hdp/Lab5_9.jpg)
 
 3.  So to finish off the tutorial I am going to create a map of the events reported in the geolocation table. I will show you how you can build up the queries and create a map of the data on an ad hoc basis.
 
@@ -86,11 +86,11 @@ The [Hive ODBC driver](http://hortonworks.com/hdp/addons/) can be found at the H
 select driverid, city, state from geolocation;
 ~~~
 
-![Lab5_10](http://hortonworks.com/wp-content/uploads/2015/07/Lab5_10.png)
+![Lab5_10](/assets/2-3/hello-hdp/Lab5_10.png)
 
 6.  After I execute the query I see what results are returned. In a more complex query you can easily make changes to the query at this point till you get the right results. So the results I get back look like this.
 
-![Lab5_11](http://hortonworks.com/wp-content/uploads/2015/07/Lab5_11.png)
+![Lab5_11](/assets/2-3/hello-hdp/Lab5_11.png)
 
 7.  Since my results look fine I now need to capture the result in a table. So I will use the select statement as part of my CTAS (create table select as) pattern. I will call the table events and the query now looks like this. 
 
@@ -103,19 +103,19 @@ AS
 SELECT driverid, city, state FROM geolocation;
 ~~~
 
-![Lab5_12](http://hortonworks.com/wp-content/uploads/2015/07/Lab5_12.png)
+![Lab5_12](/assets/2-3/hello-hdp/Lab5_12.png)
 
 8.  I can execute the query and the table events gets created. As we saw earlier I can go to Excel and import the table into a blank worksheet. The imported data will look like this.
 
-![Lab5_13](http://hortonworks.com/wp-content/uploads/2015/07/Lab5_13.jpg)
+![Lab5_13](/assets/2-3/hello-hdp/Lab5_13.jpg)
 
 9.  Now I can insert the PowerView tab in the Excel workbook. To get a map I just select the Design tab at the top and select the Map button in the menu bar.
 
-![Lab5_8](http://hortonworks.com/wp-content/uploads/2015/07/Lab5_8.jpg)
+![Lab5_8](/assets/2-3/hello-hdp/Lab5_8.jpg)
 
 10.  Make sure you have a network connection because Power View using Bing to do the geocoding which translates the city and state columns into map coordinates. If we just want to see where events took place we can uncheck the driverid. The finished map looks like this.
 
-![Lab5_15](http://hortonworks.com/wp-content/uploads/2015/07/Lab5_15.jpg)
+![Lab5_15](/assets/2-3/hello-hdp/Lab5_15.jpg)
 
 We’ve shown how the Hortonworks Data Platform (HDP) can store and analyze geolocation data. In addition I have shown you a few techniques on building your own queries. You can easily plot risk factor and miles per gallon as bar charts. I showed you the basics of creating maps. A good next step is to only plot certain types of events. Using the pattern I gave you it is pretty straight forward to extract the data and visualize it in Excel.
 
