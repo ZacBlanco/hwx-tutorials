@@ -644,7 +644,7 @@ A single physical machine gets saturated with its storage capacity as the data g
 
 ![Lab2_2](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_2.png)
 
-*   Click tmp. Then click  ![Lab2_3](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_3.png) button to create the /tmp/admin directory and then create the /tmp/admin/data directory.
+*   Click tmp. Then click  ![Lab2_3](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_3.png) button to create the `/tmp/admin` directory and then create the `/tmp/admin/data` directory.
 
 ![Screen Shot 2015-07-27 at 9.42.07 PM](http://hortonworks.com/wp-content/uploads/2015/07/Screen-Shot-2015-07-27-at-9.42.07-PM.png)
 
@@ -656,7 +656,7 @@ You can also perform the following operations on a file by right clicking on the
 
 **IMPORTANT**
 
-- Right click on the file `trucks.csv`. Click **Permissions**. Make sure that the background of all the **write** boxes are checked (blue).
+- Right click on the folder `data` which is contained within `/tmp/admin`. Click **Permissions**. Make sure that the background of all the **write** boxes are checked (blue).
 
 ![Lab2_5](http://hortonworks.com/wp-content/uploads/2015/07/Lab2_5.png)
 
