@@ -2,11 +2,11 @@
 
 **This tutorial is from the Community part of tutorial for [Hortonworks Sandbox](http://hortonworks.com/products/sandbox) - a single-node Hadoop cluster running in a virtual machine. [Download](http://hortonworks.com/products/sandbox) the Hortonworks Sandbox to run this and other tutorials in the series.** 
 
-###Summary
+### Summary
 
 This tutorial will build on the previous tutorial - [13 - Refining and Visualizing Sentiment Data](../Sandbox/T13_Refining_And_Visualizing_Sentiment_Data.md) - by using Spring XD to stream in tweets to HDFS. Once in HDFS, we'll use Apache Hive to process and analyze them, before visualizing in a tool.
 
-##1 - Download and Install Spring XD
+## 1 - Download and Install Spring XD
 Spring XD can be found at [http://spring.io](http://projects.spring.io/spring-xd/). This tutorial uses the 1.0.0.M3 version. Conventions may change in the next release. 
 
 Follow the install instructions and kick up Spring XD with a test stream to make sure it's looking good. 
@@ -24,10 +24,10 @@ That simple instruction should begin showing output in the server terminal windo
 	
 Congrats! Spring XD is running.
 
-##2 - Download and Install Hortonworks Sandbox
+## 2 - Download and Install Hortonworks Sandbox
 The Hortonworks Sandbox environment can be downloaded from [http://hortonworks.com/products/sandbox](http://hortonworks.com/products/sandbox). This tutorial uses the 1.3 version.  Conventions may change in the next release. This tutorial also uses the VirtualBox version of the image.
 
-###Running Sandbox with Bridged Networking
+### Running Sandbox with Bridged Networking
 The current Sandbox uses a NAT adapter with port forwarding by default. This makes it convenient to access Sandbox at 127.0.0.1:8888 but unfortunately, Spring XD appears to locate and attempt to use the internal IP address (in my case that was a fairly standard VirtualBox IP 10.0.2.15).
 As this IP won't resolve, the simplest workaround is to use Bridged Networking so the Sandbox has an IP address on local physical network.
 
@@ -37,37 +37,37 @@ Steps to do this are as follows:
 * Access the Network settings for the Sandbox.
 * Disable the NAT Adapter
 
-![./images/screenshot.4.png](./images/screenshot.4.png)
+![/assets/1-3/spring-xd-tweet-streaming/screenshot.4.png](/assets/1-3/spring-xd-tweet-streaming/screenshot.4.png)
 
 * Set-up a Bridged Adapter (and don't forget to change it back later if necessary)
 
-![./images/screenshot.3.png](./images/screenshot.3.png)
+![/assets/1-3/spring-xd-tweet-streaming/screenshot.3.png](/assets/1-3/spring-xd-tweet-streaming/screenshot.3.png)
 
 * Power on Sandbox
 
 **NB: After booting up fully, sandbox will still say to access at 127.0.0.1 but owing to the changes, this IP address is now incorrect. You can find the IP Address of the Sandbox as it loads:**
 
-![./images/screenshot.2.png](./images/screenshot.2.png)
+![/assets/1-3/spring-xd-tweet-streaming/screenshot.2.png](/assets/1-3/spring-xd-tweet-streaming/screenshot.2.png)
 
 In my case, local IP was 10.0.0.27 and I could access the Sandbox at 10.0.0.27:8888.
 Check whether you can do the same and then, we can configure SpringXD to use Sandbox.
 
-###Configuring Spring XD to use Hadoop (Hortonworks Sandbox)
+### Configuring Spring XD to use Hadoop (Hortonworks Sandbox)
 **NB: If you have Ambari activated on Sandbox, then both Ambari and Spring XD attempt to use port 8080. This means you'll need to run Spring XD with a different port, for example:** `--httpPort 8090`
 
-####Step 1 - Edit the Hadoop.properties file
+#### Step 1 - Edit the Hadoop.properties file
 
 Edit the file at `XD_HOME\xd\config\hadoop.properties` to enter the namenode config:
 	
 	fs.default.name=hdfs://10.0.0.27:8020
 
-####Step 2 - Spin up the Spring XD Service with Hadoop
+#### Step 2 - Spin up the Spring XD Service with Hadoop
 
 In a terminal window get the server running from the `XD_HOME\XD\` folder:
 
 	./xd-singlenode --hadoopDistro hadoop11
 
-####Step 3 - Spin up the Spring XD Client with Hadoop
+#### Step 3 - Spin up the Spring XD Client with Hadoop
 
 In a separate terminal window, get the shell running from the `XD_HOME\Shell\` folder:
 
@@ -116,7 +116,7 @@ Which you can quickly examine with:
 
 Cool, but not so interesting, so let's get to Twitter.
 
-##3 - Create the Tweet Stream in Spring XD
+## 3 - Create the Tweet Stream in Spring XD
 
 In order to stream in information from Twitter, then you'll need to set-up a [Twitter Developer app](http://dev.twitter.com) so that you can get the necessary keys.
 
@@ -155,11 +155,11 @@ At this point, you can undeploy the stream so we can do some sample analysis:
 	
 We're now done with Spring XD. It's a fun way to pull in a [bunch of data from various sources](http://docs.spring.io/spring-xd/docs/1.0.0.BUILD-SNAPSHOT/reference/html/#sources). We can now switch over to Sandbox.
 
-##4 - Refine the Data using Hive
+## 4 - Refine the Data using Hive
 
 To process and analyze the data, we'll borrow the technique [from the previous tutorial](../Sandbox/T13_Refining_And_Visualizing_Sentiment_Data.md). First of all, we can take a look in the File Browser to see the logs we've ingested.
 
-![./images/screenshot.1.png](./images/screenshot.1.png)
+![/assets/1-3/spring-xd-tweet-streaming/screenshot.1.png](/assets/1-3/spring-xd-tweet-streaming/screenshot.1.png)
 
 Next, we need to position the reference files for the analysis. You can follow the steps (Step 1 and Step 2) in the previous tutorial to load in the `dictionary` file, and the `time_zone_map` file. If you've already completed that tutorial, then you have everything you need already in the Sandbox.
 
@@ -177,11 +177,11 @@ This will place a JAR called `json-serde-1.1.7-jar-with-dependencies.jar` in the
 
 This JAR is needed for the Hive queries, which we'll perform. To do that, we will create a new query, first loading the JAR by selecting 'Add File' > 'Upload File' and then finally selecting that JAR for use.
 
-![./images/screenshot.5.png](./images/screenshot.5.png)
+![/assets/1-3/spring-xd-tweet-streaming/screenshot.5.png](/assets/1-3/spring-xd-tweet-streaming/screenshot.5.png)
 
 Once done, the following script creates a fresh table for the twitter logs:
 
-```SQL
+~~~
 	CREATE EXTERNAL TABLE cyrustweets_raw (
 	   id BIGINT,
 	   created_at STRING,
@@ -214,10 +214,11 @@ Once done, the following script creates a fresh table for the twitter logs:
 	ROW FORMAT SERDE 'org.openx.data.jsonserde.JsonSerDe'
 	STORED AS TEXTFILE
 	LOCATION '/xd/cyrustweets'
-```	
+~~~	
+
 **NB. If you've already completed the previous tutorial, there's no need to recreate the next two tables. Note that the `LOCATION` paths may be different for you.**
 
-```SQL
+~~~
 	-- Add the dictionary table
 	CREATE EXTERNAL TABLE dictionary (
 	    type string,
@@ -325,7 +326,7 @@ Then we'll create some views that can be used in the sentiment calculations.
 		
 Once this job has completed, then a quick browse of the data in `cyrustweetsanalysis` will show the results of the analysis.
 
-![./images/screenshot.7.png](./images/screenshot.7.png)
+![/assets/1-3/spring-xd-tweet-streaming/screenshot.7.png](/assets/1-3/spring-xd-tweet-streaming/screenshot.7.png)
 
 ##5 - Visualize the Data using Tool X
 
