@@ -49,26 +49,26 @@ following two files:
 
 Start by using the **HDFS Files** view from the views dropdown menu in Ambari
 
-![](../../../assets/2-3/hcat-pig-and-hive-commands/01_hdfs_files_dropdown.png)
+![](/assets/2-3/hcat-pig-and-hive-commands/01_hdfs_files_dropdown.png)
 
 Navigate to the folder `/tmp` and create a new folder called **data**.
 
-![](../../../assets/2-3/hcat-pig-and-hive-commands/02_create_data_directory.png)
+![](/assets/2-3/hcat-pig-and-hive-commands/02_create_data_directory.png)
 
 Then use the menus to upload to upload the `master.csv` file and `batting.csv` file.
 
-![](../../../assets/2-3/hcat-pig-and-hive-commands/03_upload_files.png)
+![](/assets/2-3/hcat-pig-and-hive-commands/03_upload_files.png)
 
 After uploading both files head back to the `data` folder we created. Right click on it's row and select **Permissions**. Make sure all boxes are checked (blue).
 
-![](../../../assets/2-3/hcat-pig-and-hive-commands/04_1_permissions_dropdown.png)
-![](../../../assets/2-3/hcat-pig-and-hive-commands/04_2_permissions_dialog.png)
+![](/assets/2-3/hcat-pig-and-hive-commands/04_1_permissions_dropdown.png)
+![](/assets/2-3/hcat-pig-and-hive-commands/04_2_permissions_dialog.png)
 
 Look at the top bar above the files. Look for **Upload**. Then click the **Browse** to search for the files that we unzipped earlier.
 
 When you are done, you will see the two files in your directory.
 
-![](../../../assets/2-3/hcat-pig-and-hive-commands/04_files_finished_uploading.png)
+![](/assets/2-3/hcat-pig-and-hive-commands/04_files_finished_uploading.png)
 
 ### Create tables for the Data With Hive and HCatalog
 
@@ -76,11 +76,11 @@ HCatalog has been merged with Hive project. This means that your Hive queries wi
 
 We are now going to utilize the _Hive_ view to create tables with our data. Use the same dropdown menu that you used to select the _HDFS Files_ view, and instead click **Hive**.
 
-![](../../../assets/2-3/hcat-pig-and-hive-commands/05_hive_view_dropdown.png)
+![](/assets/2-3/hcat-pig-and-hive-commands/05_hive_view_dropdown.png)
 
 Notice some of the basic items in the Hive view which are outlined in the image below.
 
-![](../../../assets/2-3/hcat-pig-and-hive-commands/06_hive_view_outline.png)
+![](/assets/2-3/hcat-pig-and-hive-commands/06_hive_view_outline.png)
 
 We're now going to create a table from our CSV using a Hive query. Copy and paste the following query and click **Execute** to run the command and create the table.
 
@@ -95,7 +95,7 @@ STORED AS TEXTFILE
 TBLPROPERTIES("skip.header.line.count"="1")
 ~~~
 
-![](../../../assets/2-3/hcat-pig-and-hive-commands/07_hive_query_1.png)
+![](/assets/2-3/hcat-pig-and-hive-commands/07_hive_query_1.png)
 
 You'll now need to load the data file into the table. Use the following command to do so.
 
@@ -103,11 +103,11 @@ You'll now need to load the data file into the table. Use the following command 
 LOAD DATA INPATH '/tmp/data/Batting.csv' OVERWRITE INTO TABLE batting_data
 ~~~
 
-![](../../../assets/2-3/hcat-pig-and-hive-commands/08_hive_query_2.png)
+![](/assets/2-3/hcat-pig-and-hive-commands/08_hive_query_2.png)
 
 You will see a new table "batting_data" has been created and has all of the data contained within it.
 
-![](../../../assets/2-3/hcat-pig-and-hive-commands/09_hive_select_1.png)
+![](/assets/2-3/hcat-pig-and-hive-commands/09_hive_select_1.png)
 
 
 Repeat above steps for the second data set (**master.csv**) using the following queries to create the `master_data` table.
@@ -136,7 +136,7 @@ LOAD DATA INPATH '/tmp/data/Master.csv' OVERWRITE INTO TABLE master_data
 
 You should now have two different tables inside the database explorer:
 
-![](../../../assets/2-3/hcat-pig-and-hive-commands/10_db_explorer.png)
+![](/assets/2-3/hcat-pig-and-hive-commands/10_db_explorer.png)
 
 ### A Short Apache Hive Tutorial
 
@@ -165,7 +165,7 @@ To see tables that Hive knows about, in Query Editor type the query:
 
 and click on **Execute**.
 
-![](../../../assets/2-3/hcat-pig-and-hive-commands/11_show_tables.png)
+![](/assets/2-3/hcat-pig-and-hive-commands/11_show_tables.png)
 
 Notice the tables that you previously created are in the list ("batting_data" and "master_data").
 
@@ -175,13 +175,13 @@ To see the records type:
 
 in Query Editor and click **Execute**.
 
-![](../../../assets/2-3/hcat-pig-and-hive-commands/12_select_batting_data.png)
+![](/assets/2-3/hcat-pig-and-hive-commands/12_select_batting_data.png)
 
 You can see the columns in the table by executing:
 
 `describe batting_data` 
 
-![](../../../assets/2-3/hcat-pig-and-hive-commands/13_describe_batting_data.png)
+![](/assets/2-3/hcat-pig-and-hive-commands/13_describe_batting_data.png)
 
 You can make a join with other tables in Hive the same way you do with
 other database queries.
@@ -200,7 +200,7 @@ watch the job running in the log.
 
 When the job completes, you can see the results.
 
-![](../../../assets/2-3/hcat-pig-and-hive-commands/14_advanced_join_query.png)
+![](/assets/2-3/hcat-pig-and-hive-commands/14_advanced_join_query.png)
 
 * * * * *
 
@@ -211,7 +211,7 @@ In this tutorial, you will create and execute a Pig script.
 
 To access the Pig interface, use the dropdown menu for views in Ambari. Select **Pig**.
 
-![](../../../assets/2-3/hcat-pig-and-hive-commands/15_pig_dropdown.png)
+![](/assets/2-3/hcat-pig-and-hive-commands/15_pig_dropdown.png)
 
 A special feature of the interface is the Pig helper. The Pig helper
 provides templates for the statements, functions, I/O statements,
@@ -221,7 +221,7 @@ used during execution.
 
 Click **New Script** and create a name for it.
 
-![](../../../assets/2-3/hcat-pig-and-hive-commands/16_create_pig_script.png)
+![](/assets/2-3/hcat-pig-and-hive-commands/16_create_pig_script.png)
 
 In this section, you will load the data from the table that is stored in
 HCatalog/Hive. Then you will make a join between two data sets on the Player
@@ -246,7 +246,7 @@ pastes the Load template into the script area.
 
 **IMPORTANT**! Note that the statement should be `org.apache.hive.hcatalog.pig.HCatLoader();`. Note the addition of the **hive** component.
 
-![](../../../assets/2-3/hcat-pig-and-hive-commands/17_pig_helper_dropdown.png)
+![](/assets/2-3/hcat-pig-and-hive-commands/17_pig_helper_dropdown.png)
 
 -   The entry **%TABLE%** is highlighted in red. Type the name of the
     table ('**batting_data**') in place of **%TABLE%**(single quotes
@@ -264,7 +264,7 @@ a = LOAD 'batting_data' using org.apache.hive.hcatalog.pig.HCatLoader();
 b = LOAD 'master_data' using org.apache.hive.hcatalog.pig.HCatLoader();
 ~~~
 
-![](../../../assets/2-3/hcat-pig-and-hive-commands/18_pig_script_1.png)
+![](/assets/2-3/hcat-pig-and-hive-commands/18_pig_script_1.png)
 
 It is important to note that at this point, we have merely defined the
 aliases for our tables to hold the data (alias "a" for batting data and
@@ -294,7 +294,7 @@ b = LOAD 'master_data' using org.apache.hive.hcatalog.pig.HCatLoader();
 c = join a by playerid, b by playerid;
 ~~~
 
-![](../../../assets/2-3/hcat-pig-and-hive-commands/19_pig_script_2.png)
+![](/assets/2-3/hcat-pig-and-hive-commands/19_pig_script_2.png)
 
 Now you have joined all the records in both of the tables on Player ID.
 
@@ -317,13 +317,13 @@ c = join a by playerid, b by playerid;
 dump c;
 ~~~
 
-![](../../../assets/2-3/hcat-pig-and-hive-commands/20_pig_script_3.png)
+![](/assets/2-3/hcat-pig-and-hive-commands/20_pig_script_3.png)
 
 ### Step 5: Save the script and execute it
 
 First you need to add the `-useHCatalog` (Case Sensitive) argument using the box box in the bottom right hand corner
 
-![](../../../assets/2-3/hcat-pig-and-hive-commands/21_use_hcat_arg.png)
+![](/assets/2-3/hcat-pig-and-hive-commands/21_use_hcat_arg.png)
 
 At the top of the screen, make sure the box "Execute on Tez" is checked. Then click **Execute** to run the script. This action creates one or more Tez jobs.
 
@@ -331,18 +331,18 @@ Below the **Execute** is a progress bar that shows the job's status.
 The progress bar can be blue (indicating job is in process), red (job
 has a problem), or green (job is complete).
 
-![](../../../assets/2-3/hcat-pig-and-hive-commands/22_pig_job_status.png)
+![](/assets/2-3/hcat-pig-and-hive-commands/22_pig_job_status.png)
 
 When the job completes, you will see the results show up in one of the dropdown menus. The result is that each line that starts with an open parenthesis "(" has
 data from both tables for each unique player ID.
 
-![](../../../assets/2-3/hcat-pig-and-hive-commands/23_pig_result.png)
+![](/assets/2-3/hcat-pig-and-hive-commands/23_pig_result.png)
 
 Click the **Logs** dropdown menu if you want to see what happened when your
 script ran, including any error messages. (You might need to scroll down
 to view the entire log.)
 
-![](../../../assets/2-3/hcat-pig-and-hive-commands/24_pig_result_logs.png)
+![](/assets/2-3/hcat-pig-and-hive-commands/24_pig_result_logs.png)
 
 Congratulations! You have successfully completed HCatalog, Basic Pig &
 Hive Commands.
