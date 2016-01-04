@@ -22,18 +22,19 @@ Finally, we will use [Apache Zeppelin](http://hortonworks.com/hadoop/zeppelin/) 
 ## Pre-Requisites
 
 - Downloaded and Installed the [Hortonworks Sandbox with HDP 2.3](http://hortonworks.com/hdp/downloads/)
+- Downloaded the GZipped version of the [Hortonworks DataFlow](http://hortonworks.com/products/dataflow)
 - Added `sandbox.hortonworks.com` to your `/etc/hosts` file.
 
 If you haven't added `sandbox.hortonworks.com` to your lists of hosts you can do so with the following command on a unix system:
 
 ~~~
-cat /etc/hosts > "127.0.0.1     sandbox.hortonworks.com"
+echo "127.0.0.1     sandbox.hortonworks.com >> /etc/hosts
 ~~~
 
 
 ## Outline
 
-1. [Install Apache Nifi](#install-apache-nifi)
+1. [Install Apache NiFi](#install-apache-nifi)
 2. [Configure and Start Solr](#configure-and-start-solr)
 3. [Creating a Twitter Application](#creating-a-twitter-application)
 4. [Create a Data Flow with Nifi](#creating-a-data-flow-with-nifi)
@@ -48,7 +49,11 @@ cat /etc/hosts > "127.0.0.1     sandbox.hortonworks.com"
 
 The first thing you're going to need if you haven't done it already is install the Apache Nifi service on your Sandbox.
 
-#### SSH into your Sandbox
+### Download Apache NiFi
+
+If you haven't already you will need to [download the GZipped versions of Hortonworks DataFlow from the website](http://hortonworks.com/hdp/downloads/#hdf).
+
+#### Send NiFi to the Sandbox
 
 If you've already logged into your sandbox through SSH your password will be different than below.
 
@@ -58,50 +63,71 @@ If you've already logged into your sandbox through SSH your password will be dif
 
 > **Note** that you will be prompted to change the `root` user's password once you login to the sandbox. **Do NOT forget this!**
 
+First we're going to need to send the HDF file that was just downloaded to the Sandbox via SCP. 
+
+Assuming that HDF has been downloaded to your `~/Downloads/` directory and that the file has a name `{NIFI}` Open up the your terminal and type the following command:
+
+~~~
+scp -P 2222 ~/Downloads/{NIFI} root@localhost:/root
+~~~
+
+If the downloaded file has a name such as `nifi-1.1.1.0-12-bin.zip`, then your command would be:
+
+~~~
+scp -P 2222 ~/Downloads/nifi-1.1.1.0-12-bin.zip root@localhost:/root
+~~~
+
+Once you've done that you'll need to SSH into the sandbox
+
+### SSH into the Sandbox
+
 There are two options to connecting to your sandbox to execute terminal commands. The first is by using the terminal emulator at [http://sandbox.hortonworks.com:4200](http://sandbox.hortonworks.com:4200). Or you can open a terminal on your computer and use the following command
 
 ~~~
-ssh root@127.0.0.1 -p 2222
+ssh root@sandbox.hortonworks.com -p 2222
 ~~~
 
-Once you've successfully connected to the sandbox you'll need to execute the following command to install the Ambari Nifi service
+Once you've successfully connected to the sandbox make sure that you're in the directory `/root/`. Then run the following commands. Replace `{NIFI}` with the name of the file which you copied earlier.
+
+Make a new directory for NiFi
 
 ~~~
-VERSION=`hdp-select status hadoop-client | sed 's/hadoop-client - \([0-9]\.[0-9]\).*/\1/'`
-sudo git clone https://github.com/abajwa-hw/ambari-nifi-service.git   /var/lib/ambari-server/resources/stacks/HDP/$VERSION/services/NIFI
+mkdir nifi
 ~~~
 
-Then you'll need to restart Ambari Server. Use the following command:
+Move our file to the folder which we just created
 
 ~~~
-sudo service ambari restart
+mv {NIFI} ./nifi
 ~~~
 
-Once Ambari restarts navigate back over to the Ambari Dashboard at  [http://sandbox.hortonworks.com:8080](http://sandbox.hortonworks.com:8080) and click **Add Service** on the bottom of left sidebar.
+Unzip the file
 
-![Add Service Button Ambari](/assets/2-3/nifi-sentiment-analytics/images/01_add_nifi.png)
+~~~
+tar -xvf {NIFI}
+~~~
 
-After you've clicked **Add Service** you will be greeted with the Add Service Wizard. Scroll down and look for the **NiFi** service. **Check the box** next to NiFi and click **Next**.
+Then let's head into the directory we just unzipped. Do a
 
+~~~
+cd {NIFI}
+~~~
 
-![Add Service Button Ambari](/assets/2-3/nifi-sentiment-analytics/images/02_add_nifi_dialog.png)
+Next we're going to need to change the port which nifi runs on from 8080 to 9090.
 
+Inside the `conf/nifi.properties` file, find the line which has `nifi.web.http.port`. Make sure it looks like the following:
 
-Continue through the add Service Wizard until you reach the screen below. Click **Deploy**. Then Ambari will install, start, and test NiFi on the sandbox.
+~~~
+nifi.web.http.port=9090
+~~~
 
+You can now start NiFi! use the `nifi.sh` file to start the application.
 
-![Deploy NiFi Ambari](/assets/2-3/nifi-sentiment-analytics/images/03_deploy_nifi_service.png)
+~~~
+bash bin/nifi.sh start
+~~~
 
-After clicking **Deploy** wait until Ambari completely installs Nifi and click **Next**.
-
-![Install, Start, and Test NiFi](/assets/2-3/nifi-sentiment-analytics/images/04_nifi_install_start_test.png)
-
-NiFi should now appear as a service on the left hand side of the ambari dashboard.
-
-![NiFi Installed](/assets/2-3/nifi-sentiment-analytics/images/05_nifi_installed.png)
-
-
-Great! NiFi is now installed on your Sandbox! 
+After a few short moments NiFi will start up on the Sandbox.
 
 Make sure you can reach the NiFi user interface at [http://sandbox.hortonworks.com:9090/nifi](http://sandbox.hortonworks.com:9090/nifi).
 
