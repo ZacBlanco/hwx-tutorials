@@ -18,11 +18,11 @@ The dataset that we will need for this tutorial is [here](http://s3.amazonaws.co
 
 Once you unzip the zip file – SensorFiles.zip, you will see the following files inside. We will be using these datafiles for the following tutorial.
 
-![](../../../assets/2-3/realtime-queries-hive-on-tez/dataset%20on%20local%20folder.JPG)
+![](../../../assets/2-1/realtime-queries-hive-on-tez/dataset%20on%20local%20folder.JPG)
 
 Let’s use the above two csv files (HVAC.csv & building.csv) to create two new tables using the following step. Navigate to [http://127.0.0.1:8000](http://127.0.0.1:8000) using your browser. Click on HCat tab.
 
-![](../../../assets/2-3/realtime-queries-hive-on-tez/create%20table%20screen.JPG)
+![](../../../assets/2-1/realtime-queries-hive-on-tez/create%20table%20screen.JPG)
 
 Now, let’s upload the above datafiles into HDFS and create two hive tables using the following steps.
 
@@ -30,11 +30,11 @@ We will name the tables as per the csv file names : “hvac” and “building�
 
 Click on “Create a new table from a file” on the left hand side pane. Enter table name as “hvac” and Choose hvac.csv file from your local system as the Input File.
 
-![](../../../assets/2-3/realtime-queries-hive-on-tez/hvac%20table%20naming.JPG)
+![](../../../assets/2-1/realtime-queries-hive-on-tez/hvac%20table%20naming.JPG)
 
 Once file is specified, you will see the column names and the data mapping as follows. You might have to scroll down little.
 
-![](../../../assets/2-3/realtime-queries-hive-on-tez/data%20mapping.JPG)
+![](../../../assets/2-1/realtime-queries-hive-on-tez/data%20mapping.JPG)
 
 Click on the create button to complete the table creation process.
 
@@ -42,7 +42,7 @@ Repeat the above steps for creating your second table “building”.
 
 Once these 2 tables are created, you should see the tables listed in the HCat Screen.
 
-![](../../../assets/2-3/realtime-queries-hive-on-tez/HCat%20Table%20List.JPG)
+![](../../../assets/2-1/realtime-queries-hive-on-tez/HCat%20Table%20List.JPG)
 
 ## Speed Improvements
 
@@ -58,7 +58,7 @@ the password is `hadoop`
 
 We will run first Hive without Tez.
 
-![Image hive](../../../assets/2-3/realtime-queries-hive-on-tez/run%20Hive.JPG)
+![Image hive](../../../assets/2-1/realtime-queries-hive-on-tez/run%20Hive.JPG)
 
 ### Step 2:
 
@@ -72,11 +72,11 @@ Then, let’s execute the hiveql as below.
     from building b join hvac h 
     on b.buildingid = h.buildingid;
 
-![enter image description here](../../../assets/2-3/realtime-queries-hive-on-tez/map%20reduce%20job%20without%20tez.JPG)
+![enter image description here](../../../assets/2-1/realtime-queries-hive-on-tez/map%20reduce%20job%20without%20tez.JPG)
 
 This query was run using the MapReduce framework.
 
-![enter image description here](../../../assets/2-3/realtime-queries-hive-on-tez/runtime%20hive.JPG)
+![enter image description here](../../../assets/2-1/realtime-queries-hive-on-tez/runtime%20hive.JPG)
 
 Note the time it takes your query to execute. In the example above it took 47.346 seconds.
 
@@ -96,12 +96,12 @@ Run the same query as we had run earlier in Step 2, to see if the speed has impr
     from building b join hvac h 
     on b.buildingid = h.buildingid;
 
-![enter image description here](../../../assets/2-3/realtime-queries-hive-on-tez/Hive%20on%20Tez.JPG)
+![enter image description here](../../../assets/2-1/realtime-queries-hive-on-tez/Hive%20on%20Tez.JPG)
 
 Check the output of this job. It shows the usage of the containers.  
 Here is the rest of the output log:
 
-![enter image description here](../../../assets/2-3/realtime-queries-hive-on-tez/hive%20on%20tez%20time%20taken.JPG)
+![enter image description here](../../../assets/2-1/realtime-queries-hive-on-tez/hive%20on%20tez%20time%20taken.JPG)
 
 In this example, Hive on Tez was considerably faster than the MapReduce execution taking 27.437 secs compared to earlier 47.346 secs.
 
@@ -120,7 +120,7 @@ Again, it should run faster as it will use hot containers produced in the Step 4
 
 Here is the result.
 
-![](../../../assets/2-3/realtime-queries-hive-on-tez/rerun%20tez%20query.JPG)
+![](../../../assets/2-1/realtime-queries-hive-on-tez/rerun%20tez%20query.JPG)
 
 This time the job took only 14.862 secs, a considerable improvement.
 
@@ -130,7 +130,7 @@ To experience this further, you could use your own dataset, upload to your HDP S
 
 You can track your Hive on Tez jobs in HDP Sandbox Web UI as well. Please go to : [http://127.0.0.1:8088/cluster](http://127.0.0.1:8088/cluster) and track your jobs while running or post to see the details.
 
-![enter image description here](../../../assets/2-3/realtime-queries-hive-on-tez/UI%20Tracking.JPG)
+![enter image description here](../../../assets/2-1/realtime-queries-hive-on-tez/UI%20Tracking.JPG)
 
 You can click on your job and see further details.
 
@@ -200,7 +200,7 @@ Let’s look at the ‘explain’ plan to confirm that it is indeed using a vect
 explain select date, count(buildingid) from hvac_orc group by date;
 ~~~
 
-![enter image description here](../../../assets/2-3/realtime-queries-hive-on-tez/vectorizedexplain.JPG)
+![enter image description here](../../../assets/2-1/realtime-queries-hive-on-tez/vectorizedexplain.JPG)
 
 Please note that in the explain plan, the Execution mode is “vectorized”. When this feature is switched off, you will not see the same line in the plan.
 
@@ -249,7 +249,7 @@ Please note down the time taken.
 
 Now, let’s explain the above query in Step 1.
 
-![enter image description here](../../../assets/2-3/realtime-queries-hive-on-tez/hive%20without%20CBO.JPG)
+![enter image description here](../../../assets/2-1/realtime-queries-hive-on-tez/hive%20without%20CBO.JPG)
 
 Please note the the CBO feature is not used. You will see that Basic stats is None in the ‘explain’ plan.
 
@@ -257,7 +257,7 @@ Please note the the CBO feature is not used. You will see that Basic stats is No
 
 Now, we will tune the same query so that it uses Cost Based Optimization (CBO). Let’s collect statistics on the table hvac.
 
-![enter image description here](../../../assets/2-3/realtime-queries-hive-on-tez/compute%20stats%20cbo.JPG)
+![enter image description here](../../../assets/2-1/realtime-queries-hive-on-tez/compute%20stats%20cbo.JPG)
 
 You are using Tez execution engine.
 
@@ -265,13 +265,13 @@ You are using Tez execution engine.
 
 Let’s collect statistics of a few columns in this table hvac. To use CBO, column level statistics are required.
 
-![enter image description here](../../../assets/2-3/realtime-queries-hive-on-tez/analyze%20column.JPG)
+![enter image description here](../../../assets/2-1/realtime-queries-hive-on-tez/analyze%20column.JPG)
 
 ### Step 5:
 
 Now let’s set the 4 settings in hive as follows and run explain on the query.
 
-![enter image description here](../../../assets/2-3/realtime-queries-hive-on-tez/hive%20with%20cbo.JPG)
+![enter image description here](../../../assets/2-1/realtime-queries-hive-on-tez/hive%20with%20cbo.JPG)
 
 Note that the Plan says that it is using stats now.
 
@@ -310,7 +310,7 @@ To see the job executions visually, you can follow these steps:
 
 Please go to your Web UI using [http://127.0.0.1:8000/about/](http://127.0.0.1:8000/about/) and turn on Ambari. If needed, you might have to add more memory to your VM. Once Ambari is turned on, you will see the following screen.
 
-![Image](../../../assets/2-3/realtime-queries-hive-on-tez/Ambari.JPG)
+![Image](../../../assets/2-1/realtime-queries-hive-on-tez/Ambari.JPG)
 
 ### Step 2:
 
@@ -329,23 +329,23 @@ http://127.0.0.1:8080/#/login
 ~~~
 
 Enter username as “admin” and password as “admin”.  
-![enter image description here](../../../assets/2-3/realtime-queries-hive-on-tez/Ambari.JPG)
+![enter image description here](../../../assets/2-1/realtime-queries-hive-on-tez/Ambari.JPG)
 
 ### Step 4:
 
 In the following screen, please go to the Jobs tab:  
-![enter image description here](../../../assets/2-3/realtime-queries-hive-on-tez/ambari%20screen.JPG)
+![enter image description here](../../../assets/2-1/realtime-queries-hive-on-tez/ambari%20screen.JPG)
 
 ### Step 5:
 
 You will see your jobs that you have run in Step 2 or earlier. Please click on any of your jobs.  
-![enter image description here](../../../assets/2-3/realtime-queries-hive-on-tez/Ambari%20Jobs.JPG)
+![enter image description here](../../../assets/2-1/realtime-queries-hive-on-tez/Ambari%20Jobs.JPG)
 
 ### Step 6:
 
 You will see here the job execution visually. You can click on various datapoints and get further details.
 
-![enter image description here](../../../assets/2-3/realtime-queries-hive-on-tez/Ambari%20DAG.JPG)
+![enter image description here](../../../assets/2-1/realtime-queries-hive-on-tez/Ambari%20DAG.JPG)
 
 ## SQL Compliance
 
