@@ -43,20 +43,44 @@ We will now use hive and create the two tables. They will be named per the csv f
 Use the following two queries to create the tables a then load the data
 
 ~~~
+create table building
+(BuildingID int,
+ BuildingMgr string,
+ BuildingAge string,
+ HVACproduct string,
+ Country string) 
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+STORED AS TEXTFILE
+TBLPROPERTIES("skip.header.line.count"="1");
 ~~~
 
 ~~~
+create table hvac (
+recorddate string,
+Time string,
+TargetTemp int,
+ActualTemp int,
+System int,
+SystemAge int,
+BuildingID int) 
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+STORED AS TEXTFILE
+TBLPROPERTIES("skip.header.line.count"="1");
 ~~~
 
-~~~PIC OF FILES IN DB EXPLORER~~~ ![](../../../assets/2-3/realtime-queries-hive-on-tez/hvac%20table%20naming.JPG)
+~~~PIC OF tables IN DB EXPLORER~~~ ![](../../../assets/2-3/realtime-queries-hive-on-tez/hvac%20table%20naming.JPG)
 
 We're are now going to load the data into the two tables using the `LOAD DATA INPATH` Hive command
 
 
 ~~~
+LOAD DATA INPATH '/tmp/data/HVAC.csv' OVERWRITE INTO TABLE hvac;
 ~~~
 
 ~~~
+LOAD DATA INPATH '/tmp/data/building.csv' OVERWRITE INTO TABLE building;
 ~~~
 
 You should now be able to obtain results when selecting small amounts of data from either table
@@ -109,20 +133,20 @@ from building b join hvac h
 on b.buildingid = h.buildingid;
 ~~~
 
-![enter image description here](../../../assets/2-3/realtime-queries-hive-on-tez/Hive%20on%20Tez.JPG)
+~~~same image as above~~~![enter image description here](../../../assets/2-3/realtime-queries-hive-on-tez/Hive%20on%20Tez.JPG)
 
 Check the output of this job. It shows the usage of the containers.  
 Here is the rest of the output log:
 
-![enter image description here](../../../assets/2-3/realtime-queries-hive-on-tez/hive%20on%20tez%20time%20taken.JPG)
+~~TEZ LOGS~~~![enter image description here](../../../assets/2-3/realtime-queries-hive-on-tez/hive%20on%20tez%20time%20taken.JPG)
 
-In this example, Hive on Tez was considerably faster than the MapReduce execution taking 27.437 secs compared to earlier 47.346 secs.
+You should notice that the results will have appeared much quicker while having the execution engine set to Tez. This is currently the default for all Hive queries.
 
 Congratulations! You have successfully run your Hive on Tez Job.
 
 ### Step 5:
 
-Now let’s rerun the same query from Step 2 or Step 4.
+Now let’s try a new query to work with
 
 ~~~
 select a.buildingid, b.buildingmgr, max(a.targettemp-a.actualtemp)
@@ -131,93 +155,21 @@ on a.buildingid = b.buildingid
 group by a.buildingid, b.buildingmgr;
 ~~~
 
-Again, it should run faster as it will use hot containers produced in the Step 4 since you are executing in the same Hive Client session.
+Try executing the query first on MapReduce execution engine, then on Tez. You should notice a considerable gap in execution time
 
 Here is the result.
 
 ![](../../../assets/2-3/realtime-queries-hive-on-tez/rerun%20tez%20query.JPG)
 
-This time the job took only 14.862 secs, a considerable improvement.
-
-To experience this further, you could use your own dataset, upload to your HDP Sandbox using steps above and execute with Tez and without.
+To experience this further, you could use your own dataset, upload to your HDP Sandbox using steps above and execute with and without Tez to compare the difference.
 
 ### Step 6:
 
 You can track your Hive on Tez jobs in HDP Sandbox Web UI as well. Please go to : [http://127.0.0.1:8088/cluster](http://127.0.0.1:8088/cluster) and track your jobs while running or post to see the details.
 
-![enter image description here](../../../assets/2-3/realtime-queries-hive-on-tez/UI%20Tracking.JPG)
+~~~KEEP THIS ONE~~~ ![enter image description here](../../../assets/2-3/realtime-queries-hive-on-tez/UI%20Tracking.JPG)
 
 You can click on your job and see further details.
-
-## Query Vectorization
-
-Now let’s check if the usage of Vectorization speeds this up further.
-
-**What is Vectorization?**  
-When Vectorization feature is used, it fetches 1000 rows at a time instead of 1 for processing. So, it can process up to 3X faster with less CPU time. This results in improved cluster utilization. It is to address the latency Problem in Hive by extensive Container use and reuse. Vectorization feature works on Hive tables with ORC File Format only.
-
-### Step 1:
-
-Let’s create a table with ORC file format as follows:
-
-~~~
-create table hvac_orc stored as orc as select * from hvac;
-~~~
-
-### Step 2:
-
-Run the following statement to enable Tez.
-
-~~~
-set hive.execution.engine=tez;
-~~~
-
-### Step 3:
-
-Run the following query.
-
-~~~
-select date, count(buildingid) from hvac group by date;
-~~~
-
-Note down the time taken.
-
-### Step 4:
-
-Now let’s run the following sql query:
-
-~~~
-select date, count(buildingid) from hvac_orc group by date;
-~~~
-
-Note down the time taken and compare to step 3.
-
-### Step 5:
-
-Now let’s run the following steps to enable vectorization:
-
-~~~
-set hive.vectorized.execution.enabled;
-~~~
-
-and then run the sql query from previous step
-~~~
-select date, count(buildingid) from hvac_orc group by date;
-~~~
-
-This time it runs with a vectorized query plan, which scales very well especially with large datasets.
-
-### Step 6:
-
-Let’s look at the ‘explain’ plan to confirm that it is indeed using a vectorized query plan:
-
-~~~
-explain select date, count(buildingid) from hvac_orc group by date;
-~~~
-
-~~IMG OF LOG~~~![enter image description here](../../../assets/2-3/realtime-queries-hive-on-tez/vectorizedexplain.JPG)
-
-Please note that in the explain plan, the Execution mode is “vectorized”. When this feature is switched off, you will not see the same line in the plan.
 
 ## Stats & Cost Based Optimization (CBO)
 
@@ -296,7 +248,9 @@ Note that the Plan says that it is using stats now.
 
 Let’s rerun the query now and observe if it runs faster. You will see better gain with a good volume of dataset than the one we are working with.
 
-`select buildingid, max(targettemp-actualtemp)  from hvac group  by buildingid;`
+~~~
+select buildingid, max(targettemp-actualtemp)  from hvac group  by buildingid;
+~~~
 
 Please note down total time taken and compare to Step 1.
 
