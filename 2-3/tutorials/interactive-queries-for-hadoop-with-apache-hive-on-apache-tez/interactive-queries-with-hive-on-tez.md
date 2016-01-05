@@ -1,6 +1,6 @@
 In this tutorial, we’ll focus on taking advantage of improvements to [Apache Hive](http://hortonworks.com/hadoop/hive) and [Apache Tez](http://hortonworks.com/hadoop/tez) through the work completed by the community as part of the [Stinger initiative](http://hortonworks.com/labs/stinger). 
 
-In this tutorial, we are going to look at some of the new features that Hive on Tez brings to HDP 2.1:
+In this tutorial, we are going to look at some of the new features that Hive on Tez brings to HDP 2.3:
 
 *   Performance improvements of Hive on Tez
 *   Performance improvements of Vectorized Query
@@ -20,81 +20,94 @@ Once you unzip the zip file – SensorFiles.zip, you will see the following file
 
 ![](../../../assets/2-3/realtime-queries-hive-on-tez/dataset%20on%20local%20folder.JPG)
 
-Let’s use the above two csv files (HVAC.csv & building.csv) to create two new tables using the following step. Navigate to [http://127.0.0.1:8000](http://127.0.0.1:8000) using your browser. Click on HCat tab.
+Let’s use the above two csv files (HVAC.csv & building.csv) to create two new tables using the following step. Navigate to [http://sandbox.hortonworks.com:8080](http://sandbox.hortonworks.com:8080) using your browser. Click the **HDFS Files** view from the dropdown menu.
 
-![](../../../assets/2-3/realtime-queries-hive-on-tez/create%20table%20screen.JPG)
+~~~HDFS FILES VIEW~~~![](../../../assets/2-3/realtime-queries-hive-on-tez/create%20table%20screen.JPG)
+
+Go to the `/tmp` folder and if it is not already present, create a new directory called `data` using the controls toward the top of the screen. Then right click on the folder and click **Permissions**. Make sure to check (blue) all of the permissions boxes.
+
+~~~PERMISSIONS PIC~~
 
 Now, let’s upload the above datafiles into HDFS and create two hive tables using the following steps.
 
-We will name the tables as per the csv file names : “hvac” and “building”.
+Upload the two files under `/tmp/data` using **Upload** at the top of the screen
 
-Click on “Create a new table from a file” on the left hand side pane. Enter table name as “hvac” and Choose hvac.csv file from your local system as the Input File.
+~~PIC of Uploaded files~~~
 
-![](../../../assets/2-3/realtime-queries-hive-on-tez/hvac%20table%20naming.JPG)
+Now head on over to the Hive view
 
-Once file is specified, you will see the column names and the data mapping as follows. You might have to scroll down little.
+~~~PIC OF HIVE VIEW~~~
 
-![](../../../assets/2-3/realtime-queries-hive-on-tez/data%20mapping.JPG)
+We will now use hive and create the two tables. They will be named per the csv file names : “hvac” and “building”.
 
-Click on the create button to complete the table creation process.
+Use the following two queries to create the tables a then load the data
 
-Repeat the above steps for creating your second table “building”.
+~~~
+~~~
 
-Once these 2 tables are created, you should see the tables listed in the HCat Screen.
+~~~
+~~~
 
-![](../../../assets/2-3/realtime-queries-hive-on-tez/HCat%20Table%20List.JPG)
+~~~PIC OF FILES IN DB EXPLORER~~~ ![](../../../assets/2-3/realtime-queries-hive-on-tez/hvac%20table%20naming.JPG)
+
+We're are now going to load the data into the two tables using the `LOAD DATA INPATH` Hive command
+
+
+~~~
+~~~
+
+~~~
+~~~
+
+You should now be able to obtain results when selecting small amounts of data from either table
+
+~~~SELECT * LIMIT~~~![](../../../assets/2-3/realtime-queries-hive-on-tez/data%20mapping.JPG)
 
 ## Speed Improvements
 
 To take a look at the speed improvements of Hive on Tez, we can run some sample queries. For this we will use the above two tables – hvac and building.
 
+By default, the Hive view runs with Tez as it's execution engine. That's because Tez has great speed improvements over the original MapReduce execution engine. But by how much exactly are these improvements? Well let's find out!
+
 ### Step 1 :
 
-We will SSH into the VM and launch the Hive Shell.
+First you'll we're going to need to click on the Hive view **Settings** tab. Then we're going to need to add a new setting.
 
-`ssh root@127.0.0.1  -p 2222;`
+~~~PIC OF SETTINGS TAB WITH BLANK EDITOR~~~
 
-the password is `hadoop`
+Then we're going to need to find the property which is `hive.execution.engine`. Select this property and then for it's value select, `mr` (short for MapReduce).
 
-We will run first Hive without Tez.
-
-![Image hive](../../../assets/2-3/realtime-queries-hive-on-tez/run%20Hive.JPG)
+~~~IMG OF PROPERTY SET~~~![Image hive](../../../assets/2-3/realtime-queries-hive-on-tez/run%20Hive.JPG)
 
 ### Step 2:
 
-Please note that Hive is running using MapReduce Framework from the log output on your screen.
+We are now going to test a query using MapReduce as our execution engine. Execute the following query and wait for the results.
 
-    set hive.execution.engine=mr;
+~~~
+select h.*, b.country, b.hvacproduct, b.buildingage, b.buildingmgr 
+from building b join hvac h 
+on b.buildingid = h.buildingid;
+~~~
 
-Then, let’s execute the hiveql as below.
-
-    select h.*, b.country, b.hvacproduct, b.buildingage, b.buildingmgr 
-    from building b join hvac h 
-    on b.buildingid = h.buildingid;
-
-![enter image description here](../../../assets/2-3/realtime-queries-hive-on-tez/map%20reduce%20job%20without%20tez.JPG)
+~~~IMG OF QUERY~~~![enter image description here](../../../assets/2-3/realtime-queries-hive-on-tez/map%20reduce%20job%20without%20tez.JPG)
 
 This query was run using the MapReduce framework.
-
-![enter image description here](../../../assets/2-3/realtime-queries-hive-on-tez/runtime%20hive.JPG)
-
-Note the time it takes your query to execute. In the example above it took 47.346 seconds.
 
 ### Step 3 :
 
 Now we can enable Hive on Tez execution and take advantage of Directed Acyclic Graph (DAG) execution representing the query instead of multiple stages of MapReduce program which involved a lot of synchronization, barriers and IO overheads. This is improved in Tez, by writing intermediate data set into memory instead of hard disk.
 
-Use the following step to set the execution engine to Tez:
-
-    set hive.execution.engine=tez;
+Head back to the **Settings** in the Hive view and now change the `hive.execution.engine` to `tez`.
 
 ### Step 4 :
 
-Run the same query as we had run earlier in Step 2, to see if the speed has improved or not.
+Run the same query as we had run earlier in Step 2, to see the speed improvements with Tez.
 
-    select h.*, b.country, b.hvacproduct, b.buildingage, b.buildingmgr 
-    from building b join hvac h 
-    on b.buildingid = h.buildingid;
+~~~
+select h.*, b.country, b.hvacproduct, b.buildingage, b.buildingmgr 
+from building b join hvac h 
+on b.buildingid = h.buildingid;
+~~~
 
 ![enter image description here](../../../assets/2-3/realtime-queries-hive-on-tez/Hive%20on%20Tez.JPG)
 
@@ -111,10 +124,12 @@ Congratulations! You have successfully run your Hive on Tez Job.
 
 Now let’s rerun the same query from Step 2 or Step 4.
 
-    select a.buildingid, b.buildingmgr, max(a.targettemp-a.actualtemp)
-    from hvac a join building b
-    on a.buildingid = b.buildingid
-    group by a.buildingid, b.buildingmgr;
+~~~
+select a.buildingid, b.buildingmgr, max(a.targettemp-a.actualtemp)
+from hvac a join building b
+on a.buildingid = b.buildingid
+group by a.buildingid, b.buildingmgr;
+~~~
 
 Again, it should run faster as it will use hot containers produced in the Step 4 since you are executing in the same Hive Client session.
 
@@ -200,7 +215,7 @@ Let’s look at the ‘explain’ plan to confirm that it is indeed using a vect
 explain select date, count(buildingid) from hvac_orc group by date;
 ~~~
 
-![enter image description here](../../../assets/2-3/realtime-queries-hive-on-tez/vectorizedexplain.JPG)
+~~IMG OF LOG~~~![enter image description here](../../../assets/2-3/realtime-queries-hive-on-tez/vectorizedexplain.JPG)
 
 Please note that in the explain plan, the Execution mode is “vectorized”. When this feature is switched off, you will not see the same line in the plan.
 
@@ -241,7 +256,9 @@ The ‘explain’ plan feature can be used to see if the correct stats are being
 
 Let’s do a simple exercise. Let’s run the following query and see how long it takes.
 
-    select buildingid, max(targettemp-actualtemp) from hvac group by buildingid;
+~~~
+select buildingid, max(targettemp-actualtemp) from hvac group by buildingid;
+~~~
 
 Please note down the time taken.
 
