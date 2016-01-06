@@ -63,18 +63,14 @@ If you've already logged into your sandbox through SSH your password will be dif
 
 > **Note** that you will be prompted to change the `root` user's password once you login to the sandbox. **Do NOT forget this!**
 
-First we're going to need to send the HDF file that was just downloaded to the Sandbox via SCP. 
+First we're going to need to send the HDF file that was just downloaded to the Sandbox via SCP.
 
-Assuming that HDF has been downloaded to your `~/Downloads/` directory and that the file has a name `{NIFI}` Open up the your terminal and type the following command:
+Assuming that HDF has been downloaded to your `~/Downloads/` directory and that the file has a name `nifi-1.1.1.0-12-bin.tar.gz` Open up the your terminal and type the following command:
 
-~~~
-scp -P 2222 ~/Downloads/{NIFI} root@localhost:/root
-~~~
-
-If the downloaded file has a name such as `nifi-1.1.1.0-12-bin.zip`, then your command would be:
+**Note:** the `-P` argument is case sensitive.
 
 ~~~
-scp -P 2222 ~/Downloads/nifi-1.1.1.0-12-bin.zip root@localhost:/root
+scp -P 2222 ~/Downloads/nifi-1.1.1.0-12-bin.tar.gz root@localhost:/root
 ~~~
 
 Once you've done that you'll need to SSH into the sandbox
@@ -87,7 +83,16 @@ There are two options to connecting to your sandbox to execute terminal commands
 ssh root@sandbox.hortonworks.com -p 2222
 ~~~
 
-Once you've successfully connected to the sandbox make sure that you're in the directory `/root/`. Then run the following commands. Replace `{NIFI}` with the name of the file which you copied earlier.
+First, use the `export` command to create a temporary variable to store the name of the nifi file which you just downloaded.
+
+For example if the filename is `nifi-1.1.1.0-12-bin.tar.gz`:
+
+~~~
+export NIFI=nifi-1.1.1.0-12-bin.tar.gz
+~~~
+
+
+Once you've successfully connected to the sandbox make sure that you're in the directory `/root/`. Then run the following commands.
 
 Make a new directory for NiFi
 
@@ -95,22 +100,23 @@ Make a new directory for NiFi
 mkdir nifi
 ~~~
 
-Move our file to the folder which we just created
+Move our file to the folder which we just created, then cd into the folder
 
 ~~~
-mv {NIFI} ./nifi
+mv $NIFI ./nifi
+cd nifi
 ~~~
 
 Unzip the file
 
 ~~~
-tar -xvf {NIFI}
+tar -xvf $NIFI
 ~~~
 
-Then let's head into the directory we just unzipped. Do a
+Then let's head into the directory we just unzipped. It will be the same as the $NIFI variable, expcept without the -bin.tar.gz at the end. In this case the command is:
 
 ~~~
-cd {NIFI}
+cd nifi-1.1.1.0-12
 ~~~
 
 Next we're going to need to change the port which nifi runs on from 8080 to 9090.
@@ -133,7 +139,34 @@ Make sure you can reach the NiFi user interface at [http://sandbox.hortonworks.c
 
 If you can't access it, then you might need to forward port `9090` on your virtual machine.
 
-For VirtualBox you can forward the port by
+For VirtualBox you can forward the port **2** ways. Either through the GUI, or using the command line on the Host machine
+
+### Forwarding a Port on the Host Machine's Terminal
+
+First you'll need to run the following command:
+
+~~~
+VBoxManage list vms
+~~~
+
+Look for the Hortonworks Sandbox VM. Take note of it's ID. Once you've taken note of the ID, run the following command to forward the port:
+
+~~~
+VBoxManage controlvm {INSERT_VM_ID_HERE} nifi,tcp,,9090,,9090
+~~~
+
+Example:
+
+~~~
+HW11108:~ zblanco$ VBoxManage list vms
+"Hortonworks Sandbox with HDP 2.3.2" {2d299b17-3b10-412a-a895-0bf958f98788}
+
+HW11108:~ zblanco$ VBoxManage controlvm 2d299b17-3b10-412a-a895-0bf958f98788 nifi,tcp,,9090,,9090
+~~~
+
+Port 9090 should now be forwarded! You may skip the GUI section of port forwarding.
+
+### Forwarding a Port with the GUI
 
 1. Opening VirtualBox Manager
 2. Right click your running Hortonworks Sandbox, click **Settings**
