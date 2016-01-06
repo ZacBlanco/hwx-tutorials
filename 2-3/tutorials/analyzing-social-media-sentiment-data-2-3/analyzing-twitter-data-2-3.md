@@ -137,7 +137,7 @@ After a few short moments NiFi will start up on the Sandbox.
 
 Make sure you can reach the NiFi user interface at [http://sandbox.hortonworks.com:9090/nifi](http://sandbox.hortonworks.com:9090/nifi).
 
-If you can't access it, then you might need to forward port `9090` on your virtual machine.
+If you can't access it, first wait approximately 10-15 seconds after executing the command. If you still can't connect after that then you might need to forward port `9090` on your virtual machine.
 
 For VirtualBox you can forward the port **2** ways. Either through the GUI, or using the command line on the Host machine
 
@@ -152,7 +152,7 @@ VBoxManage list vms
 Look for the Hortonworks Sandbox VM. Take note of it's ID. Once you've taken note of the ID, run the following command to forward the port:
 
 ~~~
-VBoxManage controlvm {INSERT_VM_ID_HERE} nifi,tcp,,9090,,9090
+VBoxManage controlvm {INSERT_VM_ID_HERE} natpf1 nifi,tcp,,9090,,9090
 ~~~
 
 Example:
@@ -161,7 +161,7 @@ Example:
 HW11108:~ zblanco$ VBoxManage list vms
 "Hortonworks Sandbox with HDP 2.3.2" {2d299b17-3b10-412a-a895-0bf958f98788}
 
-HW11108:~ zblanco$ VBoxManage controlvm 2d299b17-3b10-412a-a895-0bf958f98788 nifi,tcp,,9090,,9090
+HW11108:~ zblanco$ VBoxManage controlvm 2d299b17-3b10-412a-a895-0bf958f98788 natpf1 nifi,tcp,,9090,,9090
 ~~~
 
 Port 9090 should now be forwarded! You may skip the GUI section of port forwarding.
@@ -204,10 +204,14 @@ We're going to need to run the following commands as the Solr user. run
 su solr
 ~~~
 
-Then we need to edit the following file to make sure that Solr can recognize a tweet's timestamp format.
+Then we need to edit the following file to make sure that Solr can recognize a tweet's timestamp format. First we're going to copy the config set over to a different place:
 
 ~~~
-vi /opt/lucidworks-hdpsearch/solr/server/solr/configsets/data_driven_schema_configs/conf/solrconfig.xml
+cp -r /opt/lucidworks-hdpsearch/solr/server/solr/configsets/data_driven_schema_configs /opt/lucidworks-hdpsearch/solr/server/solr/configsets/tweet_configs
+~~~
+
+~~~
+vi /opt/lucidworks-hdpsearch/solr/server/solr/configsets/tweet_configs/conf/solrconfig.xml
 ~~~
 
 Once the file is opened in `vi` type 
@@ -215,7 +219,7 @@ Once the file is opened in `vi` type
 **Note**: In **vi** the command below should not be run in **INSERT** mode.  `/` will do a find for the text that you type after it.
 
 ~~~
-/class="solr.ParseDateFieldUpdateProcessorFactory"
+/solr.ParseDateFieldUpdateProcessorFactory
 ~~~
 
 This will bring you to the part of the config where we need to add the following:
@@ -251,7 +255,9 @@ Next we need to replace a JSON file. Use the following commands to move the orig
 
 ~~~
 cd /opt/lucidworks-hdpsearch/solr/server/solr-webapp/webapp/banana/app/dashboards/
+
 mv default.json default.json.orig
+
 wget https://raw.githubusercontent.com/ZacBlanco/hwx-tutorials/master/assets/2-3/nifi-sentiment-analytics/assets/default.json
 ~~~
 
@@ -264,10 +270,7 @@ Now we're going to start Solr. Execute
 Then we are going to add a collection called "tweets"
 
 ~~~
-/opt/lucidworks-hdpsearch/solr/bin/solr create -c tweets \
-   -d data_driven_schema_configs \
-   -s 1 \
-   -rf 1
+/opt/lucidworks-hdpsearch/solr/bin/solr create -c tweets -d tweet_configs -s 1 -rf 1
 ~~~
 
 We can now go back to running commands as the root user. Run 
