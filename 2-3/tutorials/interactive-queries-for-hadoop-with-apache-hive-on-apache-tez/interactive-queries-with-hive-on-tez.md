@@ -209,7 +209,7 @@ The ‘explain’ plan feature can be used to see if the correct stats are being
 Let’s do a simple exercise. Let’s run the following query and see how long it takes.
 
 ~~~
-select buildingid, max(targettemp-actualtemp) from hvac group by buildingid;
+select buildingid, max(targettemp-actualtemp) from hvac_orc group by buildingid;
 ~~~
 
 Please note down the time taken.
@@ -226,6 +226,10 @@ Please note the the CBO feature is not used. You will see that Basic stats is No
 
 Now, we will tune the same query so that it uses Cost Based Optimization (CBO). Let’s collect statistics on the table hvac.
 
+~~~
+analyze table hvac_orc compute statistics;
+~~~
+
 ![enter image description here](../../../assets/2-3/realtime-queries-hive-on-tez/compute%20stats%20cbo.JPG)
 
 You are using Tez execution engine.
@@ -233,6 +237,10 @@ You are using Tez execution engine.
 ### Step 4:
 
 Let’s collect statistics of a few columns in this table hvac. To use CBO, column level statistics are required.
+
+~~~
+analyze table hvac_orc compute statistics for columns targettemp, actualtemp, buildingid;
+~~~
 
 ![enter image description here](../../../assets/2-3/realtime-queries-hive-on-tez/analyze%20column.JPG)
 
@@ -249,7 +257,7 @@ Note that the Plan says that it is using stats now.
 Let’s rerun the query now and observe if it runs faster. You will see better gain with a good volume of dataset than the one we are working with.
 
 ~~~
-select buildingid, max(targettemp-actualtemp)  from hvac group  by buildingid;
+select buildingid, max(targettemp-actualtemp) from hvac_orc group by buildingid;
 ~~~
 
 Please note down total time taken and compare to Step 1.
