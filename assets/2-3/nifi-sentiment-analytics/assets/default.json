@@ -35,8 +35,8 @@
           "to": "NOW/MINUTE%2B1MINUTE",
           "field": "twitter_created_at_dt",
           "type": "time",
-          "fromDateObj": "2015-12-01T20:19:23.376Z",
-          "toDateObj": "2015-12-01T20:34:23.376Z",
+          "fromDateObj": "2016-01-07T15:01:44.541Z",
+          "toDateObj": "2016-01-07T15:16:44.541Z",
           "mandate": "must",
           "active": true,
           "alias": "",
@@ -336,10 +336,10 @@
             "ids": [
               0
             ],
-            "query": "q=*%3A*&df=id&wt=json&rows=0&fq=twitter_created_at_dt:[NOW/MINUTE-15MINUTE%20TO%20NOW/MINUTE%2B1MINUTE]&facet=true&facet.field=text&facet.limit=20",
+            "query": "q=*%3A*&df=id&wt=json&rows=0&fq=twitter_created_at_dt:[NOW/MINUTE-15MINUTE%20TO%20NOW/MINUTE%2B1MINUTE]&facet=true&facet.field=text_t&facet.limit=20",
             "custom": ""
           },
-          "field": "text",
+          "field": "text_t",
           "size": 20,
           "alignment": "vertical and horizontal",
           "fontScale": 1,
