@@ -169,7 +169,7 @@ To experience this further, you could use your own dataset, upload to your HDP S
 
 You can track your Hive on Tez jobs in HDP Sandbox Web UI as well. Please go to : [http://127.0.0.1:8088/cluster](http://127.0.0.1:8088/cluster) and track your jobs while running or post to see the details.
 
-![enter image description here](../../../assets/2-3/realtime-queries-hive-on-tez/UI%20Tracking.JPG)
+![enter image description here](../../../assets/2-3/realtime-queries-hive-on-tez/11_1_UI_job_tracking.jpg)
 
 You can click on your job and see further details.
 
