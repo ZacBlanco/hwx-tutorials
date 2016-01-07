@@ -16,7 +16,7 @@ A working HDP cluster – the easiest way to have a HDP cluster is to download t
 
 The dataset that we will need for this tutorial is [here](http://s3.amazonaws.com/hw-sandbox/tutorial14/SensorFiles.zip). Please download and save the file in a folder on your local machine.
 
-Once you unzip the zip file – SensorFiles.zip, you will see the following files inside. We will be using these datafiles for the following tutorial.
+Once you unzip the zip file – SensorFiles.zip, you will see the following files inside. We will be using these data files for the following tutorial.
 
 ![](../../../assets/2-3/realtime-queries-hive-on-tez/00_local_files.jpg)
 
@@ -24,11 +24,11 @@ Let’s use the above two csv files (HVAC.csv & building.csv) to create two new 
 
 ![](../../../assets/2-3/realtime-queries-hive-on-tez/01_hdfs_files_dropdown.png)
 
-Go to the `/tmp` folder and if it is not already present, create a new directory called `data` using the controls toward the top of the screen. Then right click on the folder and click **Permissions**. Make sure to check (blue) all of the permissions boxes.
+Go to the `/tmp` folder and if it is not already present, create a new directory called `data` using the controls toward the top of the screen. Then right-click on the folder and click **Permissions**. Make sure to check (blue) all of the permissions boxes.
 
 ![](../../../assets/2-3/realtime-queries-hive-on-tez/02_hdfs_files_permissions.png)
 
-Now, let’s upload the above datafiles into HDFS and create two hive tables using the following steps.
+Now, let’s upload the above data files into HDFS and create two hive tables using the following steps.
 
 Upload the two files under `/tmp/data` using **Upload** at the top of the screen
 
