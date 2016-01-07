@@ -18,7 +18,7 @@ The dataset that we will need for this tutorial is [here](http://s3.amazonaws.co
 
 Once you unzip the zip file – SensorFiles.zip, you will see the following files inside. We will be using these data files for the following tutorial.
 
-![](../../../assets/2-3/realtime-queries-hive-on-tez/00_local_files.jpg)
+![](../../../assets/2-3/realtime-queries-hive-on-tez/00_local_data_files.jpg)
 
 Let’s use the above two csv files (HVAC.csv & building.csv) to create two new tables using the following step. Navigate to [http://sandbox.hortonworks.com:8080](http://sandbox.hortonworks.com:8080) using your browser. Click the **HDFS Files** view from the dropdown menu.
 
