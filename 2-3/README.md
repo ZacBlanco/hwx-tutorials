@@ -13,3 +13,5 @@ The tutorials that are currently working with HDP 2.3:
 - [Deploying Hortonworks Sandbox on Microsoft Azure](tutorials/deploying-hortonworks-sandbox-on-microsoft-azure-2-3/deploying-hortonworks-sandbox-on-microsoft-azure-2-3.md)
 
 - [How to use basic Hive and Pig Commands](tutorials/hcatalog-basic-pig-and-hive-commands/hcatalog-basic-pig-and-hive-commands.md)
+
+- [Interactive Queries for Hadoop with Apache Hive on Apache Tez](tutorials/interactive-queries-for-hadoop-with-apache-hive-on-apache-tez/interactive-queries-with-hive-on-tez.md)
