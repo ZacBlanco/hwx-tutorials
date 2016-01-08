@@ -4,7 +4,7 @@ The tutorials that are currently working with HDP 2.3:
 
 - [Analyzing Social Media Sentiment with Apache NiFi](tutorials/analyzing-social-media-sentiment-data-2-3/analyzing-twitter-data-2-3.md)
 
-- [Hello World: An Introduction to Hive and Pig](tutorials/hello-world-an-introduction-to-hive-and-pig-2-3/hello-world-an-introduction-to-hive-and-pig-2-3.md)
+- [Hello HDP: An Introduction to Hadoop with Hive, Pig, and Spark](tutorials/hello-hdp-an-introduction-to-hadoop/hello-world-an-introduction-to-hive-and-pig-2-3.md)
 
 - [How to Analyze Machine and Sensor Data](tutorials/how-to-analyze-machine-and-sensor-data-2-3/how-to-analyze-machine-and-sensor-data-2-3.md)
 
@@ -15,3 +15,4 @@ The tutorials that are currently working with HDP 2.3:
 - [How to use basic Hive and Pig Commands](tutorials/hcatalog-basic-pig-and-hive-commands/hcatalog-basic-pig-and-hive-commands.md)
 
 - [Interactive Queries for Hadoop with Apache Hive on Apache Tez](tutorials/interactive-queries-for-hadoop-with-apache-hive-on-apache-tez/interactive-queries-with-hive-on-tez.md)
+- [Realtime Event Processing in Hadoop with Storm and Kafka](real-time-event-processing-with-hadoop/)
