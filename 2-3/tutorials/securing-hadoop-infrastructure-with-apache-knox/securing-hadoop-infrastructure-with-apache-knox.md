@@ -69,21 +69,29 @@ You can check if the LDAP and Gateway servers started as follows: `jps`
 
 Here is another way of starting LDAP and Gateway servers:
 
-`cd /usr/lib/knox`
+~~~
+cd /usr/lib/knox
 
-`java -jar bin/ldap.jar conf &`
+java -jar bin/ldap.jar conf &
+~~~
 
 ![enter image description here](/assets/2-3/securing-hadoop-with-knox/11-knox.JPG "11-knox.JPG")
 
-`java -jar bin/gateway.jar &`
+~~~
+java -jar bin/gateway.jar &
+~~~
 
 ![enter image description here](/assets/2-3/securing-hadoop-with-knox/12-knox+-+jar+gateway.jar.JPG "12-knox - jar gateway.jar.JPG")
 
 If you want to stop these services, you could use the following commands:
 
-`sudo -u knox bin/gateway.sh stop`
+~~~
+sudo -u knox bin/gateway.sh stop
+~~~
 
-`sudo -u knox bin/ldap.sh stop`
+~~~
+sudo -u knox bin/ldap.sh stop
+~~~
 
 ![enter image description here](/assets/2-3/securing-hadoop-with-knox/knoxLDAPStop.JPG "knoxLDAPStop.JPG")
 
@@ -95,7 +103,9 @@ With installation, a user named `knox` is created and you can see in the `/etc/p
 
 Let’s check if the Hadoop Cluster is accessible via Webhdfs.
 
-`curl -iku guest:guest-password -X GET 'http://sandbox:50070/webhdfs/v1/?op=LISTSTATUS'`
+~~~
+curl -iku guest:guest-password -X GET 'http://sandbox:50070/webhdfs/v1/?op=LISTSTATUS'
+~~~
 
 ![enter image description here](/assets/2-3/securing-hadoop-with-knox/14+connect+to+hadoop+sandbox+.JPG "14 connect to hadoop sandbox .JPG")
 
@@ -103,7 +113,10 @@ Let’s check if the Hadoop Cluster is accessible via Webhdfs.
 
 Now let’s check if we can access Hadoop Cluster via Apache Knox services.
 http:
-`curl -iku guest:guest-password -X GET 'https://localhost:8443/gateway/sandbox/webhdfs/v1/?op=LISTSTATUS'`
+
+~~~
+curl -iku guest:guest-password -X GET 'https://localhost:8443/gateway/sandbox/webhdfs/v1/?op=LISTSTATUS'
+~~~
 
 ### Step 8:
 
@@ -112,7 +125,8 @@ Let’s work on an End to End Implementation use case using Apache Knox Service.
 **NOTE:** If you get error “{“error”:”User: hcat is not allowed to impersonate guest”}”, do usermod -a -G users guest before step 8  
 Let’s go!
 
-`cd /usr/lib/knox` (for HDP 2.1) or  
+`cd /usr/lib/knox` (for HDP 2.1) or
+
 `cd /usr/hdp/current/knox-user` (for HDP 2.2)
 
 You could create the directories(knox-sample, knox-sample/input, and knox-sample/lib as follows:
