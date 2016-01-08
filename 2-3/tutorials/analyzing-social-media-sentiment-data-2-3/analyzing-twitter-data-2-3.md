@@ -469,6 +469,7 @@ Now let's do a real query and see if we can find some valuable data.
 - For **q** type `language_s:en`
 - For **sort** type `screeName_s asc`
 - For **rows** type `150`
+- For **fl** type `screenName_s, text_t`
 - For **wt** choose `csv`
 
 ![Solr Query Results 2](/assets/2-3/nifi-sentiment-analytics/images/28_solr_query_results_2.png)
@@ -501,7 +502,9 @@ sudo -u hdfs hadoop fs -chown -R admin /tmp/tweets_staging
 sudo -u hdfs hadoop fs -chmod -R 777 /tmp/tweets_staging
 ~~~
 
-After the query completes let's go to the Hive view and execute the following command to create a table for the tweets
+After the commands completes let's go to the Hive view. Head over to [http://sandbox.hortonworks.com:8080](http://sandbox.hortonworks.com:8080/). Login with credentials `admin/admin`. Use the dropdown menu at the top to get to the Hive view. 
+
+Execute the following command to create a table for the tweets
 
 ~~~
 create table if not exists tweets_text(
