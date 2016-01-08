@@ -45,7 +45,8 @@ echo "127.0.0.1     sandbox.hortonworks.com >> /etc/hosts
 
 -----------------
 
-## Install Apache Nifi
+## Install Apache Nifi <a id="install-apache-nifi"></a>
+-----------------
 
 The first thing you're going to need if you haven't done it already is install the Apache Nifi service on your Sandbox.
 
@@ -186,7 +187,7 @@ You should now be able to access the NiFi user interface at [http://sandbox.hort
 ![NiFi Interface](/assets/2-3/nifi-sentiment-analytics/images/07_nifi_interface.png)
 
 
-## Configure and Start Solr
+## Configure and Start Solr <a id="configure-and-start-solr"></a>
 
 Hortonworks Sandbox with HDP 2.3.2 has the **Lucidworks HDP Search** Pre-installed.
 
@@ -297,7 +298,7 @@ Ensure that you can access the Solr UI by navigating to [http://sandbox.hortonwo
 
 ![Solr UI](/assets/2-3/nifi-sentiment-analytics/images/08_solr_ui.png)
 
-## Creating a Twitter Application
+## Creating a Twitter Application <a id="creating-a-twitter-application"></a>
 
 If you would rather not register your own Twitter application and use previous data, please head to the [next section](#analyze-and-search-data-with-solr) where you can download the sample dataset.
 
@@ -329,7 +330,7 @@ Finally, your keys and access tokens should look similar to the following:
 
 Please make note of your **Consumer Key**, **Consumer Secret**, **Access Token**, and **Access Token Secret**. You will need these to create the data flow in NiFi.
 
-## Create a Data Flow with NiFi
+## Create a Data Flow with NiFi <a id="creating-a-data-flow-with-nifi"></a>
 
 The first thing you'll need to do here is download the NiFi data flow template for the [Twitter Dashboard here](https://raw.githubusercontent.com/ZacBlanco/hwx-tutorials/master/assets/2-3/nifi-sentiment-analytics/assets/Twitter_Flow.xml)
 
@@ -392,7 +393,7 @@ If only one of the boxes changes when you click **Start**, make sure that you do
 
 ![Starting NiFi Flow](/assets/2-3/nifi-sentiment-analytics/images/22_nifi_start.png)
 
-## Generating Random Tweet Data for Hive and Solr
+## Generating Random Tweet Data for Hive and Solr <a id="generating-random-tweet-data-for-hive-and-solr"></a>
 
 This section is for anyone who didn't want to set up a Twitter app so they could stream custom data. We're just going to use a script to generate some data and then put that into Hive and Solr. Skip to the next section if you have already set up NiFi to collect tweets.
 
@@ -419,7 +420,7 @@ The script will generate the data and put it in the directory `/tmp/data/`
 You can now continue on with the rest of the tutorial.
 
 
-## Analyze and Search Data with Solr
+## Analyze and Search Data with Solr <a id="analyze-and-search-data-with-solr"></a>
 ------------------------------------
 
 Now that we have our data in HDP-Search/Solr we can go ahead and start searching through our data.
@@ -490,7 +491,7 @@ Let's try one last query. This time you can omit the **sort** field and chooses 
 - For more information on Solr you can [go here](http://hortonworks.com/hadoop/solr/)
 - You can also visit the [Apache project Page](http://lucene.apache.org/solr/)
 
-## Analyzing Tweet Data in Hive
+## Analyzing Tweet Data in Hive <a id="analyzing-tweet-data-in-hive"></a>
 --------------------------------
 
 Now that we've taken a look at some of our data and searched it with Solr, lets see if we can refine it a bit more.
@@ -655,7 +656,7 @@ This command should yield our final results table as shown below.
 
 Now that we can access the sentiment data in our Hive table let's do some visualization on the analysis using Apache Zeppelin.
 
-## Visualizing Sentiment With Zeppelin
+## Visualizing Sentiment With Zeppelin <a id="visualizing-sentiment-with-zeppelin"></a>
 ------------------------------------------------
 
 Make sure you Zeppelin service is started in Ambari and head over to the Zeppelin View.
