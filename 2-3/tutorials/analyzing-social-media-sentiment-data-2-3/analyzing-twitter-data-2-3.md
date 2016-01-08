@@ -369,6 +369,9 @@ After clicking import you should have a screen similar to the following:
 
 Great! The NiFi flow has been set up. The _boxes_ are what NiFi calls processors. Each of the processors can be connected to one another and help make data flow. Each processor can perform specific tasks. They are at the very heart of NiFi's functionality.
 
+
+**Note!** You can make you flows looks very clean by having the connections between all of your processors at 90 degree angles with respect to one another. You can do this by [**double clicking a connection arrow to create a vertex**](https://community.hortonworks.com/content/kbentry/1828/tip-bend-those-connections.html). This will allow you to customize the look of your flow
+
 Try **right-clicking** on a few of the the processors and look at their configuration. This can help you better understand how the Twitter flow works.
 
 Now we'll need to configure the Twitter Hose processor with the access tokens that we made earlier for our Twitter application.
@@ -494,8 +497,12 @@ Now that we've taken a look at some of our data and searched it with Solr, lets 
 
 We're going to attempt to get the sentiment of each tweet by matching the words in the tweets with a sentiment dictionary. From this we can determine the sentiment of each tweet and analyze it from there.
 
+First off, if your Twitter flow on the NiFi instance is still running, you'll need to shut it off. Open up the NiFi dashboard at [sandbox.hortonworks.com:9090/nifi](sandbox.hortonworks.com:9090/nifi) and click red square at the top of the screen.
 
-First you'll need to SSH into the sandbox again and run the following two commands
+![Turning off NiFi](/assets/2-3/nifi-sentiment-analytics/images/29_1_stopping_nifi.png)
+
+
+Next, you'll need to SSH into the sandbox again and run the following two commands
 
 ~~~
 sudo -u hdfs hadoop fs -chown -R admin /tmp/tweets_staging
@@ -507,7 +514,7 @@ After the commands completes let's go to the Hive view. Head over to [http://san
 Execute the following command to create a table for the tweets
 
 ~~~
-create table if not exists tweets_text(
+CREATE EXTERNAL TABLE IF NOT EXISTS tweets_text(
   tweet_id bigint, 
   created_unixtime bigint, 
   created_time string,
@@ -516,9 +523,9 @@ create table if not exists tweets_text(
   time_zone string,
   msg string,
   fulltext string)
-row format delimited 
-fields terminated by "|"
-location "/tmp/tweets_staging";
+ROW FORMAT DELIMITED 
+FIELDS TERMINATED BY "|"
+LOCATION "/tmp/tweets_staging";
 ~~~
 
 ![Hive Tweets Table](/assets/2-3/nifi-sentiment-analytics/images/30_hive_tweets_table.png)
@@ -527,7 +534,7 @@ Now we're going to need to do some data analysis.
 
 First you're going to need to head to the **HDFS Files View** and create a new directory in `/tmp/data/tables`
 
-Then create two new directories inside of `/tmp/data/tables/`. One named **time_zone_map** and another named **dictionary**
+Then create two new directories inside of `/tmp/data/tables`. One named **time_zone_map** and another named **dictionary**
 
 ![Data Table Folders](/assets/2-3/nifi-sentiment-analytics/images/31_data_table_folders.png)
 
@@ -542,7 +549,7 @@ sudo -u hdfs hadoop fs -chmod -R 777 /tmp/data/tables
 Finally, run the following two commands:
 
 ~~~
-CREATE TABLE if not exists dictionary (
+CREATE EXTERNAL TABLE if not exists dictionary (
 	type string,
 	length int,
 	word string,
@@ -552,16 +559,16 @@ CREATE TABLE if not exists dictionary (
 ROW FORMAT DELIMITED 
 FIELDS TERMINATED BY '\t' 
 STORED AS TEXTFILE
-LOCATION '/tmp/data/tables/dictionary/';
+LOCATION '/tmp/data/tables/dictionary';
 
-CREATE TABLE if not exists time_zone_map (
+CREATE EXTERNAL TABLE if not exists time_zone_map (
     time_zone string,
     country string,
     notes string )
 ROW FORMAT DELIMITED 
 FIELDS TERMINATED BY '\t' 
 STORED AS TEXTFILE
-LOCATION '/tmp/data/tables/time_zone_map/';
+LOCATION '/tmp/data/tables/time_zone_map';
 ~~~
 
 This will create two tables from that data which we will use to analyze the tweet sentiment. They should appear in the **database explorer** as shown below.
@@ -597,6 +604,7 @@ Now that we've cleaned our data we can get around to computing the sentiment. Us
 ~~~
 -- Compute sentiment
 create view IF NOT EXISTS l1 as select tweet_id, words from tweets_text lateral view explode(sentences(lower(msg))) dummy as words;
+
 create view IF NOT EXISTS l2 as select tweet_id, word from l1 lateral view explode( words ) dummy as word;
 
 create view IF NOT EXISTS l3 as select 
@@ -662,7 +670,7 @@ After creating the note, open it up to the blank Notebook screen and type the fo
 
 ~~~
 %hive
-select * from tweetsbi LIMIT 300;
+select * from tweetsbi LIMIT 300
 ~~~
 
 We're limiting our query to just `300` results because right now we won't need to see everything. And if you've collected a lot of data from NiFi, then it could slow down your computer.
@@ -732,7 +740,8 @@ Using this data you can determine how you might want to market your products to 
 - [NiFi blogs](http://hortonworks.com/blog/category/nifi/)
 - [Indexing and Searching Documents with Apache Solr](http://hortonworks.com/hadoop-tutorial/searching-data-solr/)
 - [Introduction to Data Science with Apache Zeppelin](http://hortonworks.com/blog/introduction-to-data-science-with-apache-spark/)
-- [Hortonworks Gallery](https://hortonworks-gallery.github.io/)
+- [Hortonworks Community Connection](http://hortonworks.com/community/)
+- [HDP Sandbox & Learning Forum](https://community.hortonworks.com/spaces/81/index.html)
 
 
 
