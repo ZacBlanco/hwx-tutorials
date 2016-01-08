@@ -39,23 +39,31 @@ Apache Knox accesses Hadoop Cluster over HTTP/HTTPs
 HDP Sandbox 2.1 comes with Apache Knox installed.  
 You can run the following to find if knox processes are running:
 
-`ps -ef|grep knox`
+~~~
+ps -ef|grep knox
+~~~
 
 You will not see any process is running.
 
 You can check various knox libraries, configuration files etc. by checking in the following directory:  
-`ls -ltr /usr/lib/knox`
+
+~~~
+ls -ltr /usr/lib/knox
+~~~
 
 ### Step 2:
 
 Let’s see if LDAP processes are up and running.  
-`ps -ef|grep ldap`
+
+~~~
+ps -ef|grep ldap
+~~~
 
 ### Step 3:
 
 You can check if the LDAP and Gateway servers started as follows: `jps`
 
-![enter image description here](http://hortonassets.s3.amazonaws.com/tutorial/knox/images/jps.JPG "jps.JPG")
+![enter image description here](/assets/2-3/securing-hadoop-with-knox/jps.JPG "jps.JPG")
 
 ### Step 4:
 
@@ -65,11 +73,11 @@ Here is another way of starting LDAP and Gateway servers:
 
 `java -jar bin/ldap.jar conf &`
 
-![enter image description here](http://hortonassets.s3.amazonaws.com/tutorial/knox/images/11-knox.JPG "11-knox.JPG")
+![enter image description here](/assets/2-3/securing-hadoop-with-knox/11-knox.JPG "11-knox.JPG")
 
 `java -jar bin/gateway.jar &`
 
-![enter image description here](http://hortonassets.s3.amazonaws.com/tutorial/knox/images/12-knox+-+jar+gateway.jar.JPG "12-knox - jar gateway.jar.JPG")
+![enter image description here](/assets/2-3/securing-hadoop-with-knox/12-knox+-+jar+gateway.jar.JPG "12-knox - jar gateway.jar.JPG")
 
 If you want to stop these services, you could use the following commands:
 
@@ -77,7 +85,7 @@ If you want to stop these services, you could use the following commands:
 
 `sudo -u knox bin/ldap.sh stop`
 
-![enter image description here](http://hortonassets.s3.amazonaws.com/tutorial/knox/images/knoxLDAPStop.JPG "knoxLDAPStop.JPG")
+![enter image description here](/assets/2-3/securing-hadoop-with-knox/knoxLDAPStop.JPG "knoxLDAPStop.JPG")
 
 ### Step 5:
 
@@ -89,12 +97,12 @@ Let’s check if the Hadoop Cluster is accessible via Webhdfs.
 
 `curl -iku guest:guest-password -X GET 'http://sandbox:50070/webhdfs/v1/?op=LISTSTATUS'`
 
-![enter image description here](http://hortonassets.s3.amazonaws.com/tutorial/knox/images/14+connect+to+hadoop+sandbox+.JPG "14 connect to hadoop sandbox .JPG")
+![enter image description here](/assets/2-3/securing-hadoop-with-knox/14+connect+to+hadoop+sandbox+.JPG "14 connect to hadoop sandbox .JPG")
 
 ### Step 7:
 
 Now let’s check if we can access Hadoop Cluster via Apache Knox services.
-
+http:
 `curl -iku guest:guest-password -X GET 'https://localhost:8443/gateway/sandbox/webhdfs/v1/?op=LISTSTATUS'`
 
 ### Step 8:
@@ -130,7 +138,7 @@ Let’s run the mapreduce program.
     https://localhost:8443/gateway/sandbox/templeton/v1/mapreduce/jar
 
 When you run the mapreduce execution step, you will see the following result. Please note down the Job Id. You will use it for checking status for this Job Id in the next step.  
-![enter image description here](http://hortonassets.s3.amazonaws.com/tutorial/knox/images/30.5-+map+reduce+job+submission.JPG "30.5- map reduce job submission.JPG")
+![enter image description here](/assets/2-3/securing-hadoop-with-knox/30.5-+map+reduce+job+submission.JPG "30.5- map reduce job submission.JPG")
 
 ### Step 9:
 
@@ -138,7 +146,7 @@ You can check the status of your above Job Id as follows:
 
     curl -iku guest:guest-password 'https://localhost:8443/gateway/sandbox/templeton/v1/jobs/job_1394770200462_004'
 
-![enter image description here](http://hortonassets.s3.amazonaws.com/tutorial/knox/images/30.6-+map+reduce+job+submission+log.JPG "30.6- map reduce job submission log.JPG")
+![enter image description here](/assets/2-3/securing-hadoop-with-knox/30.6-+map+reduce+job+submission+log.JPG "30.6- map reduce job submission log.JPG")
 
 ### Step 10:
 
@@ -156,7 +164,7 @@ Let’s look at the output result file.
 
 It should look something like below:
 
-![enter image description here](http://hortonassets.s3.amazonaws.com/tutorial/knox/images/output+resuslt+files.JPG "output resuslt files.JPG")
+![enter image description here](/assets/2-3/securing-hadoop-with-knox/output+resuslt+files.JPG "output resuslt files.JPG")
 
 ### Step 12:
 
@@ -164,6 +172,6 @@ Let’s look at the output result.
 
     curl -iku guest:guest-password -L -X GET 'https://localhost:8443/gateway/sandbox/webhdfs/v1/user/guest/knox-sample/output/part-r-00000?op=OPEN'
 
-![enter image description here](http://hortonassets.s3.amazonaws.com/tutorial/knox/images/results.JPG "results.JPG")
+![enter image description here](/assets/2-3/securing-hadoop-with-knox/results.JPG "results.JPG")
 
 You just ran a mapreduce program on Hadoop over Apache Knox Service.
