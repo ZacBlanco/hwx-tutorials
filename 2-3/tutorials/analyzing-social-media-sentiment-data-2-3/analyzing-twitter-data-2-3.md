@@ -22,18 +22,19 @@ Finally, we will use [Apache Zeppelin](http://hortonworks.com/hadoop/zeppelin/) 
 ## Pre-Requisites
 
 - Downloaded and Installed the [Hortonworks Sandbox with HDP 2.3](http://hortonworks.com/hdp/downloads/)
+- Downloaded the GZipped version of the [Hortonworks DataFlow](http://hortonworks.com/products/dataflow)
 - Added `sandbox.hortonworks.com` to your `/etc/hosts` file.
 
 If you haven't added `sandbox.hortonworks.com` to your lists of hosts you can do so with the following command on a unix system:
 
 ~~~
-cat /etc/hosts > "127.0.0.1     sandbox.hortonworks.com"
+echo "127.0.0.1     sandbox.hortonworks.com >> /etc/hosts
 ~~~
 
 
 ## Outline
 
-1. [Install Apache Nifi](#install-apache-nifi)
+1. [Install Apache NiFi](#install-apache-nifi)
 2. [Configure and Start Solr](#configure-and-start-solr)
 3. [Creating a Twitter Application](#creating-a-twitter-application)
 4. [Create a Data Flow with Nifi](#creating-a-data-flow-with-nifi)
@@ -44,11 +45,16 @@ cat /etc/hosts > "127.0.0.1     sandbox.hortonworks.com"
 
 -----------------
 
-## Install Apache Nifi
+## Install Apache Nifi <a id="install-apache-nifi"></a>
+-----------------
 
 The first thing you're going to need if you haven't done it already is install the Apache Nifi service on your Sandbox.
 
-#### SSH into your Sandbox
+### Download Apache NiFi
+
+If you haven't already you will need to [download the GZipped versions of Hortonworks DataFlow from the website](http://hortonworks.com/hdp/downloads/#hdf).
+
+#### Send NiFi to the Sandbox
 
 If you've already logged into your sandbox through SSH your password will be different than below.
 
@@ -58,56 +64,110 @@ If you've already logged into your sandbox through SSH your password will be dif
 
 > **Note** that you will be prompted to change the `root` user's password once you login to the sandbox. **Do NOT forget this!**
 
+First we're going to need to send the HDF file that was just downloaded to the Sandbox via SCP.
+
+Assuming that HDF has been downloaded to your `~/Downloads/` directory and that the file has a name `nifi-1.1.1.0-12-bin.tar.gz` Open up the your terminal and type the following command:
+
+**Note:** the `-P` argument is case sensitive.
+
+~~~
+scp -P 2222 ~/Downloads/nifi-1.1.1.0-12-bin.tar.gz root@localhost:/root
+~~~
+
+Once you've done that you'll need to SSH into the sandbox
+
+### SSH into the Sandbox
+
 There are two options to connecting to your sandbox to execute terminal commands. The first is by using the terminal emulator at [http://sandbox.hortonworks.com:4200](http://sandbox.hortonworks.com:4200). Or you can open a terminal on your computer and use the following command
 
 ~~~
-ssh root@127.0.0.1 -p 2222
+ssh root@sandbox.hortonworks.com -p 2222
 ~~~
 
-Once you've successfully connected to the sandbox you'll need to execute the following command to install the Ambari Nifi service
+First, use the `export` command to create a temporary variable to store the name of the nifi file which you just downloaded.
+
+For example if the filename is `nifi-1.1.1.0-12-bin.tar.gz`:
 
 ~~~
-VERSION=`hdp-select status hadoop-client | sed 's/hadoop-client - \([0-9]\.[0-9]\).*/\1/'`
-sudo git clone https://github.com/abajwa-hw/ambari-nifi-service.git   /var/lib/ambari-server/resources/stacks/HDP/$VERSION/services/NIFI
+export NIFI=nifi-1.1.1.0-12-bin.tar.gz
 ~~~
 
-Then you'll need to restart Ambari Server. Use the following command:
+
+Once you've successfully connected to the sandbox make sure that you're in the directory `/root/`. Then run the following commands.
+
+Make a new directory for NiFi
 
 ~~~
-sudo service ambari restart
+mkdir nifi
 ~~~
 
-Once Ambari restarts navigate back over to the Ambari Dashboard at  [http://sandbox.hortonworks.com:8080](http://sandbox.hortonworks.com:8080) and click **Add Service** on the bottom of left sidebar.
+Move our file to the folder which we just created, then cd into the folder
 
-![Add Service Button Ambari](/assets/2-3/nifi-sentiment-analytics/images/01_add_nifi.png)
+~~~
+mv $NIFI ./nifi
+cd nifi
+~~~
 
-After you've clicked **Add Service** you will be greeted with the Add Service Wizard. Scroll down and look for the **NiFi** service. **Check the box** next to NiFi and click **Next**.
+Unzip the file
 
+~~~
+tar -xvf $NIFI
+~~~
 
-![Add Service Button Ambari](/assets/2-3/nifi-sentiment-analytics/images/02_add_nifi_dialog.png)
+Then let's head into the directory we just unzipped. It will be the same as the $NIFI variable, expcept without the -bin.tar.gz at the end. In this case the command is:
 
+~~~
+cd nifi-1.1.1.0-12
+~~~
 
-Continue through the add Service Wizard until you reach the screen below. Click **Deploy**. Then Ambari will install, start, and test NiFi on the sandbox.
+Next we're going to need to change the port which nifi runs on from 8080 to 9090.
 
+Inside the `conf/nifi.properties` file, find the line which has `nifi.web.http.port`. Make sure it looks like the following:
 
-![Deploy NiFi Ambari](/assets/2-3/nifi-sentiment-analytics/images/03_deploy_nifi_service.png)
+~~~
+nifi.web.http.port=9090
+~~~
 
-After clicking **Deploy** wait until Ambari completely installs Nifi and click **Next**.
+You can now start NiFi! use the `nifi.sh` file to start the application.
 
-![Install, Start, and Test NiFi](/assets/2-3/nifi-sentiment-analytics/images/04_nifi_install_start_test.png)
+~~~
+bash bin/nifi.sh start
+~~~
 
-NiFi should now appear as a service on the left hand side of the ambari dashboard.
-
-![NiFi Installed](/assets/2-3/nifi-sentiment-analytics/images/05_nifi_installed.png)
-
-
-Great! NiFi is now installed on your Sandbox! 
+After a few short moments NiFi will start up on the Sandbox.
 
 Make sure you can reach the NiFi user interface at [http://sandbox.hortonworks.com:9090/nifi](http://sandbox.hortonworks.com:9090/nifi).
 
-If you can't access it, then you might need to forward port `9090` on your virtual machine.
+If you can't access it, first wait approximately 10-15 seconds after executing the command. If you still can't connect after that then you might need to forward port `9090` on your virtual machine.
 
-For VirtualBox you can forward the port by
+For VirtualBox you can forward the port **2** ways. Either through the GUI, or using the command line on the Host machine
+
+### Forwarding a Port on the Host Machine's Terminal
+
+First you'll need to run the following command:
+
+~~~
+VBoxManage list vms
+~~~
+
+Look for the Hortonworks Sandbox VM. Take note of it's ID. Once you've taken note of the ID, run the following command to forward the port:
+
+~~~
+VBoxManage controlvm {INSERT_VM_ID_HERE} natpf1 nifi,tcp,,9090,,9090
+~~~
+
+Example:
+
+~~~
+HW11108:~ zblanco$ VBoxManage list vms
+"Hortonworks Sandbox with HDP 2.3.2" {2d299b17-3b10-412a-a895-0bf958f98788}
+
+HW11108:~ zblanco$ VBoxManage controlvm 2d299b17-3b10-412a-a895-0bf958f98788 natpf1 nifi,tcp,,9090,,9090
+~~~
+
+Port 9090 should now be forwarded! You may skip the GUI section of port forwarding.
+
+### Forwarding a Port with the GUI
 
 1. Opening VirtualBox Manager
 2. Right click your running Hortonworks Sandbox, click **Settings**
@@ -127,7 +187,7 @@ You should now be able to access the NiFi user interface at [http://sandbox.hort
 ![NiFi Interface](/assets/2-3/nifi-sentiment-analytics/images/07_nifi_interface.png)
 
 
-## Configure and Start Solr
+## Configure and Start Solr <a id="configure-and-start-solr"></a>
 
 Hortonworks Sandbox with HDP 2.3.2 has the **Lucidworks HDP Search** Pre-installed.
 
@@ -145,10 +205,14 @@ We're going to need to run the following commands as the Solr user. run
 su solr
 ~~~
 
-Then we need to edit the following file to make sure that Solr can recognize a tweet's timestamp format.
+Then we need to edit the following file to make sure that Solr can recognize a tweet's timestamp format. First we're going to copy the config set over to a different place:
 
 ~~~
-vi /opt/lucidworks-hdpsearch/solr/server/solr/configsets/data_driven_schema_configs/conf/solrconfig.xml
+cp -r /opt/lucidworks-hdpsearch/solr/server/solr/configsets/data_driven_schema_configs /opt/lucidworks-hdpsearch/solr/server/solr/configsets/tweet_configs
+~~~
+
+~~~
+vi /opt/lucidworks-hdpsearch/solr/server/solr/configsets/tweet_configs/conf/solrconfig.xml
 ~~~
 
 Once the file is opened in `vi` type 
@@ -156,7 +220,7 @@ Once the file is opened in `vi` type
 **Note**: In **vi** the command below should not be run in **INSERT** mode.  `/` will do a find for the text that you type after it.
 
 ~~~
-/class="solr.ParseDateFieldUpdateProcessorFactory"
+/solr.ParseDateFieldUpdateProcessorFactory
 ~~~
 
 This will bring you to the part of the config where we need to add the following:
@@ -192,7 +256,9 @@ Next we need to replace a JSON file. Use the following commands to move the orig
 
 ~~~
 cd /opt/lucidworks-hdpsearch/solr/server/solr-webapp/webapp/banana/app/dashboards/
+
 mv default.json default.json.orig
+
 wget https://raw.githubusercontent.com/ZacBlanco/hwx-tutorials/master/assets/2-3/nifi-sentiment-analytics/assets/default.json
 ~~~
 
@@ -205,10 +271,7 @@ Now we're going to start Solr. Execute
 Then we are going to add a collection called "tweets"
 
 ~~~
-/opt/lucidworks-hdpsearch/solr/bin/solr create -c tweets \
-   -d data_driven_schema_configs \
-   -s 1 \
-   -rf 1
+/opt/lucidworks-hdpsearch/solr/bin/solr create -c tweets -d tweet_configs -s 1 -rf 1
 ~~~
 
 We can now go back to running commands as the root user. Run 
@@ -235,7 +298,7 @@ Ensure that you can access the Solr UI by navigating to [http://sandbox.hortonwo
 
 ![Solr UI](/assets/2-3/nifi-sentiment-analytics/images/08_solr_ui.png)
 
-## Creating a Twitter Application
+## Creating a Twitter Application <a id="creating-a-twitter-application"></a>
 
 If you would rather not register your own Twitter application and use previous data, please head to the [next section](#analyze-and-search-data-with-solr) where you can download the sample dataset.
 
@@ -267,7 +330,7 @@ Finally, your keys and access tokens should look similar to the following:
 
 Please make note of your **Consumer Key**, **Consumer Secret**, **Access Token**, and **Access Token Secret**. You will need these to create the data flow in NiFi.
 
-## Create a Data Flow with NiFi
+## Create a Data Flow with NiFi <a id="creating-a-data-flow-with-nifi"></a>
 
 The first thing you'll need to do here is download the NiFi data flow template for the [Twitter Dashboard here](https://raw.githubusercontent.com/ZacBlanco/hwx-tutorials/master/assets/2-3/nifi-sentiment-analytics/assets/Twitter_Flow.xml)
 
@@ -307,6 +370,9 @@ After clicking import you should have a screen similar to the following:
 
 Great! The NiFi flow has been set up. The _boxes_ are what NiFi calls processors. Each of the processors can be connected to one another and help make data flow. Each processor can perform specific tasks. They are at the very heart of NiFi's functionality.
 
+
+**Note!** You can make you flows looks very clean by having the connections between all of your processors at 90 degree angles with respect to one another. You can do this by [**double clicking a connection arrow to create a vertex**](https://community.hortonworks.com/content/kbentry/1828/tip-bend-those-connections.html). This will allow you to customize the look of your flow
+
 Try **right-clicking** on a few of the the processors and look at their configuration. This can help you better understand how the Twitter flow works.
 
 Now we'll need to configure the Twitter Hose processor with the access tokens that we made earlier for our Twitter application.
@@ -327,7 +393,7 @@ If only one of the boxes changes when you click **Start**, make sure that you do
 
 ![Starting NiFi Flow](/assets/2-3/nifi-sentiment-analytics/images/22_nifi_start.png)
 
-## Generating Random Tweet Data for Hive and Solr
+## Generating Random Tweet Data for Hive and Solr <a id="generating-random-tweet-data-for-hive-and-solr"></a>
 
 This section is for anyone who didn't want to set up a Twitter app so they could stream custom data. We're just going to use a script to generate some data and then put that into Hive and Solr. Skip to the next section if you have already set up NiFi to collect tweets.
 
@@ -354,7 +420,7 @@ The script will generate the data and put it in the directory `/tmp/data/`
 You can now continue on with the rest of the tutorial.
 
 
-## Analyze and Search Data with Solr
+## Analyze and Search Data with Solr <a id="analyze-and-search-data-with-solr"></a>
 ------------------------------------
 
 Now that we have our data in HDP-Search/Solr we can go ahead and start searching through our data.
@@ -407,6 +473,7 @@ Now let's do a real query and see if we can find some valuable data.
 - For **q** type `language_s:en`
 - For **sort** type `screeName_s asc`
 - For **rows** type `150`
+- For **fl** type `screenName_s, text_t`
 - For **wt** choose `csv`
 
 ![Solr Query Results 2](/assets/2-3/nifi-sentiment-analytics/images/28_solr_query_results_2.png)
@@ -424,25 +491,31 @@ Let's try one last query. This time you can omit the **sort** field and chooses 
 - For more information on Solr you can [go here](http://hortonworks.com/hadoop/solr/)
 - You can also visit the [Apache project Page](http://lucene.apache.org/solr/)
 
-## Analyzing Tweet Data in Hive
+## Analyzing Tweet Data in Hive <a id="analyzing-tweet-data-in-hive"></a>
 --------------------------------
 
 Now that we've taken a look at some of our data and searched it with Solr, lets see if we can refine it a bit more.
 
 We're going to attempt to get the sentiment of each tweet by matching the words in the tweets with a sentiment dictionary. From this we can determine the sentiment of each tweet and analyze it from there.
 
+First off, if your Twitter flow on the NiFi instance is still running, you'll need to shut it off. Open up the NiFi dashboard at [sandbox.hortonworks.com:9090/nifi](sandbox.hortonworks.com:9090/nifi) and click red square at the top of the screen.
 
-First you'll need to SSH into the sandbox again and run the following two commands
+![Turning off NiFi](/assets/2-3/nifi-sentiment-analytics/images/29_1_stopping_nifi.png)
+
+
+Next, you'll need to SSH into the sandbox again and run the following two commands
 
 ~~~
 sudo -u hdfs hadoop fs -chown -R admin /tmp/tweets_staging
 sudo -u hdfs hadoop fs -chmod -R 777 /tmp/tweets_staging
 ~~~
 
-After the query completes let's go to the Hive view and execute the following command to create a table for the tweets
+After the commands completes let's go to the Hive view. Head over to [http://sandbox.hortonworks.com:8080](http://sandbox.hortonworks.com:8080/). Login with credentials `admin/admin`. Use the dropdown menu at the top to get to the Hive view. 
+
+Execute the following command to create a table for the tweets
 
 ~~~
-create table if not exists tweets_text(
+CREATE EXTERNAL TABLE IF NOT EXISTS tweets_text(
   tweet_id bigint, 
   created_unixtime bigint, 
   created_time string,
@@ -451,9 +524,9 @@ create table if not exists tweets_text(
   time_zone string,
   msg string,
   fulltext string)
-row format delimited 
-fields terminated by "|"
-location "/tmp/tweets_staging";
+ROW FORMAT DELIMITED 
+FIELDS TERMINATED BY "|"
+LOCATION "/tmp/tweets_staging";
 ~~~
 
 ![Hive Tweets Table](/assets/2-3/nifi-sentiment-analytics/images/30_hive_tweets_table.png)
@@ -462,7 +535,7 @@ Now we're going to need to do some data analysis.
 
 First you're going to need to head to the **HDFS Files View** and create a new directory in `/tmp/data/tables`
 
-Then create two new directories inside of `/tmp/data/tables/`. One named **time_zone_map** and another named **dictionary**
+Then create two new directories inside of `/tmp/data/tables`. One named **time_zone_map** and another named **dictionary**
 
 ![Data Table Folders](/assets/2-3/nifi-sentiment-analytics/images/31_data_table_folders.png)
 
@@ -477,7 +550,7 @@ sudo -u hdfs hadoop fs -chmod -R 777 /tmp/data/tables
 Finally, run the following two commands:
 
 ~~~
-CREATE TABLE if not exists dictionary (
+CREATE EXTERNAL TABLE if not exists dictionary (
 	type string,
 	length int,
 	word string,
@@ -487,16 +560,16 @@ CREATE TABLE if not exists dictionary (
 ROW FORMAT DELIMITED 
 FIELDS TERMINATED BY '\t' 
 STORED AS TEXTFILE
-LOCATION '/tmp/data/tables/dictionary/';
+LOCATION '/tmp/data/tables/dictionary';
 
-CREATE TABLE if not exists time_zone_map (
+CREATE EXTERNAL TABLE if not exists time_zone_map (
     time_zone string,
     country string,
     notes string )
 ROW FORMAT DELIMITED 
 FIELDS TERMINATED BY '\t' 
 STORED AS TEXTFILE
-LOCATION '/tmp/data/tables/time_zone_map/';
+LOCATION '/tmp/data/tables/time_zone_map';
 ~~~
 
 This will create two tables from that data which we will use to analyze the tweet sentiment. They should appear in the **database explorer** as shown below.
@@ -532,6 +605,7 @@ Now that we've cleaned our data we can get around to computing the sentiment. Us
 ~~~
 -- Compute sentiment
 create view IF NOT EXISTS l1 as select tweet_id, words from tweets_text lateral view explode(sentences(lower(msg))) dummy as words;
+
 create view IF NOT EXISTS l2 as select tweet_id, word from l1 lateral view explode( words ) dummy as word;
 
 create view IF NOT EXISTS l3 as select 
@@ -582,7 +656,7 @@ This command should yield our final results table as shown below.
 
 Now that we can access the sentiment data in our Hive table let's do some visualization on the analysis using Apache Zeppelin.
 
-## Visualizing Sentiment With Zeppelin
+## Visualizing Sentiment With Zeppelin <a id="visualizing-sentiment-with-zeppelin"></a>
 ------------------------------------------------
 
 Make sure you Zeppelin service is started in Ambari and head over to the Zeppelin View.
@@ -597,7 +671,7 @@ After creating the note, open it up to the blank Notebook screen and type the fo
 
 ~~~
 %hive
-select * from tweetsbi LIMIT 300;
+select * from tweetsbi LIMIT 300
 ~~~
 
 We're limiting our query to just `300` results because right now we won't need to see everything. And if you've collected a lot of data from NiFi, then it could slow down your computer.
@@ -667,7 +741,8 @@ Using this data you can determine how you might want to market your products to 
 - [NiFi blogs](http://hortonworks.com/blog/category/nifi/)
 - [Indexing and Searching Documents with Apache Solr](http://hortonworks.com/hadoop-tutorial/searching-data-solr/)
 - [Introduction to Data Science with Apache Zeppelin](http://hortonworks.com/blog/introduction-to-data-science-with-apache-spark/)
-- [Hortonworks Gallery](https://hortonworks-gallery.github.io/)
+- [Hortonworks Community Connection](http://hortonworks.com/community/)
+- [HDP Sandbox & Learning Forum](https://community.hortonworks.com/spaces/81/index.html)
 
 
 
