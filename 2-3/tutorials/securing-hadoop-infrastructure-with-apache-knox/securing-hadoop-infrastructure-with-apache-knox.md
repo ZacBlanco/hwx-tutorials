@@ -8,7 +8,7 @@ In this tutorial we will walk through the process of
 The [Apache Knox Gateway](http://hortonworks.com/hadoop/knox) is a system that provides a single point of authentication and access for Apache™ Hadoop® services. It provides the following features:
 
 *   Single REST API Access Point
-*   Centralized authentication, authorization and audit for Hadoop REST/HTTP services
+*   Centralized authentication, authorization and auditing for Hadoop REST/HTTP services
 *   LDAP/AD Authentication, Service Authorization and Audit
 *   Eliminates SSH edge node risks
 *   Hides Network Topology
@@ -36,11 +36,25 @@ Apache Knox accesses Hadoop Cluster over HTTP/HTTPs
 
 ### Step 1:
 
-HDP Sandbox 2.1 comes with Apache Knox installed.  
+HDP Sandbox 2.3 comes with Apache Knox installed.  
+
+
+SSH into the Sandbox using your terminal of choice, or using the Shell-in-a-Box.
+
+**Shell in a Box**: `http://<ip_addr>:4200`
+
+**SSH**
+
+| Port | User | Pass |
+|:----:|:----:|:----:|
+| 2222 | root |hadoop|
+
+    ssh root@localhost -p 2222
+
 You can run the following to find if knox processes are running:
 
 ~~~
-ps -ef|grep knox
+ps -ef | grep knox
 ~~~
 
 You will not see any process is running.
@@ -56,7 +70,7 @@ ls -ltr /usr/lib/knox
 Let’s see if LDAP processes are up and running.  
 
 ~~~
-ps -ef|grep ldap
+ps -ef | grep ldap
 ~~~
 
 ### Step 3:
@@ -64,6 +78,8 @@ ps -ef|grep ldap
 You can check if the LDAP and Gateway servers started as follows: `jps`
 
 ![enter image description here](/assets/2-3/securing-hadoop-with-knox/jps.JPG "jps.JPG")
+
+If the services are not running, then you can 
 
 ### Step 4:
 
@@ -112,7 +128,6 @@ curl -iku guest:guest-password -X GET 'http://sandbox:50070/webhdfs/v1/?op=LISTS
 ### Step 7:
 
 Now let’s check if we can access Hadoop Cluster via Apache Knox services.
-http:
 
 ~~~
 curl -iku guest:guest-password -X GET 'https://localhost:8443/gateway/sandbox/webhdfs/v1/?op=LISTSTATUS'
@@ -122,16 +137,25 @@ curl -iku guest:guest-password -X GET 'https://localhost:8443/gateway/sandbox/we
 
 Let’s work on an End to End Implementation use case using Apache Knox Service. Here we will take a simple example of a mapreduce jar that you might be already familiar with, the WordCount mapreduce program. We will first create the needed directories, upload the datafile into hdfs and also upload the mapreduce jar file into hdfs. Once these steps are done, using Apache Knox service, we will run this jar and process data to produce output result.
 
-**NOTE:** If you get error “{“error”:”User: hcat is not allowed to impersonate guest”}”, do usermod -a -G users guest before step 8  
+**NOTE:** If you get error “{“error”:”User: hcat is not allowed to impersonate guest”}”, do 
+
+`usermod -a -G users guest` 
+
+before step 8  
+
 Let’s go!
 
 `cd /usr/lib/knox` (for HDP 2.1) or
 
 `cd /usr/hdp/current/knox-user` (for HDP 2.2)
 
-You could create the directories(knox-sample, knox-sample/input, and knox-sample/lib as follows:
+You could create the directories `knox-sample`, `knox-sample/input`, and `knox-sample/lib` as follows:
 
-curl -iku guest:guest-password -X put 'https://localhost:8443/gateway/sandbox/webhdfs/v1/user/guest/knox-sample?op=MKDIRS&permission=777' curl -iku guest:guest-password -X put 'https://localhost:8443/gateway/sandbox/webhdfs/v1/user/guest/knox-sample/input?op=MKDIRS&permission=777' curl -iku guest:guest-password -X put 'https://localhost:8443/gateway/sandbox/webhdfs/v1/user/guest/knox-sample/lib?op=MKDIRS&permission=777'
+    curl -iku guest:guest-password -X put 'https://localhost:8443/gateway/sandbox/webhdfs/v1/user/guest/knox-sample?op=MKDIRS&permission=777'
+
+    curl -iku guest:guest-password -X put 'https://localhost:8443/gateway/sandbox/webhdfs/v1/user/guest/knox-sample/input?op=MKDIRS&permission=777'
+
+    curl -iku guest:guest-password -X put 'https://localhost:8443/gateway/sandbox/webhdfs/v1/user/guest/knox-sample/lib?op=MKDIRS&permission=777'
 
 Let’s upload the data and the mapreduce jar files:
 
