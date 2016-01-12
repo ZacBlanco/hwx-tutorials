@@ -101,6 +101,13 @@ java -jar bin/gateway.jar &
 
 ![enter image description here](../../../assets/2-3/securing-hadoop-with-knox/12-knox+-+jar+gateway.jar.JPG "12-knox - jar gateway.jar.JPG")
 
+
+You can also utilize the Ambari user interface to start Knox and the LDAP server. Head to `http://localhost:8080` in your browser and login with user/pass `admin/admin`. 
+
+Then head over to the Knox service and make sure it is started, and also start the Demo LDAP.
+
+![Ambari Knox](../../../assets/2-3/securing-hadoop-with-knox/01_knox_ambari.png)
+
 If you want to stop these services, you could use the following commands:
 
 ~~~
