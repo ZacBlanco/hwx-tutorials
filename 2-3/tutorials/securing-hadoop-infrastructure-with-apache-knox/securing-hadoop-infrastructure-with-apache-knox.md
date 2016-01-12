@@ -228,7 +228,7 @@ Remember, Knox is a great way to remotely access API's form your Hadoop cluster 
 ### Links and Furthur Reading
 
 - [Hortonworks Community Connection](https://community.hortonworks.com/search.html?f=&type=question&redirect=search%2Fsearch&sort=relevance&q=knox)
-- [Apache Knox](http://knox.apache.org)
+- [Apache Knox Site](http://knox.apache.org)
 - [How to set up Apache Knox](http://kminder.github.io/knox/2015/11/18/setting-up-knox.html)
 - [Adding a Service to Knox](http://kminder.github.io/knox/2015/11/16/adding-a-service-to-knox.html)
 - [Using Knox with Microsoft AD](http://kminder.github.io/knox/2015/11/18/knox-with-activedirectory.html)
