@@ -72,10 +72,10 @@ Some of the specific new business opportunities include: real-time customer serv
 
 Storm is extremely fast, with the ability to process over a million records per second per node on a cluster of modest size. Enterprises harness this speed and combine it with other data access applications in Hadoop to prevent undesirable events or to optimize positive outcomes.
 
-Here are some typical “prevent” and “optimize” use cases for Storm.
+Here are some typical "prevent" and "optimize" use cases for Storm.
 
 
-| |“Prevent” Use Cases| “Optimize” Use Cases |
+|-|"Prevent" Use Cases| "Optimize" Use Cases |
 |-|-------------------|----------------------|
 |Financial Services| Securities fraud, Operational risks & compliance violations | Order routing, Pricing |
 | Telecom |Security breaches, Network outages | Bandwidth allocation, Customer service |
