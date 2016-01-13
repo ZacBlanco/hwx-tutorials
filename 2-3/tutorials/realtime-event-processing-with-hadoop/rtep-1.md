@@ -1,6 +1,4 @@
-## Lab 1: Simulating and Transporting Real Time Event Stream with
-
-Apache Kafka
+## Lab 1: Simulating and Transporting Real Time Event Stream with Apache Kafka
 
 ## <a id="h.z9rlh6c7n55s" name="h.z9rlh6c7n55s"></a>Introduction
 
@@ -12,7 +10,7 @@ We will begin with showing you the configuring settings of Apache Kafka and Zook
 
 ## <a id="h.17ytp7764v6" name="h.17ytp7764v6"></a>Prerequisites
 
-A working Hadoop cluster: the easiest way to get a pre-configured and fully functional Hadoop cluster is to download the HDP 2.3 [Hortonworks SandBox](http://hortonworks.com/products/hortonworks-sandbox/&sa=D&ust=1452621795990000&usg=AFQjCNEWWm3hzbthl6QjURE5Sh18qmTldw). Make sure to increase the memory to at least 8GB RAM and preferably 4 processor cores, otherwise you may encounter errors in the third tutorial
+A working Hadoop cluster: the easiest way to get a pre-configured and fully functional Hadoop cluster is to download the HDP 2.3 [Hortonworks Sandbox](http://hortonworks.com/products/hortonworks-sandbox/&sa=D&ust=1452621795990000&usg=AFQjCNEWWm3hzbthl6QjURE5Sh18qmTldw). Make sure to increase the memory to at least 8GB RAM and preferably 4 processor cores, otherwise you may encounter errors in the third tutorial
 
 ## <a id="h.ededh69jlm1t" name="h.ededh69jlm1t"></a>
 
@@ -385,10 +383,6 @@ Now lets compile and execute the code to generate Truck Events. (This may run fo
 
 Once the code is successfully compiled we shall see a new target directory created in the current folder. The binaries for all the Tutorials are in this target directory and the source code in src.
 
-
-
 ![](../../../assets/2-3/realtime-event-processing/t1-update/image10.png)
-
-
 
 ![](../../../assets/2-3/realtime-event-processing/t1-update/image05.png)
