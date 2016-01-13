@@ -4,3 +4,4 @@
 - [Word Counting with Apache Pig](tutorials/word-countining-with-apache-pig/word-countining-with-apache-pig.md)
 - [Evolving Data as a Strategic Asset Using HDP and RedHat JBoss Data Virtualization](tutorials/evolving-data-as-strategic-asset-using-HDP-and-redhat-data-virtualization/evolving-data-as-strategic-asset-using-HDP-and-redhat-data-virtualization.md)
 - [How to use Basic HCatalog, Pig, and Hive Commands](tutorials/hcatalog-basic-pig-and-hive-commands/hcatalog-basic-pig-and-hive-commands.md)
+- [Realtime Event Processing in Hadoop with Storm and Kafka](tutorials/realtime-event-processing-with-hadoop/)
