@@ -75,14 +75,14 @@ Storm is extremely fast, with the ability to process over a million records per 
 Here are some typical "prevent" and "optimize" use cases for Storm.
 
 
-|-|"Prevent" Use Cases| "Optimize" Use Cases |
-|-|-------------------|----------------------|
-|Financial Services| Securities fraud, Operational risks & compliance violations | Order routing, Pricing |
-| Telecom |Security breaches, Network outages | Bandwidth allocation, Customer service |
-|Retail| Shrinkage, Stock outs | Offers, Pricing |
-|Manufacturing| Preventative maintenance, Quality assurance|Supply chain optimization, Reduced plant downtime|
-|Transportation|Driver monitoring, Predictive maintenance|Routes, Pricing|
-|Web|Application failures, Operational issues|Personalized content|
+|---|"Prevent" Use Cases| "Optimize" Use Cases |
+|---|-------------------|----------------------|
+| Financial Services | Securities fraud, Operational risks & compliance violations | Order routing, Pricing |
+| Telecom | Security breaches, Network outages | Bandwidth allocation, Customer service |
+| Retail | Shrinkage, Stock outs | Offers, Pricing |
+| Manufacturing| Preventative maintenance, Quality assurance | Supply chain optimization, Reduced plant downtime |
+| Transportation | Driver monitoring, Predictive maintenance | Routes, Pricing |
+| Web | Application failures, Operational issues | Personalized content|
 
 
 Now with Storm on YARN, a Hadoop cluster can efficiently process a full range of workloads from real-time to interactive to batch. [Storm](http://storm.apache.org/about/simple-api.html) is simple, and developers can write Storm topologies using [any programming language](http://storm.apache.org/about/multi-language.html).
