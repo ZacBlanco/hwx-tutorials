@@ -1,55 +1,41 @@
-Apache Falcon is a framework to simplify data pipeline processing and management on Hadoop clusters.
+## Introduction
 
-It makes it much simpler to onboard new workflows/pipelines, with support for late data handling and retry policies. It allows you to easily define relationship between various data and processing elements and integrate with metastore/catalog such as Hive/HCatalog. Finally it also lets you capture lineage information for feeds and processes.In this tutorial we are going walk the process of:
+Apache Falcon simplifies the configuration of data motion with: replication; lifecycle management; lineage and traceability. This provides data governance consistency across Hadoop components.
 
-*   Defining the feeds and processes
-*   Defining and executing a job to mirror data between two clusters
-*   Defining and executing a data pipeline to ingest, process and persist data continuously
+## Scenario
 
-### Prerequisite
+In this tutorial we will walk through a scenario where email data gets processed on multiple HDP 2.2 clusters around the country then gets backed up hourly on a cloud hosted cluster . In our example:
 
-[Download Hortonworks Sandbox](http://hortonworks.com/products/hortonworks-sandbox/#install)
-
-Once you have download the Hortonworks sandbox and run the VM, navigate to the Ambari interface on the port `8080` of the IP address of your Sandbox VM. Login with the username and password of `admin` and `admin` respectively:
-
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-19%2016.28.48.png?dl=1)  
-
-
-### Scenario
-
-In this tutorial we will walk through a scenario where email data lands hourly on a cluster. In our example:
-
-*   This cluster is the primary cluster located in the Oregon data center.
+*   This cluster is hosted on Windows Azure.
 *   Data arrives from all the West Coast production servers. The input data feeds are often late for up to 4 hrs.
 
 The goal is to clean the raw data to remove sensitive information like credit card numbers and make it available to our marketing data science team for customer churn analysis.
 
 To simulate this scenario, we have a pig script grabbing the freely available Enron emails from the internet and feeding it into the pipeline.
 
-![](../../../assets/2-3/falcon-processing-pipelines/arch.png)  
+![](../../../assets/2-3/hdp-azure-falcon-backup/arch.png)
 
 
-### Starting Falcon
-
-By default, Falcon is not started on the sandbox. You can click on the Falcon icon on the left hand bar:
-
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-19%2016.29.22.png?dl=1)  
 
 
-Then click on the `Service  Actions` button on the top right:
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-19%2016.29.44.png?dl=1)  
+## Prerequisite
 
+*   A cluster with Apache Hadoop 2.2 configured
+*   A cluster with Apache Falcon configured
 
-Then click on `Start`:
+The easiest way to meet the above prerequisites is to download the [HDP Sandbox](http://hortonworks.com/downloads)
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-19%2016.30.07.png?dl=1)  
+## Steps for the Scenario
 
+1.  Create cluster specification XML file
+2.  Create feed (aka dataset) specification XML file
+    *   Reference cluster specification
+3.  Create the process specification XML file
+    *   Reference cluster specification – defines where the process runs
+    *   Reference feed specification – defines the datasets that the process manipulates
 
-Once, Falcon starts, Ambari should clearly indicate as below that the service has started:
-
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-19%2016.34.32.png?dl=1)  
-
+We have already created the necessary xml files. In this step we are going to download the specifications and use them to define the topology and submit the storm job.
 
 ### Downloading and staging the dataset
 
@@ -94,6 +80,77 @@ Now let’s upload the decompressed folder with the command
 
 ![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2015.05.45.png?dl=1)  
 
+
+### Setting up the destination storage on Microsoft Azure
+
+Login to the Windows Azure portal at [http://manage.windowsazure.com](http://manage.windowsazure.com)
+
+![](../../../assets/2-3/hdp-azure-falcon-backup/image13.png)
+
+Create a storage account
+
+![](../../../assets/2-3/hdp-azure-falcon-backup/image16.png)
+
+Wait for the storage account to be provisioned
+
+![](../../../assets/2-3/hdp-azure-falcon-backup/image19.png)
+
+Copy the access key and the account name in a text document. We will use the access key and the account name in later steps
+
+![](../../../assets/2-3/hdp-azure-falcon-backup/image22.png)
+
+
+The other information you will want to note down is the blob endpoint of the storage account we just created
+
+![](../../../assets/2-3/hdp-azure-falcon-backup/image25.png)
+
+Click on the `Containers` tab and create a new container called `myfirstcontainer`.
+
+![](../../../assets/2-3/hdp-azure-falcon-backup/image26.png)
+
+### Configuring access to Azure Blob store from Hadoop
+
+Login to Ambari – http://127.0.0.1:8080 with the credentials `admin` and `admin`.
+
+![](../../../assets/2-3/hdp-azure-falcon-backup/image27.png)
+
+Then click on HDFS from the bar on the left and then select the `Configs` tab.
+
+![](../../../assets/2-3/hdp-azure-falcon-backup/image28.png)
+
+Scroll down to the bottom of the page to the `Custom hdfs-site` section and click on `Add  property...`
+
+![](../../../assets/2-3/hdp-azure-falcon-backup/image31.png)
+
+In the `Add  Property` dialog, the key name will start with `fs.azure.account.key.` followed by your blob endpoint that you noted down in a previous step. The value will be the Azure storage key that you noted down in a previous step. Once you have filled in the values click the `Add` button:
+
+![](../../../assets/2-3/hdp-azure-falcon-backup/image34.png)
+
+Once you are back out of the new key dialog you will have to `Save` it by clicking on the green `Save` button:
+
+![](../../../assets/2-3/hdp-azure-falcon-backup/image31.png)
+
+Then restart all the service by clicking on the orange `Restart` button:
+
+![](../../../assets/2-3/hdp-azure-falcon-backup/image36.png)
+
+Wait for all the restart to complete
+
+![](../../../assets/2-3/hdp-azure-falcon-backup/image38.png)
+
+Now let’s test if we can access our container on the Azure Blob Store.
+
+SSH in to the VM:
+
+`ssh root@127.0.0.1  -p 2222;`
+
+The password is `hadoop`
+
+`hdfs dfs -ls -R wasb://myfirstcontainer@saptak.blob.core.windows.net/`
+
+Issue the command from our cluster on the SSH’d terminal
+
+![](../../../assets/2-3/hdp-azure-falcon-backup/image40.png)
 
 ### Creating the cluster entities
 
@@ -442,75 +499,88 @@ On the Clusters page ensure you modify the validity to a time slice which is in 
 
 Select the Input and Output Feeds as shown below and Save
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2015.40.40.png?dl=1)  
+![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2015.40.40.png?dl=1)
+
+### Submit the entities to the cluster:
+
+#### Cluster Specification
+
+Cluster specification is one per cluster.
+
+See below for a sample cluster specification file.
+
+![](../../../assets/2-3/hdp-azure-falcon-backup/cluster-spec.png)
 
 
-### Running the feeds
+Back to our scenario, lets submit the ‘oregon cluster’ entity to Falcon. This signifies the primary Hadoop cluster located in the Oregon data center.
 
-From the Falcon Web UI home page search for the Feeds we created
+`falcon entity -type cluster -submit -file oregonCluster.xml`
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2015.41.34.png?dl=1)  
+Then lets submit the ‘virginia cluster’ entity to Falcon. This signifies the backup Hadoop cluster located in the Virginia data center
 
+`falcon entity -type cluster -submit -file virginiaCluster.xml`
 
-Select the rawEmailFeed by clicking on the checkbox
+If you view the XML file you will see how the cluster location and purpose has been captured in the XML file.
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2015.41.56.png?dl=1)  
+#### Feed Specification
 
+A feed (a.k.a dataset) signifies a location of data and its associated replication policy and late arrival cut-off time.
 
-Then click on the Schedule button on the top of the search results
+See below for a sample feed (a.k.a dataset) specification file.
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2015.42.04.png?dl=1)  
-
-
-Next run the cleansedEmailFeed in the same way
-
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2015.42.30.png?dl=1)  
+![](../../../assets/2-3/hdp-azure-falcon-backup/feed-spec.png)
 
 
-#### Running the processes
+Back to our scenario, let’s submit the source of the raw email feed. This feed signifies the raw emails that are being downloaded into the Hadoop cluster. These emails will be used by the email cleansing process.
 
-From the Falcon Web UI home page search for the Process we created
+`falcon entity -type feed -submit -file rawEmailFeed.xml`
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2015.42.55.png?dl=1)  
+Now let’s define the feed entity which will handle the end of the pipeline to store the cleansed email. This feed signifies the emails produced by the cleanse email process. It also takes care of replicating the cleansed email dataset to the backup cluster (virginia cluster)
 
+`falcon entity -type feed -submit -file cleansedEmailFeed.xml`
 
-Select the cleanseEmailProcess by clicking on the checkbox
+#### Process
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2015.43.07.png?dl=1)  
+A process defines configuration for a workflow. A workflow is a directed acyclic graph(DAG) which defines the job for the workflow engine. A process definition defines the configurations required to run the workflow job. For example, process defines the frequency at which the workflow should run, the clusters on which the workflow should run, the inputs and outputs for the workflow, how the workflow failures should be handled, how the late inputs should be handled and so on.
 
+Here is an example of what a process specification looks like:
 
-Then click on the Schedule button on the top of the search results
-
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2015.43.31.png?dl=1)  
-
-
-Next run the rawEmailIngestProcess in the same way
-
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2015.43.41.png?dl=1)  
+![](../../../assets/2-3/hdp-azure-falcon-backup/process-spec.png)
 
 
-If you visit the Oozie process page, you can seen the processes running
-
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2015.44.23.png?dl=1)  
 
 
-### Input and Output of the pipeline
 
-Now that the feeds and processes are running, we can check the dataset being ingressed and the dataset egressed on HDFS.
+Back to our scenario, let’s submit the ingest and the cleanse process respectively:
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2015.45.48.png?dl=1)  
+The ingest process is responsible for calling the Oozie workflow that downloads the raw emails from the web into the primary Hadoop cluster under the location specified in the rawEmailFeed.xml It also takes care of handling late data arrivals
 
+`falcon entity -type process -submit -file emailIngestProcess.xml`
 
-Here is the data being ingressed
+The cleanse process is responsible for calling the pig script that cleans the raw emails and produces the clean emails that are then replicated to the backup Hadoop cluster
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2016.31.37.png?dl=1)  
+`falcon entity -type process -submit -file cleanseEmailProcess.xml`
 
+### Schedule the Falcon entities
 
-and here is the data being egressed from the pipeline
+So, all that is left now is to schedule the feeds and processes to get it going.
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2017.13.05.png?dl=1)  
+#### Ingest the feed
 
+`falcon entity -type feed -schedule -name rawEmailFeed`
 
-### Summary
+`falcon entity -type process -schedule -name rawEmailIngestProcess`
 
-In this tutorial we walked through a scenario to clean the raw data to remove sensitive information like credit card numbers and make it available to our marketing data science team for customer churn analysis by defining a data pipeline with Apache Falcon.
+#### Cleanse the emails
+
+`falcon entity -type feed -schedule -name cleansedEmailFeed`
+
+`falcon entity -type process -schedule -name cleanseEmailProcess`
+
+### Processing
+
+In a few seconds you should notice that that Falcon has started ingesting files from the internet and dumping them to new folders in HDFS.
+
+In a couple of minutes you should notice a new folder called processed under which the files processed through the data pipeline are being emitted.
+
+We just created an end-to-end data pipeline to process data. The power of the Apache Falcon framework is its flexibility to work with pretty much any open source or proprietary data processing products out there.
