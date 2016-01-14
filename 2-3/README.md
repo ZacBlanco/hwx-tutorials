@@ -22,4 +22,6 @@ The tutorials that are currently working with HDP 2.3:
 
 - [Data Processing Pipelines with Apache Falcon](tutorials/define-and-process-data-pipelines-with-falcon/define-and-process-data-pipelines-with-apache-falcon.md)
 
-- [Getting Started with Cascading](tutorials/get-started-with-cascading-1/tutorial.md)
+- [Getting Started with Cascading 1](tutorials/get-started-with-cascading-1/tutorial.md)
+
+- [Getting Started with Cascading 2](tutorials/get-started-with-cascading-2/tutorial.md)

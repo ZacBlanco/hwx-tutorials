@@ -61,17 +61,17 @@ This command will produce the following output:
 
 Once the job is submitted (or running) you can actually track its progress from the Sandbox MapReduce Job Browser. Click on **Job History UI**.
 
-![Screen Shot 2014-04-18 at 4.17.04 PM](../../../assets/2-3/cascading/02_ambari_mapreduce.png)
+![Screen Shot 2014-04-18 at 4.17.04 PM](/assets/2-3/cascading/02_ambari_mapreduce.png)
 
 By default, it will display all jobs run by the user. Look for the latest one which should have a user **cascade**.
 
-![Screen Shot 2014-04-19 at 11.12.09 AM](../../../assets/2-3/cascading/03_jobhistory.png)
+![Screen Shot 2014-04-19 at 11.12.09 AM](/assets/2-3/cascading/03_jobhistory.png)
 
 ### Viewing the WordCount Output
 
 When the job is finished, the word counts are written as an HDFS file **part-00000**. Use the Sandbox’s **HDFS Files** view to navigate to the HDFS directory and view its contents.
 
-![Screen Shot 2014-04-19 at 11.02.53 AM](../../../assets/2-3/cascading/03_output.png)
+![Screen Shot 2014-04-19 at 11.02.53 AM](/assets/2-3/cascading/03_output.png)
 
 ### Above and Beyond
 
