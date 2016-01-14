@@ -15,4 +15,7 @@ The tutorials that are currently working with HDP 2.3:
 - [How to use basic Hive and Pig Commands](tutorials/hcatalog-basic-pig-and-hive-commands/hcatalog-basic-pig-and-hive-commands.md)
 
 - [Interactive Queries for Hadoop with Apache Hive on Apache Tez](tutorials/interactive-queries-for-hadoop-with-apache-hive-on-apache-tez/interactive-queries-with-hive-on-tez.md)
-- [Realtime Event Processing in Hadoop with Storm and Kafka](tutorials/realtime-event-processing-with-hadoop/rtep-0.md)
+
+- [Realtime Event Processing in Hadoop with Storm and Kafka](tutorials/real-time-event-processing-with-hadoop/)
+
+- [Data Processing Pipelines with Apache Falcon](tutorials/define-and-process-data-pipelines-with-falcon/define-and-process-data-pipelines-with-apache-falcon.md)
