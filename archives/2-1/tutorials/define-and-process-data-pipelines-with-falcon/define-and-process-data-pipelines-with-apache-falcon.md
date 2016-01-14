@@ -55,16 +55,28 @@ First download this [zip file](http://hortonassets.s3.amazonaws.com/tutorial/fal
 
 ![<Display Name>](../../../../assets/2-1/falcon-processing-pipelines/unzip.png)
 
-Navigate using your browser to the Hue – File Browser interface at [http://127.0.0.1:8000/filebrowser/](http://127.0.0.1:8000/filebrowser/) to explore the HDFS.
+Navigate using your browser to the **HDFS Files** view - A File Browser interface at [http://127.0.0.1:8080/](http://127.0.0.1:8080/) to explore the HDFS.
 
 Navigate to `/user/ambari-qa` folder like below:  
-![](../../../../assets/2-1/falcon-processing-pipelines/file-browser.png)
+![](../../../../assets/2-1/falcon-processing-pipelines/05_hdfs_ambari_qa_folder.png)
 
-Now we will upload the zip file we just downloaded:
+You're going to need to create a directory structure that matches exactly what is found in the `falcon.zip` archive.
 
-![<Display Name>](../../../../assets/2-1/falcon-processing-pipelines/uploadzip.png)
+![Falcon Dir Structure](../../../../assets/2-1/falcon-processing-pipelines/07_falcon_directory_structure.png)
 
-This should also unzip the zip file and create a folder structure with a folder called `falcon` .
+You can start by creating the `falcon/demo/apps` structure. Then create the `fs/ingest` and finally the `pig` folder.
+
+![Creating dirs ambari](../../../../assets/2-1/falcon-processing-pipelines/08_create_dirs_ambari.png)
+Creating `falcon/demo/apps`
+
+
+![Creating dirs ambari](../../../../assets/2-1/falcon-processing-pipelines/09_more_falcon_dirs.png)
+Creating `ingest/fs`
+
+
+From here you can now upload the files to their respective locations. `ingest.sh` and `workflow.xml` go into the `fs` folder. `id.pig` goes underneath the `pig`folder.
+
+![<Display Name>](../../../../assets/2-1/falcon-processing-pipelines/06_ambari_qa_upload.png)
 
 ### Staging the specifications
 
