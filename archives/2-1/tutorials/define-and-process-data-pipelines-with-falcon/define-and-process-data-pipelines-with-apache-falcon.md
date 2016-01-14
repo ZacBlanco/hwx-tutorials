@@ -13,7 +13,7 @@ The goal is to clean the raw data to remove sensitive information like credit ca
 
 To simulate this scenario, we have a pig script grabbing the freely available Enron emails from the internet and feeding it into the pipeline.
 
-![](../../../assets/2-1/falcon-processing-pipelines/arch.png)
+![](../../../../assets/2-1/falcon-processing-pipelines/arch.png)
 
 ## Prerequisites
 
@@ -26,12 +26,12 @@ After downloading the environment, confirm that Apache Falcon is running. Below 
 
 1.  Open up the Ambari UI. Login with username/password: `admin/admin`.
 
-    ![<Display Name>](../../../assets/2-1/falcon-processing-pipelines/ambari.png)
+    ![<Display Name>](../../../../assets/2-1/falcon-processing-pipelines/ambari.png)
 
-2.  Once Ambari is enabled, navigate to Ambari at `http://127.0.0.1:8080`, login with username and password of `admin` and `admin` respectively. Then check if Falcon is running.![<Display Name>](../../../assets/2-1/falcon-processing-pipelines/ambari2.png)
+2.  Once Ambari is enabled, navigate to Ambari at `http://127.0.0.1:8080`, login with username and password of `admin` and `admin` respectively. Then check if Falcon is running.![<Display Name>](../../../../assets/2-1/falcon-processing-pipelines/ambari2.png)
 3.  If Falcon is not running, start Falcon:
 
-![<Display Name>](../../../assets/2-1/falcon-processing-pipelines/falconstart.png)
+![<Display Name>](../../../../assets/2-1/falcon-processing-pipelines/falconstart.png)
 
 ## Steps for the Scenario
 
@@ -50,16 +50,16 @@ In this step we will stage the pig script and the necessary folder structure for
 
 First download this [zip file](http://hortonassets.s3.amazonaws.com/tutorial/falcon/falcon.zip) called [`falcon.zip`](http://hortonassets.s3.amazonaws.com/tutorial/falcon/falcon.zip) to your local host machine.
 
-![<Display Name>](../../../assets/2-1/falcon-processing-pipelines/unzip.png)
+![<Display Name>](../../../../assets/2-1/falcon-processing-pipelines/unzip.png)
 
 Navigate using your browser to the Hue – File Browser interface at [http://127.0.0.1:8000/filebrowser/](http://127.0.0.1:8000/filebrowser/) to explore the HDFS.
 
 Navigate to `/user/ambari-qa` folder like below:  
-![](../../../assets/2-1/falcon-processing-pipelines/file-browser.png)
+![](../../../../assets/2-1/falcon-processing-pipelines/file-browser.png)
 
 Now we will upload the zip file we just downloaded:
 
-![<Display Name>](../../../assets/2-1/falcon-processing-pipelines/uploadzip.png)
+![<Display Name>](../../../../assets/2-1/falcon-processing-pipelines/uploadzip.png)
 
 This should also unzip the zip file and create a folder structure with a folder called `falcon` .
 
@@ -99,7 +99,7 @@ Cluster specification is one per cluster.
 
 See below for a sample cluster specification file.
 
-![](../../../assets/2-1/falcon-processing-pipelines/cluster-spec.png)
+![](../../../../assets/2-1/falcon-processing-pipelines/cluster-spec.png)
 
 Back to our scenario, lets submit the ‘oregon cluster’ entity to Falcon. This signifies the primary Hadoop cluster located in the Oregon data center.
 
@@ -117,7 +117,7 @@ A feed (a.k.a dataset) signifies a location of data and its associated replicati
 
 See below for a sample feed (a.k.a dataset) specification file.
 
-![](../../../assets/2-1/falcon-processing-pipelines/feed-spec.png)
+![](../../../../assets/2-1/falcon-processing-pipelines/feed-spec.png)
 
 Back to our scenario, let’s submit the source of the raw email feed. This feed signifies the raw emails that are being downloaded into the Hadoop cluster. These emails will be used by the email cleansing process.
 
@@ -133,7 +133,7 @@ A process defines configuration for a workflow. A workflow is a directed acyclic
 
 Here is an example of what a process specification looks like:
 
-![](../../../assets/2-1/falcon-processing-pipelines/process-spec.png)
+![](../../../../assets/2-1/falcon-processing-pipelines/process-spec.png)
 
 Back to our scenario, let’s submit the ingest and the cleanse process respectively:
 
@@ -165,10 +165,10 @@ So, all that is left now is to schedule the feeds and processes to get it going.
 
 In a few seconds you should notice that that Falcon has started ingesting files from the internet and dumping them to new folders like below on HDFS:
 
-![<Display Name>](../../../assets/2-1/falcon-processing-pipelines/input.png)
+![<Display Name>](../../../../assets/2-1/falcon-processing-pipelines/input.png)
 
 In a couple of minutes you should notice a new folder called processed under which the files processed through the data pipeline are being emitted:
 
-![<Display Name>](../../../assets/2-1/falcon-processing-pipelines/output.png)
+![<Display Name>](../../../../assets/2-1/falcon-processing-pipelines/output.png)
 
 We just created an end-to-end data pipeline to process data. The power of the Apache Falcon framework is its flexibility to work with pretty much any open source or proprietary data processing products out there.
