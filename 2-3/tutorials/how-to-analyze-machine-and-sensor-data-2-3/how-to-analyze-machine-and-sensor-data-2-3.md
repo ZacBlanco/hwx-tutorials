@@ -1,4 +1,4 @@
-##Tutorial 14: Analyzing Machine and Sensor Data
+## Tutorial 14: Analyzing Machine and Sensor Data
 
 **This tutorial is for HDP version 2.3 of the [Hortonworks Sandbox](http://hortonworks.com/products/sandbox) - a single-node Hadoop cluster running in a virtual machine. [Download](http://hortonworks.com/products/sandbox) the Hortonworks Sandbox to run this and other tutorials in the series.**
 
@@ -107,14 +107,14 @@ Once logged in to the sandbox, navigate to the icon at the top right of the head
 
 -	Select `HDFS Files`
 
-   ![](./images/01_hdfs_files_view.png?raw=true)
+   ![](/assets/2-3/analyzing-machine-and-sensor-data/01_hdfs_files_view.png)
 
 -   Note the view you are greeted with once you open the `HDFS Files` Ambari View.
 -	You can view the path that you're currently in
 -	You can create new directories and upload files using the button on the top.
 -	You can also download whole directories as `.zip` files, move directories, and delete them as well. These options are highlighted in blue for each folder or file in a directory.
 
-    ![](./images/02_hdfs_files_ex_1.png?raw=true)
+    ![](/assets/2-3/analyzing-machine-and-sensor-data/02_hdfs_files_ex_1.png)
 
 
 -   Navigate to the `/tmp` directory.
@@ -123,15 +123,15 @@ Once logged in to the sandbox, navigate to the icon at the top right of the head
 -	Click **Upload** to upload the CSV file to HDFS.
 -	Follow the same procedure to upload the `building.csv` file.
 
-    ![](./images/03_hdfs_files_upload.png?raw=true)
+    ![](/assets/2-3/analyzing-machine-and-sensor-data/03_hdfs_files_upload.png)
 
 -   After uploading both files, the page should look similar to the following image:
 
-    ![](./images/04_hdfs_files_completed.png?raw=true)
+    ![](/assets/2-3/analyzing-machine-and-sensor-data/04_hdfs_files_completed.png)
 
 -	Now user the menu on the header again to access the dropdown menu containing the link to the [`Ambari Hive View`](http://localhost:8080/#/main/views/HIVE/1.0.0/Hive)
 
-    ![](./images/05_hive_view_dropdown.png?raw=true)
+    ![](/assets/2-3/analyzing-machine-and-sensor-data/05_hive_view_dropdown.png)
 
 -   Here we're going to define two tables that will contain data from our `HVAC.csv` and `building.csv` files.
 -	Copy and paste the following query into the worksheet and click **Execute** to create the table **hvac_stage**.
@@ -150,7 +150,7 @@ FIELDS TERMINATED BY ','
 STORED AS TEXTFILE;
 ```
 
-   ![](./images/06_hive_query_stage_1.png?raw=true)
+   ![](/assets/2-3/analyzing-machine-and-sensor-data/06_hive_query_stage_1.png)
 
 -   After the previous query has executed, **Execute** this next next query to create the table **buildings_stage**.
 
@@ -166,7 +166,7 @@ FIELDS TERMINATED BY ','
 STORED AS TEXTFILE;
 ```
 
-   ![](./images/07_hive_query_stage_2.png?raw=true)
+   ![](/assets/2-3/analyzing-machine-and-sensor-data/07_hive_query_stage_2.png)
 
 -   After both queries have succeeded you should see `hvac_stage` and `buildings_stage` in the **Database Explorer** on the left hand side of the screen.
 -	Now use the following query to load our tables with data from our data files that we previously uploaded to HDFS.
@@ -175,7 +175,7 @@ STORED AS TEXTFILE;
 LOAD DATA INPATH '/tmp/data/HVAC.csv' OVERWRITE INTO TABLE HVAC_stage;
 ```
 
-   ![](./images/08_hive_query_load_1.png?raw=true)
+   ![](/assets/2-3/analyzing-machine-and-sensor-data/08_hive_query_load_1.png)
 
 -   Repeat the previous step with the following query to load the table `buildings_stage` with data.
 
@@ -183,7 +183,7 @@ LOAD DATA INPATH '/tmp/data/HVAC.csv' OVERWRITE INTO TABLE HVAC_stage;
 LOAD DATA INPATH '/tmp/data/building.csv' OVERWRITE INTO TABLE buildings_stage;
 ```
 
-   ![](./images/09_hive_query_load_2.png?raw=true)
+   ![](/assets/2-3/analyzing-machine-and-sensor-data/09_hive_query_load_2.png)
 
 -   Now refresh the **Database Explorer**. You should see all of the tables appear on the left hand side after clicking `default`.
 -	If you click the small square icon to the right hand side of any table it will immediately create a query that gives you a small sample of data from the table you selected.
@@ -199,7 +199,7 @@ ALTER TABLE buildings_stage SET TBLPROPERTIES ("skip.header.line.count"="1");
 ALTER TABLE hvac_stage SET TBLPROPERTIES ("skip.header.line.count"="1");
 ```
 
-    ![](./images/10_hive_example_data.png?raw=true)
+    ![](/assets/2-3/analyzing-machine-and-sensor-data/10_hive_example_data.png)
 
 -	Now that we have both tables loaded in, we want to get better performance in Hive, so we're going to create new tables that utilize the highly efficient [**ORC** file format](http://hortonworks.com/blog/apache-orc-launches-as-a-top-level-project/). This will allow for faster queries when our datasets are much much larger.
 -	Execute the following query to create a new table `hvac` that is stored as an ORC file.
@@ -208,7 +208,7 @@ ALTER TABLE hvac_stage SET TBLPROPERTIES ("skip.header.line.count"="1");
 CREATE TABLE hvac STORED AS ORC AS SELECT * FROM HVAC_stage;
 ```
 
-   ![](./images/11_hive_orc_1.png?raw=true)
+   ![](/assets/2-3/analyzing-machine-and-sensor-data/11_hive_orc_1.png)
 
 -	Repeat the previous step, except this time we will make a table for `buildings`.
 
@@ -216,7 +216,7 @@ CREATE TABLE hvac STORED AS ORC AS SELECT * FROM HVAC_stage;
 CREATE TABLE buildings STORED AS ORC AS SELECT * FROM buildings_stage;
 ```
    
-   ![](./images/12_hive_orc_2.png?raw=true)
+   ![](/assets/2-3/analyzing-machine-and-sensor-data/12_hive_orc_2.png)
 
 ### Step 3: Run Two Hive Scripts to Refine the Sensor Data
 
@@ -250,7 +250,7 @@ AS extremetemp from hvac;
 -   After you paste the query use **Execute** to create the new table.
 -	Then
 
-    ![](./images/13_hive_hvac_temperatures.png?raw=true)
+    ![](/assets/2-3/analyzing-machine-and-sensor-data/13_hive_hvac_temperatures.png)
 
 -   On the Query Results page, use the slider to scroll to the right. You
     will notice that two new attributes appear in the `hvac_temperatures` table.
@@ -267,7 +267,7 @@ AS extremetemp from hvac;
     If the temperature is outside of the normal range, `extremetemp` is
     assigned a value of 1; otherwise its value is 0.
 
-    ![](./images/14_hive_hvac_temps_example.png?raw=true)
+    ![](/assets/2-3/analyzing-machine-and-sensor-data/14_hive_hvac_temps_example.png)
 
 -   Next we will combine the **hvac** and **hvac_temperatures** data sets.
  
@@ -281,11 +281,11 @@ from buildings b join hvac_temperatures h on b.buildingid = h.buildingid;
 
 -	Use **Execute** to run the query that will produce the table with the intended data.
 
-    ![](./images/15_hive_hvac_building_query.png?raw=true)
+    ![](/assets/2-3/analyzing-machine-and-sensor-data/15_hive_hvac_building_query.png)
 
 -   After you've successfully executed the query, use the database explorer to load a sample of the data from the new `hvac_building` table.
 
-    ![](./images/16_hive_examine_hvac_building.png?raw=true)
+    ![](/assets/2-3/analyzing-machine-and-sensor-data/16_hive_examine_hvac_building.png)
 
 Now that we've constructued the data into a useful format, we can use different reporting tools to analyze the results.
 
@@ -309,7 +309,7 @@ access the refined sentiment data.
 -   In Windows, open a new Excel workbook, then select **Data > From
     Other Sources > From Microsoft Query**.
 
-    ![](./images/18_open_query.jpg?raw=true)
+    ![](/assets/2-3/analyzing-machine-and-sensor-data/18_open_query.jpg)
 
 -   On the Choose Data Source pop-up, select the Hortonworks ODBC data
     source you installed previously, then click **OK**.
@@ -318,38 +318,38 @@ access the refined sentiment data.
     with Excel and other Business Intelligence (BI) applications that
     support ODBC.
 
-    ![](./images/19_choose_data_source.jpg?raw=true)
+    ![](/assets/2-3/analyzing-machine-and-sensor-data/19_choose_data_source.jpg)
 
 -   After the connection to the Sandbox is established, the Query Wizard
     appears. Select the "hvac_building" table in the Available tables
     and columns box, then click the right arrow button to add the entire
     "hvac_building" table to the query. Click **Next** to continue.
 
-    ![](./images/20_query_wizard1_choose_columns.jpg?raw=true)
+    ![](/assets/2-3/analyzing-machine-and-sensor-data/20_query_wizard1_choose_columns.jpg)
 
 -   On the Filter Data screen, click **Next** to continue without
     filtering the data.
 
-    ![](./images/21_query_wizard2_filter_data.jpg?raw=true)
+    ![](/assets/2-3/analyzing-machine-and-sensor-data/21_query_wizard2_filter_data.jpg)
 
 -   On the Sort Order screen, click **Next** to continue without setting
     a sort order.
 
-    ![](./images/22_query_wizard3_sort_order.jpg?raw=true)
+    ![](/assets/2-3/analyzing-machine-and-sensor-data/22_query_wizard3_sort_order.jpg)
 
 -   Click **Finish** on the Query Wizard Finish screen to retrieve the
     query data from the Sandbox and import it into Excel.
 
-    ![](./images/23_query_wizard4_finish.jpg?raw=true)
+    ![](/assets/2-3/analyzing-machine-and-sensor-data/23_query_wizard4_finish.jpg)
 
 -   On the Import Data dialog box, click **OK** to accept the default
     settings and import the data as a table.
 
-    ![](./images/24_import_data.jpg?raw=true)
+    ![](/assets/2-3/analyzing-machine-and-sensor-data/24_import_data.jpg)
 
 -   The imported query data appears in the Excel workbook.
 
-    ![](./images/25_data_imported.jpg?raw=true)
+    ![](/assets/2-3/analyzing-machine-and-sensor-data/25_data_imported.jpg)
 
 Now that we have successfully imported the refined sensor data into
 Microsoft Excel, we can use the Excel Power View feature to analyze and
@@ -363,29 +363,29 @@ most frequently outside of the optimal temperature range.
 -   In the Excel worksheet with the imported "hvac_building" table,
     select **Insert > Power View** to open a new Power View report.
 
-    ![](./images/26_open_powerview_hvac_building.jpg?raw=true)
+    ![](/assets/2-3/analyzing-machine-and-sensor-data/26_open_powerview_hvac_building.jpg)
 
 -   The Power View Fields area appears on the right side of the window,
     with the data table displayed on the left. Drag the handles or click
     the Pop Out icon to maximize the size of the data table.
 
-    ![](./images/27_powerview_hvac_building.jpg?raw=true)
+    ![](/assets/2-3/analyzing-machine-and-sensor-data/27_powerview_hvac_building.jpg)
 
 -   In the Power View Fields area, select the checkboxes next to the
     **country** and **extremetemp** fields, and clear all of the other
     checkboxes. You may need to scroll down to see all of the check
     boxes.
 
-    ![](./images/28_select_country_extremetemp.jpg?raw=true)
+    ![](/assets/2-3/analyzing-machine-and-sensor-data/28_select_country_extremetemp.jpg)
 
 -   In the FIELDS box, click the down-arrow at the right of the
     **extremetemp** field, then select **Count (Not Blank)**.
 
-    ![](./images/29_extremetemp_count_not_blank.jpg?raw=true)
+    ![](/assets/2-3/analyzing-machine-and-sensor-data/29_extremetemp_count_not_blank.jpg)
 
 -   Click **Map** on the Design tab in the top menu.
 
-    ![](./images/30_open_map.jpg?raw=true)
+    ![](/assets/2-3/analyzing-machine-and-sensor-data/30_open_map.jpg)
 
 -   The map view displays a global view of the data. We can see that the
     office in Finland had 814 sensor readings where the temperature was
@@ -394,7 +394,7 @@ most frequently outside of the optimal temperature range.
     ideal office temperatures, with only 363 readings outside of the
     ideal range.
 
-    ![](./images/31_extremetemp_map.jpg?raw=true)
+    ![](/assets/2-3/analyzing-machine-and-sensor-data/31_extremetemp_map.jpg)
 
 -   Hot offices can lead to employee complaints and reduced
     productivity. Let's see which offices run hot.
@@ -403,13 +403,13 @@ most frequently outside of the optimal temperature range.
     and select the **temprange** checkbox. Click the down-arrow at the
     right of the **temprange** field, then select **Add as Size**.
 
-    ![](./images/32_add_temprange_as_size.jpg?raw=true)
+    ![](/assets/2-3/analyzing-machine-and-sensor-data/32_add_temprange_as_size.jpg)
 
 -   Drag **temprange** from the Power View Fields area to the Filters
     box, then select the **HOT** checkbox. We can see that the buildings
     in Finland and France run hot most often.
 
-    ![](./images/33_filter_by_temprange_hot.jpg?raw=true)
+    ![](/assets/2-3/analyzing-machine-and-sensor-data/33_filter_by_temprange_hot.jpg)
 
 -   Cold offices cause elevated energy expenditures and employee
     discomfort.
@@ -418,7 +418,7 @@ most frequently outside of the optimal temperature range.
     **COLD** checkbox. We can see that the buildings in Finland and
     Indonesia run cold most often.
 
-    ![](./images/34_filter_by_temprange_cold.jpg?raw=true)
+    ![](/assets/2-3/analyzing-machine-and-sensor-data/34_filter_by_temprange_cold.jpg)
 
 -   Our data set includes information about the performance of five
     brands of HVAC equipment, distributed across many types of buildings
@@ -430,34 +430,34 @@ most frequently outside of the optimal temperature range.
     the same procedure as before to import the data, but this time only
     select the "hvacproduct" and "extremetemp" columns.
 
-    ![](./images/35_import_hvacproduct_extremetemp.jpg?raw=true)
+    ![](/assets/2-3/analyzing-machine-and-sensor-data/35_import_hvacproduct_extremetemp.jpg)
 
 -   In the Excel worksheet with the imported "hvacproduct" and
     "extremetemp" columns, select **Insert > Power View** to open a new
     Power View report.
 
-    ![](./images/36_open_powerview_hvacproduct.jpg?raw=true)
+    ![](/assets/2-3/analyzing-machine-and-sensor-data/36_open_powerview_hvacproduct.jpg)
 
 -   Click the Pop Out icon to maximize the size of the data table. In
     the FIELDS box, click the down-arrow at the right of the extremetemp
     field, then select Count (Not Blank).
 
-    ![](./images/37_extremetemp_count_not_blank.jpg?raw=true)
+    ![](/assets/2-3/analyzing-machine-and-sensor-data/37_extremetemp_count_not_blank.jpg)
 
 -   Select **Column Chart > Stacked Column**in the top menu.
 
-    ![](./images/38_open_stacked_column.jpg?raw=true)
+    ![](/assets/2-3/analyzing-machine-and-sensor-data/38_open_stacked_column.jpg)
 
 -   Click the down-arrow next to **sort by hvacproduct** in the upper
     left corner of the chart area, then select **Count of extremetemp**.
 
-    ![](./images/39_sort_by_extremetemp.jpg?raw=true)
+    ![](/assets/2-3/analyzing-machine-and-sensor-data/39_sort_by_extremetemp.jpg)
 
 -   We can see that the GG1919 model seems to regulate temperature most
     reliably, whereas the FN39TG failed to maintain the appropriate
     temperature range 9% more frequently than the GG1919.
 
-    ![](./images/40_chart_sorted_by_extremetemp.jpg?raw=true)
+    ![](/assets/2-3/analyzing-machine-and-sensor-data/40_chart_sorted_by_extremetemp.jpg)
 
 We've shown how the Hortonworks Data Platform (HDP) can store and
 analyze sensor data. With real-time access to massive amounts of
@@ -478,29 +478,29 @@ Start by navigating back to the [Ambari Dashboard](http://localhost:8080) at `ht
 
 -	Use the dropdown menu to open the Zeppelin View.
 
-   ![](./images/41_ambari_zeppelin_view.png?raw=true)
+   ![](/assets/2-3/analyzing-machine-and-sensor-data/41_ambari_zeppelin_view.png)
    
 -	From here we're going to need to create a new Zeppelin Notebook. 
 -	Notebooks in Zeppelin is how we differentiate reports from one another.
 -	Hove over **Notebook**. Use the dropdown menu and **Create a new note**.
    
-   ![](./images/42_create_zeppelin_note.png?raw=true)
+   ![](/assets/2-3/analyzing-machine-and-sensor-data/42_create_zeppelin_note.png)
    
 -	Name the note **HVAC Analysis Report** and then **Create Note**.
    
-   ![](./images/43_zeppelin_naming_note.png?raw=true)
+   ![](/assets/2-3/analyzing-machine-and-sensor-data/43_zeppelin_naming_note.png)
    
    
 -	Head back to the Zeppelin homepage.
 -	Use the **Notebook** dropdown menu to open the new notebook **HVAC Analysis Report**.
 
-   ![](./images/43_1_opening_note.png?raw=true)
+   ![](/assets/2-3/analyzing-machine-and-sensor-data/43_1_opening_note.png)
    
 -	Zeppelin integrates with Hadoop by using things called *interpreters*.
 -	In this tutorial we'll be working with the Hive interpreter to run Hive queries in Zeppelin, then visualize the results from our Hive queries directly in Zeppelin.
 -	To specify the Hive interpreter for this note, we need to put `%hive` at the top of the note. Everything afterwards will be interpreted as a Hive query.
    
-   ![](./images/44_blank_zeppelin_notebook.png?raw=true)
+   ![](/assets/2-3/analyzing-machine-and-sensor-data/44_blank_zeppelin_notebook.png)
    
 -	Type the following query into the note, then run it by clicking the **Run** arrow or by using the shortcut **Shift+Enter**.
 
@@ -510,28 +510,28 @@ Start by navigating back to the [Ambari Dashboard](http://localhost:8080) at `ht
 select country, extremetemp, temprange from hvac_building
 ```
    
-   ![](./images/45_zeppelin_query.png?raw=true)
+   ![](/assets/2-3/analyzing-machine-and-sensor-data/45_zeppelin_query.png)
    
 -	After running the previous query we can view a chart of the data by clicking the chart button located just under the query.
 
-   ![](./images/46_table_to_chart.png?raw=true)
+   ![](/assets/2-3/analyzing-machine-and-sensor-data/46_table_to_chart.png)
    
 -	Click **settings** to open up more advanced settings for creating the chart. Here you can experiment with different values and columns to create different types of charts.
    
-   ![](./images/47_changing_chart_settings.png?raw=true)
+   ![](/assets/2-3/analyzing-machine-and-sensor-data/47_changing_chart_settings.png)
    
 -	Arrange the fields according to the following image.
 -	Drag the field `temprange` into the **groups** box.
 -	Click **SUM** on `extremetemp` and change it to **COUNT**.
 -	Make sure that `country` is the only field under **Keys**.
    
-   ![](./images/48_chart_setup.png?raw=true)
+   ![](/assets/2-3/analyzing-machine-and-sensor-data/48_chart_setup.png)
    
 -	Awesome! You've just created your first chart using Apache Zeppelin.
 -	From this chart we can see which countries have the most extreme temperature and how many **NORMAL** events there are compared to **HOT** and **COLD**.
 -	From this data it could be possible to figure out which buildings might need HVAC upgrades, and which do not.
    
-   ![](./images/49_chart_finished.png?raw=true)
+   ![](/assets/2-3/analyzing-machine-and-sensor-data/49_chart_finished.png)
    
 -	Let's try creating one more note to visualize which types of HVAC systems result in the least amount of `extremetemp` readings.
 -	Paste the following query into the blank Zeppelin note following the chart we made previously.
@@ -544,13 +544,13 @@ select hvacproduct, extremetemp from hvac_building
 
 -	Now use **Shift+Enter** to run the note.
    
-   ![](./images/50_second_query.png?raw=true)
+   ![](/assets/2-3/analyzing-machine-and-sensor-data/50_second_query.png)
    
 -	Arrange the fields according to the following image so we can recreate the chart below.
 -	Make sure that `hvacproduct` is in the **Keys** box.
 -	Make sure that `extremetemp` is in the **Values** box and that it is set to **COUNT**.
    
-   ![](./images/51_chart_two.png?raw=true)
+   ![](/assets/2-3/analyzing-machine-and-sensor-data/51_chart_two.png)
   
 -	Now we can see which HVAC units result in the most `extremetemp` readings. Thus we can make a more informed decision when purchasing new HVAC systems.
 
