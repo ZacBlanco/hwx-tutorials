@@ -55,7 +55,7 @@ Now you’re ready to run and deploy your impatient.jar file onto the cluster.
 
 This command will produce the following output:
 
-![Screen Shot 2014-04-20 at 4.27.45 PM](/assets/2-3/cascading/Screen-Shot-2014-04-20-at-4.27.45-PM.png)
+![Screen Shot 2014-04-20 at 4.27.45 PM](../../../assets/2-3/cascading/Screen-Shot-2014-04-20-at-4.27.45-PM.png)
 
 ### Tracking the MapReduce Jobs on Sandbox
 

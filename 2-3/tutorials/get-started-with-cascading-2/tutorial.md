@@ -1,7 +1,7 @@
 This is the second tutorial to enable you as a Java developer to learn about Cascading and Hortonworks Data Platform (HDP). Other tutorials are:
 
-*   [WordCount with Cascading on HDP2.1 Sandbox](http://hortonworks.com/hadoop-tutorial/cascading-hortonworks-data-platform-2-1/ "Cascading Word Count")
-*   [LogParsing with Cascading on HDP2.1 Sandbox](http://hortonworks.com/hadoop-tutorial/cascading-log-parsing "Cascading Log Parsing")
+*   [WordCount with Cascading on HDP 2.3 Sandbox](http://hortonworks.com/hadoop-tutorial/cascading-hortonworks-data-platform-2-1/ "Cascading Word Count")
+*   [LogParsing with Cascading on HDP 2.3 Sandbox](http://hortonworks.com/hadoop-tutorial/cascading-log-parsing "Cascading Log Parsing")
 
 In this tutorial, you will do the following:
 
@@ -24,10 +24,10 @@ This example code is derived from Concurrent Inc.’s [training class](http://ca
 
 ### Step 2: Downloading and installing Gradle
 
-*   `cd /home/guest`
-*   `wget https://services.gradle.org/distributions/gradle-1.12-all.zip`
-*   `unzip gradle-1.12-all.zip`
-*   `export PATH=$PATH:/home/guest/gradle-1.12/bin`
+    cd ~
+    wget https://services.gradle.org/distributions/gradle-1.9-bin.zip
+    unzip gradle-1.9-bin.zip
+    chmod +x gradle-1.9/bin/gradle
 
 ### Step 3: Downloading sources and log data file
 
@@ -38,7 +38,7 @@ This example code is derived from Concurrent Inc.’s [training class](http://ca
 ### Step 4: Building the single unit of execution
 
 *   `cd /home/guest/examples/dataprocessing`
-*   `gradle clean jar`
+*   `~/gradle-1.9/bin/gradle clean jar`
 
 ### Step 5: Running the jar on Sandbox
 
@@ -53,21 +53,21 @@ This example code is derived from Concurrent Inc.’s [training class](http://ca
 
 This run should create the following output:
 
-![Screen Shot 2014-05-12 at 11.51.40 AM](assets/2-1/cacading-2/Screen-Shot-2014-05-12-at-11.51.40-AM.png)
+![Screen Shot 2014-05-12 at 11.51.40 AM](../../../assets/2-3/cascading-2/Screen-Shot-2014-05-12-at-11.51.40-AM.png)
 
 ### Tracking the MapReduce Jobs on the Sandbox
 
-Once the job is submitted (or running), you can visually track its progress from the Sandbox Hue’s Job Browser. By default, it will display all jobs submitted by the user **hue**; filter by the user **guest**.
+Once the job is submitted (or running), you can visually track its progress from the MapReduce Job Browser. Login to Ambari and click **MapReduce 2**. Then Use **Quick Links** to get to the **JobHistory UI**.
 
-![Screen Shot 2014-05-12 at 11.53.52 AM](assets/2-1/cacading-2/Screen-Shot-2014-05-12-at-11.53.52-AM.png)
+![Screen Shot 2014-05-12 at 11.53.52 AM](../../../assets/2-3/cascading-2/02_ambari_mapreduce.png)
 
 You can drill down on any links to explore further details about the Map Reduce jobs running in their respective YARN containers. For example, clicking on one of the job ids will show all the maps and reduces tasks created.
 
 ### Viewing the Log Parsing Output
 
-When the job is finished, the 10 IP addresses are written as an HDFS file part-00000\. Use the Sandbox Hue’s File Browser to navigate to the HDFS directory, /user/guest/output/logs, and view its contents.
+When the job is finished, the 10 IP addresses are written as an HDFS file part-00000\. Use the Ambari **HDFS Files** view to navigate to the HDFS directory, `/user/guest/output/logs`, and view its contents.
 
-![Screen Shot 2014-05-12 at 6.33.13 PM](assets/2-1/cacading-2/Screen-Shot-2014-05-12-at-6.33.13-PM.png)
+![Screen Shot 2014-05-12 at 6.33.13 PM](../../../assets/2-3/cascading-2/04_job_results.png)
 
 Voila! You have written a Cascading log processing application, executed it on the Hortonworks HDP Sandbox, and perused the respective MapReduce jobs and the output generated.
 
