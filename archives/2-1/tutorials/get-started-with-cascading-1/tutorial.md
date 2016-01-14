@@ -55,23 +55,23 @@ Now you’re ready to run and deploy your impatient.jar file onto the cluster.
 
 This command will produce the following output:
 
-![Screen Shot 2014-04-20 at 4.27.45 PM](/assets/2-1/cascadingScreen-Shot-2014-04-20-at-4.27.45-PM.png)
+![Screen Shot 2014-04-20 at 4.27.45 PM](/assets/2-1/cascading/Screen-Shot-2014-04-20-at-4.27.45-PM.png)
 
 ### Tracking the MapReduce Jobs on Sandbox
 
 Once the job is submitted (or running) you can actually track its progress from the Sandbox Hue’s Job Browser. By default, it will display all jobs run by the user **hue**; filter by the user **cascade.**
 
-![Screen Shot 2014-04-18 at 4.17.04 PM](/assets/2-1/cascadingScreen-Shot-2014-04-18-at-4.17.04-PM1.png)
+![Screen Shot 2014-04-18 at 4.17.04 PM](/assets/2-1/cascading/Screen-Shot-2014-04-18-at-4.17.04-PM1.png)
 
 Double click on any links to see job details.
 
-![Screen Shot 2014-04-19 at 11.12.09 AM](/assets/2-1/cascadingScreen-Shot-2014-04-19-at-11.12.09-AM.png)
+![Screen Shot 2014-04-19 at 11.12.09 AM](/assets/2-1/cascading/Screen-Shot-2014-04-19-at-11.12.09-AM.png)
 
 ### Viewing the WordCount Output
 
 When the job is finished, the word counts are written as an HDFS file **part-00000**. Use the Sandbox Hue’s File Browser to navigate to the HDFS directory and view its contents.
 
-![Screen Shot 2014-04-19 at 11.02.53 AM](/assets/2-1/cascadingScreen-Shot-2014-04-19-at-11.02.53-AM.png)
+![Screen Shot 2014-04-19 at 11.02.53 AM](/assets/2-1/cascading/Screen-Shot-2014-04-19-at-11.02.53-AM.png)
 
 ### Above and Beyond
 
