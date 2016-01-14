@@ -18,4 +18,6 @@ The tutorials that are currently working with HDP 2.3:
 
 - [Realtime Event Processing in Hadoop with Storm and Kafka](tutorials/real-time-event-processing-with-hadoop/)
 
+- [Securing your Hadoop infrastructure with Apache Knox](tutorials/securing-hadoop-infrastructure-with-apache-knox/securing-hadoop-infrastructure-with-apache-knox.md)
+
 - [Data Processing Pipelines with Apache Falcon](tutorials/define-and-process-data-pipelines-with-falcon/define-and-process-data-pipelines-with-apache-falcon.md)
