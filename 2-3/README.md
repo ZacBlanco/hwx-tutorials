@@ -21,3 +21,5 @@ The tutorials that are currently working with HDP 2.3:
 - [Securing your Hadoop infrastructure with Apache Knox](tutorials/securing-hadoop-infrastructure-with-apache-knox/securing-hadoop-infrastructure-with-apache-knox.md)
 
 - [Data Processing Pipelines with Apache Falcon](tutorials/define-and-process-data-pipelines-with-falcon/define-and-process-data-pipelines-with-apache-falcon.md)
+
+- [Getting Started with Cascading](tutorials/get-started-with-cascading-1/tutorial.md)
