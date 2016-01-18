@@ -38,6 +38,7 @@ In this tutorial, we will focus on the “path optimization” use case. Specifi
 
 *   Hortonworks ODBC driver (64-bit) installed and configured
 *   Hortonworks sample data files uploaded and refined as described in “Loading Data into the Hortonworks Sandbox”
+  - If you haven't loaded this data yet, please [download it here](https://s3.amazonaws.com/hw-sandbox/tutorial8/RefineDemoData.zip)  and import it by following this tutorial: [http://hortonworks.com/hadoop-tutorial/loading-data-into-the-hortonworks-sandbox/](http://hortonworks.com/hadoop-tutorial/loading-data-into-the-hortonworks-sandbox/)
 *   Microsoft Excel 2013 Professional Plus 64-bit
 *   Windows 7 or later(required to run Microsoft Excel 2013 Professional Plus edition)
     *   Note this tutorial can still be run with any version of Excel, but your visualizaitons will be limited to the built in charts. You may wish to attempt this with another visualization tool that can accept data via an ODBC connection, like Tableau, Lumira, etc.
