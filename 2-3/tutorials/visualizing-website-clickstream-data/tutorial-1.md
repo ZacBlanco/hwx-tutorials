@@ -1,3 +1,5 @@
+## Lab 1: Loading Data into HDFS and Hive
+
 ### Summary
 
 This tutorial describes how to load data into the Hortonworks sandbox.
@@ -38,7 +40,7 @@ One of the original uses of Hadoop at Yahoo was to store and process their massi
 
 In this tutorial, we will focus on the “path optimization” use case. Specifically: how can we improve our website to reduce bounce rates and improve conversion?
 
---------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
 
 ### Step 1: Download the Sample Data
