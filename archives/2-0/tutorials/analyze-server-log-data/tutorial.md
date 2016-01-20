@@ -106,9 +106,9 @@ At the command prompt, type in the following command, then press the Enter key:
 
 `yum install –y flume`
 
-Lines of text appear as Flume installs. When the installation is complete, “Complete!” is displayed, and the normal command prompt appears.
+Lines of text appear as Flume installs. When the installation is complete, "Complete!" is displayed, and the normal command prompt appears.
 
-![](http://raw.github.com/hortonworks/hadoop-tutorials/master/Sandbox/images/tutorial-12/01_flume_install_complete.jpg)
+![](../../../../assets/2-0/server-logs/01_flume_install_complete.jpg)
 
 We will now use SCP to copy the flume.conf file to the Sandbox. The procedure is slightly different for Windows and Mac, so both methods are described here.
 
@@ -118,15 +118,17 @@ Open a Terminal window and navigate to ServerLogFiles folder you extracted previ
 
 `scp -P 2222 flume.conf root@127.0.0.1:/etc/flume/conf`
 
-**Note:** You must use an uppercase “P” for the “-P” in this command.
+**Note:** You must use an uppercase "P" for the "-P" in this command.
 
-You may be prompted to validate the authenticity of the host. Enter “yes” when prompted.
+You may be prompted to validate the authenticity of the host. Enter "yes" when prompted.
 
-When prompted, type in the Sandbox password (“hadoop”), then Press Enter. This command will copy the flume.conf configuration file to the `/etc/flume/conf` folder on the Sandbox.
+When prompted, type in the Sandbox password ("hadoop"), then Press Enter. This command will copy the flume.conf configuration file to the `/etc/flume/conf` folder on the Sandbox.
 
 Upon successful completion, you will receive a response back in your terminal window that says:
 
-`flume.conf          100%  1013   1.0KB/s   00:00  `![](http://raw.github.com/hortonworks/hadoop-tutorials/master/Sandbox/images/tutorial-12/02_scp_mac.jpg)
+`flume.conf          100%  1013   1.0KB/s   00:00  `
+
+![](../../../../assets/2-0/server-logs/02_scp_mac.jpg)
 
 *   **Windows 7: Copy the flume.conf File to the Sandbox**
 
@@ -137,11 +139,11 @@ Upon successful completion, you will receive a response back in your terminal wi
     *   **Port:** 2222
     *   **User name:** root
 
-![](http://raw.github.com/hortonworks/hadoop-tutorials/master/Sandbox/images/tutorial-12/03_scp_windows_login.jpg)
+![](../../../../assets/2-0/server-logs/03_scp_windows_login.jpg)
 
-    *   **b.**Type the Sandbox password (“hadoop”) in the Password box, then click **OK**.
+    *   **b.**Type the Sandbox password ("hadoop") in the Password box, then click **OK**.
 
-![](http://raw.github.com/hortonworks/hadoop-tutorials/master/Sandbox/images/tutorial-12/05_scp_windows_password.jpg)
+![](../../../../assets/2-0/server-logs/05_scp_windows_password.jpg)
 
     *   **c.** Use the WinSCP file browser to navigate to the ServerLogFiles folder in the left-hand pane, and to the Sandbox etc/flume/conf folder in the right-hand pane.
 
@@ -149,7 +151,7 @@ Upon successful completion, you will receive a response back in your terminal wi
 
         Click **Copy** on the Copy pop-up to confirm the file transfer, then click **Yes** on the Confirm pop-up to confirm overwriting the existing flume.conf file.  
 
-![](http://raw.github.com/hortonworks/hadoop-tutorials/master/Sandbox/images/tutorial-12/04_scp_windows_drag.jpg)
+![](../../../../assets/2-0/server-logs/04_scp_windows_drag.jpg)
 
 *   Next we will switch back to the Sandbox command prompt window and enable the Flume log by editing the `/etc/flume/conf/log4j`.properties file. At the Sandbox command prompt, type in the following command, then press the Enter key:
 
@@ -157,17 +159,17 @@ Upon successful completion, you will receive a response back in your terminal wi
 
 *   This command opens the log4j.properties file with the vi command line text editor.
 
-![](http://raw.github.com/hortonworks/hadoop-tutorials/master/Sandbox/images/tutorial-12/05_vi_open.jpg)
+![](../../../../assets/2-0/server-logs/05_vi_open.jpg)
 
 *   Press the "i" key to switch to Insert mode. "–INSERT–" will appear at the bottom of the command prompt window. Use the down-arrow key to scroll down until you find the following lines of text:
 
 `flume.root.logger=INFO,LOGFILE\ flume.log.dir=./logs\ flume.log.file=flume.log`
 
-*   Use the arrow keys to position the cursor at the end of the second line. Use the Delete (Mac) or Backspace (Windows) key to delete “./logs”, then type in “/var/log/flume”. When you are finished, the text should be as follows:
+*   Use the arrow keys to position the cursor at the end of the second line. Use the Delete (Mac) or Backspace (Windows) key to delete "./logs", then type in "/var/log/flume". When you are finished, the text should be as follows:
 
 `flume.root.logger=INFO,LOGFILE\ flume.log.dir=/var/log/flume\ flume.log.file=flume.log`
 
-![](http://raw.github.com/hortonworks/hadoop-tutorials/master/Sandbox/images/tutorial-12/06_vi_edit.jpg)
+![](../../../../assets/2-0/server-logs/06_vi_edit.jpg)
 
 *   Press the Escape key to exit Insert mode and return to Command mode. "–INSERT–" will no longer appear at the bottom of the command prompt window. Type in the following command, then press the Enter key:
 
@@ -175,7 +177,7 @@ Upon successful completion, you will receive a response back in your terminal wi
 
 *   This command saves your changes and exits the vi text editor.
 
-![](http://raw.github.com/hortonworks/hadoop-tutorials/master/Sandbox/images/tutorial-12/07_vi_save.jpg)
+![](../../../../assets/2-0/server-logs/07_vi_save.jpg)
 
 * * *
 
@@ -185,13 +187,13 @@ Next we will log into the Sandbox remotely using SSH. The procedure is slightly 
 
 **Mac OS X: Access the Sandbox Remotely Via SSH**
 
-*   Type the following ssh command in the Terminal window, then press the Enter key. **Note:** You must use a lowercase “p” for the “-p” in this command.
+*   Type the following ssh command in the Terminal window, then press the Enter key. **Note:** You must use a lowercase "p" for the "-p" in this command.
 
     `ssh -p 2222 root@127.0.0.1`
 
 *   When prompted, type in the Sandbox password (**"hadoop"**), then press Enter. The command prompt changes to `[root@Sandbox \~]\#` to indicate that you are now logged into the Sandbox. 
 
-![](http://raw.github.com/hortonworks/hadoop-tutorials/master/Sandbox/images/tutorial-12/12_ssh_mac.jpg)
+![](../../../../assets/2-0/server-logs/12_ssh_mac.jpg)
 
 **Windows 7: Access the Sandbox Remotely Via SSH**
 
@@ -200,21 +202,21 @@ Next we will log into the Sandbox remotely using SSH. The procedure is slightly 
     *   **Host Name (or IP address):** 127.0.0.1
     *   **Port:** 2222
 
-![](http://raw.github.com/hortonworks/hadoop-tutorials/master/Sandbox/images/tutorial-12/13_putty_config.jpg)
+![](../../../../assets/2-0/server-logs/13_putty_config.jpg)
 
-*   When prompted, type in the Sandbox user name (**“root”**) and password (**“hadoop”**), then press Enter. The command prompt changes to `[root@sandbox \~]\#` to indicate that you are now logged into the Sandbox.
+*   When prompted, type in the Sandbox user name (**"root"**) and password (**"hadoop"**), then press Enter. The command prompt changes to `[root@sandbox \~]\#` to indicate that you are now logged into the Sandbox.
 
-![](http://raw.github.com/hortonworks/hadoop-tutorials/master/Sandbox/images/tutorial-12/14_putty_login.jpg)
+![](../../../../assets/2-0/server-logs/14_putty_login.jpg)
 
 *   **Mac OS X or Windows 7:** To start Flume, type in the following command, then press the Enter key:
 
     `flume-ng agent -c /etc/flume/conf -f /etc/flume/conf/flume.conf -n sandbox`
 
-![](http://raw.github.com/hortonworks/hadoop-tutorials/master/Sandbox/images/tutorial-12/08_start_flume.jpg)
+![](../../../../assets/2-0/server-logs/08_start_flume.jpg)
 
     Multiple lines of text will appear in the command prompt window as Flume starts. With Flume running, we will need to log in to the Sandbox remotely to generate the server log data.
 
-![](http://raw.github.com/hortonworks/hadoop-tutorials/master/Sandbox/images/tutorial-12/09_flume_running.jpg)
+![](../../../../assets/2-0/server-logs/09_flume_running.jpg)
 
 * * *
 
@@ -226,15 +228,15 @@ Now that Flume is running, we will use a Python script to generate the server lo
 
     **Mac OS X: Copy the generate_logs.py File to the Sandbox**
 
-    Open a Terminal window and navigate to ServerLogFiles folder. Type in the following command, then press the Enter key. **Note:** You must use an uppercase “P” for the “-P” in this command.
+    Open a Terminal window and navigate to ServerLogFiles folder. Type in the following command, then press the Enter key. **Note:** You must use an uppercase "P" for the "-P" in this command.
 
     `scp -P 2222 generate_logs.py root@127.0.0.1:`
 
-    When prompted, type in the Sandbox password (**“hadoop”**), then Press Enter. This command will copy the `generate\_logs.py` file to the root folder on the Sandbox.
+    When prompted, type in the Sandbox password (**"hadoop"**), then Press Enter. This command will copy the `generate\_logs.py` file to the root folder on the Sandbox.
 
     Upon successful completion, you will receive a response back in your terminal window like the one below.
 
-![](http://raw.github.com/hortonworks/hadoop-tutorials/master/Sandbox/images/tutorial-12/10_scp_mac_python.jpg)
+![](../../../../assets/2-0/server-logs/10_scp_mac_python.jpg)
 
     **Windows 7: Copy the generate_logs.py File to the Sandbox**
 
@@ -244,7 +246,7 @@ Now that Flume is running, we will use a Python script to generate the server lo
 
     Click **Copy** on the Copy pop-up to confirm the file transfer.
 
-![](http://raw.github.com/hortonworks/hadoop-tutorials/master/Sandbox/images/tutorial-12/11_scp_windows_python.jpg)
+![](../../../../assets/2-0/server-logs/11_scp_windows_python.jpg)
 
 *   **Mac OS X or Windows 7:** In the active Sandbox SSH session in either the Mac Terminal or the PuTTY window, type in the following command to generate the log file, then press the Enter key:
 
@@ -258,11 +260,11 @@ Now that Flume is running, we will use a Python script to generate the server lo
 
 When the table has been generated, the elapsed processing time will appear, and the command prompt will return to normal ([`root@Sandbox \~]\#`).
 
-![](http://raw.github.com/hortonworks/hadoop-tutorials/master/Sandbox/images/tutorial-12/15_hcat_command_mac.jpg)
+![](../../../../assets/2-0/server-logs/15_hcat_command_mac.jpg)
 
-*   Open the Sandbox HUE user interface in a browser, then click **HCatalog** in the menu at the top of the page. The “firewall_logs” table will appear in the HCatalog table list. Select the check box next to the “firewall_logs” table, then click **Browse Data**. You should see columns with data for time, ip, country, and status. If you do not see data take a look at the [Troubleshooting](#troubleshooting) section.
+*   Open the Sandbox HUE user interface in a browser, then click **HCatalog** in the menu at the top of the page. The "firewall_logs" table will appear in the HCatalog table list. Select the check box next to the "firewall_logs" table, then click **Browse Data**. You should see columns with data for time, ip, country, and status. If you do not see data take a look at the [Troubleshooting](#troubleshooting) section.
 
-![](http://raw.github.com/hortonworks/hadoop-tutorials/master/Sandbox/images/tutorial-12/16_firewall_logs_table.jpg)
+![](../../../../assets/2-0/server-logs/16_firewall_logs_table.jpg)
 
 * * *
 
@@ -272,37 +274,37 @@ In this section, we will use Excel Professional Plus 2013 to access the generate
 
 *   In Windows, open a new Excel workbook, then select **Data > From Other Sources > From Microsoft Query**.
 
-![](http://raw.github.com/hortonworks/hadoop-tutorials/master/Sandbox/images/tutorial-12/17_open_query.jpg)
+![](../../../../assets/2-0/server-logs/17_open_query.jpg)
 
 *   On the Choose Data Source pop-up, select the Hortonworks ODBC data source you installed previously, then click **OK**.
 
     The Hortonworks ODBC driver enables you to access Hortonworks data with Excel and other Business Intelligence (BI) applications that support ODBC.
 
-![](http://raw.github.com/hortonworks/hadoop-tutorials/master/Sandbox/images/tutorial-12/18_choose_data_source.jpg)
+![](../../../../assets/2-0/server-logs/18_choose_data_source.jpg)
 
-*   After the connection to the Sandbox is established, the Query Wizard appears. Select the “firewall_logs” table in the Available tables and columns box, then click the right arrow button to add the entire “firewall_logs” table to the query. Click **Next** to continue.
+*   After the connection to the Sandbox is established, the Query Wizard appears. Select the "firewall_logs" table in the Available tables and columns box, then click the right arrow button to add the entire "firewall_logs" table to the query. Click **Next** to continue.
 
-![](http://raw.github.com/hortonworks/hadoop-tutorials/master/Sandbox/images/tutorial-12/19_query_wizard1.jpg)
+![](../../../../assets/2-0/server-logs/19_query_wizard1.jpg)
 
 *   On the Filter Data screen, click **Next** to continue without filtering the data.
 
-![](http://raw.github.com/hortonworks/hadoop-tutorials/master/Sandbox/images/tutorial-12/20_query_wizard2.jpg)
+![](../../../../assets/2-0/server-logs/20_query_wizard2.jpg)
 
 *   On the Sort Order screen, click **Next** to continue without setting a sort order.
 
-![](http://raw.github.com/hortonworks/hadoop-tutorials/master/Sandbox/images/tutorial-12/21_query_wizard3.jpg)
+![](../../../../assets/2-0/server-logs/21_query_wizard3.jpg)
 
 *   Click **Finish** on the Query Wizard Finish screen to retrieve the query data from the Sandbox and import it into Excel.
 
-![](http://raw.github.com/hortonworks/hadoop-tutorials/master/Sandbox/images/tutorial-12/22_query_wizard4.jpg)
+![](../../../../assets/2-0/server-logs/22_query_wizard4.jpg)
 
 *   On the Import Data dialog box, click **OK** to accept the default settings and import the data as a table.
 
-![](http://raw.github.com/hortonworks/hadoop-tutorials/master/Sandbox/images/tutorial-12/23_import_data.jpg)
+![](../../../../assets/2-0/server-logs/23_import_data.jpg)
 
 *   The imported query data appears in the Excel workbook.
 
-![](http://raw.github.com/hortonworks/hadoop-tutorials/master/Sandbox/images/tutorial-12/24_data_imported.jpg)
+![](../../../../assets/2-0/server-logs/24_data_imported.jpg)
 
 Now that we have successfully imported Hortonworks Sandbox data into Microsoft Excel, we can use the Excel Power View feature to analyze and visualize the data.
 
@@ -318,45 +320,45 @@ Data visualization can help you analyze network data and determine effective res
 
 We'll start by reviewing the network traffic by country.
 
-*   In the Excel worksheet with the imported “<firewall_logs>” table, select **Insert > Power View** to open a new Power View report. (note: if this is your first time running PowerView it will prompt you to [install Silverlight](#Excel%20configuration%20for%20PowerView).
+*   In the Excel worksheet with the imported "<firewall_logs>" table, select **Insert > Power View** to open a new Power View report. (note: if this is your first time running PowerView it will prompt you to [install Silverlight](#Excel%20configuration%20for%20PowerView).
 
-![](http://raw.github.com/hortonworks/hadoop-tutorials/master/Sandbox/images/tutorial-12/25_open_powerview_firewall_logs.jpg)
+![](../../../../assets/2-0/server-logs/25_open_powerview_firewall_logs.jpg)
 
 *   The Power View Fields area appears on the right side of the window, with the data table displayed on the left.
 
     Drag the handles or click the Pop Out icon to maximize the size of the data table, and close the Filters area.
 
-![](http://raw.github.com/hortonworks/hadoop-tutorials/master/Sandbox/images/tutorial-12/26_powerview_firewall_logs.jpg)
+![](../../../../assets/2-0/server-logs/26_powerview_firewall_logs.jpg)
 
 *   In the Power View Fields area, clear checkboxes next to the **ip** and **time** fields, then click **Map** on the Design tab in the top menu. (**Note:** If you do not get data plotted on your map look at [Geolocation of data using Bing](#Geolocation%20of%20data%20using%20Bing))
 
-![](http://raw.github.com/hortonworks/hadoop-tutorials/master/Sandbox/images/tutorial-12/27_open_map.jpg)
+![](../../../../assets/2-0/server-logs/27_open_map.jpg)
 
 *   Drag the **status** field into the **SIZE** box.
 
-![](http://raw.github.com/hortonworks/hadoop-tutorials/master/Sandbox/images/tutorial-12/28_status_to_size.jpg)
+![](../../../../assets/2-0/server-logs/28_status_to_size.jpg)
 
 *   The map view displays a global view of the network traffic by country. The color orange represents successful, authorized network connections. Blue represents connections from unauthorized sources.
 
-![](http://raw.github.com/hortonworks/hadoop-tutorials/master/Sandbox/images/tutorial-12/29_network_traffic_by_country.jpg)
+![](../../../../assets/2-0/server-logs/29_network_traffic_by_country.jpg)
 
 *   Let's assume that recent denial-of-service attacks have originated in Pakistan. We can use the map controls to zoom in and take a closer look at traffic from that country.
 
-![](http://raw.github.com/hortonworks/hadoop-tutorials/master/Sandbox/images/tutorial-12/30_network_traffic_pakistan.jpg)
+![](../../../../assets/2-0/server-logs/30_network_traffic_pakistan.jpg)
 
     It's obvious that this is a coordinated attack, originating from many countries. Now we can use Excel to generate a list of the unauthorized IP addresses.
 
-*   Use the tabs at the bottom of the Excel window to navigate back to the Excel worksheet with the imported “<firewall_logs>” table.
+*   Use the tabs at the bottom of the Excel window to navigate back to the Excel worksheet with the imported "<firewall_logs>" table.
 
     Click the arrow next to the **status** column header. Clear the **Select all** check box, select the **ERROR** check box, then click **OK**.
 
-![](http://raw.github.com/hortonworks/hadoop-tutorials/master/Sandbox/images/tutorial-12/31_excel_error_list.jpg)
+![](../../../../assets/2-0/server-logs/31_excel_error_list.jpg)
 
 *   Now that we have a list of the unauthorized IP addresses, we can update the network firewall to deny requests from those attacking IP addresses.
 
 We've shown how the Hortonworks Data Platform can help system administrators capture, store, and analyze server log data. With real-time access to massive amounts of data on the Hortonworks Data Platform, we were able to block unauthorized access, restore VPN access to authorized users.
 
-With log data flowing continuously into the Hortonworks Data Platform “data lake,” we can protect the company network from similar attacks in the future. The data can be refreshed frequently and accessed to respond to security threats, or to prepare for compliance audits.
+With log data flowing continuously into the Hortonworks Data Platform "data lake," we can protect the company network from similar attacks in the future. The data can be refreshed frequently and accessed to respond to security threats, or to prepare for compliance audits.
 
 * * *
 
