@@ -56,7 +56,6 @@ To refine and visualize server log data, we will:
 
 * * *
 
-
 ## Step 1: Download and Extract the Server Log Tutorial Files
 
 *   The files needed for this tutorial are contained in a compressed (.zip) folder that you can download here:
@@ -67,7 +66,7 @@ To refine and visualize server log data, we will:
 
 * * *
 
-## Step 2 – Install, Configure, and Start Apache Flume
+## Step 2 – Configure and Start Apache Flume
 
 ### What Is Apache Flume?
 
@@ -96,66 +95,49 @@ A flow in Flume starts from the Client. The Client transmits the event to a Sour
 
 **Note:** For more in-depth information about Flume, see **Appendix A: Collecting Data in the Events Log.**
 
+First, login in to the Sandbox using the Ambari user interface which can be found at [http://sandbox.hortonworks.com:8080](http://sandbox.hortonworks.com:8080).
+
+**Note** that if the above doesn't work you can either **add sandbox.hortonworks.com to your /etc/hosts file** or you can trying using [http://localhost:8080](http://localhost:8080) or [http://127.0.0.1:8080](http://127.0.0.1:8080).
+
+Once you've logged in you'll need to use the Ambari views dropdown menu and select **Local Files**. This a view of the Sandbox VM's filesystem (**not** HDFS).
+
+![Image of Ambari Views Dropdown]()
+
+Head on over to `/etc/flume` and upload the `flume.conf` and `generate_logs.py` files which were part of the ServerLogFiles.zip which you downloaded earlier.
+
+![Image of Uploading File]()
+
+Once you've uploaded the file you'll need to login to the console through the virtual machine or login over SSH.
+
 With the Hortonworks Sandbox virtual machine (VM) command prompt window active, press the Alt and F5 keys, then log in to the Sandbox using the following user name and password:
 
 `login: root Password: hadoop`
 
+If you wish to use SSH you can use your favorite terminal program and execute the command
+
+~~~
+ssh root@localhost -p 2222
+~~~
+
+Or you can choose to use the Sandbox's built-in Web-based SSH terminal **Shell-In-A-Box** which can be accessed at [http://sandbox.hortonworks.com:4200](http://sandbox.hortonworks.com:4200)
+
+remember the username is `root` and the password is `hadoop`.
+
 After you log in, the command prompt will appear with the prefix `[root@Sandbox \~]\#:`
 
-At the command prompt, type in the following command, then press the Enter key:
+First, because you uploaded the `flume.conf` file in Ambari, we're going to need to move it to the corrent location. Execute the following command
 
-`yum install –y flume`
+~~~
+mv /etc/flume/flume.conf /etc/flume/conf/flume.conf
+~~~
 
-Lines of text appear as Flume installs. When the installation is complete, "Complete!" is displayed, and the normal command prompt appears.
+Also run 
 
-![](../../../assets/2-3/server-logs/01_flume_install_complete.jpg)
+    mv /etc/flume/generate_logs.py /root
 
-We will now use SCP to copy the flume.conf file to the Sandbox. The procedure is slightly different for Windows and Mac, so both methods are described here.
+Next we're going to need to edit another flume configuration file.
 
-**Mac OS X: Copy the flume.conf File to the Sandbox**
-
-Open a Terminal window and navigate to ServerLogFiles folder you extracted previously. Type in the following command, then press the Enter key:
-
-`scp -P 2222 flume.conf root@127.0.0.1:/etc/flume/conf`
-
-**Note:** You must use an uppercase "P" for the "-P" in this command.
-
-You may be prompted to validate the authenticity of the host. Enter "yes" when prompted.
-
-When prompted, type in the Sandbox password ("hadoop"), then Press Enter. This command will copy the flume.conf configuration file to the `/etc/flume/conf` folder on the Sandbox.
-
-Upon successful completion, you will receive a response back in your terminal window that says:
-
-`flume.conf          100%  1013   1.0KB/s   00:00  `
-
-![](../../../assets/2-3/server-logs/02_scp_mac.jpg)
-
-*   **Windows 7: Copy the flume.conf File to the Sandbox**
-
-    On Windows you will need to download and install the free [WinSCP](http://winscp.net/eng/index.php) application.
-
-    *   **a.** Open WinSCP and type in the following settings, then click **Login**.
-    *   **Host name:** 127.0.0.1
-    *   **Port:** 2222
-    *   **User name:** root
-
-![](../../../assets/2-3/server-logs/03_scp_windows_login.jpg)
-
-    *   **b.**Type the Sandbox password ("hadoop") in the Password box, then click **OK**.
-
-![](../../../assets/2-3/server-logs/05_scp_windows_password.jpg)
-
-    *   **c.** Use the WinSCP file browser to navigate to the ServerLogFiles folder in the left-hand pane, and to the Sandbox etc/flume/conf folder in the right-hand pane.
-
-        Drag-and-drop the flume.conf file from the ServerLogFiles folder to the `etc/flume/conf` folder on the Sandbox.
-
-        Click **Copy** on the Copy pop-up to confirm the file transfer, then click **Yes** on the Confirm pop-up to confirm overwriting the existing flume.conf file.  
-
-![](../../../assets/2-3/server-logs/04_scp_windows_drag.jpg)
-
-*   Next we will switch back to the Sandbox command prompt window and enable the Flume log by editing the `/etc/flume/conf/log4j`.properties file. At the Sandbox command prompt, type in the following command, then press the Enter key:
-
-    `vi /etc/flume/conf/log4j.properties`
+    vi /etc/flume/conf/log4j.properties`
 
 *   This command opens the log4j.properties file with the vi command line text editor.
 
@@ -163,17 +145,21 @@ Upon successful completion, you will receive a response back in your terminal wi
 
 *   Press the "i" key to switch to Insert mode. "–INSERT–" will appear at the bottom of the command prompt window. Use the down-arrow key to scroll down until you find the following lines of text:
 
-`flume.root.logger=INFO,LOGFILE\ flume.log.dir=./logs\ flume.log.file=flume.log`
+~~~
+flume.root.logger=INFO,LOGFILE\ flume.log.dir=./logs\ flume.log.file=flume.log
+~~~
 
 *   Use the arrow keys to position the cursor at the end of the second line. Use the Delete (Mac) or Backspace (Windows) key to delete "./logs", then type in "/var/log/flume". When you are finished, the text should be as follows:
 
-`flume.root.logger=INFO,LOGFILE\ flume.log.dir=/var/log/flume\ flume.log.file=flume.log`
+~~~
+flume.root.logger=INFO,LOGFILE\ flume.log.dir=/var/log/flume\ flume.log.file=flume.log
+~~~
 
 ![](../../../assets/2-3/server-logs/06_vi_edit.jpg)
 
 *   Press the Escape key to exit Insert mode and return to Command mode. "–INSERT–" will no longer appear at the bottom of the command prompt window. Type in the following command, then press the Enter key:
 
-    `:wq`
+    :wq
 
 *   This command saves your changes and exits the vi text editor.
 
@@ -183,40 +169,11 @@ Upon successful completion, you will receive a response back in your terminal wi
 
 ## Step 3: Start Flume
 
-Next we will log into the Sandbox remotely using SSH. The procedure is slightly different for Windows and Mac, so both methods are described here.
+Head back over to the Ambari UI at [http://sandbox.hortonworks.com:8080](http://sandbox.hortonworks.com:8080)
 
-**Mac OS X: Access the Sandbox Remotely Via SSH**
+Click on the flume Service and click **Service Actions** and select **Start** (if it is not already started) or **Restart**
 
-*   Type the following ssh command in the Terminal window, then press the Enter key. **Note:** You must use a lowercase "p" for the "-p" in this command.
-
-    `ssh -p 2222 root@127.0.0.1`
-
-*   When prompted, type in the Sandbox password (**"hadoop"**), then press Enter. The command prompt changes to `[root@Sandbox \~]\#` to indicate that you are now logged into the Sandbox. 
-
-![](../../../assets/2-3/server-logs/12_ssh_mac.jpg)
-
-**Windows 7: Access the Sandbox Remotely Via SSH**
-
-*   On Windows you will need to download and install the free [PuTTY](http://www.chiark.greenend.org.uk/%7Esgtatham/putty/download.html) application. Open PuTTY (putty.exe) and type in the following settings, then click **Open**.
-
-    *   **Host Name (or IP address):** 127.0.0.1
-    *   **Port:** 2222
-
-![](../../../assets/2-3/server-logs/13_putty_config.jpg)
-
-*   When prompted, type in the Sandbox user name (**"root"**) and password (**"hadoop"**), then press Enter. The command prompt changes to `[root@sandbox \~]\#` to indicate that you are now logged into the Sandbox.
-
-![](../../../assets/2-3/server-logs/14_putty_login.jpg)
-
-*   **Mac OS X or Windows 7:** To start Flume, type in the following command, then press the Enter key:
-
-    `flume-ng agent -c /etc/flume/conf -f /etc/flume/conf/flume.conf -n sandbox`
-
-![](../../../assets/2-3/server-logs/08_start_flume.jpg)
-
-    Multiple lines of text will appear in the command prompt window as Flume starts. With Flume running, we will need to log in to the Sandbox remotely to generate the server log data.
-
-![](../../../assets/2-3/server-logs/09_flume_running.jpg)
+![Image of Flume Service Actions]()
 
 * * *
 
@@ -224,50 +181,25 @@ Next we will log into the Sandbox remotely using SSH. The procedure is slightly 
 
 Now that Flume is running, we will use a Python script to generate the server log data, and then create an HCatalog table from the data.
 
-*   We'll start by using SCP to copy the generate_logs.py file to the Sandbox. The procedure is slightly different for Windows and Mac, so both methods are described here.
+From the Sandbox's command line or your SSH sessions type the following
+    
+    python generate_logs.py
 
-    **Mac OS X: Copy the generate_logs.py File to the Sandbox**
+When the log file has been generated, a timestamp will appear, and the command prompt will return to normal (`[root@Sandbox \~]\#`). It may take several seconds to generate the log file.
 
-    Open a Terminal window and navigate to ServerLogFiles folder. Type in the following command, then press the Enter key. **Note:** You must use an uppercase "P" for the "-P" in this command.
+*   Next we will create an Hive table from the log file.
 
-    `scp -P 2222 generate_logs.py root@127.0.0.1:`
-
-    When prompted, type in the Sandbox password (**"hadoop"**), then Press Enter. This command will copy the `generate\_logs.py` file to the root folder on the Sandbox.
-
-    Upon successful completion, you will receive a response back in your terminal window like the one below.
-
-![](../../../assets/2-3/server-logs/10_scp_mac_python.jpg)
-
-    **Windows 7: Copy the generate_logs.py File to the Sandbox**
-
-    Log in to WinSCP as before. Use the WinSCP file browser to navigate to the ServerLogFiles folder in the left-hand pane, and to the sandbox `/root` folder in the right-hand pane.
-
-    Drag-and-drop the `generate\_logs.py` file from the ServerLogFiles folder to the `/root` folder on the Sandbox.
-
-    Click **Copy** on the Copy pop-up to confirm the file transfer.
-
-![](../../../assets/2-3/server-logs/11_scp_windows_python.jpg)
-
-*   **Mac OS X or Windows 7:** In the active Sandbox SSH session in either the Mac Terminal or the PuTTY window, type in the following command to generate the log file, then press the Enter key:
-
-    `python generate_logs.py`
-
-    When the log file has been generated, a timestamp will appear, and the command prompt will return to normal (`[root@Sandbox \~]\#`). It may take several seconds to generate the log file.
-
-*   Next we will create an HCatalog table from the log file. While still in the active Sandbox SSH session, type in the following command, then press the Enter key. **Note:** The command is shown here on multiple lines, but it should actually be entered in its entirety before pressing the Enter key. The text will wrap in the Terminal or PuTTY window as you type in the command. If cut and paste fails try typing it in by hand.
-
+Open the Ambari UI and head to the views dropdown list. Select **Hive** and then past the following query.
 
 ~~~
 CREATE TABLE FIREWALL_LOGS(time STRING, ip STRING, country STRING, status STRING) ROW FORMAT DELIMITED FIELDS TERMINATED BY '|' LOCATION '/flume/events';
 ~~~
 
-When the table has been generated, the elapsed processing time will appear, and the command prompt will return to normal ([`root@Sandbox \~]\#`).
+When the table has been created you should now be able to query the data table for data using a query like 
 
-![](../../../assets/2-3/server-logs/15_hcat_command_mac.jpg)
+    Select * from FIREWALL_LOGS LIMIT 100;
 
-*   Open the Sandbox HUE user interface in a browser, then click **HCatalog** in the menu at the top of the page. The "firewall_logs" table will appear in the HCatalog table list. Select the check box next to the "firewall_logs" table, then click **Browse Data**. You should see columns with data for time, ip, country, and status. If you do not see data take a look at the [Troubleshooting](#troubleshooting) section.
-
-![](../../../assets/2-3/server-logs/16_firewall_logs_table.jpg)
+![Image of table query]()
 
 * * *
 
