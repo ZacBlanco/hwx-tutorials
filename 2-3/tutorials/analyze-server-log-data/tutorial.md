@@ -101,11 +101,11 @@ First, login in to the Sandbox using the Ambari user interface which can be foun
 
 Once you've logged in you'll need to use the Ambari views dropdown menu and select **Local Files**. This a view of the Sandbox VM's filesystem (**not** HDFS).
 
-![Image of Ambari Views Dropdown]()
+![Image of Ambari Views Dropdown](../../../assets/2-3/server-logs/ambari_views_dropdown.png)
 
 Head on over to `/etc/flume` and upload the `flume.conf` and `generate_logs.py` files which were part of the ServerLogFiles.zip which you downloaded earlier.
 
-![Image of Uploading File]()
+![Image of Uploading File](../../../assets/2-3/server-logs/ambari_files_upload.png)
 
 Once you've uploaded the file you'll need to login to the console through the virtual machine or login over SSH.
 
@@ -159,7 +159,9 @@ flume.root.logger=INFO,LOGFILE\ flume.log.dir=/var/log/flume\ flume.log.file=flu
 
 *   Press the Escape key to exit Insert mode and return to Command mode. "–INSERT–" will no longer appear at the bottom of the command prompt window. Type in the following command, then press the Enter key:
 
+
     :wq
+
 
 *   This command saves your changes and exits the vi text editor.
 
@@ -173,7 +175,7 @@ Head back over to the Ambari UI at [http://sandbox.hortonworks.com:8080](http://
 
 Click on the flume Service and click **Service Actions** and select **Start** (if it is not already started) or **Restart**
 
-![Image of Flume Service Actions]()
+![Image of Flume Service Actions](../../../assets/2-3/server-logs/ambari_start_flume.png)
 
 * * *
 
@@ -192,14 +194,24 @@ When the log file has been generated, a timestamp will appear, and the command p
 Open the Ambari UI and head to the views dropdown list. Select **Hive** and then past the following query.
 
 ~~~
-CREATE TABLE FIREWALL_LOGS(time STRING, ip STRING, country STRING, status STRING) ROW FORMAT DELIMITED FIELDS TERMINATED BY '|' LOCATION '/flume/events';
+CREATE TABLE FIREWALL_LOGS(time STRING, ip STRING, country STRING, status STRING)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY '|' 
+LOCATION '/flume/events';
 ~~~
+
+**Note** if the query doesn't run successfully due to a permissions error you then you might need to update the permission on the directory. Run the following commands over SSH on the Sandbox
+
+
+    sudo -u hdfs hadoop fs -chmod -R 777 /flume
+    sudo -u hdfs hadoop fs -chown -R admin /flume
+
 
 When the table has been created you should now be able to query the data table for data using a query like 
 
     Select * from FIREWALL_LOGS LIMIT 100;
 
-![Image of table query]()
+![Image of table query](../../../assets/2-3/server-logs/hive_table_view.png)
 
 * * *
 
