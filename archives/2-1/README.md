@@ -8,3 +8,4 @@
 - [Incremental Backup of Data from HDP to Azure using Falcon for Disaster Recovery and Burst capacity](tutorials/define-and-process-data-pipelines-with-falcon/tutorial.md)
 - [Getting Started with Cascading 1](tutorials/get-started-with-cascading-1/tutorial.md)
 - [Getting Started with Cascading 1](tutorials/get-started-with-cascading-2/tutorial.md)
+- [How to Analyze Server Log Files](tutorials/analyze-server-log-data/tutorial.md)
