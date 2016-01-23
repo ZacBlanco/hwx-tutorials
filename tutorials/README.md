@@ -2,7 +2,7 @@
 
 The tutorials that are currently working with HDP 2.3:
 
-- [Analyzing Social Media Sentiment with Apache NiFi](hortonworks/analyzing-social-media-sentiment-data-2-3/tutorial.md)
+- [Analyzing Social Media Sentiment with Apache NiFi](hortonworks/analyzing-social-media-sentiment-data/tutorial.md)
 
 - [Hello HDP: An Introduction to Hadoop with Hive, Pig, and Spark](hortonworks/hello-hdp-an-introduction-to-hadoop/tutorial.md)
 
