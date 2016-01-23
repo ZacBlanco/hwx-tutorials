@@ -56,14 +56,6 @@ If you haven't already you will need to [download the GZipped versions of Horton
 
 #### Send NiFi to the Sandbox
 
-If you've already logged into your sandbox through SSH your password will be different than below.
-
-| username | password |
-|:--------:|:--------:|
-|  _root_  | _hadoop_ |
-
-> **Note** that you will be prompted to change the `root` user's password once you login to the sandbox. **Do NOT forget this!**
-
 First we're going to need to send the HDF file that was just downloaded to the Sandbox via SCP.
 
 Assuming that HDF has been downloaded to your `~/Downloads/` directory and that the file has a name `nifi-1.1.1.0-12-bin.tar.gz` Open up the your terminal and type the following command:
@@ -84,6 +76,14 @@ There are two options to connecting to your sandbox to execute terminal commands
 ssh root@sandbox.hortonworks.com -p 2222
 ~~~
 
+If you've already logged into your sandbox through SSH your password will be different than below.
+
+| username | password |
+|:--------:|:--------:|
+|  _root_  | _hadoop_ |
+
+> **Note** that you will be prompted to change the `root` user's password once you login to the sandbox. **Do NOT forget this!**
+
 First, use the `export` command to create a temporary variable to store the name of the nifi file which you just downloaded.
 
 For example if the filename is `nifi-1.1.1.0-12-bin.tar.gz`:
@@ -91,7 +91,6 @@ For example if the filename is `nifi-1.1.1.0-12-bin.tar.gz`:
 ~~~
 export NIFI=nifi-1.1.1.0-12-bin.tar.gz
 ~~~
-
 
 Once you've successfully connected to the sandbox make sure that you're in the directory `/root/`. Then run the following commands.
 
