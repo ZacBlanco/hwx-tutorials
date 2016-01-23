@@ -26,4 +26,6 @@ The tutorials that are currently working with HDP 2.3:
 
 - [Getting Started with Cascading 2](tutorials/get-started-with-cascading-2/tutorial.md)
 
+- [How to Analyze Website Clickstream Data](tutorials/visualizing-website-clickstream-data)
+
 - [How to Analyze Server Log Files](tutorials/analyze-server-log-data/tutorial.md)
