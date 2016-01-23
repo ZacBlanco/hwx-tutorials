@@ -13,23 +13,23 @@ The offering is a single Virtual Machine which has similar functionality as the 
 
 1\. Go to [https://azure.microsoft.com/en-us/marketplace/](https://azure.microsoft.com/en-us/marketplace/) and type in “Hortonworks Sandbox” in the search bar and hit enter. The following page displays.
 
-![01](/assets/2-3/deploying-on-ms-azure/01_azure_welcome.png)
+![01](/assets/deploying-on-ms-azure/01_azure_welcome.png)
 
 2\. Click on the “Hortonworks Sandbox” offering. The next page displayed will be the landing page with some information.  On this page click on the “Create Virtual Machine” button. 
 
-![02](/assets/2-3/deploying-on-ms-azure/02_azure_create_sandbox.png)
+![02](/assets/deploying-on-ms-azure/02_azure_create_sandbox.png)
 
 3\. If not yet logged in, the following page will be displayed. Enter your credentials.
 
-![03](/assets/2-3/deploying-on-ms-azure/03_azure_sign_in.png)
+![03](/assets/deploying-on-ms-azure/03_azure_sign_in.png)
 
 4\. After logging in, the following page is presented.  Select “Resource Manager” from the drop down field “Select a deployment model” field.  Microsoft suggests to always use the Resource Manager deployment model.  More information on the Resource Manager can be found [here](https://azure.microsoft.com/en-us/documentation/articles/resource-group-overview/) .  After making the selection, click “Create”. 
 
-![04](/assets/2-3/deploying-on-ms-azure/04_select_resource_manager.png)
+![04](/assets/deploying-on-ms-azure/04_select_resource_manager.png)
 
 5\. After clicking create, you see a two new sections that will walk you through in entering information about the virtual machine being provisioned.  Below shows a screenshot of the fields filled out. 
 
-![05](/assets/2-3/deploying-on-ms-azure/05_sandbox_settings.png)
+![05](/assets/deploying-on-ms-azure/05_sandbox_settings.png)
 
 6\. Enter a value for each of the fields.  Below is an explanation of the fields. 
 
@@ -50,46 +50,46 @@ The offering is a single Virtual Machine which has similar functionality as the 
 
 7\. After entering values for the fields click OK.  The following sections are then presented:
 
-![06](/assets/2-3/deploying-on-ms-azure/07_1_select_machine.png)
+![06](/assets/deploying-on-ms-azure/07_1_select_machine.png)
 
 8\. Here you can select the machine to run the Sandbox.  The suggestion is to use a machine equivalent or higher than an A4 spec’d machine.  After selecting the machine, click on the select button.   
 
-![007](/assets/2-3/deploying-on-ms-azure/07_confirm_settings.png)
+![007](/assets/deploying-on-ms-azure/07_confirm_settings.png)
 
 9\. The next prompt is a list of settings.  You can simply leave these as defaults and click “OK”.  The next screen is the summary. 
 
-![08](/assets/2-3/deploying-on-ms-azure/08_azure_machine_summary.png)
+![08](/assets/deploying-on-ms-azure/08_azure_machine_summary.png)
 
 10\. Ensure the information looks correct for the specific items you have entered and selected.  If all looks well,  click the “OK” button.  
 
-![09](/assets/2-3/deploying-on-ms-azure/09_finalize_machine_buy.png)
+![09](/assets/deploying-on-ms-azure/09_finalize_machine_buy.png)
 
 11\. The last step in this section is to click purchase.  You will be brought back to the dashboard.  An animation for the deployment of the Sandbox will be rendering.  It should resemble the screenshot below. 
 
-![10](/assets/2-3/deploying-on-ms-azure/10_deploying_sandbox.png)
+![10](/assets/deploying-on-ms-azure/10_deploying_sandbox.png)
 
 Once the virtual machine is deployed the following screen is displayed in the portal. 
 
-![11](/assets/2-3/deploying-on-ms-azure/11_sandbox_ip_address.png)
+![11](/assets/deploying-on-ms-azure/11_sandbox_ip_address.png)
 
 12\. Take note of the IP address.  In this example, it is 40.122.52.204 and highlighted in a green box.  Your machine will have a different IP.  Open up a new browser tab and enter in your IP address followed by the port 8888.  You should have something similar as the screen below, but with your ip address. 
 
-![12_0_sandbox_url.png](/assets/2-3/deploying-on-ms-azure/12_0_sandbox_url.png)
+![12_0_sandbox_url.png](/assets/deploying-on-ms-azure/12_0_sandbox_url.png)
 
 13\. Hit enter and you should be welcomed with the following registration page.
 
 
-![12](/assets/2-3/deploying-on-ms-azure/12_sandbox_welcome.png)
+![12](/assets/deploying-on-ms-azure/12_sandbox_welcome.png)
 14\. Fill out the form, agree to the terms of use and click the submit button.  The next page displayed is the splash page.  
 
-![13](/assets/2-3/deploying-on-ms-azure/13_sandbox_get_started.png)
+![13](/assets/deploying-on-ms-azure/13_sandbox_get_started.png)
 
 15\. If you are new to HDP, start your journey by clicking on the link to the HDP Hello World Tutorial.  
 
 ## Next Steps...
 Now that you have the Sandbox up and running, feel free to try our list of tutorials.  By clicking on the try tab on the splash page.  The page below will be displayed allowing you to explore our tutorials. 
 
-![15](/assets/2-3/deploying-on-ms-azure/14_sandbox_next_steps.png)
+![15](/assets/deploying-on-ms-azure/14_sandbox_next_steps.png)
 
 
 Please leave feedback and comments in our Sandbox Forums at [http://hortonworks.com/community/forums/forum/hortonworks-sandbox/](http://hortonworks.com/community/forums/forum/hortonworks-sandbox/).

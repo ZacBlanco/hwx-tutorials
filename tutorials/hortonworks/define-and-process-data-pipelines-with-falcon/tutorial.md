@@ -12,7 +12,7 @@ It makes it much simpler to onboard new workflows/pipelines, with support for la
 
 Once you have download the Hortonworks sandbox and run the VM, navigate to the Ambari interface on the port `8080` of the IP address of your Sandbox VM. Login with the username and password of `admin` and `admin` respectively:
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-19%2016.28.48.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-19%2016.28.48.png?dl=1)  
 
 
 ### Scenario
@@ -26,29 +26,29 @@ The goal is to clean the raw data to remove sensitive information like credit ca
 
 To simulate this scenario, we have a pig script grabbing the freely available Enron emails from the internet and feeding it into the pipeline.
 
-![](../../../assets/2-3/falcon-processing-pipelines/arch.png)  
+![](../../../assets/falcon-processing-pipelines/arch.png)  
 
 
 ### Starting Falcon
 
 By default, Falcon is not started on the sandbox. You can click on the Falcon icon on the left hand bar:
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-19%2016.29.22.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-19%2016.29.22.png?dl=1)  
 
 
 Then click on the `Service  Actions` button on the top right:
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-19%2016.29.44.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-19%2016.29.44.png?dl=1)  
 
 
 Then click on `Start`:
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-19%2016.30.07.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-19%2016.30.07.png?dl=1)  
 
 
 Once, Falcon starts, Ambari should clearly indicate as below that the service has started:
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-19%2016.34.32.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-19%2016.34.32.png?dl=1)  
 
 
 ### Downloading and staging the dataset
@@ -57,7 +57,7 @@ Now let’s stage the dataset using the commandline. Although we perform many of
 
 First SSH into the Hortonworks Sandbox with the command:
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot_2015-04-13_07_58_43.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot_2015-04-13_07_58_43.png?dl=1)  
 
 
 The default password is `hadoop`
@@ -74,7 +74,7 @@ and then unzip with the command
 
     unzip falcon.zip
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-10%2018.39.50.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-10%2018.39.50.png?dl=1)  
 
 
 Now let’s give ourselves permission to upload files
@@ -85,14 +85,14 @@ then let’s create a folder `falcon` under `ambari-qa` with the command
 
     hadoop fs -mkdir /user/ambari-qa/falcon
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-25%2018.24.59.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-25%2018.24.59.png?dl=1)  
 
 
 Now let’s upload the decompressed folder with the command
 
     hadoop fs -copyFromLocal demo /user/ambari-qa/falcon/
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2015.05.45.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-11%2015.05.45.png?dl=1)  
 
 
 ### Creating the cluster entities
@@ -104,7 +104,7 @@ Use `hadoop fs -mkdir` commands to create the directories `/apps/falcon/primaryC
     hadoop fs -mkdir /apps/falcon/primaryCluster
     hadoop fs -mkdir /apps/falcon/backupCluster
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-07%2010.29.58.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-07%2010.29.58.png?dl=1)  
 
 
 Further create directories called `staging` inside each of the directories we created above:
@@ -112,7 +112,7 @@ Further create directories called `staging` inside each of the directories we cr
     hadoop fs -mkdir /apps/falcon/primaryCluster/staging
     hadoop fs -mkdir /apps/falcon/backupCluster/staging
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-07%2010.31.37.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-07%2010.31.37.png?dl=1)  
 
 
 Next we will need to create the `working` directories for `primaryCluster` and `backupCluster`
@@ -120,7 +120,7 @@ Next we will need to create the `working` directories for `primaryCluster` and `
     hadoop fs -mkdir /apps/falcon/primaryCluster/working
     hadoop fs -mkdir /apps/falcon/backupCluster/working
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-07%2010.36.12.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-07%2010.36.12.png?dl=1)  
 
 
 Finally you need to set the proper permissions on the staging/working directories:
@@ -133,19 +133,19 @@ Finally you need to set the proper permissions on the staging/working directorie
 
 Let’s open the Falcon Web UI. You can easily launch the Falcon Web UI from Ambari:
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-19%2016.31.12.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-19%2016.31.12.png?dl=1)  
 
 
 You can also navigate to the Falcon Web UI directly on our browser. The Falcon UI is by default at port 15000\. The default username is `ambari-qa` and the password is `admin`.
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-07%2010.45.40.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-07%2010.45.40.png?dl=1)  
 
 
 This UI allows us to create and manage the various entities like Cluster, Feed, Process and Mirror. Each of these entities are represented by a XML file which you either directly upload or generate by filling up the various fields.
 
 You can also search for existing entities and then edit, change state, etc.
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-07%2010.46.23.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-07%2010.46.23.png?dl=1)  
 
 
 Let’s first create a couple of cluster entities. To create a cluster entity click on the `Cluster` button on the top.
@@ -174,16 +174,16 @@ Then click on the `edit` button over XML Preview area on the right hand side of 
     </cluster>
 
 Click `Finish` on top of the XML Preview area to save the XML.  
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-07%2010.49.25.png?dl=1)
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-07%2010.49.25.png?dl=1)
 
 Falcon UI should have automatically parsed out the values from the XML and populated in the right fields. Once you have verified that these are the correct values press `Next`.
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-07%2010.50.01.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-07%2010.50.01.png?dl=1)  
 
 
 Click `Save` to persist the entity.
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-07%2010.50.18.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-07%2010.50.18.png?dl=1)  
 
 
 Similarly, we will create the `backupCluster` entity. Again click on `Cluster` button on the top to open up the form to create the cluster entity.
@@ -213,12 +213,12 @@ Then click on the `edit` button over XML Preview area on the right hand side of 
 
 Click `Finish` on top of the XML Preview area to save the XML and then the `Next` button to verify the values.
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-07%2010.51.14.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-07%2010.51.14.png?dl=1)  
 
 
 Click `Save` to persist the `backupCluster` entity.
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-07%2010.51.33.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-07%2010.51.33.png?dl=1)  
 
 
 ### Defining the rawEmailFeed entity
@@ -251,24 +251,24 @@ Then click on the edit button over XML Preview area on the right hand side of th
 
 Click `Finish` on the top of the XML Preview area
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2015.09.14.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-11%2015.09.14.png?dl=1)  
 
 
 Falcon UI should have automatically parsed out the values from the XML and populated in the right fields. Once you have verified that these are the correct values press `Next`.
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2015.14.21.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-11%2015.14.21.png?dl=1)  
 
 
 On the Clusters page ensure you modify the validity to a time slice which is in the very near future.
 
 Click `Next`
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2015.15.35.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-11%2015.15.35.png?dl=1)  
 
 
 Save the feed
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2015.16.01.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-11%2015.16.01.png?dl=1)  
 
 
 ### Defining the rawEmailIngestProcess entity
@@ -301,27 +301,27 @@ Then click on the edit button over XML Preview area on the right hand side of th
 
 Click `Finish` on the top of the XML Preview area
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2015.17.01.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-11%2015.17.01.png?dl=1)  
 
 
 Accept the default values and click next
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2015.17.19.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-11%2015.17.19.png?dl=1)  
 
 
 On the Clusters page ensure you modify the validity to a time slice which is in the very near future and then click next
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2015.18.02.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-11%2015.18.02.png?dl=1)  
 
 
 Accept the default values and click Next
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2015.18.15.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-11%2015.18.15.png?dl=1)  
 
 
 Let’s `Save` the process.
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2015.18.37.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-11%2015.18.37.png?dl=1)  
 
 
 ### Defining the cleansedEmailFeed
@@ -368,30 +368,30 @@ Then click on the edit button over XML Preview area on the right hand side of th
 
 Click `Finish` on the top of the XML Preview area
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2015.35.10.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-11%2015.35.10.png?dl=1)  
 
 
 Accept the default values and click Next
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2015.35.49.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-11%2015.35.49.png?dl=1)  
 
 
 Accept the default values and click Next
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2015.35.58.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-11%2015.35.58.png?dl=1)  
 
 
 On the Clusters page ensure you modify the validity to a time slice which is in the very near future and then click Next
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2015.36.35.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-11%2015.36.35.png?dl=1)  
 
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2015.37.05.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-11%2015.37.05.png?dl=1)  
 
 
 Accept the default values and click Save
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2015.37.21.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-11%2015.37.21.png?dl=1)  
 
 
 ### Defining the cleanseEmailProcess
@@ -427,88 +427,88 @@ Then click on the edit button over XML Preview area on the right hand side of th
 
 Click `Finish` on the top of the XML Preview area
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2015.39.34.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-11%2015.39.34.png?dl=1)  
 
 
 Accept the default values and click Next
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2015.39.53.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-11%2015.39.53.png?dl=1)  
 
 
 On the Clusters page ensure you modify the validity to a time slice which is in the very near future and then click Next
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2015.40.24.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-11%2015.40.24.png?dl=1)  
 
 
 Select the Input and Output Feeds as shown below and Save
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2015.40.40.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-11%2015.40.40.png?dl=1)  
 
 
 ### Running the feeds
 
 From the Falcon Web UI home page search for the Feeds we created
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2015.41.34.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-11%2015.41.34.png?dl=1)  
 
 
 Select the rawEmailFeed by clicking on the checkbox
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2015.41.56.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-11%2015.41.56.png?dl=1)  
 
 
 Then click on the Schedule button on the top of the search results
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2015.42.04.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-11%2015.42.04.png?dl=1)  
 
 
 Next run the cleansedEmailFeed in the same way
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2015.42.30.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-11%2015.42.30.png?dl=1)  
 
 
 #### Running the processes
 
 From the Falcon Web UI home page search for the Process we created
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2015.42.55.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-11%2015.42.55.png?dl=1)  
 
 
 Select the cleanseEmailProcess by clicking on the checkbox
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2015.43.07.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-11%2015.43.07.png?dl=1)  
 
 
 Then click on the Schedule button on the top of the search results
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2015.43.31.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-11%2015.43.31.png?dl=1)  
 
 
 Next run the rawEmailIngestProcess in the same way
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2015.43.41.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-11%2015.43.41.png?dl=1)  
 
 
 If you visit the Oozie process page, you can seen the processes running
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2015.44.23.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-11%2015.44.23.png?dl=1)  
 
 
 ### Input and Output of the pipeline
 
 Now that the feeds and processes are running, we can check the dataset being ingressed and the dataset egressed on HDFS.
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2015.45.48.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-11%2015.45.48.png?dl=1)  
 
 
 Here is the data being ingressed
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2016.31.37.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-11%2016.31.37.png?dl=1)  
 
 
 and here is the data being egressed from the pipeline
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2017.13.05.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-11%2017.13.05.png?dl=1)  
 
 
 ### Summary

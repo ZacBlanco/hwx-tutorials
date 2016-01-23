@@ -101,11 +101,11 @@ First, login in to the Sandbox using the Ambari user interface which can be foun
 
 Once you've logged in you'll need to use the Ambari views dropdown menu and select **Local Files**. This a view of the Sandbox VM's filesystem (**not** HDFS).
 
-![Image of Ambari Views Dropdown](../../../assets/2-3/server-logs/ambari_views_dropdown.png)
+![Image of Ambari Views Dropdown](../../../assets/server-logs/ambari_views_dropdown.png)
 
 Head on over to `/etc/flume` and upload the `flume.conf` and `generate_logs.py` files which were part of the ServerLogFiles.zip which you downloaded earlier.
 
-![Image of Uploading File](../../../assets/2-3/server-logs/ambari_files_upload.png)
+![Image of Uploading File](../../../assets/server-logs/ambari_files_upload.png)
 
 Once you've uploaded the file you'll need to login to the console through the virtual machine or login over SSH.
 
@@ -141,7 +141,7 @@ Next we're going to need to edit another flume configuration file.
 
 *   This command opens the log4j.properties file with the vi command line text editor.
 
-![](../../../assets/2-3/server-logs/05_vi_open.jpg)
+![](../../../assets/server-logs/05_vi_open.jpg)
 
 *   Press the "i" key to switch to Insert mode. "–INSERT–" will appear at the bottom of the command prompt window. Use the down-arrow key to scroll down until you find the following lines of text:
 
@@ -155,7 +155,7 @@ flume.root.logger=INFO,LOGFILE\ flume.log.dir=./logs\ flume.log.file=flume.log
 flume.root.logger=INFO,LOGFILE\ flume.log.dir=/var/log/flume\ flume.log.file=flume.log
 ~~~
 
-![](../../../assets/2-3/server-logs/06_vi_edit.jpg)
+![](../../../assets/server-logs/06_vi_edit.jpg)
 
 *   Press the Escape key to exit Insert mode and return to Command mode. "–INSERT–" will no longer appear at the bottom of the command prompt window. Type in the following command, then press the Enter key:
 
@@ -165,7 +165,7 @@ flume.root.logger=INFO,LOGFILE\ flume.log.dir=/var/log/flume\ flume.log.file=flu
 
 *   This command saves your changes and exits the vi text editor.
 
-![](../../../assets/2-3/server-logs/07_vi_save.jpg)
+![](../../../assets/server-logs/07_vi_save.jpg)
 
 * * *
 
@@ -175,7 +175,7 @@ Head back over to the Ambari UI at [http://sandbox.hortonworks.com:8080](http://
 
 Click on the flume Service and click **Service Actions** and select **Start** (if it is not already started) or **Restart**
 
-![Image of Flume Service Actions](../../../assets/2-3/server-logs/ambari_start_flume.png)
+![Image of Flume Service Actions](../../../assets/server-logs/ambari_start_flume.png)
 
 * * *
 
@@ -211,7 +211,7 @@ When the table has been created you should now be able to query the data table f
 
     Select * from FIREWALL_LOGS LIMIT 100;
 
-![Image of table query](../../../assets/2-3/server-logs/hive_table_view.png)
+![Image of table query](../../../assets/server-logs/hive_table_view.png)
 
 * * *
 
@@ -221,37 +221,37 @@ In this section, we will use Excel Professional Plus 2013 to access the generate
 
 *   In Windows, open a new Excel workbook, then select **Data > From Other Sources > From Microsoft Query**.
 
-![](../../../assets/2-3/server-logs/17_open_query.jpg)
+![](../../../assets/server-logs/17_open_query.jpg)
 
 *   On the Choose Data Source pop-up, select the Hortonworks ODBC data source you installed previously, then click **OK**.
 
     The Hortonworks ODBC driver enables you to access Hortonworks data with Excel and other Business Intelligence (BI) applications that support ODBC.
 
-![](../../../assets/2-3/server-logs/18_choose_data_source.jpg)
+![](../../../assets/server-logs/18_choose_data_source.jpg)
 
 *   After the connection to the Sandbox is established, the Query Wizard appears. Select the "firewall_logs" table in the Available tables and columns box, then click the right arrow button to add the entire "firewall_logs" table to the query. Click **Next** to continue.
 
-![](../../../assets/2-3/server-logs/19_query_wizard1.jpg)
+![](../../../assets/server-logs/19_query_wizard1.jpg)
 
 *   On the Filter Data screen, click **Next** to continue without filtering the data.
 
-![](../../../assets/2-3/server-logs/20_query_wizard2.jpg)
+![](../../../assets/server-logs/20_query_wizard2.jpg)
 
 *   On the Sort Order screen, click **Next** to continue without setting a sort order.
 
-![](../../../assets/2-3/server-logs/21_query_wizard3.jpg)
+![](../../../assets/server-logs/21_query_wizard3.jpg)
 
 *   Click **Finish** on the Query Wizard Finish screen to retrieve the query data from the Sandbox and import it into Excel.
 
-![](../../../assets/2-3/server-logs/22_query_wizard4.jpg)
+![](../../../assets/server-logs/22_query_wizard4.jpg)
 
 *   On the Import Data dialog box, click **OK** to accept the default settings and import the data as a table.
 
-![](../../../assets/2-3/server-logs/23_import_data.jpg)
+![](../../../assets/server-logs/23_import_data.jpg)
 
 *   The imported query data appears in the Excel workbook.
 
-![](../../../assets/2-3/server-logs/24_data_imported.jpg)
+![](../../../assets/server-logs/24_data_imported.jpg)
 
 Now that we have successfully imported Hortonworks Sandbox data into Microsoft Excel, we can use the Excel Power View feature to analyze and visualize the data.
 
@@ -269,29 +269,29 @@ We'll start by reviewing the network traffic by country.
 
 *   In the Excel worksheet with the imported "<firewall_logs>" table, select **Insert > Power View** to open a new Power View report. (note: if this is your first time running PowerView it will prompt you to [install Silverlight](#Excel%20configuration%20for%20PowerView).
 
-![](../../../assets/2-3/server-logs/25_open_powerview_firewall_logs.jpg)
+![](../../../assets/server-logs/25_open_powerview_firewall_logs.jpg)
 
 *   The Power View Fields area appears on the right side of the window, with the data table displayed on the left.
 
     Drag the handles or click the Pop Out icon to maximize the size of the data table, and close the Filters area.
 
-![](../../../assets/2-3/server-logs/26_powerview_firewall_logs.jpg)
+![](../../../assets/server-logs/26_powerview_firewall_logs.jpg)
 
 *   In the Power View Fields area, clear checkboxes next to the **ip** and **time** fields, then click **Map** on the Design tab in the top menu. (**Note:** If you do not get data plotted on your map look at [Geolocation of data using Bing](#Geolocation%20of%20data%20using%20Bing))
 
-![](../../../assets/2-3/server-logs/27_open_map.jpg)
+![](../../../assets/server-logs/27_open_map.jpg)
 
 *   Drag the **status** field into the **SIZE** box.
 
-![](../../../assets/2-3/server-logs/28_status_to_size.jpg)
+![](../../../assets/server-logs/28_status_to_size.jpg)
 
 *   The map view displays a global view of the network traffic by country. The color orange represents successful, authorized network connections. Blue represents connections from unauthorized sources.
 
-![](../../../assets/2-3/server-logs/29_network_traffic_by_country.jpg)
+![](../../../assets/server-logs/29_network_traffic_by_country.jpg)
 
 *   Let's assume that recent denial-of-service attacks have originated in Pakistan. We can use the map controls to zoom in and take a closer look at traffic from that country.
 
-![](../../../assets/2-3/server-logs/30_network_traffic_pakistan.jpg)
+![](../../../assets/server-logs/30_network_traffic_pakistan.jpg)
 
     It's obvious that this is a coordinated attack, originating from many countries. Now we can use Excel to generate a list of the unauthorized IP addresses.
 
@@ -299,7 +299,7 @@ We'll start by reviewing the network traffic by country.
 
     Click the arrow next to the **status** column header. Clear the **Select all** check box, select the **ERROR** check box, then click **OK**.
 
-![](../../../assets/2-3/server-logs/31_excel_error_list.jpg)
+![](../../../assets/server-logs/31_excel_error_list.jpg)
 
 *   Now that we have a list of the unauthorized IP addresses, we can update the network firewall to deny requests from those attacking IP addresses.
 

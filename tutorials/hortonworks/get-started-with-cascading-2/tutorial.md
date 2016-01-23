@@ -53,13 +53,13 @@ This example code is derived from Concurrent Inc.’s [training class](http://ca
 
 This run should create the following output:
 
-![Screen Shot 2014-05-12 at 11.51.40 AM](/assets/2-3/cascading-2/Screen-Shot-2014-05-12-at-11.51.40-AM.png)
+![Screen Shot 2014-05-12 at 11.51.40 AM](/assets/cascading-2/Screen-Shot-2014-05-12-at-11.51.40-AM.png)
 
 ### Tracking the MapReduce Jobs on the Sandbox
 
 Once the job is submitted (or running), you can visually track its progress from the MapReduce Job Browser. Login to Ambari and click **MapReduce 2**. Then Use **Quick Links** to get to the **JobHistory UI**.
 
-![Screen Shot 2014-05-12 at 11.53.52 AM](/assets/2-3/cascading-2/02_ambari_mapreduce.png)
+![Screen Shot 2014-05-12 at 11.53.52 AM](/assets/cascading-2/02_ambari_mapreduce.png)
 
 You can drill down on any links to explore further details about the Map Reduce jobs running in their respective YARN containers. For example, clicking on one of the job ids will show all the maps and reduces tasks created.
 
@@ -67,7 +67,7 @@ You can drill down on any links to explore further details about the Map Reduce 
 
 When the job is finished, the 10 IP addresses are written as an HDFS file part-00000\. Use the Ambari **HDFS Files** view to navigate to the HDFS directory, `/user/guest/output/logs`, and view its contents.
 
-![Screen Shot 2014-05-12 at 6.33.13 PM](/assets/2-3/cascading-2/04_job_results.png)
+![Screen Shot 2014-05-12 at 6.33.13 PM](/assets/cascading-2/04_job_results.png)
 
 Voila! You have written a Cascading log processing application, executed it on the Hortonworks HDP Sandbox, and perused the respective MapReduce jobs and the output generated.
 

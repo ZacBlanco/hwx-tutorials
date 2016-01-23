@@ -13,7 +13,7 @@ The goal is to clean the raw data to remove sensitive information like credit ca
 
 To simulate this scenario, we have a pig script grabbing the freely available Enron emails from the internet and feeding it into the pipeline.
 
-![](../../../assets/2-3/hdp-azure-falcon-backup/arch.png)
+![](../../../assets/hdp-azure-falcon-backup/arch.png)
 
 
 
@@ -43,7 +43,7 @@ Now let’s stage the dataset using the commandline. Although we perform many of
 
 First SSH into the Hortonworks Sandbox with the command:
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot_2015-04-13_07_58_43.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot_2015-04-13_07_58_43.png?dl=1)  
 
 
 The default password is `hadoop`
@@ -60,7 +60,7 @@ and then unzip with the command
 
     unzip falcon.zip
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-10%2018.39.50.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-10%2018.39.50.png?dl=1)  
 
 
 Now let’s give ourselves permission to upload files
@@ -71,72 +71,72 @@ then let’s create a folder `falcon` under `ambari-qa` with the command
 
     hadoop fs -mkdir /user/ambari-qa/falcon
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-25%2018.24.59.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-25%2018.24.59.png?dl=1)  
 
 
 Now let’s upload the decompressed folder with the command
 
     hadoop fs -copyFromLocal demo /user/ambari-qa/falcon/
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2015.05.45.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-11%2015.05.45.png?dl=1)  
 
 
 ### Setting up the destination storage on Microsoft Azure
 
 Login to the Windows Azure portal at [http://manage.windowsazure.com](http://manage.windowsazure.com)
 
-![](../../../assets/2-3/hdp-azure-falcon-backup/image13.png)
+![](../../../assets/hdp-azure-falcon-backup/image13.png)
 
 Create a storage account
 
-![](../../../assets/2-3/hdp-azure-falcon-backup/image16.png)
+![](../../../assets/hdp-azure-falcon-backup/image16.png)
 
 Wait for the storage account to be provisioned
 
-![](../../../assets/2-3/hdp-azure-falcon-backup/image19.png)
+![](../../../assets/hdp-azure-falcon-backup/image19.png)
 
 Copy the access key and the account name in a text document. We will use the access key and the account name in later steps
 
-![](../../../assets/2-3/hdp-azure-falcon-backup/image22.png)
+![](../../../assets/hdp-azure-falcon-backup/image22.png)
 
 
 The other information you will want to note down is the blob endpoint of the storage account we just created
 
-![](../../../assets/2-3/hdp-azure-falcon-backup/image25.png)
+![](../../../assets/hdp-azure-falcon-backup/image25.png)
 
 Click on the `Containers` tab and create a new container called `myfirstcontainer`.
 
-![](../../../assets/2-3/hdp-azure-falcon-backup/image26.png)
+![](../../../assets/hdp-azure-falcon-backup/image26.png)
 
 ### Configuring access to Azure Blob store from Hadoop
 
 Login to Ambari – http://127.0.0.1:8080 with the credentials `admin` and `admin`.
 
-![](../../../assets/2-3/hdp-azure-falcon-backup/image27.png)
+![](../../../assets/hdp-azure-falcon-backup/image27.png)
 
 Then click on HDFS from the bar on the left and then select the `Configs` tab.
 
-![](../../../assets/2-3/hdp-azure-falcon-backup/image28.png)
+![](../../../assets/hdp-azure-falcon-backup/image28.png)
 
 Scroll down to the bottom of the page to the `Custom hdfs-site` section and click on `Add  property...`
 
-![](../../../assets/2-3/hdp-azure-falcon-backup/image31.png)
+![](../../../assets/hdp-azure-falcon-backup/image31.png)
 
 In the `Add  Property` dialog, the key name will start with `fs.azure.account.key.` followed by your blob endpoint that you noted down in a previous step. The value will be the Azure storage key that you noted down in a previous step. Once you have filled in the values click the `Add` button:
 
-![](../../../assets/2-3/hdp-azure-falcon-backup/image34.png)
+![](../../../assets/hdp-azure-falcon-backup/image34.png)
 
 Once you are back out of the new key dialog you will have to `Save` it by clicking on the green `Save` button:
 
-![](../../../assets/2-3/hdp-azure-falcon-backup/image31.png)
+![](../../../assets/hdp-azure-falcon-backup/image31.png)
 
 Then restart all the service by clicking on the orange `Restart` button:
 
-![](../../../assets/2-3/hdp-azure-falcon-backup/image36.png)
+![](../../../assets/hdp-azure-falcon-backup/image36.png)
 
 Wait for all the restart to complete
 
-![](../../../assets/2-3/hdp-azure-falcon-backup/image38.png)
+![](../../../assets/hdp-azure-falcon-backup/image38.png)
 
 Now let’s test if we can access our container on the Azure Blob Store.
 
@@ -150,7 +150,7 @@ The password is `hadoop`
 
 Issue the command from our cluster on the SSH’d terminal
 
-![](../../../assets/2-3/hdp-azure-falcon-backup/image40.png)
+![](../../../assets/hdp-azure-falcon-backup/image40.png)
 
 ### Creating the cluster entities
 
@@ -161,7 +161,7 @@ Use `hadoop fs -mkdir` commands to create the directories `/apps/falcon/primaryC
     hadoop fs -mkdir /apps/falcon/primaryCluster
     hadoop fs -mkdir /apps/falcon/backupCluster
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-07%2010.29.58.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-07%2010.29.58.png?dl=1)  
 
 
 Further create directories called `staging` inside each of the directories we created above:
@@ -169,7 +169,7 @@ Further create directories called `staging` inside each of the directories we cr
     hadoop fs -mkdir /apps/falcon/primaryCluster/staging
     hadoop fs -mkdir /apps/falcon/backupCluster/staging
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-07%2010.31.37.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-07%2010.31.37.png?dl=1)  
 
 
 Next we will need to create the `working` directories for `primaryCluster` and `backupCluster`
@@ -177,7 +177,7 @@ Next we will need to create the `working` directories for `primaryCluster` and `
     hadoop fs -mkdir /apps/falcon/primaryCluster/working
     hadoop fs -mkdir /apps/falcon/backupCluster/working
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-07%2010.36.12.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-07%2010.36.12.png?dl=1)  
 
 
 Finally you need to set the proper permissions on the staging/working directories:
@@ -190,19 +190,19 @@ Finally you need to set the proper permissions on the staging/working directorie
 
 Let’s open the Falcon Web UI. You can easily launch the Falcon Web UI from Ambari:
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-19%2016.31.12.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-19%2016.31.12.png?dl=1)  
 
 
 You can also navigate to the Falcon Web UI directly on our browser. The Falcon UI is by default at port 15000\. The default username is `ambari-qa` and the password is `admin`.
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-07%2010.45.40.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-07%2010.45.40.png?dl=1)  
 
 
 This UI allows us to create and manage the various entities like Cluster, Feed, Process and Mirror. Each of these entities are represented by a XML file which you either directly upload or generate by filling up the various fields.
 
 You can also search for existing entities and then edit, change state, etc.
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-07%2010.46.23.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-07%2010.46.23.png?dl=1)  
 
 
 Let’s first create a couple of cluster entities. To create a cluster entity click on the `Cluster` button on the top.
@@ -231,16 +231,16 @@ Then click on the `edit` button over XML Preview area on the right hand side of 
     </cluster>
 
 Click `Finish` on top of the XML Preview area to save the XML.  
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-07%2010.49.25.png?dl=1)
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-07%2010.49.25.png?dl=1)
 
 Falcon UI should have automatically parsed out the values from the XML and populated in the right fields. Once you have verified that these are the correct values press `Next`.
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-07%2010.50.01.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-07%2010.50.01.png?dl=1)  
 
 
 Click `Save` to persist the entity.
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-07%2010.50.18.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-07%2010.50.18.png?dl=1)  
 
 
 Similarly, we will create the `backupCluster` entity. Again click on `Cluster` button on the top to open up the form to create the cluster entity.
@@ -270,12 +270,12 @@ Then click on the `edit` button over XML Preview area on the right hand side of 
 
 Click `Finish` on top of the XML Preview area to save the XML and then the `Next` button to verify the values.
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-07%2010.51.14.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-07%2010.51.14.png?dl=1)  
 
 
 Click `Save` to persist the `backupCluster` entity.
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-07%2010.51.33.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-07%2010.51.33.png?dl=1)  
 
 
 ### Defining the rawEmailFeed entity
@@ -308,24 +308,24 @@ Then click on the edit button over XML Preview area on the right hand side of th
 
 Click `Finish` on the top of the XML Preview area
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2015.09.14.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-11%2015.09.14.png?dl=1)  
 
 
 Falcon UI should have automatically parsed out the values from the XML and populated in the right fields. Once you have verified that these are the correct values press `Next`.
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2015.14.21.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-11%2015.14.21.png?dl=1)  
 
 
 On the Clusters page ensure you modify the validity to a time slice which is in the very near future.
 
 Click `Next`
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2015.15.35.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-11%2015.15.35.png?dl=1)  
 
 
 Save the feed
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2015.16.01.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-11%2015.16.01.png?dl=1)  
 
 
 ### Defining the rawEmailIngestProcess entity
@@ -358,27 +358,27 @@ Then click on the edit button over XML Preview area on the right hand side of th
 
 Click `Finish` on the top of the XML Preview area
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2015.17.01.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-11%2015.17.01.png?dl=1)  
 
 
 Accept the default values and click next
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2015.17.19.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-11%2015.17.19.png?dl=1)  
 
 
 On the Clusters page ensure you modify the validity to a time slice which is in the very near future and then click next
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2015.18.02.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-11%2015.18.02.png?dl=1)  
 
 
 Accept the default values and click Next
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2015.18.15.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-11%2015.18.15.png?dl=1)  
 
 
 Let’s `Save` the process.
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2015.18.37.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-11%2015.18.37.png?dl=1)  
 
 
 ### Defining the cleansedEmailFeed
@@ -425,30 +425,30 @@ Then click on the edit button over XML Preview area on the right hand side of th
 
 Click `Finish` on the top of the XML Preview area
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2015.35.10.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-11%2015.35.10.png?dl=1)  
 
 
 Accept the default values and click Next
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2015.35.49.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-11%2015.35.49.png?dl=1)  
 
 
 Accept the default values and click Next
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2015.35.58.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-11%2015.35.58.png?dl=1)  
 
 
 On the Clusters page ensure you modify the validity to a time slice which is in the very near future and then click Next
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2015.36.35.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-11%2015.36.35.png?dl=1)  
 
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2015.37.05.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-11%2015.37.05.png?dl=1)  
 
 
 Accept the default values and click Save
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2015.37.21.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-11%2015.37.21.png?dl=1)  
 
 
 ### Defining the cleanseEmailProcess
@@ -484,22 +484,22 @@ Then click on the edit button over XML Preview area on the right hand side of th
 
 Click `Finish` on the top of the XML Preview area
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2015.39.34.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-11%2015.39.34.png?dl=1)  
 
 
 Accept the default values and click Next
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2015.39.53.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-11%2015.39.53.png?dl=1)  
 
 
 On the Clusters page ensure you modify the validity to a time slice which is in the very near future and then click Next
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2015.40.24.png?dl=1)  
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-11%2015.40.24.png?dl=1)  
 
 
 Select the Input and Output Feeds as shown below and Save
 
-![](../../../assets/2-3/falcon-processing-pipelines/Screenshot%202015-08-11%2015.40.40.png?dl=1)
+![](../../../assets/falcon-processing-pipelines/Screenshot%202015-08-11%2015.40.40.png?dl=1)
 
 ### Submit the entities to the cluster:
 
@@ -509,7 +509,7 @@ Cluster specification is one per cluster.
 
 See below for a sample cluster specification file.
 
-![](../../../assets/2-3/hdp-azure-falcon-backup/cluster-spec.png)
+![](../../../assets/hdp-azure-falcon-backup/cluster-spec.png)
 
 
 Back to our scenario, lets submit the ‘oregon cluster’ entity to Falcon. This signifies the primary Hadoop cluster located in the Oregon data center.
@@ -528,7 +528,7 @@ A feed (a.k.a dataset) signifies a location of data and its associated replicati
 
 See below for a sample feed (a.k.a dataset) specification file.
 
-![](../../../assets/2-3/hdp-azure-falcon-backup/feed-spec.png)
+![](../../../assets/hdp-azure-falcon-backup/feed-spec.png)
 
 
 Back to our scenario, let’s submit the source of the raw email feed. This feed signifies the raw emails that are being downloaded into the Hadoop cluster. These emails will be used by the email cleansing process.
@@ -545,7 +545,7 @@ A process defines configuration for a workflow. A workflow is a directed acyclic
 
 Here is an example of what a process specification looks like:
 
-![](../../../assets/2-3/hdp-azure-falcon-backup/process-spec.png)
+![](../../../assets/hdp-azure-falcon-backup/process-spec.png)
 
 
 

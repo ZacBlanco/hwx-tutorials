@@ -61,21 +61,21 @@ For details on Storm, [click here](http://hortonworks.com/labs/storm/).
 
 Started by logging into Ambari as admin/admin. From the Dashboard page of Ambari, click on Storm from the list of installed services. (If you do not see Storm listed under Services, please follow click on Action -> Add Service and select Storm and deploy it.)
 
-![Screen Shot 2015-06-04 at 4.23.34 PM.png](../../../assets/2-3/realtime-event-processing/t2-update/image11.png)
+![Screen Shot 2015-06-04 at 4.23.34 PM.png](../../../assets/realtime-event-processing/t2-update/image11.png)
 
 2\. Start Storm
 
 From the Storm page, click on Service Actions -> Start
 
-![Screen Shot 2015-06-04 at 4.26.41 PM.png](../../../assets/2-3/realtime-event-processing/t2-update/image20.png)
+![Screen Shot 2015-06-04 at 4.26.41 PM.png](../../../assets/realtime-event-processing/t2-update/image20.png)
 
 Check the box and click on Confirm Start:
 
-![Screen Shot 2015-06-04 at 4.30.57 PM.png](../../../assets/2-3/realtime-event-processing/t2-update/image19.png)
+![Screen Shot 2015-06-04 at 4.30.57 PM.png](../../../assets/realtime-event-processing/t2-update/image19.png)
 
 Wait for Storm to start.
 
-![Screen Shot 2015-06-04 at 4.35.57 PM.png](../../../assets/2-3/realtime-event-processing/t2-update/image17.png)
+![Screen Shot 2015-06-04 at 4.35.57 PM.png](../../../assets/realtime-event-processing/t2-update/image17.png)
 
 3\. Configure Storm
 
@@ -85,32 +85,32 @@ You can check the below configurations by pasting them into the Filter text box 
 
 *   Check zookeeper configuration: ensure `storm.zookeeper.servers` is set to `sandbox.hortonworks.com`
 
-![Screen Shot 2015-06-04 at 4.38.57 PM.png](../../../assets/2-3/realtime-event-processing/t2-update/image21.png)
+![Screen Shot 2015-06-04 at 4.38.57 PM.png](../../../assets/realtime-event-processing/t2-update/image21.png)
 
 *   Check the local directory configuration: ensure `storm.local.dir` is set to `/hadoop/storm`
 
-![Screen Shot 2015-06-04 at 4.39.45 PM.png](../../../assets/2-3/realtime-event-processing/t2-update/image00.png)
+![Screen Shot 2015-06-04 at 4.39.45 PM.png](../../../assets/realtime-event-processing/t2-update/image00.png)
 
 *   Check the nimbus host configuration: ensure `nimbus.host` is set to `sandbox.hortonworks.com`
 
-![Screen Shot 2015-06-04 at 4.41.09 PM.png](../../../assets/2-3/realtime-event-processing/t2-update/image07.png)
+![Screen Shot 2015-06-04 at 4.41.09 PM.png](../../../assets/realtime-event-processing/t2-update/image07.png)
 
 *   Check the slots allocated: ensure `supervisor.slots.ports` is set to `[6700, 6701]`
 
-![Screen Shot 2015-06-04 at 4.41.58 PM.png](../../../assets/2-3/realtime-event-processing/t2-update/image13.png)
+![Screen Shot 2015-06-04 at 4.41.58 PM.png](../../../assets/realtime-event-processing/t2-update/image13.png)
 
 *   Check the UI configuration port: Ensure `ui.port` is set to `8744`
 
-![Screen Shot 2015-06-04 at 4.54.16 PM.png](../../../assets/2-3/realtime-event-processing/t2-update/image04.png)
+![Screen Shot 2015-06-04 at 4.54.16 PM.png](../../../assets/realtime-event-processing/t2-update/image04.png)
 
 
 *  <a id="h.for70ptijz3u" name="h.for70ptijz3u"></a>Check the Storm UI from the Quick Links
 
-![Screen Shot 2015-06-04 at 4.56.25 PM.png](../../../assets/2-3/realtime-event-processing/t2-update/image03.png)
+![Screen Shot 2015-06-04 at 4.56.25 PM.png](../../../assets/realtime-event-processing/t2-update/image03.png)
 
 Now you can see the UI:
 
-![Storm UI](../../../assets/2-3/realtime-event-processing/t2-update/image14.png)
+![Storm UI](../../../assets/realtime-event-processing/t2-update/image14.png)
 
 Storm UI
 
@@ -118,11 +118,11 @@ Storm UI
 
 *   Go to the Ambari User VIew icon and select Storm :
 
-![](../../../assets/2-3/realtime-event-processing/t2-update/image01.png)
+![](../../../assets/realtime-event-processing/t2-update/image01.png)
 
 *    The Storm user view gives you the summary of topologies created by you. As of now we do not have any topologies created hence none are listed in the summary.
 
-![](../../../assets/2-3/realtime-event-processing/t2-update/image02.png)
+![](../../../assets/realtime-event-processing/t2-update/image02.png)
 
 ### <a id="h.lrawtro2firk" name="h.lrawtro2firk"></a>
 
@@ -148,7 +148,7 @@ Recall that the source code is under `/opt/TruckEvents/Tutorials-master/src` d
 
 Verify that Kafka is running using Ambari dashboard. If not, following the steps in tutorial #1
 
-![Screen Shot 2015-06-04 at 5.10.27 PM.png](../../../assets/2-3/realtime-event-processing/t2-update/image10.png)
+![Screen Shot 2015-06-04 at 5.10.27 PM.png](../../../assets/realtime-event-processing/t2-update/image10.png)
 
 3\. <a id="h.joxfaniynzxv" name="h.joxfaniynzxv"></a> Creating Storm Topology
 
@@ -165,22 +165,22 @@ Running a topology is straightforward. First, you package all your code and depe
     [root@sandbox ~]# storm jar target/Tutorial-1.0-SNAPSHOT.jar com.hortonworks.tutorials.tutorial2.TruckEventProcessingTopology  
 
 
-![storm new topology](../../../assets/2-3/realtime-event-processing/t2-update/image16.png)
+![storm new topology](../../../assets/realtime-event-processing/t2-update/image16.png)
 storm new topology
 
 It should complete with "Finished submitting topology" as shown below.
 
-![Screen Shot 2015-06-04 at 5.20.31 PM.png](../../../assets/2-3/realtime-event-processing/t2-update/image06.png)
+![Screen Shot 2015-06-04 at 5.20.31 PM.png](../../../assets/realtime-event-processing/t2-update/image06.png)
 
 This runs the class `TruckEventProcessingTopology` .The main function of the class defines the topology and submits it to Nimbus. The storm jar part takes care of connecting to Nimbus and uploading the jar.
 
 Refresh the Storm UI browser window to see new Topology 'truck-event-processor' in the browser.
 
-![truck event processor new topology](../../../assets/2-3/realtime-event-processing/t2-update/image12.png)
+![truck event processor new topology](../../../assets/realtime-event-processing/t2-update/image12.png)
 
 *   Storm User View will now show a topology formed and running.
 
-![](../../../assets/2-3/realtime-event-processing/t2-update/image22.png)
+![](../../../assets/realtime-event-processing/t2-update/image22.png)
 
 4\. <a id="h.z4kv482ba0ad" name="h.z4kv482ba0ad"></a>Generating TruckEvents
 
@@ -189,13 +189,13 @@ The TruckEvents producer can now be executed as we did in Tutorial #1 from the s
     root@sandbox Tutorials-master]java -cp target/Tutorial-1.0-SNAPSHOT.jar com.hortonworks.tutorials.tutorial1.TruckEventsProducer sandbox.hortonworks.com:6667 sandbox.hortonworks.com:2181  
 
 
-![Truck Events Producer](../../../assets/2-3/realtime-event-processing/t2-update/image24.png)
+![Truck Events Producer](../../../assets/realtime-event-processing/t2-update/image24.png)
 
 Truck Events Producer
 
 Go back to the Storm UI and click on **truck-event-processor** topology to drill into it.  Under Spouts you should see that numbers of emitted and transferred tuples is increasing which shows that the messages are processed in real time by Spout
 
-![](../../../assets/2-3/realtime-event-processing/t2-update/image08.png)
+![](../../../assets/realtime-event-processing/t2-update/image08.png)
 
 kafkaSpout count
 
@@ -205,14 +205,14 @@ You can press Control-C to stop the Kafka producer (i.e keep Control key pressed
 
 **Under Storm User view**: You should be able to see the topology created by you under storm user views.
 
-![](../../../assets/2-3/realtime-event-processing/t2-update/image18.png)
+![](../../../assets/realtime-event-processing/t2-update/image18.png)
 
 *   You can also keep track of several statistics of Spouts and Bolts.
 
-![](../../../assets/2-3/realtime-event-processing/t2-update/image09.png)
+![](../../../assets/realtime-event-processing/t2-update/image09.png)
 
 
-![](../../../assets/2-3/realtime-event-processing/t2-update/image23.png)
+![](../../../assets/realtime-event-processing/t2-update/image23.png)
 
 ## <a id="h.mi6wp3waqv75" name="h.mi6wp3waqv75"></a>Step 3: Code description
 
@@ -345,9 +345,9 @@ Compile the code using Maven after downloading a new data file or on completing 
     [root@sandbox ~]# mvn clean package  
 
 
-![mvn clean package](../../../assets/2-3/realtime-event-processing/t2-update/image15.png)
+![mvn clean package](../../../assets/realtime-event-processing/t2-update/image15.png)
 
-![mvn build success](../../../assets/2-3/realtime-event-processing/t2-update/image05.png)
+![mvn build success](../../../assets/realtime-event-processing/t2-update/image05.png)
 
 We now have a successfully compiled the code.
 

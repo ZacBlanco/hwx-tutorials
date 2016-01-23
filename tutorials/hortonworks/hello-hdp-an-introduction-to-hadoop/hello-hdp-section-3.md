@@ -4,19 +4,19 @@
 
 Start the HDP Sandbox following the [Sandbox Install Guide](http://hortonworks.com/products/hortonworks-sandbox/#install) to start the VM:
 
-![Lab0_1](/assets/2-3/hello-hdp/Lab0_1.png)
+![Lab0_1](/assets/hello-hdp/Lab0_1.png)
 
 Once you have installed the Sandbox VM, it resolves to the host on your environment, the address of which varies depending upon the Virtual Machine you are using(Vmware, VirtualBox etc). As, a general thumb rule, wait for the installation to complete and confirmation screen will tell you the host your sandbox resolves to. For example:
 
 In case of VirtualBox: host would be 127.0.0.1
 
-![Lab0_2](/assets/2-3/hello-hdp/Lab0_2.png)
+![Lab0_2](/assets/hello-hdp/Lab0_2.png)
 
 If you are using a private cluster or a cloud to run sandbox. Please find the host your sandbox resolves to.
 
 Append the port number :8888 to your host address, open your browser, and access Sandbox Welcome page at http://_host_:8888/.
 
-![Screen Shot 2015-07-20 at 6.11.32 PM](/assets/2-3/hello-hdp/Screen-Shot-2015-07-20-at-6.11.32-PM.png)
+![Screen Shot 2015-07-20 at 6.11.32 PM](/assets/hello-hdp/Screen-Shot-2015-07-20-at-6.11.32-PM.png)
 
 Navigate to Ambari welcome page using the url given on Sandbox welcome page.
 
@@ -55,7 +55,7 @@ Enter the Ambari Welcome URL and then you should see a similar screen:
 
 There are 5 key capabilities to explore in the Ambari Welcome screen:
 
-![Lab0_3](/assets/2-3/hello-hdp/Lab0_3.png)
+![Lab0_3](/assets/hello-hdp/Lab0_3.png)
 
 1.  “**Operate Your Cluster**” will take you to the Ambari Dashboard which is the primary UI for Hadoop Operators
 2.  “**Manage Users + Groups**” allows you to add & remove Ambari users and groups
@@ -67,7 +67,7 @@ Take a few minutes to quickly explore these 5 capabilities and to become familia
 
 Enter the Ambari Dashboard URL and you should see a similar screen:
 
-##### ![Lab0_4](/assets/2-3/hello-hdp/Lab0_4.png)
+##### ![Lab0_4](/assets/hello-hdp/Lab0_4.png)
 
 Briefly skim through the Ambari Dashboard links (circled above) by clicking on
 
