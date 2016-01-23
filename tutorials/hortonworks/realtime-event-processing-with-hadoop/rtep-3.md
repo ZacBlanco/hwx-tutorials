@@ -52,21 +52,21 @@ In this tutorial, you will learn the following topics:
 
 Started by logging into Ambari as admin/admin. From the previous tutorials: HDFS, Hive, YARN, Kafka and Storm should already be running but HBase may be down. From the Dashboard page of Ambari, click on HBase from the list of installed services.
 
-![Screen Shot 2015-06-04 at 6.26.48 PM.png](../../../assets/realtime-event-processing/t3-update/image27.png)
+![Screen Shot 2015-06-04 at 6.26.48 PM.png](/assets/realtime-event-processing/t3-update/image27.png)
 
 2\. Start HBase
 
 From the HBase page, click on Service Actions -> Start
 
-![Screen Shot 2015-06-04 at 6.32.07 PM.png](../../../assets/realtime-event-processing/t3-update/image21.png)
+![Screen Shot 2015-06-04 at 6.32.07 PM.png](/assets/realtime-event-processing/t3-update/image21.png)
 
 Check the box and click on Confirm Start:
 
-![Screen Shot 2015-06-04 at 6.33.21 PM.png](../../../assets/realtime-event-processing/t3-update/image09.png)
+![Screen Shot 2015-06-04 at 6.33.21 PM.png](/assets/realtime-event-processing/t3-update/image09.png)
 
 Wait for HBase to start (It may take a few minutes to turn green)
 
-![Screen Shot 2015-06-04 at 6.41.39 PM.png](../../../assets/realtime-event-processing/t3-update/image26.png)
+![Screen Shot 2015-06-04 at 6.41.39 PM.png](/assets/realtime-event-processing/t3-update/image26.png)
 
 You can use the Ambari dashboard to check status of other components too. If HDFS, Hive, YARN, Kafka, Storm or HBase are down, you can start them in the same way: by selecting the service and then using the Service Actions to start it. The remaining components do not have to be up. (Oozie can be stopped to save memory, as it is not needed for this tutorial)
 
@@ -91,7 +91,7 @@ The first table stores all events generated and the second stores the 'driverId'
     hbase(main):004:0>  
 
 
-![Screen Shot 2015-06-04 at 7.03.00 PM.png](../../../assets/realtime-event-processing/t3-update/image23.png)
+![Screen Shot 2015-06-04 at 7.03.00 PM.png](/assets/realtime-event-processing/t3-update/image23.png)
 
 Next, we will create Hive tables.
 
@@ -114,11 +114,11 @@ Open the Hive view in Ambari in a browser and copy the below script into the que
 
 This creates the Hive table to persist all events generated. The table is partitioned by date.
 
-![](../../../assets/realtime-event-processing/t3-update/image22.png)
+![](/assets/realtime-event-processing/t3-update/image22.png)
 
 Verify that the table has been properly created by refreshing the Database Explorer. Under Databases, click default to expand this table and the new table should appear. Clicking on the List icon next to truck_events_text_partition shows that the table was created but empty.
 
-![Screen Shot 2015-06-04 at 7.13.29 PM.png](../../../assets/realtime-event-processing/t3-update/image14.png)
+![Screen Shot 2015-06-04 at 7.13.29 PM.png](/assets/realtime-event-processing/t3-update/image14.png)
 
 *   Creating ORC 'truckevent' Hive tables
 
@@ -149,7 +149,7 @@ Next let's create the 'truckevent' table as per the above syntax. Paste the belo
 
 Refresh the Database Explorer and you should see the new table appear under default:
 
-![](../../../assets/realtime-event-processing/t3-update/image24.png)
+![](/assets/realtime-event-processing/t3-update/image24.png)
 
 The data in 'truck_events_text_partition_orc' table can be stored with ZLIB, Snappy, LZO compression options. This can be set by changing tblproperties ("orc.compress"="NONE")option in the query above.
 
@@ -172,23 +172,23 @@ Recall that the source code is under `/opt/TruckEvents/Tutorials-master/src` di
 
 If its still running, deactivate or kill the previous Storm topology using the Storm UI as shown in the screenshots below:
 
-![storm UI](../../../assets/realtime-event-processing/t3-update/image02.png)
+![storm UI](/assets/realtime-event-processing/t3-update/image02.png)
 
 
 Storm User view: Alternatively you shall see a topology runnning in your Storm User View as well.
 
-![](../../../assets/realtime-event-processing/t3-update/image25.png)
+![](/assets/realtime-event-processing/t3-update/image25.png)
 
-![deactivate and kill](../../../assets/realtime-event-processing/t3-update/image10.png)
+![deactivate and kill](/assets/realtime-event-processing/t3-update/image10.png)
 
 
-![Deactivate](../../../assets/realtime-event-processing/t3-update/image01.png)
+![Deactivate](/assets/realtime-event-processing/t3-update/image01.png)
 
-![kill](../../../assets/realtime-event-processing/t3-update/image20.png)
+![kill](/assets/realtime-event-processing/t3-update/image20.png)
 
 *   Alternatively, you can kill the topology using Storm User View as well.
 
-![](../../../assets/realtime-event-processing/t3-update/image13.png)
+![](/assets/realtime-event-processing/t3-update/image13.png)
 
 The Storm topology can be deactivated/killed from the Storm UI as above or via shell:
 
@@ -203,17 +203,17 @@ Execute the Storm 'jar' command to create a new Topology from Tutorial #3 after
 
 You should see that it successfully submitted the topology:
 
-![Screen Shot 2015-06-04 at 7.55.23 PM.png](../../../assets/realtime-event-processing/t3-update/image12.png)
+![Screen Shot 2015-06-04 at 7.55.23 PM.png](/assets/realtime-event-processing/t3-update/image12.png)
 
 The topology should also show up on the Storm UI
 
-![Topology Summary](../../../assets/realtime-event-processing/t3-update/image16.png)
+![Topology Summary](/assets/realtime-event-processing/t3-update/image16.png)
 
 Under Storm User View: You shall see here that Kafka Spout has started writing to hdfs and hbase.
 
-![](../../../assets/realtime-event-processing/t3-update/image04.png)
+![](/assets/realtime-event-processing/t3-update/image04.png)
 
-![](../../../assets/realtime-event-processing/t3-update/image03.png)
+![](/assets/realtime-event-processing/t3-update/image03.png)
 
 ### <a id="h.mofsscti7b0q" name="h.mofsscti7b0q"></a>Step 4:
 
@@ -226,25 +226,25 @@ Generate Events and Verify Data in HDFS and HBase.
 
 Verify in the Storm UI or Storm User View to verify the Bolt section that HDFS/HBase tuples are being executed and acked
 
-![stormview-hbase-hdfs.png](../../../assets/realtime-event-processing/t3-update/image08.png)
+![stormview-hbase-hdfs.png](/assets/realtime-event-processing/t3-update/image08.png)
 
 *   Verify that the data is in HDFS by opening the Ambari Files view: http://localhost:8080/#/main/views/FILES/0.1.0/MyFiles
 
 With the default settings for HDFS, users will see the data written to HDFS once in every few minutes.
 
-![Screen Shot 2015-06-04 at 9.10.39 PM.png](../../../assets/realtime-event-processing/t3-update/image17.png)
+![Screen Shot 2015-06-04 at 9.10.39 PM.png](/assets/realtime-event-processing/t3-update/image17.png)
 
 Drill down into `/truck-events-v4/staging` dir in HDFS
 
-![](../../../assets/realtime-event-processing/t3-update/image00.png)
+![](/assets/realtime-event-processing/t3-update/image00.png)
 
 Click on one of the txt files and confirm that it contains the events:
 
-![Screen Shot 2015-06-04 at 9.20.24 PM.png](../../../assets/realtime-event-processing/t3-update/image05.png)
+![Screen Shot 2015-06-04 at 9.20.24 PM.png](/assets/realtime-event-processing/t3-update/image05.png)
 
 *   Verify data in Hive by navigating to the Hive view, expanding the default database and and clicking the List icon next to truck_events_text_partition table
 
-![Screen Shot 2015-06-04 at 9.13.23 PM.png](../../../assets/realtime-event-processing/t3-update/image11.png)
+![Screen Shot 2015-06-04 at 9.13.23 PM.png](/assets/realtime-event-processing/t3-update/image11.png)
 
 *   You can press Control-C to stop the Kafka producer (i.e keep Control key pressed and then press C)
 *   Verify that the data is in HBase by executing the following commands in HBase shell:
@@ -261,22 +261,22 @@ Click on one of the txt files and confirm that it contains the events:
 
 The `driver_dangerous_events` table is updated upon every violation.
 
-![Screen Shot 2015-06-04 at 9.09.29 PM.png](../../../assets/realtime-event-processing/t3-update/image07.png)
+![Screen Shot 2015-06-04 at 9.09.29 PM.png](/assets/realtime-event-processing/t3-update/image07.png)
 
 *   Next let's populate the data into ORC table for interactive query by Excel (or any BI tool) via ODBC over Hive/Tez. Open the Hive view and enter the below and click Execute.
 
     INSERT OVERWRITE TABLE truck_events_text_partition_orc partition (date)
     select * from truck_events_text_partition;
 
-![](../../../assets/realtime-event-processing/t3-update/image18.png)
+![](/assets/realtime-event-processing/t3-update/image18.png)
 
 Notice that this launches a Tez job in the background. You can get more details on this using the Yarn resource manager UI. You can find for this under the link under Ambari -> Yarn -> Quick links but will be similar to http://localhost:8088/cluster
 
-![Screen Shot 2015-06-06 at 8.00.27 PM.png](../../../assets/realtime-event-processing/t3-update/image19.png)
+![Screen Shot 2015-06-06 at 8.00.27 PM.png](/assets/realtime-event-processing/t3-update/image19.png)
 
 Now query the ORC table by clicking the List icon next to it under Databases and notice it is also now populated
 
-![](../../../assets/realtime-event-processing/t3-update/image06.png)
+![](/assets/realtime-event-processing/t3-update/image06.png)
 
 *   Once done, stop the Storm topology
 
@@ -519,7 +519,7 @@ Updating Tutorials-master Project
 
     [root@sandbox ~]# mvn clean package
 
-![update project](../../../assets/realtime-event-processing/t3-update/image15.png)
+![update project](/assets/realtime-event-processing/t3-update/image15.png)
 
 The maven build should succeed
 

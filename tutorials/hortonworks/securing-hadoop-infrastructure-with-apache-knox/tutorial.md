@@ -79,7 +79,7 @@ ps -ef | grep ldap
 
 You can check if the LDAP and Gateway servers started as follows: `jps`
 
-![enter image description here](../../../assets/securing-hadoop-with-knox/jps.JPG "jps.JPG")
+![enter image description here](/assets/securing-hadoop-with-knox/jps.JPG "jps.JPG")
 
 If the services are not running, then you can 
 
@@ -93,20 +93,20 @@ cd /usr/hdp/current/knox-server
 java -jar bin/ldap.jar conf &
 ~~~
 
-![enter image description here](../../../assets/securing-hadoop-with-knox/11-knox.JPG "11-knox.JPG")
+![enter image description here](/assets/securing-hadoop-with-knox/11-knox.JPG "11-knox.JPG")
 
 ~~~
 java -jar bin/gateway.jar &
 ~~~
 
-![enter image description here](../../../assets/securing-hadoop-with-knox/12-knox+-+jar+gateway.jar.JPG "12-knox - jar gateway.jar.JPG")
+![enter image description here](/assets/securing-hadoop-with-knox/12-knox+-+jar+gateway.jar.JPG "12-knox - jar gateway.jar.JPG")
 
 
 You can also utilize the Ambari user interface to start Knox and the LDAP server. Head to `http://localhost:8080` in your browser and login with user/pass `admin/admin`. 
 
 Then head over to the Knox service and make sure it is started, and also start the Demo LDAP.
 
-![Ambari Knox](../../../assets/securing-hadoop-with-knox/01_knox_ambari.png)
+![Ambari Knox](/assets/securing-hadoop-with-knox/01_knox_ambari.png)
 
 If you want to stop these services, you could use the following commands:
 
@@ -118,7 +118,7 @@ sudo -u knox bin/gateway.sh stop
 sudo -u knox bin/ldap.sh stop
 ~~~
 
-![enter image description here](../../../assets/securing-hadoop-with-knox/knoxLDAPStop.JPG "knoxLDAPStop.JPG")
+![enter image description here](/assets/securing-hadoop-with-knox/knoxLDAPStop.JPG "knoxLDAPStop.JPG")
 
 ### Step 5:
 
@@ -132,7 +132,7 @@ Let’s check if the Hadoop Cluster is accessible via WebHDFS. Note that this re
 curl -iku guest:guest-password -X GET 'http://sandbox:50070/webhdfs/v1/?op=LISTSTATUS'
 ~~~
 
-![enter image description here](../../../assets/securing-hadoop-with-knox/14+connect+to+hadoop+sandbox+.JPG "14 connect to hadoop sandbox .JPG")
+![enter image description here](/assets/securing-hadoop-with-knox/14+connect+to+hadoop+sandbox+.JPG "14 connect to hadoop sandbox .JPG")
 
 ### Step 7:
 
@@ -183,7 +183,7 @@ Let’s run the mapreduce program.
     https://localhost:8443/gateway/default/templeton/v1/mapreduce/jar
 
 When you run the mapreduce execution step, you will see the following result. Please note down the Job Id. You will use it for checking status for this Job Id in the next step.  
-![enter image description here](../../../assets/securing-hadoop-with-knox/30.5-+map+reduce+job+submission.JPG "30.5- map reduce job submission.JPG")
+![enter image description here](/assets/securing-hadoop-with-knox/30.5-+map+reduce+job+submission.JPG "30.5- map reduce job submission.JPG")
 
 ### Step 9:
 
@@ -193,7 +193,7 @@ You can check the status of your above Job Id as follows:
     
 Remember to **replace everything after `jobs/` with your job id.
 
-![enter image description here](../../../assets/securing-hadoop-with-knox/30.6-+map+reduce+job+submission+log.JPG "30.6- map reduce job submission log.JPG")
+![enter image description here](/assets/securing-hadoop-with-knox/30.6-+map+reduce+job+submission+log.JPG "30.6- map reduce job submission log.JPG")
 
 ### Step 10:
 
@@ -211,7 +211,7 @@ Let’s look at the output result file.
 
 It should look something like below:
 
-![enter image description here](../../../assets/securing-hadoop-with-knox/output+resuslt+files.JPG "output resuslt files.JPG")
+![enter image description here](/assets/securing-hadoop-with-knox/output+resuslt+files.JPG "output resuslt files.JPG")
 
 ### Step 12:
 
@@ -219,7 +219,7 @@ Let’s look at the output result.
 
     curl -iku guest:guest-password -L -X GET 'https://localhost:8443/gateway/default/webhdfs/v1/user/guest/knox-sample/output/part-r-00000?op=OPEN'
 
-![enter image description here](../../../assets/securing-hadoop-with-knox/results.JPG "results.JPG")
+![enter image description here](/assets/securing-hadoop-with-knox/results.JPG "results.JPG")
 
 You just ran a mapreduce program on Hadoop through the Apache Knox Gateway!
 
