@@ -37,7 +37,7 @@ A working Hadoop cluster: the easiest way to get a pre-configured and fully func
 *   Multi-client support
 *   Real time
 
-![Kafka Producer-Broker-Consumer](../../../assets/2-3/realtime-event-processing/t1-update/image13.png)
+![Kafka Producer-Broker-Consumer](/assets/realtime-event-processing/t1-update/image13.png)
 
 Kafka Producer-Broker-Consumer
 
@@ -60,13 +60,13 @@ In this tutorial, you will learn the following topics:
 
 After downloading the Sandbox and running the VM, login to the Sandbox using the URL displayed in the console. For example, the URL in the screenshot below is `http://172.16.251.244:8000/`
 
-![](../../../assets/2-3/realtime-event-processing/t1-update/image01.png)
+![](/assets/realtime-event-processing/t1-update/image01.png)
 
 **2. Login to Ambari**
 
 Go to port 8080 of your Sandbox’s IP address to view the Ambari login page. For example, http://172.16.251.244:8080:
 
-![](../../../assets/2-3/realtime-event-processing/t1-update/image21.png)
+![](/assets/realtime-event-processing/t1-update/image21.png)
 
 The username and password are both admin.
 
@@ -76,17 +76,17 @@ The username and password are both admin.
 
 From the Dashboard page of Ambari, click on Kafka from the list of installed services. (If Kafka is not installed, perform the steps in Appendix A first.):
 
-![](../../../assets/2-3/realtime-event-processing/t1-update/image03.png)
+![](/assets/realtime-event-processing/t1-update/image03.png)
 
 **2.Start Kafka**
 
 From the Kafka page, click on Service Actions -> Start:
 
-![](../../../assets/2-3/realtime-event-processing/t1-update/image06.png)
+![](/assets/realtime-event-processing/t1-update/image06.png)
 
 Check the box and click on Confirm Start:
 
-![Screen Shot 2015-06-04 at 3.06.10 PM.png](../../../assets/2-3/realtime-event-processing/t1-update/image11.png)
+![Screen Shot 2015-06-04 at 3.06.10 PM.png](/assets/realtime-event-processing/t1-update/image11.png)
 
 Wait for Kafka to start.
 
@@ -94,7 +94,7 @@ Wait for Kafka to start.
 
 ZooKeeper serves as the coordination interface between the Kafka broker and consumers:
 
-![Single Broker based Kakfa cluster](../../../assets/2-3/realtime-event-processing/t1-update/image02.png)
+![Single Broker based Kakfa cluster](/assets/realtime-event-processing/t1-update/image02.png)
 
 The important Zookeeper properties can be checked in Ambari.
 
@@ -102,17 +102,17 @@ The important Zookeeper properties can be checked in Ambari.
 
 Click on ZooKeeper in the list of services, then click on the Configs tab. Verify ZooKeeper is running on port 2181:
 
-![](../../../assets/2-3/realtime-event-processing/t1-update/image00.png)
+![](/assets/realtime-event-processing/t1-update/image00.png)
 
 If this port 2181 is busy or is consumed by other processes, then you could change the default port number of ZooKeeper to any other valid port number. If ZooKeeper is not running, you can start the Zookeeper service from Ambari:
 
-![](../../../assets/2-3/realtime-event-processing/t1-update/image16.png)
+![](/assets/realtime-event-processing/t1-update/image16.png)
 
 **2\. Configure Kafka**
 
 From the Kafka page, click on the Configs tab. Verify the `zookeeper.connect` property points to your ZooKeeper server name and port:
 
-![](../../../assets/2-3/realtime-event-processing/t1-update/image18.png)
+![](/assets/realtime-event-processing/t1-update/image18.png)
 
 ### <a id="h.1gb1ug9kkdq7" name="h.1gb1ug9kkdq7"></a>Step 4: Define a Kafka Topic
 
@@ -120,13 +120,13 @@ From the Kafka page, click on the Configs tab. Verify the `zookeeper.connect` pr
 
 We will SSH in to the Sandbox to the perform the remaining tasks of this tutorial. To SSH in to the Sandbox on Windows, press **Alt+**F5 in the VM window. On a Mac, press **Command+Ctrl+Alt+F5**.
 
-![](../../../assets/2-3/realtime-event-processing/t1-update/image12.png)
+![](/assets/realtime-event-processing/t1-update/image12.png)
 
 <a id="h.fpja1wpsyy09" name="h.fpja1wpsyy09"></a>_NOTE: You can also SSH using a program like Putty for Windows or the Terminal application on a Mac. The command to login is ssh root@127.0.0.1 -p 2222_
 
 You will be prompted for a login:
 
-![](../../../assets/2-3/realtime-event-processing/t1-update/image04.png)
+![](/assets/realtime-event-processing/t1-update/image04.png)
 
 Type in `root` as the login, and the password is `hadoop`.
 
@@ -152,7 +152,7 @@ Also note that sometimes ZooKeeper does not listen on `localhost`, so you may ne
 
 The output should look like:
 
-![](../../../assets/2-3/realtime-event-processing/t1-update/image22.png)
+![](/assets/realtime-event-processing/t1-update/image22.png)
 
 
 **3. Verify the topic was created successfully**
@@ -163,13 +163,13 @@ Check if topic `truckevent` was created successfully with the following command:
 
 You should see `truckevent` in the list of topics (and probably your only topic):
 
-![](../../../assets/2-3/realtime-event-processing/t1-update/image25.png)
+![](/assets/realtime-event-processing/t1-update/image25.png)
 
 ### Overview of Producing Messages  
 
 Producers are applications that create Messages and publish them to the Kafka broker for further consumption:
 
-![Kafka Producers for truck events](../../../assets/2-3/realtime-event-processing/t1-update/image24.png)
+![Kafka Producers for truck events](/assets/realtime-event-processing/t1-update/image24.png)
 
 
 In this tutorial we shall use a Java API to produce Truck events. The Java code in `TruckEventsProducer.java` will generate data with following columns:
@@ -223,7 +223,7 @@ To start the Kafka Producer we execute the following command to see the output a
 
 
 
-![Screen Shot 2015-06-06 at 5.46.22 PM.png](../../../assets/2-3/realtime-event-processing/t1-update/image15.png)
+![Screen Shot 2015-06-06 at 5.46.22 PM.png](/assets/realtime-event-processing/t1-update/image15.png)
 
 After a few seconds, press Control-C to stop the producer.
 
@@ -234,7 +234,7 @@ To verify, execute the following command to start a consumer to see the produced
     [root@sandbox Tutorials-master]# /usr/hdp/current/kafka-broker/bin/kafka-console-consumer.sh --zookeeper sandbox.hortonworks.com:2181 --topic truckevent --from-beginning
 
    
-![Screen Shot 2015-06-06 at 5.50.53 PM.png](../../../assets/2-3/realtime-event-processing/t1-update/image23.png)  
+![Screen Shot 2015-06-06 at 5.50.53 PM.png](/assets/realtime-event-processing/t1-update/image23.png)  
 
 You can press Control-C to stop the console consumer (i.e keep Control key pressed and then press C)
 
@@ -337,24 +337,24 @@ Follow these steps if your version of the Sandbox does not have Kafka installed:
 
 1.  From the Ambari Dashboard, select Actions -> Add Service:
 
-![](../../../assets/2-3/realtime-event-processing/t1-update/image17.png)
+![](/assets/realtime-event-processing/t1-update/image17.png)
 
 2\.  Select Kafka from the list of Services and click Next:
 
-![](../../../assets/2-3/realtime-event-processing/t1-update/image08.png)
+![](/assets/realtime-event-processing/t1-update/image08.png)
 
 3\.  Keep clicking Next with the selected defaults until you reach the following screen:
 
-![](../../../assets/2-3/realtime-event-processing/t1-update/image20.png)
+![](/assets/realtime-event-processing/t1-update/image20.png)
 
 4\.  Set the value of logs.dir to  /tmp/kafka-logs
 5\.  Click the Deploy button:
 
-![](../../../assets/2-3/realtime-event-processing/t1-update/image09.png)
+![](/assets/realtime-event-processing/t1-update/image09.png)
 
 6\.  Wait for Kafka to install:
 
-![](../../../assets/2-3/realtime-event-processing/t1-update/image07.png)
+![](/assets/realtime-event-processing/t1-update/image07.png)
 
 
 
@@ -368,7 +368,7 @@ Download and install Apache Maven as shown in the commands below
       yum -y install apache-maven
       mvn -version  
 
-![Maven Version](../../../assets/2-3/realtime-event-processing/t1-update/image14.png)
+![Maven Version](/assets/realtime-event-processing/t1-update/image14.png)
 Maven Version
 
 
@@ -377,12 +377,12 @@ Now lets compile and execute the code to generate Truck Events. (This may run fo
     cd /opt/TruckEvents/Tutorials-master    
     mvn clean package  
 
-![mvn clean pacakge](../../../assets/2-3/realtime-event-processing/t1-update/image19.png)
+![mvn clean pacakge](/assets/realtime-event-processing/t1-update/image19.png)
 
     mvn clean pacakge
 
 Once the code is successfully compiled we shall see a new target directory created in the current folder. The binaries for all the Tutorials are in this target directory and the source code in src.
 
-![](../../../assets/2-3/realtime-event-processing/t1-update/image10.png)
+![](/assets/realtime-event-processing/t1-update/image10.png)
 
-![](../../../assets/2-3/realtime-event-processing/t1-update/image05.png)
+![](/assets/realtime-event-processing/t1-update/image05.png)
