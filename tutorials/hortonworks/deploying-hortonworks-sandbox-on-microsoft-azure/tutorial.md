@@ -3,7 +3,7 @@
 The Azure cloud infrastructure has become a commonplace for users to deploy virtual machines on the cloud due to its’ flexibility, ease of deployment, and cost benefits.  In addition, Microsoft has expanded Azure to include a marketplace with thousands of certified, open source, and community software applications, developer services, and data—pre-configured for Microsoft Azure.  This tutorial covers deploying the HDP Sandbox offering from the Azure Marketplace.  
 
 ## Prerequisites
-[A Microsoft Azure account – you can sign up for an evaluation account if you do not already have one.](https://azure.microsoft.com/en-us/pricing/free-trial/)
+[A Microsoft Azure account. You can sign up for an evaluation account if you do not already have one.](https://azure.microsoft.com/en-us/pricing/free-trial/)
 
 ## Concepts/FAQs
 
