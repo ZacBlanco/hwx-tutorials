@@ -51,8 +51,8 @@ do
     sed -i '.bak' "s/src=\"\/assets\//src=\"https:\/\/raw.githubusercontent.com\/ZacBlanco\/hwx-tutorials\/$BRANCH\/assets\//g" $f
     sed -i '' "s/‘/'/g" $f
     sed -i '' "s/’/'/g" $f
-    sed -i '' "s/\”/\"/g" $f
-    sed -i '' "s/\“/\"/g" $f
+    sed -i '' "s/”/\"/g" $f
+    sed -i '' "s/“/\"/g" $f
 #    [‘|’|“|”]
   fi
 done
