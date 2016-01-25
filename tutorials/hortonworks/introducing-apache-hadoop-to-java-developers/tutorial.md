@@ -4,7 +4,7 @@ It was originally implemented at Yahoo based on papers published by Google in 20
 
 Since then Apache Hadoop has matured and developed to become a data platform for not just processing humongous amount of data in batch but with the advent of [YARN](http://hortonworks.com/hadoop/yarn/) it now supports many diverse workloads such as Interactive queries over large data with [Hive on Tez](http://hortonworks.com/labs/stinger/), Realtime data processing with [Apache Storm](http://hortonworks.com/labs/storm/), super scalable NoSQL datastore like [HBase](http://hortonworks.com/hadoop/hbase/), in-memory datastore like [Spark](http://hortonworks.com/hadoop/spark/) and the list goes on.
 
-![](../../../assets/introducing-hadoop-to-java-developers/5-boxes.png)
+![](/assetsintroducing-hadoop-to-java-developers/5-boxes.png)
 
 For this introductory tutorial for Hadoop Developers we are going to focus on the basics, like:
 

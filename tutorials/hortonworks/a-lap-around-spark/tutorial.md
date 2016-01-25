@@ -49,7 +49,7 @@ To calculate Pi with Spark:
 
 
 **Note:** The Pi job should complete without any failure messages and produce output similar to below, note the value of Pi in the output message:  
-![](../../../assets/a-lap-around-spark/Screenshot%202015-07-20%2014.48.48.png?dl=1)
+![](/assetsa-lap-around-spark/Screenshot%202015-07-20%2014.48.48.png?dl=1)
 
 ### Using WordCount with Spark
 
@@ -78,7 +78,7 @@ To run WordCount:
 
 
 Output similar to below displays before the Scala REPL prompt, scala>:  
-![](../../../assets/a-lap-around-spark/Screenshot%202015-07-20%2014.50.31.png?dl=1)
+![](/assetsa-lap-around-spark/Screenshot%202015-07-20%2014.50.31.png?dl=1)
 
 #### At the Scala REPL prompt enter:
 
@@ -102,7 +102,7 @@ To view the output in the scala shell:
 
 
 
-![](../../../assets/a-lap-around-spark/Screenshot%202015-07-20%2014.55.13.png?dl=1)
+![](/assetsa-lap-around-spark/Screenshot%202015-07-20%2014.55.13.png?dl=1)
 
 To print the full output of the WordCount job:
 
@@ -112,7 +112,7 @@ To print the full output of the WordCount job:
 
 
 
-![](../../../assets/a-lap-around-spark/Screenshot%202015-07-20%2014.57.10.png?dl=1)
+![](/assetsa-lap-around-spark/Screenshot%202015-07-20%2014.57.10.png?dl=1)
 
 ##### Viewing the WordCount output with HDFS
 
@@ -135,7 +135,7 @@ Exit the scala shell.
 
 It should display output similar to:
 
-![](../../../assets/a-lap-around-spark/Screenshot%202015-07-20%2014.58.22.png?dl=1)
+![](/assetsa-lap-around-spark/Screenshot%202015-07-20%2014.58.22.png?dl=1)
 
 Use the HDFS cat command to see the WordCount output. For example,
 
@@ -145,7 +145,7 @@ Use the HDFS cat command to see the WordCount output. For example,
 
 
 
-![](../../../assets/a-lap-around-spark/Screenshot%202015-07-20%2014.59.10.png?dl=1)
+![](/assetsa-lap-around-spark/Screenshot%202015-07-20%2014.59.10.png?dl=1)
 
 ##### Using Spark DataFrame API
 
@@ -169,7 +169,7 @@ Let's upload people text file to HDFS
 
 
 
-![](../../../assets/a-lap-around-spark/Screenshot%202015-07-20%2015.01.49.png?dl=1)
+![](/assetsa-lap-around-spark/Screenshot%202015-07-20%2015.01.49.png?dl=1)
 
 Then let's launch the Spark Shell
 
@@ -193,7 +193,7 @@ Then let's launch the Spark Shell
 
 This will produce and output such as
 
-![](../../../assets/a-lap-around-spark/Screenshot%202015-07-20%2015.04.33.png?dl=1)
+![](/assetsa-lap-around-spark/Screenshot%202015-07-20%2015.04.33.png?dl=1)
 
 **Note:** The highlighted output shows the inferred schema of the underlying people.json.
 
@@ -205,7 +205,7 @@ Now print the content of DataFrame with df.show
 
 
 
-![](../../../assets/a-lap-around-spark/Screenshot%202015-07-20%2015.06.29.png?dl=1)
+![](/assetsa-lap-around-spark/Screenshot%202015-07-20%2015.06.29.png?dl=1)
 
 ##### Data Frame API examples
 
@@ -219,7 +219,7 @@ Now print the content of DataFrame with df.show
 
 
 
-![](../../../assets/a-lap-around-spark/Screenshot%202015-07-20%2015.13.59.png?dl=1)
+![](/assetsa-lap-around-spark/Screenshot%202015-07-20%2015.13.59.png?dl=1)
 
 
 
@@ -229,7 +229,7 @@ Now print the content of DataFrame with df.show
 
 
 
-![](../../../assets/a-lap-around-spark/Screenshot%202015-07-20%2015.14.47.png?dl=1)
+![](/assetsa-lap-around-spark/Screenshot%202015-07-20%2015.14.47.png?dl=1)
 
 
 
@@ -239,7 +239,7 @@ Now print the content of DataFrame with df.show
 
 
 
-![](../../../assets/a-lap-around-spark/Screenshot%202015-07-20%2015.15.41.png?dl=1)
+![](/assetsa-lap-around-spark/Screenshot%202015-07-20%2015.15.41.png?dl=1)
 
 ##### Programmatically Specifying Schema
 
@@ -259,7 +259,7 @@ Now print the content of DataFrame with df.show
 
 
 
-![](../../../assets/a-lap-around-spark/Screenshot%202015-07-20%2015.18.02.png?dl=1)
+![](/assetsa-lap-around-spark/Screenshot%202015-07-20%2015.18.02.png?dl=1)
 
 
 
@@ -277,7 +277,7 @@ Now print the content of DataFrame with df.show
 
 This will produce an output like
 
-![](../../../assets/a-lap-around-spark/Screenshot%202015-07-20%2015.19.49.png?dl=1)
+![](/assetsa-lap-around-spark/Screenshot%202015-07-20%2015.19.49.png?dl=1)
 
 ### Running Hive 0.13.1 UDF
 
@@ -306,7 +306,7 @@ Before running Hive examples run the following steps:
 
 You should see output similar to the following:
 
-![](../../../assets/a-lap-around-spark/Screenshot%202015-07-20%2015.24.12.png?dl=1)
+![](/assetsa-lap-around-spark/Screenshot%202015-07-20%2015.24.12.png?dl=1)
 
 #### Create Hive Table
 
@@ -318,7 +318,7 @@ You should see output similar to the following:
 
 You should see output similar to the following:
 
-![](../../../assets/a-lap-around-spark/Screenshot%202015-07-20%2015.25.34.png?dl=1)
+![](/assetsa-lap-around-spark/Screenshot%202015-07-20%2015.25.34.png?dl=1)
 
 #### Load example KV value data into Table
 
@@ -330,7 +330,7 @@ You should see output similar to the following:
 
 You should see output similar to the following:
 
-![](../../../assets/a-lap-around-spark/Screenshot%202015-07-20%2015.26.53.png?dl=1)
+![](/assetsa-lap-around-spark/Screenshot%202015-07-20%2015.26.53.png?dl=1)
 
 #### Invoke Hive collect_list UDF
 
@@ -342,7 +342,7 @@ You should see output similar to the following:
 
 You should see output similar to the following:
 
-![](../../../assets/a-lap-around-spark/Screenshot%202015-07-21%2010.40.04.png?dl=1)
+![](/assetsa-lap-around-spark/Screenshot%202015-07-21%2010.40.04.png?dl=1)
 
 ### Read & Write ORC File Example
 
@@ -374,7 +374,7 @@ In this tech preview, we have implemented full support for ORC files with Spark.
 
 
 
-![](../../../assets/a-lap-around-spark/Screenshot%202015-07-21%2010.42.11.png?dl=1)
+![](/assetsa-lap-around-spark/Screenshot%202015-07-21%2010.42.11.png?dl=1)
 
 #### Read ORC Table from HDFS as HadoopRDD**
 
@@ -384,7 +384,7 @@ In this tech preview, we have implemented full support for ORC files with Spark.
 
 
 
-![](../../../assets/a-lap-around-spark/Screenshot%202015-07-21%2010.45.03.png?dl=1)
+![](/assetsa-lap-around-spark/Screenshot%202015-07-21%2010.45.03.png?dl=1)
 
 #### Verify we can manipulate the ORC record through RDD
 
@@ -398,7 +398,7 @@ In this tech preview, we have implemented full support for ORC files with Spark.
 
 You should see output similar to the following:
 
-![](../../../assets/a-lap-around-spark/Screenshot%202015-07-21%2010.46.20.png?dl=1)
+![](/assetsa-lap-around-spark/Screenshot%202015-07-21%2010.46.20.png?dl=1)
 
 #### **Copy example table into HDFS**
 
@@ -434,7 +434,7 @@ on Scala prompt type the following, except for the comments
 
 
 
-![](../../../assets/a-lap-around-spark/Screenshot%202015-07-21%2010.54.29.png?dl=1)
+![](/assetsa-lap-around-spark/Screenshot%202015-07-21%2010.54.29.png?dl=1)
 
 Load and register the spark table
 
@@ -450,7 +450,7 @@ Load and register the spark table
 
 
 
-![](../../../assets/a-lap-around-spark/Screenshot%202015-07-21%2013.35.47.png?dl=1)
+![](/assetsa-lap-around-spark/Screenshot%202015-07-21%2013.35.47.png?dl=1)
 
 Infer table schema from RDD
 
@@ -460,7 +460,7 @@ Infer table schema from RDD
 
 
 
-![](../../../assets/a-lap-around-spark/Screenshot%202015-07-21%2013.37.06.png?dl=1)
+![](/assetsa-lap-around-spark/Screenshot%202015-07-21%2013.37.06.png?dl=1)
 
 Create a table from schema
 
@@ -474,7 +474,7 @@ Create a table from schema
 
 
 
-![](../../../assets/a-lap-around-spark/Screenshot%202015-07-21%2013.43.49.png?dl=1)
+![](/assetsa-lap-around-spark/Screenshot%202015-07-21%2013.43.49.png?dl=1)
 
 Save Table to ORCFile
 
@@ -494,7 +494,7 @@ Create Table from ORCFile
 
 
 
-![](../../../assets/a-lap-around-spark/Screenshot%202015-07-21%2013.46.51.png?dl=1)
+![](/assetsa-lap-around-spark/Screenshot%202015-07-21%2013.46.51.png?dl=1)
 
 Query from the table
 
@@ -504,7 +504,7 @@ Query from the table
 
 
 
-![](../../../assets/a-lap-around-spark/Screenshot%202015-07-21%2013.47.58.png?dl=1)
+![](/assetsa-lap-around-spark/Screenshot%202015-07-21%2013.47.58.png?dl=1)
 
 ### SparkSQL Thrift Server for JDBC/ODBC access
 
@@ -551,7 +551,7 @@ Note, the connection may take a few second to be available and try show tables a
 
 
 
-![](../../../assets/a-lap-around-spark/Screenshot%202015-07-21%2013.53.04.png?dl=1)
+![](/assetsa-lap-around-spark/Screenshot%202015-07-21%2013.53.04.png?dl=1)
 
 type `Ctrl+C` to exit beeline.
 
@@ -563,7 +563,7 @@ type `Ctrl+C` to exit beeline.
 
 
 
-![](../../../assets/a-lap-around-spark/Screenshot%202015-07-21%2013.55.40.png?dl=1)
+![](/assetsa-lap-around-spark/Screenshot%202015-07-21%2013.55.40.png?dl=1)
 
 ### Spark Job History Server
 
@@ -587,7 +587,7 @@ You can let the history server run, while you run examples and go to YARN resour
 
 
 
-![](../../../assets/a-lap-around-spark/Screenshot%202015-07-21%2014.00.10.png?dl=1)
+![](/assetsa-lap-around-spark/Screenshot%202015-07-21%2014.00.10.png?dl=1)
 
 Visit [http://hortonworks.com/tutorials](http://hortonworks.com/tutorials) for more tutorials on Apache Spark.
 

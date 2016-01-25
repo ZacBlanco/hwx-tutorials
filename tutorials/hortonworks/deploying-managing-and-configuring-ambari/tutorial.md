@@ -6,50 +6,50 @@ In this tutorial, we will walk through the some of the key aspects of deploying,
 
 ### Prerequisites
 
-*   [Hortonworks Sandbox](../../../assets/deploying-managing-and-configuring-ambari/sandbox)
+*   [Hortonworks Sandbox](/assetsdeploying-managing-and-configuring-ambari/sandbox)
 
 ### Deployment
 
 Deploying various components like HDFS, Mapreduce, YARN, Tez, Nagios, Ganglia, Hive, HBase, Pig, Sqoop, Oozie, ZooKeeper, Falcon, Slider, Storm and Flume in a distributed topology can be made much simpler with Ambari.
 
-![](../../../assets/deploying-managing-and-configuring-ambari/vagrant_25.jpg)
+![](/assetsdeploying-managing-and-configuring-ambari/vagrant_25.jpg)
 
-We have a complete walkthrough of deploying a cluster with Ambari in another tutorial titled [Introducing Apache Ambari for deploying and managing Apache Hadoop](../../../assets/deploying-managing-and-configuring-ambari/).
+We have a complete walkthrough of deploying a cluster with Ambari in another tutorial titled [Introducing Apache Ambari for deploying and managing Apache Hadoop](/assetsdeploying-managing-and-configuring-ambari/).
 
 ### Configuring the Capacity Scheduler
 
-For rest of the tutorial we will use the Ambari hosted on the [Hortonworks Sandbox](../../../assets/deploying-managing-and-configuring-ambari/sandbox).
+For rest of the tutorial we will use the Ambari hosted on the [Hortonworks Sandbox](/assetsdeploying-managing-and-configuring-ambari/sandbox).
 
 After you spin up the Hortonworks Sandbox, login to Ambari. The default username and password is ``.  
-![](../../../assets/deploying-managing-and-configuring-ambari/ambari001.png)
+![](/assetsdeploying-managing-and-configuring-ambari/ambari001.png)
 
 After you Login, you will see the Dashboard. This is an unified view of the state of your cluster.
 
-![](../../../assets/deploying-managing-and-configuring-ambari/ambari002.png)
+![](/assetsdeploying-managing-and-configuring-ambari/ambari002.png)
 
 You can drill into specify service dashboard and configuration.
 
-![](../../../assets/deploying-managing-and-configuring-ambari/ambari003.png)
+![](/assetsdeploying-managing-and-configuring-ambari/ambari003.png)
 
 Let’s dive into YARN dashboard by selecting Yarn from the left-side bar or the drop down menu.
 
-![](../../../assets/deploying-managing-and-configuring-ambari/ambari004.png)
+![](/assetsdeploying-managing-and-configuring-ambari/ambari004.png)
 
 We will start updating the configuration for Yarn Capacity Scheduling policies.
 
-![](../../../assets/deploying-managing-and-configuring-ambari/ambari005.png)
+![](/assetsdeploying-managing-and-configuring-ambari/ambari005.png)
 
 Scroll down to the `` section of the page. The default capacity scheduling policy just has one queue.
 
-![](../../../assets/deploying-managing-and-configuring-ambari/ambari006.png)
+![](/assetsdeploying-managing-and-configuring-ambari/ambari006.png)
 
 Let check out the scheduling policy visually. Scroll up to the top of the page and click on quick links. Then select ResourceManager UI from the dropdown.
 
-![](../../../assets/deploying-managing-and-configuring-ambari/ambari007.png)
+![](/assetsdeploying-managing-and-configuring-ambari/ambari007.png)
 
 As you can see below we just have the default policy.
 
-![](../../../assets/deploying-managing-and-configuring-ambari/ambari008.png)
+![](/assetsdeploying-managing-and-configuring-ambari/ambari008.png)
 
 Let’s change the capacity scheduling policy to where we have seperate queues and policies for Engineering, Marketing and Support departments:
 
@@ -130,71 +130,71 @@ Let’s change the capacity scheduling policy to where we have seperate queues a
 
 Copy and paste the above policy in the `` textbox:
 
-![](../../../assets/deploying-managing-and-configuring-ambari/ambari006.png)
+![](/assetsdeploying-managing-and-configuring-ambari/ambari006.png)
 
 Click `` and confirm on the dialog box:
 
-![](../../../assets/deploying-managing-and-configuring-ambari/ambari009.png)
+![](/assetsdeploying-managing-and-configuring-ambari/ambari009.png)
 
 At this point the, the configuration is saved but we still need to restart the affected components by the configuration change as indicated in the orange band below:
 
-![](../../../assets/deploying-managing-and-configuring-ambari/ambari010.png)
+![](/assetsdeploying-managing-and-configuring-ambari/ambari010.png)
 
 Also note that there is now a new version of the configuration as indicated by the green ``.
 
-![](../../../assets/deploying-managing-and-configuring-ambari/ambari011.png)
+![](/assetsdeploying-managing-and-configuring-ambari/ambari011.png)
 
 Wait for the restart to complete:
 
-![](../../../assets/deploying-managing-and-configuring-ambari/ambari013.png)
+![](/assetsdeploying-managing-and-configuring-ambari/ambari013.png)
 
 and then goto the browser tab with the Capacity Scheduler policy and refresh the page. Voila! There’s our new policy:
 
-![](../../../assets/deploying-managing-and-configuring-ambari/ambari015.png)
+![](/assetsdeploying-managing-and-configuring-ambari/ambari015.png)
 
 ### Versioning Configuration
 
 Now if we want to revert to ``:
 
-![](../../../assets/deploying-managing-and-configuring-ambari/ambari010.png)
+![](/assetsdeploying-managing-and-configuring-ambari/ambari010.png)
 
 On the confirmation dialog, enter why you are trying to revert back in the notes section before confirming:
 
-![](../../../assets/deploying-managing-and-configuring-ambari/ambari016.png)
+![](/assetsdeploying-managing-and-configuring-ambari/ambari016.png)
 
 Now you will notice, we have new configuration version ``:
 
-![](../../../assets/deploying-managing-and-configuring-ambari/ambari017.png)
+![](/assetsdeploying-managing-and-configuring-ambari/ambari017.png)
 
 We will need to restart as before to ensure this version takes effect:
 
-![](../../../assets/deploying-managing-and-configuring-ambari/ambari018.png)
+![](/assetsdeploying-managing-and-configuring-ambari/ambari018.png)
 
 Let’s recheck to see if our configuration has indeed reverted back:
 
-![](../../../assets/deploying-managing-and-configuring-ambari/ambari019.png)
+![](/assetsdeploying-managing-and-configuring-ambari/ambari019.png)
 
 ### Comparing versions of the configuration:
 
 Now there are often situations, where it is difficult to figure out the difference between two versions of the configuration.
 
 Let’s change the `` property at the top of the Yarn settings page:  
-![](../../../assets/deploying-managing-and-configuring-ambari/ambari020.png)
+![](/assetsdeploying-managing-and-configuring-ambari/ambari020.png)
 
 to ``:
 
-![](../../../assets/deploying-managing-and-configuring-ambari/ambari023.png)
+![](/assetsdeploying-managing-and-configuring-ambari/ambari023.png)
 
 Once we save the changes we will have to restart the services:
 
-![](../../../assets/deploying-managing-and-configuring-ambari/ambari024.png)
+![](/assetsdeploying-managing-and-configuring-ambari/ambari024.png)
 
 Now select the versioning icon from the corner and select the version you want to compare with. In our case we will compare with the previous version:  
-![](../../../assets/deploying-managing-and-configuring-ambari/ambari025.png)
+![](/assetsdeploying-managing-and-configuring-ambari/ambari025.png)
 
 Here we can see exactly which properties of the configuration has changed:
 
-![](../../../assets/deploying-managing-and-configuring-ambari/ambari026.png)
+![](/assetsdeploying-managing-and-configuring-ambari/ambari026.png)
 
 ### Extracting configuration for edge nodes
 
@@ -202,9 +202,9 @@ In this section we will extract the configuration required to use Hive client on
 
 Select Hive from the side-bar. Switch to the config tab and select ``. you will notice that you can either select Hive Client configuration or HCat Client configuration
 
-![](../../../assets/deploying-managing-and-configuring-ambari/ambari028.png)
+![](/assetsdeploying-managing-and-configuring-ambari/ambari028.png)
 
 Once you select the particular configuration you want to download you will get a tar.gz file. Below is the extracted file with the Hive client configuration that you can use:  
-![](../../../assets/deploying-managing-and-configuring-ambari/ambari029.png)
+![](/assetsdeploying-managing-and-configuring-ambari/ambari029.png)
 
 Hope you got a taste of deploying, configuring and managing a Data Lake infrastructure with HDP 2.2.

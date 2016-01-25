@@ -45,7 +45,7 @@ Let’s get the jar file which is available in the Storm Starter kit. This has o
 
     wget http://public-repo-1.hortonworks.com/HDP-LABS/Projects/Storm/0.9.0.1/storm-starter-0.0.1-storm-0.9.0.1.jar
 
-![enter image description here](../../../assets/processing-streaming-data-in-hadoop-with-storm/10000%20storm%20example%20download.JPG)
+![enter image description here](/assetsprocessing-streaming-data-in-hadoop-with-storm/10000%20storm%20example%20download.JPG)
 
 
 ### Step 3 :
@@ -62,7 +62,7 @@ You can check the classes available in the jar as follows:
     jar -xvf storm-starter-0.0.1-storm-0.9.0.1.jar | grep Split  
     jar -xvf storm-starter-0.0.1-storm-0.9.0.1.jar | grep WordCount
 
-![enter image description here](../../../assets/processing-streaming-data-in-hadoop-with-storm/10000%20jar%20classes.JPG)
+![enter image description here](/assetsprocessing-streaming-data-in-hadoop-with-storm/10000%20jar%20classes.JPG)
 
 
 
@@ -76,7 +76,7 @@ Let’s run the Storm Jar file.
 
     /usr/lib/storm/bin/storm jar storm-starter-0.0.1-storm-0.9.0.1.jar storm.starter.WordCountTopology WordCount -c storm.starter.WordCountTopology WordCount -c nimbus.host=sandbox.hortonworks.com
 
-![enter image description here](../../../assets/processing-streaming-data-in-hadoop-with-storm/10000%20jar%20running.JPG)
+![enter image description here](/assetsprocessing-streaming-data-in-hadoop-with-storm/10000%20jar%20running.JPG)
 
 
 
@@ -85,20 +85,20 @@ Let’s run the Storm Jar file.
 ### Step 5 :
 
 Let’s use Storm UI and look at it graphically:  
-![enter image description here](../../../assets/processing-streaming-data-in-hadoop-with-storm/10000%20Storm%20UI.JPG)
+![enter image description here](/assetsprocessing-streaming-data-in-hadoop-with-storm/10000%20Storm%20UI.JPG)
 
 You should notice the Storm Topology, WordCount in the Topology summary.
 
 ### Step 6 :
 
 Please click on the WordCount Topology. You will see the following:  
-![enter image description here](../../../assets/processing-streaming-data-in-hadoop-with-storm/1000%20Storm%20UI%20next%20step.JPG)
+![enter image description here](/assetsprocessing-streaming-data-in-hadoop-with-storm/1000%20Storm%20UI%20next%20step.JPG)
 
 ### Step 7 :
 
 In this page, please click on count in the Bolt Section.
 
-![enter image description here](../../../assets/processing-streaming-data-in-hadoop-with-storm/10000Click%20on%20Bolt.JPG)
+![enter image description here](/assetsprocessing-streaming-data-in-hadoop-with-storm/10000Click%20on%20Bolt.JPG)
 
 
 
@@ -112,7 +112,7 @@ Now if click on any port in the executor section and you will be able to view th
 
 Lastly but most importantly, you can always look at the log files in the following folder. These logs are extremely useful for debugging or status finding.
 
-![enter image description here](../../../assets/processing-streaming-data-in-hadoop-with-storm/1000%20log.JPG)
+![enter image description here](/assetsprocessing-streaming-data-in-hadoop-with-storm/1000%20log.JPG)
 
 
 

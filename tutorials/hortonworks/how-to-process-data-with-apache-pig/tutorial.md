@@ -25,11 +25,11 @@ We start by selecting the `HDFS Files view` from the Off-canvas menu at the top.
 
 Navigate to `/user/admin` and click on the Upload button to select the files we want to upload into the Hortonworks Sandbox environment.
 
-![](../../../assets/how-to-process-data-with-apache-pig/68747470733a2f2f7797772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f707138574845314f486c434e31684e556c453f7261773d74727565.png?dl=1)
+![](/assetshow-to-process-data-with-apache-pig/68747470733a2f2f7797772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f707138574845314f486c434e31684e556c453f7261773d74727565.png?dl=1)
 
 When you click on the browse button you will get a dialog box. Navigate to where you stored the `Batting.csv` file on your local disk and select `Batting.csv` and click again upload. Do the same thing for `Master.csv`. When you are done you will see there are two files in your directory.
 
-![](../../../assets/how-to-process-data-with-apache-pig/68747470733a2f2f77754772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f707138543142565a6d6f775a79303152456b3f7261773d74727565.png?dl=1)
+![](/assetshow-to-process-data-with-apache-pig/68747470733a2f2f77754772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f707138543142565a6d6f775a79303152456b3f7261773d74727565.png?dl=1)
 
 Now that we have our data files we can start writing our `Pig script`. Click on the `Pig button` from the Off-canvas menu.
 
@@ -37,12 +37,12 @@ We see the `Pig user interface` in our browser window. On the left we can choose
 
 To get started push the button `"New Script"` at the top right and fill in a name for your script. If you leave the gap “Script HDFS Location” empty, it will be filled automatically.
 
-![](../../../assets/how-to-process-data-with-apache-pig/68747470733a2f2f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f707138576b4e61524778364d46394d616e633f7261773d74727565.png?dl=1)
+![](/assetshow-to-process-data-with-apache-pig/68747470733a2f2f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f707138576b4e61524778364d46394d616e633f7261773d74727565.png?dl=1)
 
 After clicking on “create”, a new page opens.  
 At the center is the composition area where we will be writing our script. At top right of the composition area are buttons to Execute, `Explain  and perform a Syntax check` of the current script.
 
-![](../../../assets/how-to-process-data-with-apache-pig/68747470733a2f2f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f707138626e704c5a476c32516b564463584d3f7261773d74727565.png?dl=1)
+![](/assetshow-to-process-data-with-apache-pig/68747470733a2f2f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f707138626e704c5a476c32516b564463584d3f7261773d74727565.png?dl=1)
 
 At the left are buttons to save, copy or delete the script and at the very bottom we can add a argument.
 
@@ -50,7 +50,7 @@ The first thing we need to do is load the data. We use the load statement for th
 
     batting = load 'Batting.csv' using PigStorage(',');
 
-![](../../../assets/how-to-process-data-with-apache-pig/68747470733a2f2f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f70713853566c4a636a56525644427a616e4d3f7261773d74727565.png?dl=1)
+![](/assetshow-to-process-data-with-apache-pig/68747470733a2f2f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f70713853566c4a636a56525644427a616e4d3f7261773d74727565.png?dl=1)
 
 To filter out the first row of the data we have to add this line:
 
@@ -58,25 +58,25 @@ To filter out the first row of the data we have to add this line:
 
 The next thing we want to do is name the fields. We will use a `FOREACH` statement to iterate through the batting data object. We can use `Pig  Helper` that is at the bottom of the composition area to provide us with a template. We will click on `Pig  Helper`, select Data processing functions and then click on the `FOREACH template`. We can then replace each element by hitting the tab key.
 
-![](../../../assets/how-to-process-data-with-apache-pig/68747470733a2f2f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f7071384f446c5763554a5251307451596b453f7261773d74727565.png?dl=1)
+![](/assetshow-to-process-data-with-apache-pig/68747470733a2f2f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f7071384f446c5763554a5251307451596b453f7261773d74727565.png?dl=1)
 
 So the `FOREACH` statement will iterate through the batting data object and `GENERATE` pulls out selected fields and assigns them names. The new data object we are creating is then named runs. Our code will now be:
 
     runs = FOREACH raw_runs GENERATE $0 as playerID, $1 as year, $8 as runs;
 
-![](../../../assets/how-to-process-data-with-apache-pig/68747470733a2f2f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f707138634752365958467964334a4b526a413f7261773d74727565.png?dl=1)
+![](/assetshow-to-process-data-with-apache-pig/68747470733a2f2f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f707138634752365958467964334a4b526a413f7261773d74727565.png?dl=1)
 
 The next line of code is a `GROUP` statement that groups the elements in runs by the year field. So the grp_data object will then be indexed by year. In the next statement as we iterate through grp_data we will go through year by year. Type in the code:
 
     grp_data = GROUP runs by (year);
 
-![](../../../assets/how-to-process-data-with-apache-pig/68747470733a2f2f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f70713861316847535764714c545a506144513f7261773d74727565.png?dl=1)
+![](/assetshow-to-process-data-with-apache-pig/68747470733a2f2f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f70713861316847535764714c545a506144513f7261773d74727565.png?dl=1)
 
 In the next `FOREACH` statement we are going to find the maximum runs for each year. The code for this is:
 
     max_runs = FOREACH grp_data GENERATE group as grp,MAX(runs.runs) as max_runs;
 
-![](../../../assets/how-to-process-data-with-apache-pig/68747470733a2f2f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f70713854334e7154305a6b64475a585958633f7261773d74727565.png?dl=1)
+![](/assetshow-to-process-data-with-apache-pig/68747470733a2f2f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f70713854334e7154305a6b64475a585958633f7261773d74727565.png?dl=1)
 
 Now that we have the maximum runs we need to join this with the runs data object so we can pick up the player id. The result will be a dataset with `Year,  PlayerID  and  Max  Run`. At the end we `DUMP` the data to the output.
 
@@ -84,7 +84,7 @@ Now that we have the maximum runs we need to join this with the runs data object
     join_data = FOREACH join_max_run GENERATE $0 as year, $2 as playerID, $1 as runs;  
     DUMP join_data;
 
-![](../../../assets/how-to-process-data-with-apache-pig/68747470733a2f2f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f70713862564e57546b78344e6c67775454413f7261773d74727565.png?dl=1)
+![](/assetshow-to-process-data-with-apache-pig/68747470733a2f2f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f70713862564e57546b78344e6c67775454413f7261773d74727565.png?dl=1)
 
 Let’s take a look at our script. The first thing to notice is we never really address single rows of data to the left of the equals sign and on the right we just describe what we want to do for each row. We just assume things are applied to all the rows. We also have powerful operators like `GROUP` and `JOIN` to sort rows by a key and to build new data objects.
 
@@ -92,15 +92,15 @@ At this point we can save our script.
 
 We can execute our code by clicking on the execute button at the top right of the composition area, which opens a new page.
 
-![](../../../assets/how-to-process-data-with-apache-pig/68747470733a2f2f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f7071384e6e68574c57785756464a36596e4d3f7261773d74727565.png?dl=1)
+![](/assetshow-to-process-data-with-apache-pig/68747470733a2f2f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f7071384e6e68574c57785756464a36596e4d3f7261773d74727565.png?dl=1)
 
 As the jobs are run we will get status boxes where we will see logs, error message, the output of our script and our code at the bottom.
 
-![](../../../assets/how-to-process-data-with-apache-pig/68747470733a2f2f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f70713853486854636a6c556548517a576e4d3f7261773d74727565.png?dl=1)
+![](/assetshow-to-process-data-with-apache-pig/68747470733a2f2f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f70713853486854636a6c556548517a576e4d3f7261773d74727565.png?dl=1)
 
 If you scroll down to the “Logs…” and click on the link you can see the log file of your jobs. We should always check the Logs to check if your script was executed correctly.
 
-![](../../../assets/how-to-process-data-with-apache-pig/68747470733a2f2f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f70713854466c506230314d574735445a6d4d3f7261773d74727565.png?dl=1)
+![](/assetshow-to-process-data-with-apache-pig/68747470733a2f2f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f70713854466c506230314d574735445a6d4d3f7261773d74727565.png?dl=1)
 
 So we have created a simple `Pig script` that **reads in some comma separated data.**  
 Once we have that set of records in Pig we **pull out the `playerID, year and runs fields` from each row.**  

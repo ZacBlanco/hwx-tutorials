@@ -28,25 +28,25 @@ You can download the data file in csv zip using the command below:
 
 `wget http://hortonassets.s3.amazonaws.com/pig/lahman591-csv.zip`
 
-![](../../../assets/faster-pig-with-tez/1.png)
+![](/assetsfaster-pig-with-tez/1.png)
 
 After the file gets downloaded, `unzip lahman591-csv.zip`
 
-![](../../../assets/faster-pig-with-tez/2.png)
+![](/assetsfaster-pig-with-tez/2.png)
 
 ### Uploading into HDFS
 
 Let's change into the directory with `cd lahman591-csv` and use the list command `ls` to check all the files we downloaded:
 
-![](../../../assets/faster-pig-with-tez/3.png)
+![](/assetsfaster-pig-with-tez/3.png)
 
 We are going to upload the `Batting.csv` file using the command `hadoop fs -put ./Batting.csv /user/guest/`:
 
-![](../../../assets/faster-pig-with-tez/4.png)
+![](/assetsfaster-pig-with-tez/4.png)
 
 Let's check if the files are on HDFS, with the command `hadoop fs -ls /user/guest/`:
 
-![](../../../assets/faster-pig-with-tez/5.png)
+![](/assetsfaster-pig-with-tez/5.png)
 
 ### Running Pig on MapReduce
 
@@ -54,7 +54,7 @@ We will run first Pig without Tez.
 
 So, first let's create the pig script with the command `vi 1.pig`:
 
-![](../../../assets/faster-pig-with-tez/6.png)
+![](/assetsfaster-pig-with-tez/6.png)
 
 Press `i` in vi to enable the insert mode. Then copy the pig script below and paste it in vi:
 
@@ -69,25 +69,25 @@ Press `i` in vi to enable the insert mode. Then copy the pig script below and pa
 
 Then hit `esc` button and type `:wq` to save the file:
 
-![](../../../assets/faster-pig-with-tez/7.png)
+![](/assetsfaster-pig-with-tez/7.png)
 
 Now we can execute the pig script using the MapReduce engine by simply typing `pig 1.pig`:
 
-![](../../../assets/faster-pig-with-tez/8.png)
+![](/assetsfaster-pig-with-tez/8.png)
 
 It typically takes a little more than two minutes to finish on our single node pseudocluster. Note the time it took on our machine after it completes:
 
-![](../../../assets/faster-pig-with-tez/9.png)
+![](/assetsfaster-pig-with-tez/9.png)
 
 ### Running Pig on Tez
 
 Let's run the same Pig script with Tez using the command `pig -x tez 1.pig`:
 
-![](../../../assets/faster-pig-with-tez/10.png)
+![](/assetsfaster-pig-with-tez/10.png)
 
 This time note the time after the execution completes:
 
-![](../../../assets/faster-pig-with-tez/11.png)
+![](/assetsfaster-pig-with-tez/11.png)
 
 On our machine it took around 58 seconds with Pig using the Tez engine. That is more than 2X faster than Pig using MapReduce even without any specific optimization in the script for Tez.
 

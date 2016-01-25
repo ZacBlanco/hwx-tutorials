@@ -38,13 +38,13 @@ Let’s look at the syntax first:
 
 Let’s use the following commands as follows and execute. You can ssh to the sandbox using Tools like Putty. You could download putty.exe from the internet.
 
-![enter image description here](../../../assets/using-the-command-line-to-manage-hdfs/HDFS_HW_step_1-1.jpg)
+![enter image description here](/assetsusing-the-command-line-to-manage-hdfs/HDFS_HW_step_1-1.jpg)
 
 Let’s touch a file locally.
 
     $ touch filename.txt
 
-![enter image description here](../../../assets/using-the-command-line-to-manage-hdfs/HDFS_HW_step_1-2.jpg)
+![enter image description here](/assetsusing-the-command-line-to-manage-hdfs/HDFS_HW_step_1-2.jpg)
 
 #### [](#step-2-now-lets-check-how-to-find-out-space-utilization-in-a-hdfs-dir)Step 2: Now, let’s check how to find out space utilization in a HDFS dir.
 
@@ -57,7 +57,7 @@ Let’s touch a file locally.
         Example:
                 hadoop fs -du  /user/hadoop/ /user/hadoop/dir1/Sample.txt
 
-![enter image description here](../../../assets/using-the-command-line-to-manage-hdfs/HDFS_HW_DU_step2.1.jpg)
+![enter image description here](/assetsusing-the-command-line-to-manage-hdfs/HDFS_HW_DU_step2.1.jpg)
 
 #### [](#step-4)Step 4:
 
@@ -83,7 +83,7 @@ hadoop fs -get:
         Example:
                 hadoop fs -get /user/hadoop/dir3/Samplefile.txt /home/
 
-![enter image description here](../../../assets/using-the-command-line-to-manage-hdfs/HDFS_HW_get_step2.1.jpg)
+![enter image description here](/assetsusing-the-command-line-to-manage-hdfs/HDFS_HW_get_step2.1.jpg)
 
 #### [](#step-5-lets-look-at-quickly-two-advanced-features)Step 5: Let’s look at quickly two advanced features.
 
@@ -120,7 +120,7 @@ Let’s upload two files for this exercise first:
 
 
 
-![enter image description here](../../../assets/using-the-command-line-to-manage-hdfs/HDFS_HW_getmerge_distcp_step2.1.png)
+![enter image description here](/assetsusing-the-command-line-to-manage-hdfs/HDFS_HW_getmerge_distcp_step2.1.png)
 
 
 #### [](#step-6getting-help)Step 6:Getting help
@@ -134,6 +134,6 @@ You can use Help command to get list of commands supported by Hadoop Data File S
 
 
 
-![enter image description here](../../../assets/using-the-command-line-to-manage-hdfs/HDFS_HW_step3.png)
+![enter image description here](/assetsusing-the-command-line-to-manage-hdfs/HDFS_HW_step3.png)
 
 Hope this short tutorial was useful to get the basics of file management.
