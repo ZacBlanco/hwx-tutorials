@@ -32,35 +32,35 @@ Save the sample data .zip file to your computer, then extract the files and unzi
 
 Select the `HDFS Files view` from the Off-canvas menu at the top. The HDFS Files view allows you to view the Hortonworks Data Platform(HDP) file store. The HDP file system is separate from the local file system.
 
-![](https://www.dropbox.com/s/4xaqckakzkfuc1n/68747470733a2f2f37777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f707138616d30314d6d52695a444a714e6b453f7261773d74727565.png?dl=1)
+![](../../../assets/how-to-load-data-into-sandbox/68747470733a2f2f37777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f707138616d30314d6d52695a444a714e6b453f7261773d74727565.png?dl=1)
 
 We navigate to `/tmp`, create an **admin** folder
 
-![](https://www.dropbox.com/s/cro2p9etyqkq5gv/68747470733a2f42f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f7071386155744456453554576a497a516d633f7261773d74727565.png?dl=1)
+![](../../../assets/how-to-load-data-into-sandbox/68747470733a2f42f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f7071386155744456453554576a497a516d633f7261773d74727565.png?dl=1)
 
 right click on admin and select **Permissions**:
 
-![](https://www.dropbox.com/s/gu5mk3wfb5zrlm7/68747470733a2f2f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f7071385331464f5133567a526a52716558633f7261773d74727565.png?dl=1)
+![](../../../assets/how-to-load-data-into-sandbox/68747470733a2f2f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f7071385331464f5133567a526a52716558633f7261773d74727565.png?dl=1)
 
 Now we check the `Write buttons` and `modify recursively` and press save.
 
-![](https://www.dropbox.com/s/p69c3ldd8h2ni3u/68747470733a22f22f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f7071384d33557a4e693171636e426a516d633f7261773d74727565.png?dl=1)
+![](../../../assets/how-to-load-data-into-sandbox/68747470733a22f22f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f7071384d33557a4e693171636e426a516d633f7261773d74727565.png?dl=1)
 
 Verify that the permissions look now like this:
 
-![](https://www.dropbox.com/s/ujp0cuhmaw01fq8/68747470733a2f2f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f70713854475a716345395252316876596d633f7261773d74727565.png?dl=1)
+![](../../../assets/how-to-load-data-into-sandbox/68747470733a2f2f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f70713854475a716345395252316876596d633f7261773d74727565.png?dl=1)
 
 Now, we navigate to `/tmp/admin`, click on upload and browse the `Omniture.0.tsv`.
 
 Repeat this procedure for `users.tsv` file and for `products.tsv`.
 
-![](https://www.dropbox.com/s/wxg65de3y28tuqc/68747470733a22f2f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f7071384e3342784f5655744f46707a576d383f7261773d74727565.png?dl=1)
+![](../../../assets/how-to-load-data-into-sandbox/68747470733a22f2f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f7071384e3342784f5655744f46707a576d383f7261773d74727565.png?dl=1)
 
 ### [](#step-3-create-hive-tables)Step 3: Create Hive tables
 
 Let’s open the `Hive  View` by clicking on the Hive button from the `views menu`.
 
-![](https://www.dropbox.com/s/820du6lysueltzp/687474707133a2f2f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f707138566c68794c575934576e6c574e324d3f7261773d74727565.png?dl=1)
+![](../../../assets/how-to-load-data-into-sandbox/687474707133a2f2f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f707138566c68794c575934576e6c574e324d3f7261773d74727565.png?dl=1)
 
 and create the tables users, products and omniture.
 
@@ -72,7 +72,7 @@ and create the tables users, products and omniture.
 
 </div>
 
-![](https://www.dropbox.com/s/nrf2da6b4as0bh2/68747470733a2f12f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f707138544752564c585574646c64596256553f7261773d74727565.png?dl=1)
+![](../../../assets/how-to-load-data-into-sandbox/68747470733a2f12f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f707138544752564c585574646c64596256553f7261773d74727565.png?dl=1)
 
 <div class="highlight highlight-source-sql">
 
@@ -82,7 +82,7 @@ and create the tables users, products and omniture.
 
 </div>
 
-![](https://www.dropbox.com/s/hj3qizhvhp87k4a/68747470733a2f23f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f7071385a327459596b5a4463546b315a44413f7261773d74727565.png?dl=1)
+![](../../../assets/how-to-load-data-into-sandbox/68747470733a2f23f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f7071385a327459596b5a4463546b315a44413f7261773d74727565.png?dl=1)
 
 <div class="highlight highlight-source-sql">
 
@@ -92,7 +92,7 @@ and create the tables users, products and omniture.
 
 </div>
 
-![](https://www.dropbox.com/s/a40ddorbwf1yk5s/68747470733a2f2f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f7071384c545a445548563262305a585546553f7261773d74727565.png?dl=1)
+![](../../../assets/how-to-load-data-into-sandbox/68747470733a2f2f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f7071384c545a445548563262305a585546553f7261773d74727565.png?dl=1)
 
 ### [](#step-4-load-data-into-new-tables)Step 4: Load data into new tables
 
@@ -104,13 +104,13 @@ To load the data into the tables, we have to execute the following queries.
 
 </div>
 
-![](https://www.dropbox.com/s/ux3oifq21d2kg4q/687474707333a2f2f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f7071384f47395453324a57525864555245553f7261773d74727565.png?dl=1)
+![](../../../assets/how-to-load-data-into-sandbox/687474707333a2f2f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f7071384f47395453324a57525864555245553f7261773d74727565.png?dl=1)
 
 To check if the data was loaded, click on the icon next to the table name. It executes a sample query.
 
-![](https://www.dropbox.com/s/4hykd0nwzye4l0d/68747470733a2f21f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f7071384d454630556a4a3056454a734f45553f7261773d74727565.png?dl=1)  
-![](https://www.dropbox.com/s/hl4g5zlwvs855un/68747470733a2f12f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f707138565656745a7a4a52524442686330303f7261773d74727565.png?dl=1)  
-![](https://www.dropbox.com/s/8314xyhj3cf1bzk/68747470733a2f2f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f70713853474a6d65455533625745304d54673f7261773d74727565.png?dl=1)
+![](../../../assets/how-to-load-data-into-sandbox/68747470733a2f21f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f7071384d454630556a4a3056454a734f45553f7261773d74727565.png?dl=1)  
+![](../../../assets/how-to-load-data-into-sandbox/68747470733a2f12f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f707138565656745a7a4a52524442686330303f7261773d74727565.png?dl=1)  
+![](../../../assets/how-to-load-data-into-sandbox/68747470733a2f2f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f70713853474a6d65455533625745304d54673f7261773d74727565.png?dl=1)
 
 ### [](#step-5-view-and-refine-the-data-in-the-sandbox)Step 5: View and Refine the Data in the Sandbox
 
@@ -120,16 +120,16 @@ Here’s a summary of the data we’re working with:
 
 **omniturelogs** – website logs containing information such as URL, timestamp, IP address, geocoded IP, and session ID.
 
-![](https://www.dropbox.com/s/75wocbv1rorvppi/687474707133a2f2f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f707138516e70445a4846365332395454584d3f7261773d74727565.png?dl=1)  
-![](https://www.dropbox.com/s/gac7mw5z8b0hgz7/68747470733a2f2f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f7071386158707a5430787161475a6d5647383f7261773d74727565.png?dl=1)
+![](../../../assets/how-to-load-data-into-sandbox/687474707133a2f2f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f707138516e70445a4846365332395454584d3f7261773d74727565.png?dl=1)  
+![](../../../assets/how-to-load-data-into-sandbox/68747470733a2f2f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f7071386158707a5430787161475a6d5647383f7261773d74727565.png?dl=1)
 
 **users** – CRM user data listing SWIDs (Software User IDs) along with date of birth and gender.
 
-![](https://www.dropbox.com/s/wuzsjuaqjgvxslx/68747470733a2f2f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f70713854576b784d46677757576c465344513f7261773d74727565.png?dl=1)
+![](../../../assets/how-to-load-data-into-sandbox/68747470733a2f2f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f70713854576b784d46677757576c465344513f7261773d74727565.png?dl=1)
 
 **products** – CMS data that maps product categories to website URLs.
 
-![](https://www.dropbox.com/s/a40ddorbwf1yk5s/68747470733a2f2f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f7071384c545a445548563262305a585546553f7261773d74727565.png?dl=1)
+![](../../../assets/how-to-load-data-into-sandbox/68747470733a2f2f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f7071384c545a445548563262305a585546553f7261773d74727565.png?dl=1)
 
 Now let’s use a Hive script to generate an “omniture” view that contains a subset of the data in the Omniture log table.
 
@@ -139,22 +139,22 @@ Now let’s use a Hive script to generate an “omniture” view that contains a
 
 </div>
 
-![](https://www.dropbox.com/s/0pli3bqqwuylwz8/68747470733a2f2f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f7071384e55467a556d744253586c5a6147383f7261773d74727565.png?dl=1)
+![](../../../assets/how-to-load-data-into-sandbox/68747470733a2f2f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f7071384e55467a556d744253586c5a6147383f7261773d74727565.png?dl=1)
 
 Click Save as. On the “Saving item” pop-up, type “omniture” in the box, then click OK.
 
-![](https://www.dropbox.com/s/e94blglguj2dvzy/68747470733a2f2f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f707138546c52745557684d5130686c5645453f7261773d74727565.png?dl=1)
+![](../../../assets/how-to-load-data-into-sandbox/68747470733a2f2f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f707138546c52745557684d5130686c5645453f7261773d74727565.png?dl=1)
 
 You can see your saved query now by clicking on the “Save Queries” button at the top.
 
-![](https://www.dropbox.com/s/19tvel3rcv9dye8/68747470733a2f2f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f707138556c59305758426b623164526157633f7261773d74727565.png?dl=1)
+![](../../../assets/how-to-load-data-into-sandbox/68747470733a2f2f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f707138556c59305758426b623164526157633f7261773d74727565.png?dl=1)
 
 Click Execute to run the script.
 
 To view the data generated by the saved script, click on the icon next to the view’s name at the Database Explorer.  
 The query results will appear, and you can see that the results include the data from the omniturelogs table that were specified in the query.
 
-![](https://www.dropbox.com/s/e4y1l7gx3mu3faw/68747470733a2f2f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f7071385a4574665a305a47556b6c524d30553f7261773d74727565.png?dl=1)
+![](../../../assets/how-to-load-data-into-sandbox/68747470733a2f2f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f7071385a4574665a305a47556b6c524d30553f7261773d74727565.png?dl=1)
 
 Finally, we’ll create a script that joins the omniture website log data to the CRM data (registered users) and CMS data (products). Click Query Editor, then paste the following text in the Query box:
 
@@ -164,10 +164,10 @@ Finally, we’ll create a script that joins the omniture website log data to the
 
 Save this script as “webloganalytics” and execute the script.
 
-![](https://www.dropbox.com/s/es8g9uc9hr80k15/68747470733a2f2f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f707138526c6877583246664d3367774e55453f7261773d74727565.png?dl=1)
+![](../../../assets/how-to-load-data-into-sandbox/68747470733a2f2f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f707138526c6877583246664d3367774e55453f7261773d74727565.png?dl=1)
 
 You can view the data generated by the script as described in the preceding steps.
 
-![](https://www.dropbox.com/s/57mpvcszsf4lxf2/68747470733a2f2f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f7071384d445631627a4a72633245305354513f7261773d74727565.png?dl=1)
+![](../../../assets/how-to-load-data-into-sandbox/68747470733a2f2f7777772e676f6f676c6564726976652e636f6d2f686f73742f30427a686c4f79776e4f7071384d445631627a4a72633245305354513f7261773d74727565.png?dl=1)
 
 Now that you have loaded data into the Hortonworks Platform, you can use Business Intelligence (BI) applications such as Microsoft Excel to access and analyze the data.  
