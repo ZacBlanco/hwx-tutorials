@@ -20,19 +20,19 @@ In order to access the Hortonworks Sandbox with HDFS Explorer you will need to c
 
 To do this launch Notepad [with administrator privileges](http://windows.microsoft.com/en-gb/windows7/how-do-i-run-an-application-once-with-a-full-administrator-access-token).
 
-![Alt text](./images/tutorial-05/screenshot01.png)
+![Alt text](/assets/hdfs-explorer/screenshot01.png)
 
 In Notepad, click **File > Open**, paste the following into the file name field, and then click Open:
  
 `%systemroot%\system32\drivers\etc\hosts`
 
-![Alt text](./images/tutorial-05/screenshot02.png)
+![Alt text](/assets/hdfs-explorer/screenshot02.png)
 
 Add the following code to the end of the hosts file: 
 
 `192.168.56.101 sandbox.hortonworks.com sandbox`
 
-![Alt text](./images/tutorial-05/screenshot03.png)
+![Alt text](/assets/hdfs-explorer/screenshot03.png)
 
 … and save the changes.
 
@@ -49,9 +49,9 @@ Add the following code to the end of the hosts file:
 * **Cluster address:** `sandbox.hortonworks.com`
 * **User name:** `hadoop`
 
-![Alt text](./images/tutorial-05/screenshot04.png)
+![Alt text](/assets/hdfs-explorer/screenshot04.png)
 
-![Alt text](./images/tutorial-05/screenshot05.png)
+![Alt text](/assets/hdfs-explorer/screenshot05.png)
 
 **Note: HDFS Explorer supports multiple connections. To create additional connections, simply click file > add connection again. **
 
