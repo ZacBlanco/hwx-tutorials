@@ -89,7 +89,7 @@ In this tutorial, we will learn to:
 
 *   Using the browser, visit [http://sandbox.hortonworks.com:8983/solr/#/~cloud](http://sandbox.hortonworks.com:8983/solr/#/%7Ecloud). You should see the labs collection with 2 shards, each with a replication factor of 2.
 
-![Image](../../../assets/search-with-solr/solrui.png)
+![Image](/assets/search-with-solr/solrui.png)
 
 ### [](#step-6---load-documents-to-hdfs)Step 6 – Load documents to HDFS
 
@@ -107,7 +107,7 @@ In this tutorial, we will learn to:
 *   Search the indexed documents. Using the browser, visit the url [http://sandbox.hortonworks.com:8984/solr/labs/select?q=*:*](http://sandbox.hortonworks.com:8984/solr/labs/select?q=*:*)
 *   You will see search results like below
 
-![Image](../../../assets/search-with-solr/solr-query.png)
+![Image](/assets/search-with-solr/solr-query.png)
 
 ### [](#summary)Summary
 
