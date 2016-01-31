@@ -331,9 +331,9 @@ Please make note of your **Consumer Key**, **Consumer Secret**, **Access Token**
 
 ## Create a Data Flow with NiFi <a id="creating-a-data-flow-with-nifi"></a>
 
-The first thing you'll need to do here is download the NiFi data flow template for the [Twitter Dashboard here](https://raw.githubusercontent.com/ZacBlanco/hwx-tutorials/master/assets/nifi-sentiment-analytics/assets/Twitter_Flow.xml)
+The first thing you'll need to do here is download the NiFi data flow template for the [Twitter Dashboard here](https://raw.githubusercontent.com/ZacBlanco/hwx-tutorials/hdp-2.3/assets/nifi-sentiment-analytics/assets/Twitter_Flow.xml)
 
-[**Download**](https://raw.githubusercontent.com/ZacBlanco/hwx-tutorials/master/assets/nifi-sentiment-analytics/assets/Twitter_Flow.xml)
+[**Download**](https://raw.githubusercontent.com/ZacBlanco/hwx-tutorials/hdp-2.3/assets/nifi-sentiment-analytics/assets/Twitter_Flow.xml)
 
 Make note of where you download this file. You'll need it in the next step.
 
@@ -399,7 +399,7 @@ This section is for anyone who didn't want to set up a Twitter app so they could
 First you'll need to SSH into the sandbox execute the following command
 
 ~~~
-wget https://raw.githubusercontent.com/ZacBlanco/hwx-tutorials/master/assets/nifi-sentiment-analytics/assets/twitter-gen.sh
+wget https://raw.githubusercontent.com/ZacBlanco/hwx-tutorials/hdp-2.3/assets/nifi-sentiment-analytics/assets/twitter-gen.sh
 ~~~
 
 Then run the command with your specified number of tweets that you would like to generate.
@@ -538,7 +538,7 @@ Then create two new directories inside of `/tmp/data/tables`. One named **time_z
 
 ![Data Table Folders](/assets/nifi-sentiment-analytics/images/31_data_table_folders.png)
 
-In each of the folders respectively you'll need to upload the [`dictionary.tsv` file](https://raw.githubusercontent.com/ZacBlanco/hwx-tutorials/master/assets/nifi-sentiment-analytics/assets/dictionary.tsv), and the [`time_zone_map.tsv` file](https://raw.githubusercontent.com/ZacBlanco/hwx-tutorials/master/assets/nifi-sentiment-analytics/assets/time_zone_map.tsv) to each of their respective directories.
+In each of the folders respectively you'll need to upload the [`dictionary.tsv` file](https://raw.githubusercontent.com/ZacBlanco/hwx-tutorials/hdp-2.3/assets/nifi-sentiment-analytics/assets/dictionary.tsv), and the [`time_zone_map.tsv` file](https://raw.githubusercontent.com/ZacBlanco/hwx-tutorials/hdp-2.3/assets/nifi-sentiment-analytics/assets/time_zone_map.tsv) to each of their respective directories.
 
 After doing so, you'll need to run the following command on the Sandbox:
 
