@@ -1,2 +1,5 @@
 _site/*
 .sass-cache/*
+util/build/assets
+util/build/_site
+util/build/tutorials
