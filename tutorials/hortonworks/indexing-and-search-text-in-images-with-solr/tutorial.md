@@ -10,15 +10,15 @@ A very common request from many customers is to be able to index text in image f
 
 
 
-yum install autoconf automake libtool
+        yum install autoconf automake libtool
 
-yum install libpng-devel
+        yum install libpng-devel
 
-yum install libjpeg-devel
+        yum install libjpeg-devel
 
-yum install libtiff-devel
+        yum install libtiff-devel
 
-yum install zlib-devel
+        yum install zlib-devel
 
 
 
@@ -52,11 +52,11 @@ cat ~/.profile export TESSDATA_PREFIX='/usr/local/share/'  export LD_LIBRARY_PAT
 
 
 
-tar xvf leptonica-1.69.tar.gz  cd leptonica-1.69  ./configure
+        tar xvf leptonica-1.69.tar.gz  cd leptonica-1.69  ./configure
 
 make
 
-sudo make install
+      sudo make install
 
 
 
@@ -64,13 +64,13 @@ sudo make install
 
 
 
-tar xvf tesseract-ocr-3.02.02.tar.gz cd tesseract-ocr ./autogen.sh ./configure
+        tar xvf tesseract-ocr-3.02.02.tar.gz cd tesseract-ocr ./autogen.sh ./configure
 
-make
+        make
 
-sudo make install
+        sudo make install
 
-sudo ldconfig
+        sudo ldconfig
 
 
 
@@ -78,9 +78,13 @@ sudo ldconfig
 
 
 
-wget [http://tesseract-ocr.googlecode.com/files/tesseract-ocr-3.02.eng.tar.gz](http://tesseract-ocr.googlecode.com/files/tesseract-ocr-3.02.eng.tar.gz) tar xzf tesseract-ocr-3.02.eng.tar.gz
+wget [http://tesseract-ocr.googlecode.com/files/tesseract-ocr-3.02.eng.tar.gz](http://tesseract-ocr.googlecode.com/files/tesseract-ocr-3.02.eng.tar.gz)
 
-cp tesseract-ocr/tessdata/* /usr/local/share/tessdata
+    wget http://tesseract-ocr.googlecode.com/files/tesseract-ocr-3.02.eng.tar.gz
+
+    tar xzf tesseract-ocr-3.02.eng.tar.gz
+
+    cp tesseract-ocr/tessdata/* /usr/local/share/tessdata
 
 
 
@@ -88,23 +92,22 @@ cp tesseract-ocr/tessdata/* /usr/local/share/tessdata
 
 [http://blog.thedigitalgroup.com/vijaym/2015/07/17/using-solr-and-tikaocr-to-search-text-inside-an-image/](http://blog.thedigitalgroup.com/vijaym/2015/07/17/using-solr-and-tikaocr-to-search-text-inside-an-image/)
 
-
-
-/usr/local/bin/tesseract ~/OM_1.jpg ~/OM_out
-
-
+    /usr/local/bin/tesseract ~/OM_1.jpg ~/OM_out
 
 Tesseract Open Source OCR Engine v3.02.02 with Leptonica
 
 
 
-cat ~/OM_out.txt ‘  '"I“ " "'  ./ lrast.  Shortly before the classes started I was visiting a. certain public school, a school set  in a typically English countryside, which on the June clay of my visit was wonder- fully beauliful.  The  Head  Master—-no less typical than his
+    cat ~/OM_out.txt ‘  '"I“ " "'  ./ lrast.  
 
-school and the country-side—pointed out the charms of
 
-both,  and his pride came out  in the ?nal remark which he made
+    Shortly before the classes started I was visiting a. certain public school, a school set  in a typically English countryside, which on the June clay of my visit was wonder- fully beauliful.  The  Head  Master—-no less typical than his
 
-beforehe left me.  He explained that he had a class to take in'I'heocritus.  Then  (with a. buoyant gesture);  “  Can you , conceive anything more delightful than a class  in  Theocritus, on such a day and  in such a place?"
+    school and the country-side—pointed out the charms of
+
+    both,  and his pride came out  in the ?nal remark which he made
+
+    beforehe left me.  He explained that he had a class to take in'I'heocritus.  Then  (with a. buoyant gesture);  “  Can you , conceive anything more delightful than a class  in  Theocritus, on such a day and  in such a place?"
 
 
 
@@ -114,11 +117,7 @@ If you have text in your out file, then you’ve done it correctly!
 
 [https://wiki.apache.org/solr/ExtractingRequestHandler](https://wiki.apache.org/solr/ExtractingRequestHandler)
 
-
-
-cd  /opt/lucidworks-hdpsearch/solr/bin/  ./solr -e dih
-
-
+    cd  /opt/lucidworks-hdpsearch/solr/bin/  ./solr -e dih
 
 *   **Use SOLR Admin to upload the image**
 
