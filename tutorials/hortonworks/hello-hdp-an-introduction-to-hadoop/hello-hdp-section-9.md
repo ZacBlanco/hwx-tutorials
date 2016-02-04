@@ -57,7 +57,7 @@ Step 2: Running a Hive query
 *   Copy and paste the code below into your Zeppelin note.
 
 
-~~~~
+~~~
 %hive
 
 SELECT * FROM finalresults
@@ -154,7 +154,9 @@ Now that we know how to use Apache Zeppelin to obtain and visualize our data, we
 
 ## Suggested Reading
 
-
+- [Apache Zeppelin Docs](https://zeppelin.incubator.apache.org/docs/)
+- [Zeppelin on HDP](http://hortonworks.com/hadoop/zeppelin/)
+- [Zeppelin Homepage](https://zeppelin.incubator.apache.org/)
 
 
 
