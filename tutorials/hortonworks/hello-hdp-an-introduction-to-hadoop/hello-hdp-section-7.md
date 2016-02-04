@@ -255,7 +255,7 @@ hiveContext.sql("create table finalresults( driverid String, occurance bigint,to
 Before we load the data into hive table that we created above, we will have to convert our data file into orc format too.
 
 ~~~
-risk_factor_spark.saveAsOrcFile("risk_factor_spark")
+risk_factor_spark.write.orc("risk_factor_spark")
 ~~~
 
 **Load the data into Hive table using load data command.**
