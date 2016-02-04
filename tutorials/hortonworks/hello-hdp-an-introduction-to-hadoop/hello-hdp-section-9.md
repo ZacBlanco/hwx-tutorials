@@ -26,10 +26,7 @@ Step 1: Creating a Zeppelin Notebook
 *   Click on Ambari User view icon and navigate to Zeppelin notebook.
 
 
-
-
-
-![](../../../assets/hello-hdp/zeppelin/2015-10-03_18-22-54.png)
+![](/assets/hello-hdp/zeppelin/2015-10-03_18-22-54.png)
 
 
 
@@ -39,18 +36,18 @@ Step 1: Creating a Zeppelin Notebook
 *   You may also need to modify the forwarded ports on the virtual machine as well if you do this.
 
 
-![](../../../assets/hello-hdp/zeppelin/pasted image 0.png)
+![](/assets/hello-hdp/zeppelin/pasted image 0.png)
 
 
 *   Click on create notebook and a new workbook shall get started. Name the note Driver Risk Factor
 
 
-![](../../../assets/hello-hdp/zeppelin/2015-10-03_18-27-26.png)
+![](/assets/hello-hdp/zeppelin/2015-10-03_18-27-26.png)
 
 
 *   After creating the new note, use the dropdown menu from the Notebook button to
 
-![](../../../assets/hello-hdp/zeppelin/2015-10-03_18-39-40.png)
+![](/assets/hello-hdp/zeppelin/2015-10-03_18-39-40.png)
 
 
 Step 2: Running a Hive query
@@ -69,31 +66,31 @@ SELECT * FROM finalresults
 
  
 
-*   Click  ![](../../../assets/hello-hdp/zeppelin/Screen Shot 2015-10-03 at 6.41.03 PM.png)  to run the query in the Zeppelin notebook.
+*   Click  ![](/assets/hello-hdp/zeppelin/Screen Shot 2015-10-03 at 6.41.03 PM.png)  to run the query in the Zeppelin notebook.
 
 
 *   Initially, the query will produce the data in tabular format as shown in the screenshot.
 
 
 
-![](../../../assets/hello-hdp/zeppelin/pasted-image-0-1.png)
+![](/assets/hello-hdp/zeppelin/pasted-image-0-1.png)
 
 
 Step 3: Making charts using Zeppelin
 
-![](../../../assets/hello-hdp/zeppelin/2015-10-03_19-03-17.png)
+![](/assets/hello-hdp/zeppelin/2015-10-03_19-03-17.png)
 
 *   Iterate through each of the tabs that appear underneath the query. Each one will display a different type of chart depending on the data that is returned in the query. 2
 *   After clicking on a chart, we can view extra advanced settings to tailor the view of the data we want
 
-![](../../../assets/hello-hdp/zeppelin/2015-10-03_19-06-10.png)
+![](/assets/hello-hdp/zeppelin/2015-10-03_19-06-10.png)
 
 *   Click settings to open the advanced chart features.
 *   To make the same chart as the one above, drag the table relations into the boxes as shown in the image below.
 
 
 
-![](../../../assets/hello-hdp/zeppelin/2015-10-03_19-10-03.png)
+![](/assets/hello-hdp/zeppelin/2015-10-03_19-10-03.png)
 
 
 
@@ -101,7 +98,7 @@ Step 3: Making charts using Zeppelin
 
 *   You should now see an image like the one below.
 
-![](../../../assets/hello-hdp/zeppelin/pasted-image-0-2.png)
+![](/assets/hello-hdp/zeppelin/pasted-image-0-2.png)
 
 
 
@@ -109,7 +106,7 @@ Step 3: Making charts using Zeppelin
 
 
 
-![](../../../assets/hello-hdp/zeppelin/pasted-image-0-3.png)
+![](/assets/hello-hdp/zeppelin/pasted-image-0-3.png)
 
 
 
@@ -129,7 +126,7 @@ SELECT a.driverid, a.riskfactor, b.city, b.state FROM finalresults a, geolocatio
 ~~~
 
 
-![](../../../assets/hello-hdp/zeppelin/2015-10-08_22-19-13.png)
+![](/assets/hello-hdp/zeppelin/2015-10-08_22-19-13.png)
 
 
 
@@ -137,13 +134,13 @@ Run the query above using the keyboard shortcut Shift+Enter. You should eventual
 
 
 
-![](../../../assets/hello-hdp/zeppelin/2015-10-08_22-21-01.png)
+![](/assets/hello-hdp/zeppelin/2015-10-08_22-21-01.png)
 
 
 
 After changing a few of the settings we can figure out which of the cities has the high risk factors. Try changing the chart settings by clicking the scatterplot icon. Then make sure that they keys a.driverid is within the xAxis field, a.riskfactor is in the yAxis field, and b.city is in the group field. The chart should look similar to the following.
 
-![](../../../assets/hello-hdp/zeppelin/2015-10-08_22-22-33.png)
+![](/assets/hello-hdp/zeppelin/2015-10-08_22-22-33.png)
 
 
 
