@@ -291,6 +291,9 @@ Before running Hive examples run the following steps:
 
 
     su hdfs
+    
+    //If not already in spark-client directory, change to that directory to run spark shell
+    cd /usr/hdp/current/spark-client
 
     ./bin/spark-shell --num-executors 2 --executor-memory 512m --master yarn-client
 
@@ -480,7 +483,11 @@ Save Table to ORCFile
 
 
 
+    //For Spark 1.3.1, use
     peopleSchemaRDD.saveAsOrcFile("people.orc")
+    
+    //For Spark 1.4.1, use
+    peopleSchemaRDD.write.format("orc").save("peopleSchemaRDD")
 
 
 
@@ -488,8 +495,12 @@ Create Table from ORCFile
 
 
 
+    //For Spark 1.3.1, use
     val morePeople = hiveContext.orcFile("people.orc")
-
+    
+    //For Spark 1.4.1, use
+    val morePeople = hiveContext.read.format("orc").load("morePeople")
+    
     morePeople.registerTempTable("morePeople")
 
 
