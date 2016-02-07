@@ -292,7 +292,8 @@ Before running Hive examples run the following steps:
 
     su hdfs
     
-    //If not already in spark-client directory, change to that directory to run spark shell
+    //If not already in spark-client directory, change to that directory
+    
     cd /usr/hdp/current/spark-client
 
     ./bin/spark-shell --num-executors 2 --executor-memory 512m --master yarn-client
